@@ -22,5 +22,26 @@ public enum EventType
     YellowCard,
     TurnoverWon,
     TurnoverLost,
-    Wide
+    Wide,
+    Default
+}
+
+static class EventTypeExtensions
+{
+    /// <summary>
+    /// Checks if the event is relevant to the team in possession.
+    /// Some events like turnover won we want to pick a player from the opposing team.
+    /// </summary>
+    /// <param name="eventType"></param>
+    /// <returns></returns>
+    public static bool IsInPossessionTeamEvent(this EventType eventType)
+    {
+        switch (eventType)
+        {
+            case EventType.TurnoverWon:
+                return false;
+            default:
+                return true;
+        }
+    }
 }

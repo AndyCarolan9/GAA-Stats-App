@@ -7,64 +7,46 @@ namespace StatsTracker.Classes;
 /// </summary>
 public class MatchEvent
 {
-    #region Fields
-    private Point _location;
-
-    private string _player;
-    
-    private TimeSpan _time;
-    
-    private EventType _type;
-    
-    private ActionType _action;
-    #endregion
-
     #region Constructors
     public MatchEvent()
     {
-        _player = string.Empty;
+        Player = string.Empty;
+        TeamName = string.Empty;
     }
     
-    public MatchEvent(Point location, string player, TimeSpan time, EventType eventType, ActionType action)
+    public MatchEvent(Point location, string player, long time, EventType eventType, ActionType action, string teamName)
     {
-        _location = location;
-        _player = player;
-        _time = time;
-        _type = eventType;
-        _action = action;
+        Location = location;
+        Player = player;
+        Time = time;
+        Type = eventType;
+        Action = action;
+        TeamName = teamName;
+    }
+
+    public MatchEvent(Point location, string player, long time, EventType eventType, string teamName)
+    {
+        Location = location;
+        Player = player;
+        Time = time;
+        Type = eventType;
+        TeamName = teamName;
     }
     #endregion
     
     #region Properties
 
-    public Point Location
-    {
-        get => _location;
-        set => _location = value;
-    }
+    public Point Location { get; set; }
 
-    public string Player
-    {
-        get => _player;
-        set => _player = value;
-    }
+    public string Player { get; set; }
 
-    public TimeSpan Time
-    {
-        get => _time;
-        set => _time = value;
-    }
+    public long Time { get; set; }
 
-    public EventType Type
-    {
-        get => _type;
-        set => _type = value;
-    }
+    public EventType Type { get; set; }
 
-    public ActionType Action
-    {
-        get => _action;
-        set => _action = value;
-    }
+    public ActionType Action { get; set; }
+    
+    public string TeamName { get; set; }
+
     #endregion
 }

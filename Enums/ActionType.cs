@@ -7,5 +7,6 @@ public enum ActionType
     Free,
     From45,
     Play,
-    Mark
+    Mark,
+    Default
 }
