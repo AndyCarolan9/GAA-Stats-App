@@ -4,6 +4,9 @@ using StatsTracker.Events;
 
 namespace StatsTracker.Views;
 
+/// <summary>
+/// Used for selecting players and the action type of the match event.
+/// </summary>
 public partial class ActionSelectWindow : Form, IStatsView
 {
     private Button? _selectedPlayerButton;
@@ -12,8 +15,14 @@ public partial class ActionSelectWindow : Form, IStatsView
     private Color _actionButtonColor = Color.IndianRed;
     private readonly InputStatEventArgs _inputStatEventArgs;
     
+    /// <summary>
+    /// Called when the enter stat button is clicked.
+    /// </summary>
     public event EventHandler<InputStatEventArgs>? OnEnterStatClicked;
     
+    /// <summary>
+    /// Called when the cancel button is clicked.
+    /// </summary>
     public event EventHandler<EventArgs>? OnCancelled;
     
     public ActionSelectWindow(Team team, InputStatEventArgs eventArgs)
@@ -26,12 +35,15 @@ public partial class ActionSelectWindow : Form, IStatsView
         SetupPlayerButtons();
         SetupActionButtons();
     }
-
+    
     public Form GetForm()
     {
         return this;
     }
 
+    /// <summary>
+    /// Sets up the player buttons from the team sheet.
+    /// </summary>
     private void SetupPlayerButtons()
     {
         foreach(var button in Controls.OfType<Button>())
@@ -48,6 +60,9 @@ public partial class ActionSelectWindow : Form, IStatsView
         }
     }
 
+    /// <summary>
+    /// Sets up the action buttons.
+    /// </summary>
     private void SetupActionButtons()
     {
         _actionButtonColor = FromPlay.BackColor;
@@ -60,6 +75,11 @@ public partial class ActionSelectWindow : Form, IStatsView
         FromMark.MouseClick += ActionButton_Click;
     }
 
+    /// <summary>
+    /// Called when a player button is clicked.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="mouseEventArgs">The mouse event arguments of the event.</param>
     private void PlayerButton_Click(object? sender, MouseEventArgs mouseEventArgs)
     {
         if (mouseEventArgs.Button != MouseButtons.Left) return;
@@ -83,6 +103,11 @@ public partial class ActionSelectWindow : Form, IStatsView
         _selectedPlayerButton.BackColor = Color.WhiteSmoke;
     }
 
+    /// <summary>
+    /// Called when an action button is pressed.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="mouseEventArgs">The mouse event arguments of the event.</param>
     private void ActionButton_Click(object? sender, MouseEventArgs mouseEventArgs)
     {
         if (mouseEventArgs.Button != MouseButtons.Left) return;
@@ -106,7 +131,13 @@ public partial class ActionSelectWindow : Form, IStatsView
         _selectedActionButton.BackColor = Color.WhiteSmoke;
     }
 
-    private void EnterStat_Click(object? sender, EventArgs e)
+    /// <summary>
+    /// Called when the enter stat button is clicked.
+    /// The selected data is added together and the OnEnterStatClicked event is invoked.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="eventArgs">The event arguments of the button press.</param>
+    private void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
         _inputStatEventArgs.ActionType = GetSelectedActionType();
         _inputStatEventArgs.Player = GetSelectedPlayerName();
@@ -114,11 +145,20 @@ public partial class ActionSelectWindow : Form, IStatsView
         OnEnterStatClicked?.Invoke(sender, _inputStatEventArgs);
     }
 
-    private void Cancel_Click(object? sender, EventArgs e)
+    /// <summary>
+    /// Called when the cancel button is clicked.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="eventArgs">The event arguments of the button press.</param>
+    private void Cancel_Click(object? sender, EventArgs eventArgs)
     {
-        OnCancelled?.Invoke(sender, e);
+        OnCancelled?.Invoke(sender, eventArgs);
     }
 
+    /// <summary>
+    /// Returns the action type based on the action name.
+    /// </summary>
+    /// <returns>The action type from the name.</returns>
     private ActionType GetSelectedActionType()
     {
         string? actionName = _selectedActionButton?.Text;
@@ -138,10 +178,14 @@ public partial class ActionSelectWindow : Form, IStatsView
             case "From 45":
                 return ActionType.From45;
             default:
-                return ActionType.Play;
+                return ActionType.Default;
         }
     }
 
+    /// <summary>
+    /// Returns the player name from the button.
+    /// </summary>
+    /// <returns>The player name from the button.</returns>
     private string GetSelectedPlayerName()
     {
         if (_selectedPlayerButton is null)

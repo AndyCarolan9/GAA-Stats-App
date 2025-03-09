@@ -1,5 +1,8 @@
 ﻿namespace StatsTracker.Enums;
 
+/// <summary>
+/// Event type used to describe the match event.
+/// </summary>
 public enum EventType
 {
     KickOutWon,
@@ -26,6 +29,9 @@ public enum EventType
     Default
 }
 
+/// <summary>
+/// Extension class which adds some methods to the event type enum.
+/// </summary>
 static class EventTypeExtensions
 {
     /// <summary>

@@ -4,8 +4,14 @@ using StatsTracker.Events;
 
 namespace StatsTracker.Views;
 
+/// <summary>
+/// View used for handling the UI inputs of match events.
+/// </summary>
 public partial class MatchView : Form, IStatsView
 {
+    /// <summary>
+    /// Event used when a stat is entered on the field input.
+    /// </summary>
     public event EventHandler<InputStatEventArgs>? OnStatEntered;
 
     private Point _inputLocation = new Point(0, 0);
@@ -15,21 +21,35 @@ public partial class MatchView : Form, IStatsView
         InitializeComponent();
     }
 
+    /// <summary>
+    /// Returns the form class of this view.
+    /// </summary>
+    /// <returns>The form class of this view.</returns>
     public Form GetForm()
     {
         return this;
     }
     
-    private void FootballFieldInput_MouseClick(object sender, MouseEventArgs e)
+    /// <summary>
+    /// Shows the context menu when the input field is right-clicked.
+    /// </summary>
+    /// <param name="sender">The object which sent the event.</param>
+    /// <param name="mouseEventArgs">The mouse event arguments of the fired event.</param>
+    private void FootballFieldInput_MouseClick(object sender, MouseEventArgs mouseEventArgs)
     {
-        if (e.Button == MouseButtons.Right)
+        if (mouseEventArgs.Button == MouseButtons.Right)
         {
-            _inputLocation = e.Location;
-            EventInputMenu.Show(this, e.Location);
+            _inputLocation = mouseEventArgs.Location;
+            EventInputMenu.Show(this, mouseEventArgs.Location);
         }
     }
 
-    private void EventInputMenu_Opening(object sender, CancelEventArgs e)
+    /// <summary>
+    /// Called when the context menu is opened.
+    /// </summary>
+    /// <param name="sender">The object which sent the event.</param>
+    /// <param name="cancelEventArgs">The event args of the fired event.</param>
+    private void EventInputMenu_Opening(object sender, CancelEventArgs cancelEventArgs)
     {
         EventInputMenu.Items.Clear();
         
@@ -98,7 +118,12 @@ public partial class MatchView : Form, IStatsView
         EventInputMenu.Items.Add(freeConceded);
     }
 
-    private void EventInputMenu_ItemClicked(object? sender, MouseEventArgs e)
+    /// <summary>
+    /// Called when a button of the context menu is clicked.
+    /// </summary>
+    /// <param name="sender">The object which sent the event.</param>
+    /// <param name="mouseEventArgs">The mouse event arguments of the fired event.</param>
+    private void EventInputMenu_ItemClicked(object? sender, MouseEventArgs mouseEventArgs)
     {
         if (sender is null)
         {
@@ -115,6 +140,11 @@ public partial class MatchView : Form, IStatsView
         OnStatEntered?.Invoke(this, new InputStatEventArgs() { EventType = eventType, Location = _inputLocation });
     }
 
+    /// <summary>
+    /// Returns the event type enum based on the event name.
+    /// </summary>
+    /// <param name="eventName">The name of the event.</param>
+    /// <returns>The event type.</returns>
     private EventType GetEventTypeFromName(string eventName)
     {
         switch (eventName)
@@ -129,9 +159,20 @@ public partial class MatchView : Form, IStatsView
                 return EventType.DoublePoint;
             case "GoalScored":
                 return EventType.Goal;
+            case "Saved Shot":
+                return EventType.Saved;
+            case "KickOutWon":
+                return EventType.KickOutWon;
+            case "KickOutWonMark":
+                return EventType.KickOutWonMark;
+            case "KickOutLost":
+                return EventType.KickOutLost;
+            case "KickOutLostMark":
+                return EventType.KickOutLostMark;
+            case "FreeConceded":
+                return EventType.FreeConceded;
+            default:
+                return EventType.Default;
         }
-
-        // TODO create a default.
-        return EventType.Wide;
     }
 }
