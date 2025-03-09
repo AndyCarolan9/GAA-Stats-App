@@ -12,7 +12,7 @@ public partial class ActionSelectWindow : Form, IStatsView
     private Color _actionButtonColor = Color.IndianRed;
     private readonly InputStatEventArgs _inputStatEventArgs;
     
-    public event EventHandler<InputStatEventArgs>? OnStatEntered;
+    public event EventHandler<InputStatEventArgs>? OnEnterStatClicked;
     
     public event EventHandler<EventArgs>? OnCancelled;
     
@@ -111,7 +111,7 @@ public partial class ActionSelectWindow : Form, IStatsView
         _inputStatEventArgs.ActionType = GetSelectedActionType();
         _inputStatEventArgs.Player = GetSelectedPlayerName();
         _inputStatEventArgs.Team = _selectedTeam;
-        OnStatEntered?.Invoke(sender, _inputStatEventArgs);
+        OnEnterStatClicked?.Invoke(sender, _inputStatEventArgs);
     }
 
     private void Cancel_Click(object? sender, EventArgs e)

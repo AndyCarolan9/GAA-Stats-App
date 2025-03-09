@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using StatsTracker.Classes;
+using StatsTracker.Enums;
+using StatsTracker.Events;
 
 namespace StatsTracker.Model;
 
@@ -18,6 +20,8 @@ public class Match
     private Team _awayTeam;
 
     private int _half = 1;
+
+    private bool _isHomeTeamInPossession = true;
 
     #endregion
     
@@ -72,6 +76,13 @@ public class Match
     public void RemoveEvent(MatchEvent matchEvent)
     {
         _matchEvents.Remove(matchEvent);
+    }
+
+    public void AddEvent(InputStatEventArgs statArgs)
+    {
+        var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
+            statArgs.EventType, statArgs.ActionType, statArgs.Team.TeamName);
+        _matchEvents.Add(matchEvent);
     }
     #endregion
 }

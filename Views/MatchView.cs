@@ -100,6 +100,11 @@ public partial class MatchView : Form, IStatsView
 
     private void EventInputMenu_ItemClicked(object? sender, MouseEventArgs e)
     {
+        if (sender is null)
+        {
+            return;
+        }
+        
         string? eventName = ((ToolStripMenuItem)sender).Name;
         if (eventName == null)
         {
