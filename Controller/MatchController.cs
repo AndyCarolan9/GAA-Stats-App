@@ -42,9 +42,7 @@ public class MatchController : IStatsController
     /// <param name="inputStatEventArgs">The input arguments for the statistic.</param>
     private void OnStatEntered(object? sender, InputStatEventArgs inputStatEventArgs)
     {
-        Team team = new Team("Glen Emmets", Color.Green, new []{"Ian O'Reilly", "Emmet Delaney", "Keith Boylan",
-            "Jamie Farnan", "Callum Wogan", "Evan English", "Brien Maguire", "Cian Talbot", "Darragh Russel", "Paddy McHugh",
-            "Kealan O'Neill", "James Butler", "Eoin Maguire", "Alex Carolan", "Lorcan Lynch"});
+        Team team = new Team();
         _actionSelectWindow = new ActionSelectWindow(team, inputStatEventArgs);
         BindActionViewEvents();
         _actionSelectWindow.ShowDialog();
