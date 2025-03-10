@@ -80,6 +80,10 @@ public class Match
     public void AddEvent(MatchEvent matchEvent)
     {
         _matchEvents.Add(matchEvent);
+        if (matchEvent.Type.IsTurnoverEvent())
+        {
+            _isHomeTeamInPossession = !_isHomeTeamInPossession;
+        }
     }
 
     public void RemoveEvent(MatchEvent matchEvent)
@@ -92,28 +96,21 @@ public class Match
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.ActionType, statArgs.Team.TeamName);
         _matchEvents.Add(matchEvent);
+
+        if (statArgs.EventType.IsTurnoverEvent())
+        {
+            _isHomeTeamInPossession = !_isHomeTeamInPossession;
+        }
     }
 
     public Team GetTeamForEvent(EventType eventType)
     {
-        switch(eventType)
+        if (eventType.IsInPossessionTeamEvent())
         {
-            case EventType.TurnoverLost:
-            case EventType.OutFor45:
-            case EventType.Point:
-            case EventType.Goal:
-            case EventType.DoublePoint:
-            case EventType.Short:
-            case EventType.OffPosts:
-            case EventType.KickOutWon:
-            case EventType.KickOutWonMark:
-            case EventType.Saved:
-            case EventType.SavedOutFor45:
-            case EventType.Wide:
-                return GetInPossessionTeam();
-            default:
-                return GetDefendingTeam();
+            return GetInPossessionTeam();
         }
+
+        return GetDefendingTeam();
     }
 
     public Team GetInPossessionTeam()
