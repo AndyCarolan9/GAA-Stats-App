@@ -21,7 +21,7 @@ public class Match
 
     private int _half = 1;
 
-    private bool _isHomeTeamInPossession = true;
+    private bool _isHomeTeamInPossession = false;
 
     #endregion
     
@@ -34,6 +34,15 @@ public class Match
         _matchTimer = new Stopwatch();
         _homeTeam = new Team();
         _awayTeam = new Team();
+    }
+
+    public Match(Team homeTeam, Team awayTeam)
+    {
+        _matchName = Guid.NewGuid().ToString();
+        _matchEvents = new List<MatchEvent>();
+        _matchTimer = new Stopwatch();
+        _homeTeam = homeTeam;
+        _awayTeam = awayTeam;
     }
 
     public Match(Team homeTeam, Team awayTeam, string matchName, List<MatchEvent> matchEvents)
@@ -83,6 +92,48 @@ public class Match
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.ActionType, statArgs.Team.TeamName);
         _matchEvents.Add(matchEvent);
+    }
+
+    public Team GetTeamForEvent(EventType eventType)
+    {
+        switch(eventType)
+        {
+            case EventType.TurnoverLost:
+            case EventType.OutFor45:
+            case EventType.Point:
+            case EventType.Goal:
+            case EventType.DoublePoint:
+            case EventType.Short:
+            case EventType.OffPosts:
+            case EventType.KickOutWon:
+            case EventType.KickOutWonMark:
+            case EventType.Saved:
+            case EventType.SavedOutFor45:
+            case EventType.Wide:
+                return GetInPossessionTeam();
+            default:
+                return GetDefendingTeam();
+        }
+    }
+
+    public Team GetInPossessionTeam()
+    {
+        if (_isHomeTeamInPossession)
+        {
+            return _homeTeam;
+        }
+        
+        return _awayTeam;
+    }
+
+    public Team GetDefendingTeam()
+    {
+        if (_isHomeTeamInPossession)
+        {
+            return _awayTeam;
+        }
+        
+        return _homeTeam;
     }
     #endregion
 }

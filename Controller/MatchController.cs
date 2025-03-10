@@ -42,8 +42,7 @@ public class MatchController : IStatsController
     /// <param name="inputStatEventArgs">The input arguments for the statistic.</param>
     private void OnStatEntered(object? sender, InputStatEventArgs inputStatEventArgs)
     {
-        Team team = new Team();
-        _actionSelectWindow = new ActionSelectWindow(team, inputStatEventArgs);
+        _actionSelectWindow = new ActionSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType), inputStatEventArgs);
         BindActionViewEvents();
         _actionSelectWindow.ShowDialog();
     }
