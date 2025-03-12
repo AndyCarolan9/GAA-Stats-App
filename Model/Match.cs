@@ -55,6 +55,19 @@ public class Match
     }
     #endregion
     
+    #region Getters
+
+    public Team GetHomeTeam()
+    {
+        return _homeTeam;
+    }
+
+    public Team GetAwayTeam()
+    {
+        return _awayTeam;
+    }
+    #endregion
+    
     #region Methods
 
     public void StartHalf()
