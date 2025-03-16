@@ -18,6 +18,9 @@
       <Compile Update="View_Elements\SplitCountBar.cs">
         <SubType>Component</SubType>
       </Compile>
+      <Compile Update="View_Elements\StatisticBar.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

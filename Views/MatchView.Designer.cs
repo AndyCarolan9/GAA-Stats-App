@@ -77,8 +77,27 @@ partial class MatchView
         toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
         pointScoredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        HomeTeamName = new System.Windows.Forms.Label();
+        AwayTeamName = new System.Windows.Forms.Label();
+        AwayTeamScore = new System.Windows.Forms.Label();
+        HomeTeamScore = new System.Windows.Forms.Label();
+        pictureBox1 = new System.Windows.Forms.PictureBox();
+        pictureBox2 = new System.Windows.Forms.PictureBox();
+        HomeTeamSubs = new System.Windows.Forms.Button();
+        AwayTeamSubs = new System.Windows.Forms.Button();
+        pictureBox3 = new System.Windows.Forms.PictureBox();
+        TurnoverStatBar = new StatsTracker.View_Elements.StatisticBar();
+        ShotsStatBar = new StatsTracker.View_Elements.StatisticBar();
+        KickoutsStatsBar = new StatsTracker.View_Elements.StatisticBar();
+        GoalShotsStatBar = new StatsTracker.View_Elements.StatisticBar();
+        WidesStatBar = new StatsTracker.View_Elements.StatisticBar();
+        AttacksStatBar = new StatsTracker.View_Elements.StatisticBar();
+        FreesStatBar = new StatsTracker.View_Elements.StatisticBar();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
         SuspendLayout();
         // 
         // FootballFieldInput
@@ -97,7 +116,7 @@ partial class MatchView
         // EventInputMenu
         // 
         EventInputMenu.Name = "EventInputMenu";
-        EventInputMenu.Size = new System.Drawing.Size(181, 26);
+        EventInputMenu.Size = new System.Drawing.Size(61, 4);
         EventInputMenu.Opening += EventInputMenu_Opening;
         // 
         // toolStripComboBox1
@@ -370,21 +389,209 @@ partial class MatchView
         pointScoredToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
         pointScoredToolStripMenuItem.Text = "Point Scored";
         // 
+        // HomeTeamName
+        // 
+        HomeTeamName.Font = new System.Drawing.Font("Segoe UI", 24F);
+        HomeTeamName.Location = new System.Drawing.Point(1353, 35);
+        HomeTeamName.Name = "HomeTeamName";
+        HomeTeamName.Size = new System.Drawing.Size(278, 51);
+        HomeTeamName.TabIndex = 2;
+        HomeTeamName.Text = "Home Team";
+        HomeTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // AwayTeamName
+        // 
+        AwayTeamName.Font = new System.Drawing.Font("Segoe UI", 24F);
+        AwayTeamName.Location = new System.Drawing.Point(1648, 35);
+        AwayTeamName.Name = "AwayTeamName";
+        AwayTeamName.Size = new System.Drawing.Size(244, 51);
+        AwayTeamName.TabIndex = 3;
+        AwayTeamName.Text = "Away Team";
+        AwayTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // AwayTeamScore
+        // 
+        AwayTeamScore.Font = new System.Drawing.Font("Segoe UI", 24F);
+        AwayTeamScore.Location = new System.Drawing.Point(1648, 86);
+        AwayTeamScore.Name = "AwayTeamScore";
+        AwayTeamScore.Size = new System.Drawing.Size(244, 51);
+        AwayTeamScore.TabIndex = 5;
+        AwayTeamScore.Text = "3-13";
+        AwayTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // HomeTeamScore
+        // 
+        HomeTeamScore.Font = new System.Drawing.Font("Segoe UI", 24F);
+        HomeTeamScore.Location = new System.Drawing.Point(1353, 86);
+        HomeTeamScore.Name = "HomeTeamScore";
+        HomeTeamScore.Size = new System.Drawing.Size(278, 51);
+        HomeTeamScore.TabIndex = 6;
+        HomeTeamScore.Text = "4-12";
+        HomeTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // pictureBox1
+        // 
+        pictureBox1.BackColor = System.Drawing.Color.Black;
+        pictureBox1.Location = new System.Drawing.Point(709, 25);
+        pictureBox1.Name = "pictureBox1";
+        pictureBox1.Size = new System.Drawing.Size(8, 1023);
+        pictureBox1.TabIndex = 7;
+        pictureBox1.TabStop = false;
+        // 
+        // pictureBox2
+        // 
+        pictureBox2.BackColor = System.Drawing.Color.Black;
+        pictureBox2.Location = new System.Drawing.Point(1320, 25);
+        pictureBox2.Name = "pictureBox2";
+        pictureBox2.Size = new System.Drawing.Size(8, 1023);
+        pictureBox2.TabIndex = 8;
+        pictureBox2.TabStop = false;
+        // 
+        // HomeTeamSubs
+        // 
+        HomeTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
+        HomeTeamSubs.Location = new System.Drawing.Point(1429, 160);
+        HomeTeamSubs.Name = "HomeTeamSubs";
+        HomeTeamSubs.Size = new System.Drawing.Size(122, 34);
+        HomeTeamSubs.TabIndex = 9;
+        HomeTeamSubs.Text = "Subs";
+        HomeTeamSubs.UseVisualStyleBackColor = true;
+        // 
+        // AwayTeamSubs
+        // 
+        AwayTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
+        AwayTeamSubs.Location = new System.Drawing.Point(1708, 160);
+        AwayTeamSubs.Name = "AwayTeamSubs";
+        AwayTeamSubs.Size = new System.Drawing.Size(122, 34);
+        AwayTeamSubs.TabIndex = 10;
+        AwayTeamSubs.Text = "Subs";
+        AwayTeamSubs.UseVisualStyleBackColor = true;
+        // 
+        // pictureBox3
+        // 
+        pictureBox3.BackColor = System.Drawing.Color.Black;
+        pictureBox3.Location = new System.Drawing.Point(709, 200);
+        pictureBox3.Name = "pictureBox3";
+        pictureBox3.Size = new System.Drawing.Size(1200, 10);
+        pictureBox3.TabIndex = 13;
+        pictureBox3.TabStop = false;
+        // 
+        // TurnoverStatBar
+        // 
+        TurnoverStatBar.Location = new System.Drawing.Point(1374, 216);
+        TurnoverStatBar.Name = "TurnoverStatBar";
+        TurnoverStatBar.Size = new System.Drawing.Size(500, 101);
+        TurnoverStatBar.StatName = "Turnovers";
+        TurnoverStatBar.TabIndex = 14;
+        // 
+        // ShotsStatBar
+        // 
+        ShotsStatBar.Location = new System.Drawing.Point(1374, 410);
+        ShotsStatBar.Name = "ShotsStatBar";
+        ShotsStatBar.Size = new System.Drawing.Size(500, 101);
+        ShotsStatBar.StatName = "Shots";
+        ShotsStatBar.TabIndex = 15;
+        // 
+        // KickoutsStatsBar
+        // 
+        KickoutsStatsBar.Location = new System.Drawing.Point(1374, 313);
+        KickoutsStatsBar.Name = "KickoutsStatsBar";
+        KickoutsStatsBar.Size = new System.Drawing.Size(500, 101);
+        KickoutsStatsBar.StatName = "Kickouts";
+        KickoutsStatsBar.TabIndex = 16;
+        // 
+        // GoalShotsStatBar
+        // 
+        GoalShotsStatBar.Location = new System.Drawing.Point(1374, 507);
+        GoalShotsStatBar.Name = "GoalShotsStatBar";
+        GoalShotsStatBar.Size = new System.Drawing.Size(500, 101);
+        GoalShotsStatBar.StatName = "Goal Shots";
+        GoalShotsStatBar.TabIndex = 17;
+        // 
+        // WidesStatBar
+        // 
+        WidesStatBar.Location = new System.Drawing.Point(1374, 603);
+        WidesStatBar.Name = "WidesStatBar";
+        WidesStatBar.Size = new System.Drawing.Size(500, 101);
+        WidesStatBar.StatName = "Wides";
+        WidesStatBar.TabIndex = 18;
+        // 
+        // AttacksStatBar
+        // 
+        AttacksStatBar.Location = new System.Drawing.Point(1374, 701);
+        AttacksStatBar.Name = "AttacksStatBar";
+        AttacksStatBar.Size = new System.Drawing.Size(500, 101);
+        AttacksStatBar.StatName = "Attacks";
+        AttacksStatBar.TabIndex = 19;
+        // 
+        // FreesStatBar
+        // 
+        FreesStatBar.Location = new System.Drawing.Point(1374, 799);
+        FreesStatBar.Name = "FreesStatBar";
+        FreesStatBar.Size = new System.Drawing.Size(500, 101);
+        FreesStatBar.StatName = "Frees";
+        FreesStatBar.TabIndex = 20;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(1904, 1041);
+        Controls.Add(FreesStatBar);
+        Controls.Add(AttacksStatBar);
+        Controls.Add(WidesStatBar);
+        Controls.Add(GoalShotsStatBar);
+        Controls.Add(KickoutsStatsBar);
+        Controls.Add(ShotsStatBar);
+        Controls.Add(TurnoverStatBar);
+        Controls.Add(pictureBox3);
+        Controls.Add(AwayTeamSubs);
+        Controls.Add(HomeTeamSubs);
+        Controls.Add(pictureBox2);
+        Controls.Add(pictureBox1);
+        Controls.Add(HomeTeamScore);
+        Controls.Add(AwayTeamScore);
+        Controls.Add(AwayTeamName);
+        Controls.Add(HomeTeamName);
         Controls.Add(FootballFieldInput);
         Controls.Add(HeaderBar);
+        DoubleBuffered = true;
         MainMenuStrip = HeaderBar;
         Text = "MatchView";
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).EndInit();
         HeaderBar.ResumeLayout(false);
         HeaderBar.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private StatsTracker.View_Elements.StatisticBar ShotsStatBar;
+    private StatsTracker.View_Elements.StatisticBar KickoutsStatsBar;
+    private StatsTracker.View_Elements.StatisticBar GoalShotsStatBar;
+    private StatsTracker.View_Elements.StatisticBar WidesStatBar;
+    private StatsTracker.View_Elements.StatisticBar AttacksStatBar;
+    private StatsTracker.View_Elements.StatisticBar FreesStatBar;
+
+    private StatsTracker.View_Elements.StatisticBar TurnoverStatBar;
+
+    private System.Windows.Forms.PictureBox pictureBox3;
+
+    private System.Windows.Forms.Button HomeTeamSubs;
+    private System.Windows.Forms.Button AwayTeamSubs;
+
+    private System.Windows.Forms.PictureBox pictureBox2;
+
+    private System.Windows.Forms.PictureBox pictureBox1;
+
+    private System.Windows.Forms.Label AwayTeamScore;
+    private System.Windows.Forms.Label HomeTeamScore;
+
+    private System.Windows.Forms.Label HomeTeamName;
+
+    private System.Windows.Forms.Label AwayTeamName;
 
     private System.Windows.Forms.ToolStripMenuItem pointScoredToolStripMenuItem;
 

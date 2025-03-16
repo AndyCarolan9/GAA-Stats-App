@@ -20,6 +20,7 @@ public class MatchController : IStatsController
         _view = new MatchView();
         
         BindViewEvents();
+        SetTeamDataInView();
     }
 
     public IStatsView GetView()
@@ -94,4 +95,13 @@ public class MatchController : IStatsController
     {
         UnbindActionViewEvents();
     }
+    
+    #region View Displays
+
+    private void SetTeamDataInView()
+    {
+        _view.GetHomeTeamNameLabel().Text = _match.GetHomeTeam().TeamName;
+        _view.GetAwayTeamNameLabel().Text = _match.GetAwayTeam().TeamName;
+    }
+    #endregion
 }

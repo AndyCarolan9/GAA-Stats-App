@@ -15,7 +15,7 @@ namespace StatsTracker.View_Elements
             container.Add(this);
 
             InitializeComponent();
-            SetStyle(ControlStyles.UserPaint | ControlStyles.UseTextForAccessibility | ControlStyles.Selectable, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.Selectable, true);
         }
 
         protected override void OnPaint(PaintEventArgs e)

@@ -29,6 +29,26 @@ public partial class MatchView : Form, IStatsView
     {
         return this;
     }
+
+    public Label GetHomeTeamNameLabel()
+    {
+        return HomeTeamName;
+    }
+    
+    public Label GetAwayTeamNameLabel()
+    {
+        return AwayTeamName;
+    }
+    
+    public Label GetHomeTeamScoreLabel()
+    {
+        return HomeTeamScore;
+    }
+    
+    public Label GetAwayTeamScoreLabel()
+    {
+        return AwayTeamScore;
+    }
     
     /// <summary>
     /// Shows the context menu when the input field is right-clicked.
