@@ -74,61 +74,40 @@ public partial class MatchView : Form, IStatsView
         EventInputMenu.Items.Clear();
         
         ToolStripMenuItem pointShot = new ToolStripMenuItem("Point Shot");
+        pointShot.Name = "PointShot";
+        AddSubMenuItemsForShots(pointShot);
         EventInputMenu.Items.Add(pointShot);
         
-        ToolStripMenuItem pointScored = new ToolStripMenuItem("Point Scored");
-        pointScored.Name = "PointScored";
-        pointScored.MouseDown += EventInputMenu_ItemClicked;
-        pointShot.DropDownItems.Add(pointScored);
-        
-        ToolStripMenuItem wideShot = new ToolStripMenuItem("Wide Shot");
-        wideShot.Name = "WideShot";
-        wideShot.MouseDown += EventInputMenu_ItemClicked;
-        pointShot.DropDownItems.Add(wideShot);
-        
-        ToolStripMenuItem shortShot = new ToolStripMenuItem("Short Shot");
-        shortShot.Name = "ShortShot";
-        shortShot.MouseDown += EventInputMenu_ItemClicked;
-        pointShot.DropDownItems.Add(shortShot);
-        
-        ToolStripMenuItem longShot = new ToolStripMenuItem("2 Point Shot");
-        longShot.Name = "LongShot";
-        longShot.MouseDown += EventInputMenu_ItemClicked;
-        pointShot.DropDownItems.Add(longShot);
-        
         ToolStripMenuItem goalShot = new ToolStripMenuItem("Goal Shot");
+        goalShot.Name = "GoalShot";
+        AddSubMenuItemsForShots(goalShot);
         EventInputMenu.Items.Add(goalShot);
         
-        ToolStripMenuItem goalScored = new ToolStripMenuItem("Goal Scored");
-        goalScored.Name = "GoalScored";
-        goalScored.MouseDown += EventInputMenu_ItemClicked;
-        goalShot.DropDownItems.Add(goalScored);
-        
-        ToolStripMenuItem savedShot = new ToolStripMenuItem("Saved Shot");
-        savedShot.Name = "SavedShot";
-        savedShot.MouseDown += EventInputMenu_ItemClicked;
-        goalShot.DropDownItems.Add(savedShot);
+        ToolStripMenuItem longShot = new ToolStripMenuItem("2 Point Shot");
+        longShot.Name = "2PointShot";
+        AddSubMenuItemsForShots(longShot);
+        EventInputMenu.Items.Add(longShot);
         
         ToolStripMenuItem kickout = new ToolStripMenuItem("Kick Out");
         EventInputMenu.Items.Add(kickout);
         
-        ToolStripMenuItem kickoutWon = new ToolStripMenuItem("Kick Out Won");
-        kickoutWon.Name = "KickOutWon";
+        ToolStripMenuItem kickoutWon = new ToolStripMenuItem("Won");
+        kickoutWon.Name = "Won";
         kickoutWon.MouseDown += EventInputMenu_ItemClicked;
         kickout.DropDownItems.Add(kickoutWon);
         
-        ToolStripMenuItem kickoutWonMark = new ToolStripMenuItem("Kick Out Won Mark");
-        kickoutWonMark.Name = "KickOutWonMark";
+        ToolStripMenuItem kickoutWonMark = new ToolStripMenuItem("Won Mark");
+        kickoutWonMark.Name = "WonMark";
         kickoutWonMark.MouseDown += EventInputMenu_ItemClicked;
         kickout.DropDownItems.Add(kickoutWonMark);
         
-        ToolStripMenuItem kickoutLost = new ToolStripMenuItem("Kick Out Lost");
-        kickoutLost.Name = "KickOutLost";
+        ToolStripMenuItem kickoutLost = new ToolStripMenuItem("Lost");
+        kickoutLost.Name = "Lost";
         kickoutLost.MouseDown += EventInputMenu_ItemClicked;
         kickout.DropDownItems.Add(kickoutLost);
         
-        ToolStripMenuItem kickoutLostMark = new ToolStripMenuItem("Kick Out Lost Mark");
-        kickoutLostMark.Name = "KickOutLostMark";
+        ToolStripMenuItem kickoutLostMark = new ToolStripMenuItem("Lost Mark");
+        kickoutLostMark.Name = "LostMark";
         kickoutLostMark.MouseDown += EventInputMenu_ItemClicked;
         kickout.DropDownItems.Add(kickoutLostMark);
         
@@ -158,6 +137,73 @@ public partial class MatchView : Form, IStatsView
         EventType eventType = GetEventTypeFromName(eventName);
         
         OnStatEntered?.Invoke(this, new InputStatEventArgs() { EventType = eventType, Location = _inputLocation });
+    }
+
+    private void AddSubMenuItemsForShots(ToolStripMenuItem parent)
+    {
+        if (parent.Name == "PointShot")
+        {
+            ToolStripMenuItem pointScored = new ToolStripMenuItem("Point Scored");
+            pointScored.Name = "PointScored";
+            pointScored.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(pointScored);
+            
+            ToolStripMenuItem shortShot = new ToolStripMenuItem("Short");
+            shortShot.Name = "Short";
+            shortShot.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(shortShot);
+        }
+
+        if (parent.Name == "GoalShot")
+        {
+            ToolStripMenuItem pointScored = new ToolStripMenuItem("Point Scored");
+            pointScored.Name = "PointScored";
+            pointScored.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(pointScored);
+            
+            ToolStripMenuItem goalScored = new ToolStripMenuItem("Goal Scored");
+            goalScored.Name = "GoalScored";
+            goalScored.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(goalScored);
+            
+            ToolStripMenuItem saved = new ToolStripMenuItem("Saved");
+            saved.Name = "Saved";
+            saved.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(saved);
+        }
+
+        if (parent.Name == "2PointShot")
+        {
+            ToolStripMenuItem doublePointScored = new ToolStripMenuItem("2 Pointer Scored");
+            doublePointScored.Name = "2PointScored";
+            doublePointScored.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(doublePointScored);
+            
+            ToolStripMenuItem shortShot = new ToolStripMenuItem("Short");
+            shortShot.Name = "Short";
+            shortShot.MouseDown += EventInputMenu_ItemClicked;
+            parent.DropDownItems.Add(shortShot);
+        }
+        
+        ToolStripMenuItem wideShot = new ToolStripMenuItem("Wide");
+        wideShot.Name = "Wide";
+        wideShot.MouseDown += EventInputMenu_ItemClicked;
+        parent.DropDownItems.Add(wideShot);
+        
+        ToolStripMenuItem postsShot = new ToolStripMenuItem("Off Posts");
+        postsShot.Name = "PostsShot";
+        postsShot.MouseDown += EventInputMenu_ItemClicked;
+        parent.DropDownItems.Add(postsShot);
+        
+        ToolStripMenuItem blockedShot = new ToolStripMenuItem("Blocked");
+        blockedShot.Name = "BlockedShot";
+        blockedShot.MouseDown += EventInputMenu_ItemClicked;
+        parent.DropDownItems.Add(blockedShot);
+        
+        ToolStripMenuItem outFor45 = new ToolStripMenuItem("Out for 45");
+        outFor45.Name = "OutFor45Shot";
+        outFor45.MouseDown += EventInputMenu_ItemClicked;
+        parent.DropDownItems.Add(outFor45);
     }
 
     /// <summary>
