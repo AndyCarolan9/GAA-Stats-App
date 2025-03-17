@@ -13,16 +13,6 @@ public class MatchEvent
         Player = string.Empty;
         TeamName = string.Empty;
     }
-    
-    public MatchEvent(Point location, string player, long time, EventType eventType, ActionType action, string teamName)
-    {
-        Location = location;
-        Player = player;
-        Time = time;
-        Type = eventType;
-        Action = action;
-        TeamName = teamName;
-    }
 
     public MatchEvent(Point location, string player, long time, EventType eventType, string teamName)
     {
@@ -43,8 +33,6 @@ public class MatchEvent
     public long Time { get; set; }
 
     public EventType Type { get; set; }
-
-    public ActionType Action { get; set; }
     
     public string TeamName { get; set; }
 

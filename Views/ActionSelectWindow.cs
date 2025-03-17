@@ -139,7 +139,7 @@ public partial class ActionSelectWindow : Form, IStatsView
     /// <param name="eventArgs">The event arguments of the button press.</param>
     private void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
-        _inputStatEventArgs.ActionType = GetSelectedActionType();
+        //_inputStatEventArgs.ActionType = GetSelectedActionType();
         _inputStatEventArgs.Player = GetSelectedPlayerName();
         _inputStatEventArgs.Team = _selectedTeam;
         OnEnterStatClicked?.Invoke(sender, _inputStatEventArgs);

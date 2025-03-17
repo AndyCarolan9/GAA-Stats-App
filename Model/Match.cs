@@ -106,14 +106,36 @@ public class Match
 
     public void AddEvent(InputStatEventArgs statArgs)
     {
+        if (statArgs is ShotEventArgs shotArgs)
+        {
+            AddEvent(shotArgs);
+            return;
+        }
+
+        if (statArgs is KickOutEventArgs kickOutArgs)
+        {
+            AddEvent(kickOutArgs);
+            return;
+        }
+        
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
-            statArgs.EventType, statArgs.ActionType, statArgs.Team.TeamName);
+            statArgs.EventType, statArgs.Team.TeamName);
         _matchEvents.Add(matchEvent);
 
         if (statArgs.EventType.IsTurnoverEvent())
         {
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
         }
+    }
+
+    private void AddEvent(ShotEventArgs shotArgs)
+    {
+        
+    }
+
+    private void AddEvent(KickOutEventArgs kickOutEventArgs)
+    {
+        
     }
 
     public Team GetTeamForEvent(EventType eventType)

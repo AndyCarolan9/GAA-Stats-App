@@ -7,8 +7,6 @@ public class InputStatEventArgs
 {
     public EventType EventType { get; set; }
     
-    public ActionType ActionType { get; set; }
-    
     public Team Team { get; set; }
     
     public Point Location { get; set; }
