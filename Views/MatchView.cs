@@ -139,18 +139,44 @@ public partial class MatchView : Form, IStatsView
         OnStatEntered?.Invoke(this, new InputStatEventArgs() { EventType = eventType, Location = _inputLocation });
     }
 
+    private void ShotItemClicked(object? sender, MouseEventArgs mouseEventArgs)
+    {
+        if (sender is null)
+        {
+            return;
+        }
+        
+        ToolStripMenuItem item = (ToolStripMenuItem)sender;
+        ToolStrip? toolStrip = item.GetCurrentParent();
+        if (toolStrip is null)
+        {
+            return;
+        }
+        
+        string? name = toolStrip.AccessibilityObject.Name;
+        if (name is null)
+        {
+            return;
+        }
+        
+        Enum.TryParse(name.Replace(" ", ""), out EventType eventType);
+        
+        ShotEventArgs shotEventArgs = new ShotEventArgs() { Location = _inputLocation, EventType = eventType };
+        OnStatEntered?.Invoke(this, shotEventArgs);
+    }
+
     private void AddSubMenuItemsForShots(ToolStripMenuItem parent)
     {
         if (parent.Name == "PointShot")
         {
             ToolStripMenuItem pointScored = new ToolStripMenuItem("Point Scored");
             pointScored.Name = "PointScored";
-            pointScored.MouseDown += EventInputMenu_ItemClicked;
+            pointScored.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(pointScored);
             
             ToolStripMenuItem shortShot = new ToolStripMenuItem("Short");
             shortShot.Name = "Short";
-            shortShot.MouseDown += EventInputMenu_ItemClicked;
+            shortShot.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(shortShot);
         }
 
@@ -158,17 +184,17 @@ public partial class MatchView : Form, IStatsView
         {
             ToolStripMenuItem pointScored = new ToolStripMenuItem("Point Scored");
             pointScored.Name = "PointScored";
-            pointScored.MouseDown += EventInputMenu_ItemClicked;
+            pointScored.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(pointScored);
             
             ToolStripMenuItem goalScored = new ToolStripMenuItem("Goal Scored");
             goalScored.Name = "GoalScored";
-            goalScored.MouseDown += EventInputMenu_ItemClicked;
+            goalScored.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(goalScored);
             
             ToolStripMenuItem saved = new ToolStripMenuItem("Saved");
             saved.Name = "Saved";
-            saved.MouseDown += EventInputMenu_ItemClicked;
+            saved.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(saved);
         }
 
@@ -176,33 +202,33 @@ public partial class MatchView : Form, IStatsView
         {
             ToolStripMenuItem doublePointScored = new ToolStripMenuItem("2 Pointer Scored");
             doublePointScored.Name = "2PointScored";
-            doublePointScored.MouseDown += EventInputMenu_ItemClicked;
+            doublePointScored.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(doublePointScored);
             
             ToolStripMenuItem shortShot = new ToolStripMenuItem("Short");
             shortShot.Name = "Short";
-            shortShot.MouseDown += EventInputMenu_ItemClicked;
+            shortShot.MouseDown += ShotItemClicked;
             parent.DropDownItems.Add(shortShot);
         }
         
         ToolStripMenuItem wideShot = new ToolStripMenuItem("Wide");
         wideShot.Name = "Wide";
-        wideShot.MouseDown += EventInputMenu_ItemClicked;
+        wideShot.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(wideShot);
         
         ToolStripMenuItem postsShot = new ToolStripMenuItem("Off Posts");
         postsShot.Name = "PostsShot";
-        postsShot.MouseDown += EventInputMenu_ItemClicked;
+        postsShot.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(postsShot);
         
         ToolStripMenuItem blockedShot = new ToolStripMenuItem("Blocked");
         blockedShot.Name = "BlockedShot";
-        blockedShot.MouseDown += EventInputMenu_ItemClicked;
+        blockedShot.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(blockedShot);
         
         ToolStripMenuItem outFor45 = new ToolStripMenuItem("Out for 45");
         outFor45.Name = "OutFor45Shot";
-        outFor45.MouseDown += EventInputMenu_ItemClicked;
+        outFor45.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(outFor45);
     }
 

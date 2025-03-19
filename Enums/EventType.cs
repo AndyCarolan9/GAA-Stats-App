@@ -5,6 +5,8 @@
 /// </summary>
 public enum EventType
 {
+    Default,
+    PointShot,
     KickOutWon,
     KickOutWonMark,
     KickOutLost,
@@ -25,8 +27,7 @@ public enum EventType
     YellowCard,
     TurnoverWon,
     TurnoverLost,
-    Wide,
-    Default
+    Wide
 }
 
 /// <summary>

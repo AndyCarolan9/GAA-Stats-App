@@ -19,7 +19,7 @@ public class ShotEvent : MatchEvent
     #endregion
     
     #region Properties
-    public ActionType  ActionType { get; set; }
+    public ActionType ActionType { get; set; }
     
     public ShotResultType ResultType { get; set; }
     #endregion
