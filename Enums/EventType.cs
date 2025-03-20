@@ -7,6 +7,7 @@ public enum EventType
 {
     Default,
     PointShot,
+    KickOut,
     KickOutWon,
     KickOutWonMark,
     KickOutLost,

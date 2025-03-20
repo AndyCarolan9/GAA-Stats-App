@@ -5,11 +5,11 @@
 /// </summary>
 public enum ActionType
 {
+    Default,
     Sideline,
     Penalty,
     Free,
     From45,
     Play,
     Mark,
-    Default
 }

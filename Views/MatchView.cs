@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
 
@@ -93,22 +94,22 @@ public partial class MatchView : Form, IStatsView
         
         ToolStripMenuItem kickoutWon = new ToolStripMenuItem("Won");
         kickoutWon.Name = "Won";
-        kickoutWon.MouseDown += EventInputMenu_ItemClicked;
+        kickoutWon.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutWon);
         
         ToolStripMenuItem kickoutWonMark = new ToolStripMenuItem("Won Mark");
         kickoutWonMark.Name = "WonMark";
-        kickoutWonMark.MouseDown += EventInputMenu_ItemClicked;
+        kickoutWonMark.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutWonMark);
         
         ToolStripMenuItem kickoutLost = new ToolStripMenuItem("Lost");
         kickoutLost.Name = "Lost";
-        kickoutLost.MouseDown += EventInputMenu_ItemClicked;
+        kickoutLost.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutLost);
         
         ToolStripMenuItem kickoutLostMark = new ToolStripMenuItem("Lost Mark");
         kickoutLostMark.Name = "LostMark";
-        kickoutLostMark.MouseDown += EventInputMenu_ItemClicked;
+        kickoutLostMark.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutLostMark);
         
         ToolStripMenuItem freeConceded = new ToolStripMenuItem("Free Conceded");
@@ -160,9 +161,37 @@ public partial class MatchView : Form, IStatsView
         }
         
         Enum.TryParse(name.Replace(" ", ""), out EventType eventType);
-        
-        ShotEventArgs shotEventArgs = new ShotEventArgs() { Location = _inputLocation, EventType = eventType };
+        Enum.TryParse(item.Name, out ShotResultType resultType);
+        ShotEventArgs shotEventArgs = new ShotEventArgs() { Location = _inputLocation, EventType = eventType, 
+            ResultType = resultType };
         OnStatEntered?.Invoke(this, shotEventArgs);
+    }
+
+    private void KickOutItemClicked(object? sender, MouseEventArgs mouseEventArgs)
+    {
+        if (sender is null)
+        {
+            return;
+        }
+        
+        ToolStripMenuItem item = (ToolStripMenuItem)sender;
+        ToolStrip? toolStrip = item.GetCurrentParent();
+        if (toolStrip is null)
+        {
+            return;
+        }
+        
+        string? name = toolStrip.AccessibilityObject.Name;
+        if (name is null)
+        {
+            return;
+        }
+        
+        Enum.TryParse(name.Replace(" ", ""), out EventType eventType);
+        Enum.TryParse(item.Name, out KickOutResultType resultType);
+        KickOutEventArgs kickOutEventArgs = new KickOutEventArgs() { EventType = eventType, Location = _inputLocation, 
+            ResultType = resultType };
+        OnStatEntered?.Invoke(this, kickOutEventArgs);
     }
 
     private void AddSubMenuItemsForShots(ToolStripMenuItem parent)
