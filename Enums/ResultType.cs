@@ -9,6 +9,8 @@ public enum KickOutResultType
     WonMark,
     Lost,
     LostMark,
+    WonBreak,
+    LostBreak
 }
 
 /// <summary>

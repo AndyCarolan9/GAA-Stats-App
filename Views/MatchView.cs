@@ -102,6 +102,11 @@ public partial class MatchView : Form, IStatsView
         kickoutWonMark.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutWonMark);
         
+        ToolStripMenuItem kickoutWonBreak = new ToolStripMenuItem("Won Break");
+        kickoutWonBreak.Name = "WonBreak";
+        kickoutWonBreak.MouseDown += KickOutItemClicked;
+        kickout.DropDownItems.Add(kickoutWonBreak);
+        
         ToolStripMenuItem kickoutLost = new ToolStripMenuItem("Lost");
         kickoutLost.Name = "Lost";
         kickoutLost.MouseDown += KickOutItemClicked;
@@ -111,6 +116,11 @@ public partial class MatchView : Form, IStatsView
         kickoutLostMark.Name = "LostMark";
         kickoutLostMark.MouseDown += KickOutItemClicked;
         kickout.DropDownItems.Add(kickoutLostMark);
+        
+        ToolStripMenuItem kickoutLostBreak = new ToolStripMenuItem("Lost Break");
+        kickoutLostBreak.Name = "LostBreak";
+        kickoutLostBreak.MouseDown += KickOutItemClicked;
+        kickout.DropDownItems.Add(kickoutLostBreak);
         
         ToolStripMenuItem freeConceded = new ToolStripMenuItem("Free Conceded");
         freeConceded.Name = "Free Conceded";
