@@ -8,18 +8,6 @@ public enum EventType
     Default,
     PointShot,
     KickOut,
-    KickOutWon,
-    KickOutWonMark,
-    KickOutLost,
-    KickOutLostMark,
-    Saved,
-    SavedOutFor45,
-    OutFor45,
-    Short,
-    Point,
-    DoublePoint,
-    Goal,
-    OffPosts,
     FreeConceded,
     PenaltyConceded,
     BlackCard,
@@ -27,8 +15,7 @@ public enum EventType
     RedCard2Y,
     YellowCard,
     TurnoverWon,
-    TurnoverLost,
-    Wide
+    TurnoverLost
 }
 
 /// <summary>
@@ -47,17 +34,8 @@ static class EventTypeExtensions
         switch (eventType)
         {
             case EventType.TurnoverLost:
-            case EventType.OutFor45:
-            case EventType.Point:
-            case EventType.Goal:
-            case EventType.DoublePoint:
-            case EventType.Short:
-            case EventType.OffPosts:
-            case EventType.KickOutWon:
-            case EventType.KickOutWonMark:
-            case EventType.Saved:
-            case EventType.SavedOutFor45:
-            case EventType.Wide:
+            case EventType.PointShot:
+            case EventType.KickOut:
                 return true;
             default:
                 return false;
@@ -74,15 +52,6 @@ static class EventTypeExtensions
         switch (eventType)
         {
             case EventType.TurnoverLost:
-            case EventType.Point:
-            case EventType.Goal:
-            case EventType.DoublePoint:
-            case EventType.Short:
-            case EventType.OffPosts:
-            case EventType.KickOutLost:
-            case EventType.KickOutLostMark:
-            case EventType.Saved:
-            case EventType.Wide:
             case EventType.TurnoverWon:
             case EventType.FreeConceded:
                 return true;

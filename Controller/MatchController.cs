@@ -1,4 +1,5 @@
 ﻿using StatsTracker.Classes;
+using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
 using StatsTracker.Views;
@@ -12,7 +13,7 @@ public class MatchController : IStatsController
 {
     private Match _match;
     private MatchView _view;
-    private ActionSelectWindow? _actionSelectWindow = null;
+    private PlayerSelectWindow? _selectWindow = null;
 
     public MatchController(Match match)
     {
@@ -43,9 +44,30 @@ public class MatchController : IStatsController
     /// <param name="inputStatEventArgs">The input arguments for the statistic.</param>
     private void OnStatEntered(object? sender, InputStatEventArgs inputStatEventArgs)
     {
-        _actionSelectWindow = new ActionSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType), inputStatEventArgs);
-        BindActionViewEvents();
-        _actionSelectWindow.ShowDialog();
+        if (inputStatEventArgs is KickOutEventArgs kickOutEventArgs)
+        {
+            if (kickOutEventArgs.ResultType == KickOutResultType.Lost 
+                || kickOutEventArgs.ResultType == KickOutResultType.LostMark
+                || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
+            {
+                // If the kick out is lost, don't show a player select window.
+                _match.AddEvent(kickOutEventArgs);
+                return;
+            }
+        }
+        
+        if (inputStatEventArgs is ShotEventArgs shotEventArgs)
+        {
+            _selectWindow = new ActionSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType), shotEventArgs);
+            BindActionViewEvents();
+            _selectWindow.ShowDialog();
+        }
+        else
+        {
+            _selectWindow = new PlayerSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType), inputStatEventArgs);
+            BindActionViewEvents();
+            _selectWindow.ShowDialog();
+        }
     }
 
     /// <summary>
@@ -53,10 +75,10 @@ public class MatchController : IStatsController
     /// </summary>
     private void BindActionViewEvents()
     {
-        if (_actionSelectWindow != null)
+        if (_selectWindow != null)
         {
-            _actionSelectWindow.OnEnterStatClicked += OnEnterStatClicked;
-            _actionSelectWindow.OnCancelled += OnEnterStatCancelled;
+            _selectWindow.OnEnterStatClicked += OnEnterStatClicked;
+            _selectWindow.OnCancelled += OnEnterStatCancelled;
         }
     }
 
@@ -65,12 +87,12 @@ public class MatchController : IStatsController
     /// </summary>
     private void UnbindActionViewEvents()
     {
-        if (_actionSelectWindow != null)
+        if (_selectWindow != null)
         {
-            _actionSelectWindow.OnEnterStatClicked -= OnEnterStatClicked;
-            _actionSelectWindow.OnCancelled -= OnEnterStatCancelled;
-            _actionSelectWindow.Close();
-            _actionSelectWindow = null;
+            _selectWindow.OnEnterStatClicked -= OnEnterStatClicked;
+            _selectWindow.OnCancelled -= OnEnterStatCancelled;
+            _selectWindow.Close();
+            _selectWindow = null;
         }
     }
 

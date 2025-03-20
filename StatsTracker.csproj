@@ -21,6 +21,9 @@
       <Compile Update="View_Elements\StatisticBar.cs">
         <SubType>UserControl</SubType>
       </Compile>
+      <Compile Update="Views\PlayerSelectWindow.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

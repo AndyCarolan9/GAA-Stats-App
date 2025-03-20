@@ -123,7 +123,7 @@ public partial class MatchView : Form, IStatsView
         kickout.DropDownItems.Add(kickoutLostBreak);
         
         ToolStripMenuItem freeConceded = new ToolStripMenuItem("Free Conceded");
-        freeConceded.Name = "Free Conceded";
+        freeConceded.Name = "FreeConceded";
         freeConceded.MouseDown += EventInputMenu_ItemClicked;
         EventInputMenu.Items.Add(freeConceded);
     }
@@ -145,8 +145,8 @@ public partial class MatchView : Form, IStatsView
         {
             return;
         }
-        EventType eventType = GetEventTypeFromName(eventName);
         
+        Enum.TryParse(eventName, out EventType eventType);
         OnStatEntered?.Invoke(this, new InputStatEventArgs() { EventType = eventType, Location = _inputLocation });
     }
 
@@ -269,41 +269,5 @@ public partial class MatchView : Form, IStatsView
         outFor45.Name = "OutFor45Shot";
         outFor45.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(outFor45);
-    }
-
-    /// <summary>
-    /// Returns the event type enum based on the event name.
-    /// </summary>
-    /// <param name="eventName">The name of the event.</param>
-    /// <returns>The event type.</returns>
-    private EventType GetEventTypeFromName(string eventName)
-    {
-        switch (eventName)
-        {
-            case "PointScored":
-                return EventType.Point;
-            case "WideShot":
-                return EventType.Wide;
-            case "ShortShot":
-                return EventType.Short;
-            case "LongShot":
-                return EventType.DoublePoint;
-            case "GoalScored":
-                return EventType.Goal;
-            case "Saved Shot":
-                return EventType.Saved;
-            case "KickOutWon":
-                return EventType.KickOutWon;
-            case "KickOutWonMark":
-                return EventType.KickOutWonMark;
-            case "KickOutLost":
-                return EventType.KickOutLost;
-            case "KickOutLostMark":
-                return EventType.KickOutLostMark;
-            case "FreeConceded":
-                return EventType.FreeConceded;
-            default:
-                return EventType.Default;
-        }
     }
 }
