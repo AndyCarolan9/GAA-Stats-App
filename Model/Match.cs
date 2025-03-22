@@ -69,7 +69,7 @@ public class Match
     #endregion
     
     #region Methods
-
+    #region Timer Methods
     public void StartHalf()
     {
         _matchTimer = Stopwatch.StartNew();
@@ -89,7 +89,9 @@ public class Match
     {
         _matchTimer.Start();
     }
+    #endregion
 
+    #region Event Methods
     public void AddEvent(MatchEvent matchEvent)
     {
         _matchEvents.Add(matchEvent);
@@ -151,7 +153,9 @@ public class Match
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
         }
     }
-
+    #endregion
+    
+    #region Team Methods
     public Team GetTeamForEvent(EventType eventType)
     {
         if (eventType.IsInPossessionTeamEvent())
@@ -181,5 +185,60 @@ public class Match
         
         return _homeTeam;
     }
+    #endregion
+    
+    #region Statistic Methods
+    private StatisticPair GetStatisticForEvent(EventType eventType)
+    {
+        List<MatchEvent> events = _matchEvents.FindAll(matchEvent => matchEvent.Type == eventType);
+        return GetStatisticPairForEvent(events);
+    }
+
+    private StatisticPair GetStatisticForShotResult(ShotResultType resultType)
+    {
+        List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
+        {
+            if (matchEvent is ShotEvent shotEvent)
+            {
+                return shotEvent.ResultType == resultType;
+            }
+            
+            return false;
+        });
+        return GetStatisticPairForEvent(events);
+    }
+
+    private StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType)
+    {
+        List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
+        {
+            if (matchEvent is KickOutEvent kickOutEvent)
+            {
+                return kickOutEvent.ResultType == resultType;
+            }
+
+            return false;
+        });
+        
+        return GetStatisticPairForEvent(events);
+    }
+
+    private StatisticPair GetStatisticPairForEvent(List<MatchEvent> matchEvents)
+    {
+        int homeCount = matchEvents.Count(matchEvent => matchEvent.TeamName == _homeTeam.TeamName);
+        int awayCount = matchEvents.Count(matchEvent => matchEvent.TeamName == _awayTeam.TeamName);
+
+        return new StatisticPair(homeCount, awayCount);
+    }
+
+    public StatisticPair GetTurnOvers()
+    {
+        StatisticPair turnOversWon = GetStatisticForEvent(EventType.TurnoverWon); 
+        StatisticPair turnOversLost = GetStatisticForEvent(EventType.TurnoverLost);
+        
+        return new StatisticPair(turnOversWon.HomeTeamValue + turnOversLost.HomeTeamValue, 
+            turnOversWon.AwayTeamValue + turnOversLost.AwayTeamValue);
+    }
+    #endregion
     #endregion
 }

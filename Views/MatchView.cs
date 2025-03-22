@@ -2,6 +2,7 @@
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
+using StatsTracker.View_Elements;
 
 namespace StatsTracker.Views;
 
@@ -31,6 +32,7 @@ public partial class MatchView : Form, IStatsView
         return this;
     }
 
+    #region Control Getters
     public Label GetHomeTeamNameLabel()
     {
         return HomeTeamName;
@@ -50,6 +52,42 @@ public partial class MatchView : Form, IStatsView
     {
         return AwayTeamScore;
     }
+
+    public StatisticBar GetTurnoverStatisticBar()
+    {
+        return TurnoverStatBar;
+    }
+
+    public StatisticBar GetShotsStatisticBar()
+    {
+        return ShotsStatBar;
+    }
+
+    public StatisticBar GetGoalShotsStatisticBar()
+    {
+        return GoalShotsStatBar;
+    }
+
+    public StatisticBar GetWidesStatisticBar()
+    {
+        return WidesStatBar;
+    }
+
+    public StatisticBar GetKickoutStatisticBar()
+    {
+        return KickoutsStatsBar;
+    }
+
+    public StatisticBar GetAttacksStatisticBar()
+    {
+        return AttacksStatBar;
+    }
+
+    public StatisticBar GetFreeStatisticBar()
+    {
+        return FreesStatBar;
+    }
+    #endregion
     
     /// <summary>
     /// Shows the context menu when the input field is right-clicked.

@@ -32,6 +32,15 @@ namespace StatsTracker.View_Elements
             AwayTeamValue.Text = value.ToString();
         }
 
+        public void InitialiseValues()
+        {
+            SetHomeValue(0);
+            SetAwayValue(0);
+
+            StatSplitBar.Maximum = 2;
+            StatSplitBar.Value = 1;
+        }
+
         public void UpdateValues(int homeValue, int awayValue)
         {
             SetHomeValue(homeValue);
@@ -40,6 +49,12 @@ namespace StatsTracker.View_Elements
             int total = homeValue + awayValue;
             StatSplitBar.Maximum = total;
             StatSplitBar.Value = homeValue;
+        }
+
+        public void SetTeamColors(Color homeTeamColor, Color awayTeamColor)
+        {
+            StatSplitBar.ForeColor = homeTeamColor;
+            StatSplitBar.BackColor = awayTeamColor;
         }
     }
 }

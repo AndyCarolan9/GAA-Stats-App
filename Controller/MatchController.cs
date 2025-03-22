@@ -2,6 +2,7 @@
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
+using StatsTracker.View_Elements;
 using StatsTracker.Views;
 
 namespace StatsTracker.Controller;
@@ -22,6 +23,7 @@ public class MatchController : IStatsController
         
         BindViewEvents();
         SetTeamDataInView();
+        SetupStatisticBars();
     }
 
     public IStatsView GetView()
@@ -53,6 +55,7 @@ public class MatchController : IStatsController
                 // If the kick out is lost, don't show a player select window.
                 kickOutEventArgs.Team = _match.GetDefendingTeam();
                 _match.AddEvent(kickOutEventArgs);
+                UpdateView();
                 return;
             }
         }
@@ -106,6 +109,7 @@ public class MatchController : IStatsController
     private void OnEnterStatClicked(object? sender, InputStatEventArgs inputStatEventArgs)
     {
         _match.AddEvent(inputStatEventArgs);
+        UpdateView();
         UnbindActionViewEvents();
     }
 
@@ -120,11 +124,34 @@ public class MatchController : IStatsController
     }
     
     #region View Displays
-
     private void SetTeamDataInView()
     {
         _view.GetHomeTeamNameLabel().Text = _match.GetHomeTeam().TeamName;
         _view.GetAwayTeamNameLabel().Text = _match.GetAwayTeam().TeamName;
+    }
+
+    private void SetupStatisticBars()
+    {
+        SetupStatisticBar(_view.GetTurnoverStatisticBar());
+    }
+
+    private void SetupStatisticBar(StatisticBar statisticBar)
+    {
+        statisticBar.InitialiseValues();
+        statisticBar.SetTeamColors(_match.GetHomeTeam().TeamColor, _match.GetAwayTeam().TeamColor);
+    }
+    
+    private void UpdateView()
+    {
+        UpdateTurnOversBar();
+    }
+
+    private void UpdateTurnOversBar()
+    {
+        StatisticPair turnOvers = _match.GetTurnOvers();
+        StatisticBar bar = _view.GetTurnoverStatisticBar();
+        
+        bar.UpdateValues(turnOvers.HomeTeamValue, turnOvers.AwayTeamValue);
     }
     #endregion
 }
