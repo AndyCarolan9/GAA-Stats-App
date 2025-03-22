@@ -29,7 +29,11 @@ namespace StatsTracker.View_Elements
             Rectangle rec = e.ClipRectangle;
             rec.Height -= 4;
             
-            int homeTeamWidth = (int)(rec.Width * ((double)Value / Maximum)) - 4;
+            int homeTeamWidth = 0;
+            if (Value > 0)
+            {
+                homeTeamWidth = (int)(rec.Width * ((double)Value / Maximum)) - 4;
+            }
             home.X = 2;
             home.Y = 2;
             home.Width = homeTeamWidth;
@@ -37,8 +41,12 @@ namespace StatsTracker.View_Elements
 
             //Away Team Bar
             SolidBrush awayFillBrush = new SolidBrush(BackColor);
-            int remainder = Maximum - Value;
-            int awayTeamWidth = (int)(rec.Width * ((double)remainder / Maximum));
+            int awayTeamWidth = Width - 4;
+            if (Value > 0)
+            {
+                int remainder = Maximum - Value;
+                awayTeamWidth = (int)(rec.Width * ((double)remainder / Maximum));
+            }
             away.X = home.Width + 2;
             away.Y = 2;
             away.Width = awayTeamWidth;
