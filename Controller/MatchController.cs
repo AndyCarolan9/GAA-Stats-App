@@ -51,6 +51,7 @@ public class MatchController : IStatsController
                 || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
             {
                 // If the kick out is lost, don't show a player select window.
+                kickOutEventArgs.Team = _match.GetDefendingTeam();
                 _match.AddEvent(kickOutEventArgs);
                 return;
             }

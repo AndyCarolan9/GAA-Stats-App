@@ -130,12 +130,26 @@ public class Match
 
     private void AddEvent(ShotEventArgs shotArgs)
     {
-        
+        var matchEvent = new ShotEvent(shotArgs.Location, shotArgs.Player, _matchTimer.ElapsedMilliseconds,
+            shotArgs.EventType, shotArgs.Team.TeamName, shotArgs.ActionType, shotArgs.ResultType);
+        _matchEvents.Add(matchEvent);
+
+        if (shotArgs.IsTurnedOver)
+        {
+            _isHomeTeamInPossession = !_isHomeTeamInPossession;
+        }
     }
 
     private void AddEvent(KickOutEventArgs kickOutEventArgs)
     {
-        
+        var matchEvent = new KickOutEvent(kickOutEventArgs.Location, kickOutEventArgs.Player, _matchTimer.ElapsedMilliseconds,
+            kickOutEventArgs.EventType, kickOutEventArgs.Team.TeamName, kickOutEventArgs.ResultType);
+        _matchEvents.Add(matchEvent);
+
+        if (kickOutEventArgs.ResultType.IsPossessionTurnedOver())
+        {
+            _isHomeTeamInPossession = !_isHomeTeamInPossession;
+        }
     }
 
     public Team GetTeamForEvent(EventType eventType)

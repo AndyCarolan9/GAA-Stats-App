@@ -48,11 +48,12 @@ partial class PlayerSelectWindow
         Player15 = new System.Windows.Forms.Button();
         EnterStatButton = new System.Windows.Forms.Button();
         CancelStatButton = new System.Windows.Forms.Button();
+        TurnOverCheckBox = new System.Windows.Forms.CheckBox();
         SuspendLayout();
         // 
         // Player1
         // 
-        Player1.Location = new System.Drawing.Point(176, 351);
+        Player1.Location = new System.Drawing.Point(178, 332);
         Player1.Name = "Player1";
         Player1.Size = new System.Drawing.Size(132, 43);
         Player1.TabIndex = 0;
@@ -61,7 +62,7 @@ partial class PlayerSelectWindow
         // 
         // Player2
         // 
-        Player2.Location = new System.Drawing.Point(340, 291);
+        Player2.Location = new System.Drawing.Point(342, 272);
         Player2.Name = "Player2";
         Player2.Size = new System.Drawing.Size(132, 43);
         Player2.TabIndex = 1;
@@ -70,7 +71,7 @@ partial class PlayerSelectWindow
         // 
         // Player3
         // 
-        Player3.Location = new System.Drawing.Point(176, 291);
+        Player3.Location = new System.Drawing.Point(178, 272);
         Player3.Name = "Player3";
         Player3.Size = new System.Drawing.Size(132, 43);
         Player3.TabIndex = 2;
@@ -79,7 +80,7 @@ partial class PlayerSelectWindow
         // 
         // Player4
         // 
-        Player4.Location = new System.Drawing.Point(12, 291);
+        Player4.Location = new System.Drawing.Point(14, 272);
         Player4.Name = "Player4";
         Player4.Size = new System.Drawing.Size(132, 43);
         Player4.TabIndex = 3;
@@ -88,7 +89,7 @@ partial class PlayerSelectWindow
         // 
         // Player5
         // 
-        Player5.Location = new System.Drawing.Point(340, 224);
+        Player5.Location = new System.Drawing.Point(342, 205);
         Player5.Name = "Player5";
         Player5.Size = new System.Drawing.Size(132, 43);
         Player5.TabIndex = 4;
@@ -97,7 +98,7 @@ partial class PlayerSelectWindow
         // 
         // Player6
         // 
-        Player6.Location = new System.Drawing.Point(176, 224);
+        Player6.Location = new System.Drawing.Point(178, 205);
         Player6.Name = "Player6";
         Player6.Size = new System.Drawing.Size(132, 43);
         Player6.TabIndex = 5;
@@ -106,7 +107,7 @@ partial class PlayerSelectWindow
         // 
         // Player7
         // 
-        Player7.Location = new System.Drawing.Point(12, 224);
+        Player7.Location = new System.Drawing.Point(14, 205);
         Player7.Name = "Player7";
         Player7.Size = new System.Drawing.Size(132, 43);
         Player7.TabIndex = 6;
@@ -115,7 +116,7 @@ partial class PlayerSelectWindow
         // 
         // Player8
         // 
-        Player8.Location = new System.Drawing.Point(263, 159);
+        Player8.Location = new System.Drawing.Point(265, 140);
         Player8.Name = "Player8";
         Player8.Size = new System.Drawing.Size(132, 43);
         Player8.TabIndex = 7;
@@ -124,7 +125,7 @@ partial class PlayerSelectWindow
         // 
         // Player9
         // 
-        Player9.Location = new System.Drawing.Point(95, 159);
+        Player9.Location = new System.Drawing.Point(97, 140);
         Player9.Name = "Player9";
         Player9.Size = new System.Drawing.Size(132, 43);
         Player9.TabIndex = 8;
@@ -133,7 +134,7 @@ partial class PlayerSelectWindow
         // 
         // Player10
         // 
-        Player10.Location = new System.Drawing.Point(340, 96);
+        Player10.Location = new System.Drawing.Point(342, 77);
         Player10.Name = "Player10";
         Player10.Size = new System.Drawing.Size(132, 43);
         Player10.TabIndex = 9;
@@ -142,7 +143,7 @@ partial class PlayerSelectWindow
         // 
         // Player11
         // 
-        Player11.Location = new System.Drawing.Point(176, 96);
+        Player11.Location = new System.Drawing.Point(178, 77);
         Player11.Name = "Player11";
         Player11.Size = new System.Drawing.Size(132, 43);
         Player11.TabIndex = 10;
@@ -151,7 +152,7 @@ partial class PlayerSelectWindow
         // 
         // Player12
         // 
-        Player12.Location = new System.Drawing.Point(12, 96);
+        Player12.Location = new System.Drawing.Point(14, 77);
         Player12.Name = "Player12";
         Player12.Size = new System.Drawing.Size(132, 43);
         Player12.TabIndex = 11;
@@ -160,7 +161,7 @@ partial class PlayerSelectWindow
         // 
         // Player13
         // 
-        Player13.Location = new System.Drawing.Point(340, 31);
+        Player13.Location = new System.Drawing.Point(342, 12);
         Player13.Name = "Player13";
         Player13.Size = new System.Drawing.Size(132, 43);
         Player13.TabIndex = 12;
@@ -169,7 +170,7 @@ partial class PlayerSelectWindow
         // 
         // Player14
         // 
-        Player14.Location = new System.Drawing.Point(176, 31);
+        Player14.Location = new System.Drawing.Point(178, 12);
         Player14.Name = "Player14";
         Player14.Size = new System.Drawing.Size(132, 43);
         Player14.TabIndex = 13;
@@ -178,7 +179,7 @@ partial class PlayerSelectWindow
         // 
         // Player15
         // 
-        Player15.Location = new System.Drawing.Point(12, 31);
+        Player15.Location = new System.Drawing.Point(14, 12);
         Player15.Name = "Player15";
         Player15.Size = new System.Drawing.Size(132, 43);
         Player15.TabIndex = 14;
@@ -211,11 +212,21 @@ partial class PlayerSelectWindow
         CancelStatButton.UseVisualStyleBackColor = false;
         CancelStatButton.Click += Cancel_Click;
         // 
+        // TurnOverCheckBox
+        // 
+        TurnOverCheckBox.Location = new System.Drawing.Point(159, 386);
+        TurnOverCheckBox.Name = "TurnOverCheckBox";
+        TurnOverCheckBox.Size = new System.Drawing.Size(171, 25);
+        TurnOverCheckBox.TabIndex = 17;
+        TurnOverCheckBox.Text = "Is possession turned over?";
+        TurnOverCheckBox.UseVisualStyleBackColor = true;
+        // 
         // PlayerSelectWindow
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(484, 461);
+        Controls.Add(TurnOverCheckBox);
         Controls.Add(CancelStatButton);
         Controls.Add(EnterStatButton);
         Controls.Add(Player15);
@@ -236,6 +247,8 @@ partial class PlayerSelectWindow
         Text = "PlayerSelectWindow";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.CheckBox TurnOverCheckBox;
 
     private System.Windows.Forms.Button Player1;
     private System.Windows.Forms.Button Player2;

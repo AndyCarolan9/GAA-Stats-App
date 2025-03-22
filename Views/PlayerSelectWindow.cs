@@ -1,4 +1,5 @@
 ﻿using StatsTracker.Classes;
+using StatsTracker.Enums;
 using StatsTracker.Events;
 
 namespace StatsTracker.Views;
@@ -32,11 +33,36 @@ public partial class PlayerSelectWindow : Form, IStatsView
         InitializeComponent();
         
         SetupPlayerButtons();
+        
+        SetupPossessionCheckBox();
     }
 
     public Form GetForm()
     {
         return this;
+    }
+
+    private void SetupPossessionCheckBox()
+    {
+        ShotEventArgs? shotEventArgs = InputStatEventArgs as ShotEventArgs;
+        if (shotEventArgs is null)
+        {
+            TurnOverCheckBox.Visible = false;
+            return;
+        }
+
+        if (shotEventArgs.IsPossessionButtonsVisible())
+        {
+            TurnOverCheckBox.Visible = true;
+            return;
+        }
+        
+        TurnOverCheckBox.Visible = false;
+    }
+
+    protected CheckBox GetTurnOverCheckBox()
+    {
+        return TurnOverCheckBox;
     }
     
     /// <summary>
@@ -44,6 +70,11 @@ public partial class PlayerSelectWindow : Form, IStatsView
     /// </summary>
     private void SetupPlayerButtons()
     {
+        if (SelectedTeam is null)
+        {
+            return;
+        }
+        
         foreach(var button in Controls.OfType<Button>())
         {
             if (button.Name.Contains("Player"))
