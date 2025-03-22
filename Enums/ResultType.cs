@@ -74,21 +74,21 @@ static class ShotResultTyeExtensions
 static class KickOutResultExtensions
 {
     /// <summary>
-    /// Returns true if possession is turned over as a result of the kick out.
+    /// Returns true if the kick out is won.
     /// Will not affect the turnover count.
     /// </summary>
     /// <param name="kickOutResult"></param>
-    /// <returns>True if possession is turned over as a result of the kick out.</returns>
-    public static bool IsPossessionTurnedOver(this KickOutResultType kickOutResult)
+    /// <returns>True if the kick out is won.</returns>
+    public static bool IsKickOutWon(this KickOutResultType kickOutResult)
     {
         switch (kickOutResult)
         {
             case KickOutResultType.Lost:
             case KickOutResultType.LostMark:
             case KickOutResultType.LostBreak:
-                return true;
-            default:
                 return false;
+            default:
+                return true;
         }
     }
 }

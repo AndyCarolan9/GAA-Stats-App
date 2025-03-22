@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
@@ -148,7 +148,7 @@ public class Match
             kickOutEventArgs.EventType, kickOutEventArgs.Team.TeamName, kickOutEventArgs.ResultType);
         _matchEvents.Add(matchEvent);
 
-        if (kickOutEventArgs.ResultType.IsPossessionTurnedOver())
+        if (!kickOutEventArgs.ResultType.IsKickOutWon())
         {
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
         }
