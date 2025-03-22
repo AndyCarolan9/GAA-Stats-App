@@ -1,4 +1,4 @@
-﻿using StatsTracker.Classes;
+using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
@@ -53,7 +53,7 @@ public class MatchController : IStatsController
                 || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
             {
                 // If the kick out is lost, don't show a player select window.
-                kickOutEventArgs.Team = _match.GetDefendingTeam();
+                kickOutEventArgs.Team = _match.GetInPossessionTeam();
                 _match.AddEvent(kickOutEventArgs);
                 UpdateView();
                 return;
