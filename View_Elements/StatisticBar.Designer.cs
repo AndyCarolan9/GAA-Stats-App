@@ -61,9 +61,9 @@ partial class StatisticBar
         // HomeTeamValue
         // 
         HomeTeamValue.Font = new System.Drawing.Font("Segoe UI", 20F);
-        HomeTeamValue.Location = new System.Drawing.Point(3, 0);
+        HomeTeamValue.Location = new System.Drawing.Point(3, -5);
         HomeTeamValue.Name = "HomeTeamValue";
-        HomeTeamValue.Size = new System.Drawing.Size(72, 36);
+        HomeTeamValue.Size = new System.Drawing.Size(72, 40);
         HomeTeamValue.TabIndex = 2;
         HomeTeamValue.Text = "40";
         HomeTeamValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,9 +71,9 @@ partial class StatisticBar
         // AwayTeamValue
         // 
         AwayTeamValue.Font = new System.Drawing.Font("Segoe UI", 20F);
-        AwayTeamValue.Location = new System.Drawing.Point(425, -3);
+        AwayTeamValue.Location = new System.Drawing.Point(425, -5);
         AwayTeamValue.Name = "AwayTeamValue";
-        AwayTeamValue.Size = new System.Drawing.Size(72, 36);
+        AwayTeamValue.Size = new System.Drawing.Size(72, 40);
         AwayTeamValue.TabIndex = 3;
         AwayTeamValue.Text = "40";
         AwayTeamValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
