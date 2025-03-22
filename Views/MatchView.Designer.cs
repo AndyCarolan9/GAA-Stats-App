@@ -93,11 +93,21 @@ partial class MatchView
         WidesStatBar = new StatsTracker.View_Elements.StatisticBar();
         AttacksStatBar = new StatsTracker.View_Elements.StatisticBar();
         FreesStatBar = new StatsTracker.View_Elements.StatisticBar();
+        HalfLabel = new System.Windows.Forms.Label();
+        StartStopButton = new System.Windows.Forms.Button();
+        Pause = new System.Windows.Forms.Button();
+        label2 = new System.Windows.Forms.Label();
+        label3 = new System.Windows.Forms.Label();
+        pictureBox4 = new System.Windows.Forms.PictureBox();
+        MinutesLabel = new System.Windows.Forms.Label();
+        label5 = new System.Windows.Forms.Label();
+        SecondsLabel = new System.Windows.Forms.Label();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
         SuspendLayout();
         // 
         // FootballFieldInput
@@ -491,6 +501,7 @@ partial class MatchView
         // 
         // ShotsStatBar
         // 
+        ShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ShotsStatBar.Location = new System.Drawing.Point(1374, 410);
         ShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         ShotsStatBar.Name = "ShotsStatBar";
@@ -500,6 +511,7 @@ partial class MatchView
         // 
         // KickoutsStatsBar
         // 
+        KickoutsStatsBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         KickoutsStatsBar.Location = new System.Drawing.Point(1374, 313);
         KickoutsStatsBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KickoutsStatsBar.Name = "KickoutsStatsBar";
@@ -509,6 +521,7 @@ partial class MatchView
         // 
         // GoalShotsStatBar
         // 
+        GoalShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         GoalShotsStatBar.Location = new System.Drawing.Point(1374, 507);
         GoalShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         GoalShotsStatBar.Name = "GoalShotsStatBar";
@@ -518,6 +531,7 @@ partial class MatchView
         // 
         // WidesStatBar
         // 
+        WidesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         WidesStatBar.Location = new System.Drawing.Point(1374, 603);
         WidesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         WidesStatBar.Name = "WidesStatBar";
@@ -527,6 +541,7 @@ partial class MatchView
         // 
         // AttacksStatBar
         // 
+        AttacksStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         AttacksStatBar.Location = new System.Drawing.Point(1374, 701);
         AttacksStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         AttacksStatBar.Name = "AttacksStatBar";
@@ -536,6 +551,7 @@ partial class MatchView
         // 
         // FreesStatBar
         // 
+        FreesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         FreesStatBar.Location = new System.Drawing.Point(1374, 799);
         FreesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         FreesStatBar.Name = "FreesStatBar";
@@ -543,12 +559,112 @@ partial class MatchView
         FreesStatBar.StatName = "Frees";
         FreesStatBar.TabIndex = 20;
         // 
+        // HalfLabel
+        // 
+        HalfLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+        HalfLabel.Location = new System.Drawing.Point(726, 75);
+        HalfLabel.Name = "HalfLabel";
+        HalfLabel.Size = new System.Drawing.Size(165, 50);
+        HalfLabel.TabIndex = 24;
+        HalfLabel.Text = "Second Half";
+        HalfLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        // 
+        // StartStopButton
+        // 
+        StartStopButton.Font = new System.Drawing.Font("Segoe UI", 15F);
+        StartStopButton.Location = new System.Drawing.Point(730, 146);
+        StartStopButton.Name = "StartStopButton";
+        StartStopButton.Size = new System.Drawing.Size(157, 38);
+        StartStopButton.TabIndex = 25;
+        StartStopButton.Text = "Start";
+        StartStopButton.UseVisualStyleBackColor = true;
+        // 
+        // Pause
+        // 
+        Pause.Font = new System.Drawing.Font("Segoe UI", 15F);
+        Pause.Location = new System.Drawing.Point(907, 146);
+        Pause.Name = "Pause";
+        Pause.Size = new System.Drawing.Size(157, 38);
+        Pause.TabIndex = 26;
+        Pause.Text = "Pause";
+        Pause.UseVisualStyleBackColor = true;
+        // 
+        // label2
+        // 
+        label2.Font = new System.Drawing.Font("Segoe UI", 15F);
+        label2.Location = new System.Drawing.Point(930, 26);
+        label2.Name = "label2";
+        label2.Size = new System.Drawing.Size(151, 39);
+        label2.TabIndex = 27;
+        label2.Text = "Time Gone";
+        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // label3
+        // 
+        label3.Font = new System.Drawing.Font("Segoe UI", 15F);
+        label3.Location = new System.Drawing.Point(730, 25);
+        label3.Name = "label3";
+        label3.Size = new System.Drawing.Size(151, 39);
+        label3.TabIndex = 28;
+        label3.Text = "Current Half";
+        label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // pictureBox4
+        // 
+        pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        pictureBox4.Location = new System.Drawing.Point(907, 74);
+        pictureBox4.Name = "pictureBox4";
+        pictureBox4.Size = new System.Drawing.Size(176, 51);
+        pictureBox4.TabIndex = 29;
+        pictureBox4.TabStop = false;
+        // 
+        // MinutesLabel
+        // 
+        MinutesLabel.BackColor = System.Drawing.Color.Transparent;
+        MinutesLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+        MinutesLabel.Location = new System.Drawing.Point(931, 80);
+        MinutesLabel.Name = "MinutesLabel";
+        MinutesLabel.Size = new System.Drawing.Size(64, 39);
+        MinutesLabel.TabIndex = 30;
+        MinutesLabel.Text = "00";
+        MinutesLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+        // 
+        // label5
+        // 
+        label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+        label5.Location = new System.Drawing.Point(983, 78);
+        label5.Name = "label5";
+        label5.Size = new System.Drawing.Size(29, 39);
+        label5.TabIndex = 31;
+        label5.Text = ":";
+        label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // SecondsLabel
+        // 
+        SecondsLabel.BackColor = System.Drawing.Color.Transparent;
+        SecondsLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+        SecondsLabel.Location = new System.Drawing.Point(1001, 80);
+        SecondsLabel.Name = "SecondsLabel";
+        SecondsLabel.Size = new System.Drawing.Size(63, 39);
+        SecondsLabel.TabIndex = 32;
+        SecondsLabel.Text = "00";
+        SecondsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(1902, 1033);
+        Controls.Add(SecondsLabel);
+        Controls.Add(label5);
+        Controls.Add(MinutesLabel);
+        Controls.Add(pictureBox4);
+        Controls.Add(label3);
+        Controls.Add(label2);
+        Controls.Add(Pause);
+        Controls.Add(StartStopButton);
+        Controls.Add(HalfLabel);
         Controls.Add(FreesStatBar);
         Controls.Add(AttacksStatBar);
         Controls.Add(WidesStatBar);
@@ -577,9 +693,24 @@ partial class MatchView
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Label SecondsLabel;
+
+    private System.Windows.Forms.Label MinutesLabel;
+    private System.Windows.Forms.Label HalfLabel;
+    private System.Windows.Forms.Label label5;
+
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.PictureBox pictureBox4;
+
+    private System.Windows.Forms.Button StartStopButton;
+    private System.Windows.Forms.Button Pause;
+
+    private System.Windows.Forms.Label label2;
 
     private StatsTracker.View_Elements.StatisticBar ShotsStatBar;
     private StatsTracker.View_Elements.StatisticBar KickoutsStatsBar;
