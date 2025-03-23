@@ -578,6 +578,7 @@ partial class MatchView
         StartStopButton.TabIndex = 25;
         StartStopButton.Text = "Start";
         StartStopButton.UseVisualStyleBackColor = true;
+        StartStopButton.MouseClick += StartStopButton_MouseClick;
         // 
         // Pause
         // 
@@ -588,6 +589,7 @@ partial class MatchView
         Pause.TabIndex = 26;
         Pause.Text = "Pause";
         Pause.UseVisualStyleBackColor = true;
+        Pause.MouseClick += Pause_MouseClick;
         // 
         // label2
         // 

@@ -16,6 +16,10 @@ public partial class MatchView : Form, IStatsView
     /// </summary>
     public event EventHandler<InputStatEventArgs>? OnStatEntered;
 
+    public event EventHandler? OnTimerStartStopPressed;
+    
+    public event EventHandler? OnTimerPausePressed;
+
     private Point _inputLocation = new Point(0, 0);
     
     public MatchView()
@@ -91,6 +95,21 @@ public partial class MatchView : Form, IStatsView
     public StatisticBar[] GetAllStatisticBars()
     {
         return Controls.OfType<StatisticBar>().ToArray();
+    }
+
+    public Label GetMinutesLabel()
+    {
+        return MinutesLabel;
+    }
+
+    public Label GetSecondsLabel()
+    {
+        return SecondsLabel;
+    }
+
+    public Label GetHalfLabel()
+    {
+        return HalfLabel;
     }
     #endregion
     
@@ -317,5 +336,15 @@ public partial class MatchView : Form, IStatsView
         outFor45.Name = "OutFor45";
         outFor45.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(outFor45);
+    }
+
+    private void StartStopButton_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnTimerStartStopPressed?.Invoke(sender, e);
+    }
+
+    private void Pause_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnTimerPausePressed?.Invoke(sender, e);
     }
 }

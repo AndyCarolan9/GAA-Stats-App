@@ -19,9 +19,11 @@ public class Match
     
     private Team _awayTeam;
 
-    private int _half = 1;
+    private int _half = 0;
 
     private bool _isHomeTeamInPossession = false;
+    
+    private bool _isPlayStarted = false;
 
     #endregion
     
@@ -70,24 +72,55 @@ public class Match
     
     #region Methods
     #region Timer Methods
+    /// <summary>
+    /// Starts the match timer and increments the half number.
+    /// </summary>
     public void StartHalf()
     {
+        if (_isPlayStarted)
+        {
+            StopHalf();
+            return;
+        }
+        
         _matchTimer = Stopwatch.StartNew();
+        _half += _half;
+        _isPlayStarted = true;
     }
 
-    public void StopHalf()
+    /// <summary>
+    /// Stops the match timer.
+    /// </summary>
+    private void StopHalf()
     {
         _matchTimer.Stop();
+        _isPlayStarted = false;
     }
 
+    /// <summary>
+    /// Pauses the match timer.
+    /// </summary>
     public void PauseTimer()
     {
+        if (_isPlayStarted && !_matchTimer.IsRunning)
+        {
+            ResumeTimer();
+            return;
+        }
         _matchTimer.Stop();
     }
 
-    public void ResumeTimer()
+    /// <summary>
+    /// Resumes the match timer.
+    /// </summary>
+    private void ResumeTimer()
     {
         _matchTimer.Start();
+    }
+
+    public TimeSpan GetElapsedTime()
+    {
+        return _matchTimer.Elapsed;
     }
     #endregion
 

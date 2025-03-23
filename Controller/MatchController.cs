@@ -4,6 +4,7 @@ using StatsTracker.Events;
 using StatsTracker.Model;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
+using Timer = System.Windows.Forms.Timer;
 
 namespace StatsTracker.Controller;
 
@@ -16,12 +17,15 @@ public class MatchController : IStatsController
     private MatchView _view;
     private PlayerSelectWindow? _selectWindow = null;
 
+    private Timer? _timeDisplayTimer;
+
     public MatchController(Match match)
     {
         _match = match;
         _view = new MatchView();
         
         BindViewEvents();
+        BindTimerButtons();
         SetTeamDataInView();
         SetupStatisticBars();
     }
@@ -121,6 +125,81 @@ public class MatchController : IStatsController
     private void OnEnterStatCancelled(object? sender, EventArgs eventArgs)
     {
         UnbindActionViewEvents();
+    }
+
+    /// <summary>
+    /// Binds the timer events of the view.
+    /// </summary>
+    private void BindTimerButtons()
+    {
+        _view.OnTimerStartStopPressed += OnStartStopButtonClicked;
+        _view.OnTimerPausePressed += OnTimerPausePressed;
+    }
+
+    /// <summary>
+    /// Starts the match and display timer. If they are already started they are stopped.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="e">The event args passed with the event.</param>
+    private void OnStartStopButtonClicked(object? sender, EventArgs e)
+    {
+        _match.StartHalf();
+
+        if (_timeDisplayTimer is null)
+        {
+            _timeDisplayTimer = new Timer();
+            _timeDisplayTimer.Interval = 1000;
+            _timeDisplayTimer.Tick += UpdateTimeDisplay;
+            _timeDisplayTimer.Start();
+        }
+    }
+
+    /// <summary>
+    /// Called when the pause button is pressed. If the timer is enabled it pauses it and pauses the display timer.
+    /// If the timer is paused, it will be resumed.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="e">The event args passed with the event.</param>
+    private void OnTimerPausePressed(object? sender, EventArgs e)
+    {
+        if (_timeDisplayTimer is null)
+        {
+            return;
+        }
+        
+        _match.PauseTimer();
+
+        if (_timeDisplayTimer.Enabled)
+        {
+            _timeDisplayTimer.Stop();
+        }
+        else
+        {
+            _timeDisplayTimer.Start();
+        }
+        
+    }
+
+    private void UpdateTimeDisplay(object? sender, EventArgs e)
+    {
+        TimeSpan elapsedTime = _match.GetElapsedTime();
+        _view.GetMinutesLabel().Text = GetTimeValue(elapsedTime.Minutes);
+        _view.GetSecondsLabel().Text = GetTimeValue(elapsedTime.Seconds);
+    }
+
+    /// <summary>
+    /// Returns the time value as a string. If the value is 1 second, it will return 01 for clearer display in the view.
+    /// </summary>
+    /// <param name="timeValue">The int value of the time.</param>
+    /// <returns>The time value as formatted string.</returns>
+    private string GetTimeValue(int timeValue)
+    {
+        if (timeValue < 10)
+        {
+            return "0" + timeValue;
+        }
+        
+        return timeValue.ToString();
     }
     
     #region View Displays
