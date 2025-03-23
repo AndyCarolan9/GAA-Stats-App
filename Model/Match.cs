@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
@@ -188,13 +188,13 @@ public class Match
     #endregion
     
     #region Statistic Methods
-    private StatisticPair GetStatisticForEvent(EventType eventType)
+    public StatisticPair GetStatisticForEvent(EventType eventType)
     {
         List<MatchEvent> events = _matchEvents.FindAll(matchEvent => matchEvent.Type == eventType);
         return GetStatisticPairForEvent(events);
     }
 
-    private StatisticPair GetStatisticForShotResult(ShotResultType resultType)
+    public StatisticPair GetStatisticForShotResult(ShotResultType resultType)
     {
         List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
         {
@@ -208,7 +208,7 @@ public class Match
         return GetStatisticPairForEvent(events);
     }
 
-    private StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType)
+    public StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType)
     {
         List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
         {
@@ -220,6 +220,12 @@ public class Match
             return false;
         });
         
+        return GetStatisticPairForEvent(events);
+    }
+
+    private StatisticPair GetStatisticPairByPredicate(Predicate<MatchEvent> predicate)
+    {
+        List<MatchEvent> events = _matchEvents.FindAll(predicate);
         return GetStatisticPairForEvent(events);
     }
 
@@ -236,8 +242,32 @@ public class Match
         StatisticPair turnOversWon = GetStatisticForEvent(EventType.TurnoverWon); 
         StatisticPair turnOversLost = GetStatisticForEvent(EventType.TurnoverLost);
         
-        return new StatisticPair(turnOversWon.HomeTeamValue + turnOversLost.HomeTeamValue, 
-            turnOversWon.AwayTeamValue + turnOversLost.AwayTeamValue);
+        return new StatisticPair(turnOversWon.HomeTeamValue + turnOversLost.AwayTeamValue, 
+            turnOversWon.AwayTeamValue + turnOversLost.HomeTeamValue);
+    }
+
+    public StatisticPair GetKickOutsWon()
+    {
+        StatisticPair kickOutsWon = GetStatisticPairByPredicate(matchEvent =>
+        {
+            if (matchEvent is KickOutEvent kickOutEvent)
+            {
+                return kickOutEvent.ResultType.IsKickOutWon();
+            }
+
+            return false;
+        });
+        
+        return kickOutsWon;
+    }
+
+    public StatisticPair GetFrees()
+    {
+        StatisticPair freesConceded = GetStatisticForEvent(EventType.FreeConceded);
+        StatisticPair fouledFrees = GetStatisticForEvent(EventType.FouledFree);
+        
+        return new StatisticPair(freesConceded.HomeTeamValue + fouledFrees.AwayTeamValue,
+            freesConceded.AwayTeamValue + fouledFrees.HomeTeamValue);
     }
     #endregion
     #endregion

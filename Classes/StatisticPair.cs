@@ -41,4 +41,9 @@ public class StatisticPair
         
         return (float)AwayTeamValue / TotalValue;
     }
+
+    public bool IsStatisticsEmpty()
+    {
+        return HomeTeamValue == 0 && AwayTeamValue == 0;
+    }
 }

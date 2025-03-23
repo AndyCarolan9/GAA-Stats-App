@@ -7,8 +7,11 @@ public enum EventType
 {
     Default,
     PointShot,
+    GoalShot,
+    DoublePointShot,
     KickOut,
     FreeConceded,
+    FouledFree,
     PenaltyConceded,
     BlackCard,
     RedCard,

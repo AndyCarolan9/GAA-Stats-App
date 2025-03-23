@@ -1,4 +1,4 @@
-using StatsTracker.Classes;
+﻿using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
@@ -132,7 +132,11 @@ public class MatchController : IStatsController
 
     private void SetupStatisticBars()
     {
-        SetupStatisticBar(_view.GetTurnoverStatisticBar());
+        StatisticBar[] bars = _view.GetAllStatisticBars();
+        foreach (var statsBar in bars)
+        {
+            SetupStatisticBar(statsBar);
+        }
     }
 
     private void SetupStatisticBar(StatisticBar statisticBar)
@@ -144,14 +148,79 @@ public class MatchController : IStatsController
     private void UpdateView()
     {
         UpdateTurnOversBar();
+        UpdateKickOutsWonBar();
+        UpdatePointShotsBar();
+        UpdateGoalShotsBar();
+        UpdateWidesBar();
+        UpdateFreesBar();
     }
 
     private void UpdateTurnOversBar()
     {
         StatisticPair turnOvers = _match.GetTurnOvers();
+        if (turnOvers.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
         StatisticBar bar = _view.GetTurnoverStatisticBar();
         
         bar.UpdateValues(turnOvers.HomeTeamValue, turnOvers.AwayTeamValue);
+    }
+
+    private void UpdateKickOutsWonBar()
+    {
+        StatisticPair kickOutsWon = _match.GetKickOutsWon();
+        if (kickOutsWon.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
+        _view.GetKickoutStatisticBar().UpdateValues(kickOutsWon.HomeTeamValue, kickOutsWon.AwayTeamValue);
+    }
+
+    private void UpdatePointShotsBar()
+    {
+        StatisticPair pointShots = _match.GetStatisticForEvent(EventType.PointShot);
+        if (pointShots.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
+        _view.GetShotsStatisticBar().UpdateValues(pointShots.HomeTeamValue, pointShots.AwayTeamValue);
+    }
+
+    private void UpdateGoalShotsBar()
+    {
+        StatisticPair goalShots = _match.GetStatisticForEvent(EventType.GoalShot);
+        if (goalShots.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
+        _view.GetGoalShotsStatisticBar().UpdateValues(goalShots.HomeTeamValue, goalShots.AwayTeamValue);
+    }
+
+    private void UpdateWidesBar()
+    {
+        StatisticPair wides = _match.GetStatisticForShotResult(ShotResultType.Wide);
+        if (wides.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
+        _view.GetWidesStatisticBar().UpdateValues(wides.HomeTeamValue, wides.AwayTeamValue);
+    }
+
+    private void UpdateFreesBar()
+    {
+        StatisticPair frees = _match.GetFrees();
+        if (frees.IsStatisticsEmpty())
+        {
+            return;
+        }
+        
+        _view.GetFreeStatisticBar().UpdateValues(frees.HomeTeamValue, frees.AwayTeamValue);
     }
     #endregion
 }

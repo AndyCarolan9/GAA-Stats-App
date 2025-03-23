@@ -87,6 +87,11 @@ public partial class MatchView : Form, IStatsView
     {
         return FreesStatBar;
     }
+
+    public StatisticBar[] GetAllStatisticBars()
+    {
+        return Controls.OfType<StatisticBar>().ToArray();
+    }
     #endregion
     
     /// <summary>
@@ -123,7 +128,7 @@ public partial class MatchView : Form, IStatsView
         EventInputMenu.Items.Add(goalShot);
         
         ToolStripMenuItem longShot = new ToolStripMenuItem("2 Point Shot");
-        longShot.Name = "2PointShot";
+        longShot.Name = "DoublePointShot";
         AddSubMenuItemsForShots(longShot);
         EventInputMenu.Items.Add(longShot);
         
