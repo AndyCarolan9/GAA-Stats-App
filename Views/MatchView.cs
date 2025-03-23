@@ -111,6 +111,16 @@ public partial class MatchView : Form, IStatsView
     {
         return HalfLabel;
     }
+
+    public Button GetStartStopButton()
+    {
+        return StartStopButton;
+    }
+
+    public Button GetPauseButton()
+    {
+        return Pause;
+    }
     #endregion
     
     /// <summary>

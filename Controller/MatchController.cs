@@ -144,6 +144,8 @@ public class MatchController : IStatsController
     private void OnStartStopButtonClicked(object? sender, EventArgs e)
     {
         _match.StartHalf();
+        SetHalfLabelText();
+        _view.GetStartStopButton().Text = !_match.IsMatchPlaying() ? "Start" : "Stop";
 
         if (_timeDisplayTimer is null)
         {
@@ -151,6 +153,19 @@ public class MatchController : IStatsController
             _timeDisplayTimer.Interval = 1000;
             _timeDisplayTimer.Tick += UpdateTimeDisplay;
             _timeDisplayTimer.Start();
+        }
+    }
+
+    private void SetHalfLabelText()
+    {
+        int half = _match.GetHalf();
+        if (half == 1)
+        {
+            _view.GetHalfLabel().Text = "First Half";
+        }
+        else if (half == 2)
+        {
+            _view.GetHalfLabel().Text = "Second Half";
         }
     }
 
@@ -172,10 +187,12 @@ public class MatchController : IStatsController
         if (_timeDisplayTimer.Enabled)
         {
             _timeDisplayTimer.Stop();
+            _view.GetPauseButton().Text = "Resume";
         }
         else
         {
             _timeDisplayTimer.Start();
+            _view.GetPauseButton().Text = "Pause";
         }
         
     }

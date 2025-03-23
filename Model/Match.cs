@@ -84,7 +84,7 @@ public class Match
         }
         
         _matchTimer = Stopwatch.StartNew();
-        _half += _half;
+        _half += 1;
         _isPlayStarted = true;
     }
 
@@ -121,6 +121,16 @@ public class Match
     public TimeSpan GetElapsedTime()
     {
         return _matchTimer.Elapsed;
+    }
+
+    public int GetHalf()
+    {
+        return _half;
+    }
+
+    public bool IsMatchPlaying()
+    {
+        return _isPlayStarted;
     }
     #endregion
 
