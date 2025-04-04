@@ -10,8 +10,8 @@ public class KickOutEvent : MatchEvent
         
     }
 
-    public KickOutEvent(Point location, string player, long time, EventType eventType, string teamName,
-        KickOutResultType resultType) : base(location, player, time, eventType, teamName)
+    public KickOutEvent(Point location, string player, long time, EventType eventType, string teamName, int halfIndex,
+        KickOutResultType resultType) : base(location, player, time, eventType, teamName, halfIndex)
     {
         ResultType = resultType;
     }

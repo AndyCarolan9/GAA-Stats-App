@@ -10,8 +10,8 @@ public class ShotEvent : MatchEvent
         
     }
 
-    public ShotEvent(Point location, string player, long time, EventType eventType, string teamName,
-        ActionType actionType, ShotResultType resultType) : base(location, player, time, eventType, teamName)
+    public ShotEvent(Point location, string player, long time, EventType eventType, string teamName, int halfIndex,
+        ActionType actionType, ShotResultType resultType) : base(location, player, time, eventType, teamName, halfIndex)
     {
         ActionType = actionType;
         ResultType = resultType;

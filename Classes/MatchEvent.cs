@@ -14,13 +14,14 @@ public class MatchEvent
         TeamName = string.Empty;
     }
 
-    public MatchEvent(Point location, string player, long time, EventType eventType, string teamName)
+    public MatchEvent(Point location, string player, long time, EventType eventType, string teamName, int halfIndex)
     {
         Location = location;
         Player = player;
         Time = time;
         Type = eventType;
         TeamName = teamName;
+        HalfIndex = halfIndex;
     }
     #endregion
     
@@ -35,6 +36,8 @@ public class MatchEvent
     public EventType Type { get; set; }
     
     public string TeamName { get; set; }
+    
+    public int HalfIndex { get; set; }
 
     #endregion
 }

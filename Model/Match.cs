@@ -164,7 +164,7 @@ public class Match
         }
         
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
-            statArgs.EventType, statArgs.Team.TeamName);
+            statArgs.EventType, statArgs.Team.TeamName, _half);
         _matchEvents.Add(matchEvent);
 
         if (statArgs.EventType.IsTurnoverEvent())
@@ -176,7 +176,7 @@ public class Match
     private void AddEvent(ShotEventArgs shotArgs)
     {
         var matchEvent = new ShotEvent(shotArgs.Location, shotArgs.Player, _matchTimer.ElapsedMilliseconds,
-            shotArgs.EventType, shotArgs.Team.TeamName, shotArgs.ActionType, shotArgs.ResultType);
+            shotArgs.EventType, shotArgs.Team.TeamName, _half, shotArgs.ActionType, shotArgs.ResultType);
         _matchEvents.Add(matchEvent);
 
         if (shotArgs.IsTurnedOver)
@@ -188,7 +188,7 @@ public class Match
     private void AddEvent(KickOutEventArgs kickOutEventArgs)
     {
         var matchEvent = new KickOutEvent(kickOutEventArgs.Location, kickOutEventArgs.Player, _matchTimer.ElapsedMilliseconds,
-            kickOutEventArgs.EventType, kickOutEventArgs.Team.TeamName, kickOutEventArgs.ResultType);
+            kickOutEventArgs.EventType, kickOutEventArgs.Team.TeamName, _half, kickOutEventArgs.ResultType);
         _matchEvents.Add(matchEvent);
 
         if (!kickOutEventArgs.ResultType.IsKickOutWon())
