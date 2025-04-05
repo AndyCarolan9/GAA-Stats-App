@@ -83,7 +83,7 @@ public partial class PlayerSelectWindow : Form, IStatsView
                 
                 string strIndex = button.Name.Substring(6);
                 int index = Int32.Parse(strIndex) - 1;
-                button.Text = SelectedTeam.TeamSheet[index];
+                button.Text = SelectedTeam.CurrentTeam[index];
                 button.BackColor = SelectedTeam.TeamColor;
             }
         }

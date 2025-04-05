@@ -12,14 +12,28 @@ public class Team
     {
         TeamName = "";
         TeamColor = new Color();
-        TeamSheet = new string[15];
+        TeamSheet = new List<string>();
+        CurrentTeam = new string[15];
     }
 
-    public Team(string teamName, Color teamColor, string[] teamSheet)
+    public Team(string teamName, Color teamColor, List<string> teamSheet)
     {
         TeamName = teamName;
         TeamColor = teamColor;
         TeamSheet = teamSheet;
+        
+        CurrentTeam = new string[15];
+
+        int playerCount = 15;
+        if (teamSheet.Count < playerCount)
+        {
+            playerCount = teamSheet.Count;
+        }
+
+        for (int i = 0; i < playerCount; i++)
+        {
+            CurrentTeam[i] = teamSheet[i];
+        }
     }
 
     #endregion
@@ -28,9 +42,17 @@ public class Team
 
     public string TeamName { get; set; }
 
-    public string[] TeamSheet { get; set; }
+    /// <summary>
+    /// The list of all players in this team which play this match.
+    /// </summary>
+    public List<string> TeamSheet { get; set; }
 
     public Color TeamColor { get; set; }
+    
+    /// <summary>
+    /// The current 15 on the field.
+    /// </summary>
+    public string[] CurrentTeam{ get; set; }
 
     #endregion
     
@@ -39,19 +61,33 @@ public class Team
     /// Adds a player to the team sheet.
     /// </summary>
     /// <param name="playerName">The name of the player.</param>
-    /// <param name="playerPosition">The position that</param>
-    public void AddPlayer(string playerName, int playerPosition)
+    public void AddPlayerToTeamSheet(string playerName)
     {
-        TeamSheet[playerPosition] = playerName;
+        TeamSheet.Add(playerName);
     }
 
     /// <summary>
     /// Removes a player from the team sheet.
     /// </summary>
-    /// <param name="playerPosition">The position of the player to remove.</param>
-    public void RemovePlayer(int playerPosition)
+    /// <param name="playerName">The name of the player.</param>
+    public void RemovePlayerFromTeamSheet(string playerName)
     {
-        TeamSheet[playerPosition] = "";
+        TeamSheet.Remove(playerName);
+    }
+
+    /// <summary>
+    /// Replaces the player in position index with the new player.
+    /// </summary>
+    /// <param name="playerOn">The name of the player coming on.</param>
+    /// <param name="position">The index of the position they are going on for.</param>
+    /// <returns>The name of the player who came off.</returns>
+    public string MakeSub(string playerOn, int position)
+    {
+        string playerOffName = CurrentTeam[position];
+        
+        CurrentTeam[position] = playerOn;
+        
+        return playerOffName;
     }
     #endregion
 }
