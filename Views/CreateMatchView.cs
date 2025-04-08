@@ -13,14 +13,10 @@ public partial class CreateMatchView : Form, IStatsView
     }
     
     #region Events
-    public event EventHandler? OnHomeTeamDropTextChanged;
-    public event EventHandler? OnHomeTeamDropDownIndexChanged;
     public event EventHandler<MouseEventArgs>? OnHomeTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveDownClick;
     
-    public event EventHandler? OnAwayTeamDropTextChanged;
-    public event EventHandler? OnAwayTeamDropDownIndexChanged;
     public event EventHandler<MouseEventArgs>? OnAwayTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveDownClick;
@@ -28,6 +24,9 @@ public partial class CreateMatchView : Form, IStatsView
     public event EventHandler? OnTeamDropDownIndexChanged;
     public event EventHandler<MouseEventArgs>? OnMoveToHomeClick;
     public event EventHandler<MouseEventArgs>? OnMoveToAwayClick;
+    
+    public event EventHandler<MouseEventArgs>? OnAddPlayerClick;
+    public event EventHandler<MouseEventArgs>? OnAddTeamClick;
     #endregion
     
     #region View Items
@@ -41,9 +40,9 @@ public partial class CreateMatchView : Form, IStatsView
         return HomeTeamPlayersListBox;
     }
 
-    public ColorDialog GetHomeTeamColorDialog()
+    public ColorDialog GetTeamColorDialog()
     {
-        return HomeTeamColor;
+        return TeamColorSelector;
     }
 
     public Button GetHomeTeamSetColorButton()
@@ -61,6 +60,11 @@ public partial class CreateMatchView : Form, IStatsView
         return HomeTeamMoveDown;
     }
 
+    public PictureBox GetHomeTeamPictureBox()
+    {
+        return HomeTeamColorBox;
+    }
+
     public ComboBox GetAwayTeamDropDown()
     {
         return AwayTeamDropDown;
@@ -69,11 +73,6 @@ public partial class CreateMatchView : Form, IStatsView
     public ListBox GetAwayTeamListBox()
     {
         return AwayTeamPlayersList;
-    }
-
-    public ColorDialog GetAwayTeamColorDialog()
-    {
-        return AwayTeamColor;
     }
     
     public Button GetAwayTeamSetColorButton()
@@ -90,17 +89,33 @@ public partial class CreateMatchView : Form, IStatsView
     {
         return AwayMoveDown;
     }
+
+    public TextBox GetAddPlayerTextBox()
+    {
+        return AddPlayerTextBox;
+    }
+
+    public TextBox GetAddTeamTextBox()
+    {
+        return AddTeamTextBox;
+    }
+    
+    public PictureBox GetAwayTeamPictureBox()
+    {
+        return AwayTeamColorBox;
+    }
+
+    public ComboBox GetTeamDropDown()
+    {
+        return TeamDropdown;
+    }
+
+    public ListBox GetTeamListBox()
+    {
+        return PlayersList;
+    }
     #endregion
-
-    private void HomeTeamDropDown_TextUpdate(object sender, EventArgs e)
-    {
-        OnHomeTeamDropTextChanged?.Invoke(this, e);
-    }
-
-    private void HomeTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        OnHomeTeamDropDownIndexChanged?.Invoke(this, e);
-    }
+    
 
     private void HomeTeamSetColor_MouseClick(object sender, MouseEventArgs e)
     {
@@ -132,16 +147,6 @@ public partial class CreateMatchView : Form, IStatsView
         OnMoveToAwayClick?.Invoke(this, e);
     }
 
-    private void AwayTeamDropDown_TextUpdate(object sender, EventArgs e)
-    {
-        OnAwayTeamDropTextChanged?.Invoke(this, e);
-    }
-
-    private void AwayTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        OnAwayTeamDropDownIndexChanged?.Invoke(this, e);
-    }
-
     private void AwayTeamSetColor_MouseClick(object sender, MouseEventArgs e)
     {
         OnAwayTeamColorClick?.Invoke(this, e);
@@ -155,5 +160,15 @@ public partial class CreateMatchView : Form, IStatsView
     private void AwayMoveDown_MouseClick(object sender, MouseEventArgs e)
     {
         OnAwayTeamMoveDownClick?.Invoke(this, e);
+    }
+
+    private void AddPlayer_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnAddPlayerClick?.Invoke(this, e);
+    }
+
+    private void AddTeam_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnAddTeamClick?.Invoke(this, e);
     }
 }

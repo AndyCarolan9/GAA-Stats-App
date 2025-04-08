@@ -33,10 +33,9 @@ partial class CreateMatchView
     {
         HomeTeamDropDown = new System.Windows.Forms.ComboBox();
         label1 = new System.Windows.Forms.Label();
-        HomeTeamColor = new System.Windows.Forms.ColorDialog();
+        TeamColorSelector = new System.Windows.Forms.ColorDialog();
         HomeTeamSetColor = new System.Windows.Forms.Button();
         HomeTeamPlayersListBox = new System.Windows.Forms.ListBox();
-        AwayTeamColor = new System.Windows.Forms.ColorDialog();
         HomeMoveUp = new System.Windows.Forms.Button();
         HomeTeamMoveDown = new System.Windows.Forms.Button();
         PlayersList = new System.Windows.Forms.ListBox();
@@ -49,6 +48,14 @@ partial class CreateMatchView
         AwayTeamDropDown = new System.Windows.Forms.ComboBox();
         MoveToHome = new System.Windows.Forms.Button();
         MoveToAway = new System.Windows.Forms.Button();
+        HomeTeamColorBox = new System.Windows.Forms.PictureBox();
+        AwayTeamColorBox = new System.Windows.Forms.PictureBox();
+        AddPlayer = new System.Windows.Forms.Button();
+        AddTeam = new System.Windows.Forms.Button();
+        AddTeamTextBox = new System.Windows.Forms.TextBox();
+        AddPlayerTextBox = new System.Windows.Forms.TextBox();
+        ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)AwayTeamColorBox).BeginInit();
         SuspendLayout();
         // 
         // HomeTeamDropDown
@@ -58,8 +65,6 @@ partial class CreateMatchView
         HomeTeamDropDown.Name = "HomeTeamDropDown";
         HomeTeamDropDown.Size = new System.Drawing.Size(178, 23);
         HomeTeamDropDown.TabIndex = 0;
-        HomeTeamDropDown.SelectedIndexChanged += HomeTeamDropDown_SelectedIndexChanged;
-        HomeTeamDropDown.TextUpdate += HomeTeamDropDown_TextUpdate;
         // 
         // label1
         // 
@@ -71,9 +76,9 @@ partial class CreateMatchView
         label1.Text = "Home Team";
         label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
-        // HomeTeamColor
+        // TeamColorSelector
         // 
-        HomeTeamColor.Color = System.Drawing.Color.Gray;
+        TeamColorSelector.Color = System.Drawing.Color.Gray;
         // 
         // HomeTeamSetColor
         // 
@@ -188,8 +193,6 @@ partial class CreateMatchView
         AwayTeamDropDown.Name = "AwayTeamDropDown";
         AwayTeamDropDown.Size = new System.Drawing.Size(178, 23);
         AwayTeamDropDown.TabIndex = 8;
-        AwayTeamDropDown.SelectedIndexChanged += AwayTeamDropDown_SelectedIndexChanged;
-        AwayTeamDropDown.TextUpdate += AwayTeamDropDown_TextUpdate;
         // 
         // MoveToHome
         // 
@@ -211,11 +214,69 @@ partial class CreateMatchView
         MoveToAway.UseVisualStyleBackColor = true;
         MoveToAway.MouseClick += MoveToAway_MouseClick;
         // 
+        // HomeTeamColorBox
+        // 
+        HomeTeamColorBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        HomeTeamColorBox.Location = new System.Drawing.Point(194, 51);
+        HomeTeamColorBox.Name = "HomeTeamColorBox";
+        HomeTeamColorBox.Size = new System.Drawing.Size(103, 22);
+        HomeTeamColorBox.TabIndex = 16;
+        HomeTeamColorBox.TabStop = false;
+        // 
+        // AwayTeamColorBox
+        // 
+        AwayTeamColorBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        AwayTeamColorBox.Location = new System.Drawing.Point(488, 51);
+        AwayTeamColorBox.Name = "AwayTeamColorBox";
+        AwayTeamColorBox.Size = new System.Drawing.Size(104, 22);
+        AwayTeamColorBox.TabIndex = 17;
+        AwayTeamColorBox.TabStop = false;
+        // 
+        // AddPlayer
+        // 
+        AddPlayer.Location = new System.Drawing.Point(194, 425);
+        AddPlayer.Name = "AddPlayer";
+        AddPlayer.Size = new System.Drawing.Size(104, 23);
+        AddPlayer.TabIndex = 19;
+        AddPlayer.Text = "Add Player";
+        AddPlayer.UseVisualStyleBackColor = true;
+        AddPlayer.MouseClick += AddPlayer_MouseClick;
+        // 
+        // AddTeam
+        // 
+        AddTeam.Location = new System.Drawing.Point(672, 426);
+        AddTeam.Name = "AddTeam";
+        AddTeam.Size = new System.Drawing.Size(104, 23);
+        AddTeam.TabIndex = 20;
+        AddTeam.Text = "Add Team";
+        AddTeam.UseVisualStyleBackColor = true;
+        AddTeam.MouseClick += AddTeam_MouseClick;
+        // 
+        // AddTeamTextBox
+        // 
+        AddTeamTextBox.Location = new System.Drawing.Point(488, 425);
+        AddTeamTextBox.Name = "AddTeamTextBox";
+        AddTeamTextBox.Size = new System.Drawing.Size(178, 23);
+        AddTeamTextBox.TabIndex = 21;
+        // 
+        // AddPlayerTextBox
+        // 
+        AddPlayerTextBox.Location = new System.Drawing.Point(12, 425);
+        AddPlayerTextBox.Name = "AddPlayerTextBox";
+        AddPlayerTextBox.Size = new System.Drawing.Size(178, 23);
+        AddPlayerTextBox.TabIndex = 22;
+        // 
         // CreateMatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(786, 461);
+        Controls.Add(AddPlayerTextBox);
+        Controls.Add(AddTeamTextBox);
+        Controls.Add(AddTeam);
+        Controls.Add(AddPlayer);
+        Controls.Add(AwayTeamColorBox);
+        Controls.Add(HomeTeamColorBox);
         Controls.Add(MoveToAway);
         Controls.Add(MoveToHome);
         Controls.Add(AwayMoveDown);
@@ -233,8 +294,22 @@ partial class CreateMatchView
         Controls.Add(label1);
         Controls.Add(HomeTeamDropDown);
         Text = "Create Match";
+        ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).EndInit();
+        ((System.ComponentModel.ISupportInitialize)AwayTeamColorBox).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
+
+    private System.Windows.Forms.TextBox AddPlayerTextBox;
+
+    private System.Windows.Forms.Button AddPlayer;
+
+    private System.Windows.Forms.TextBox AddTeamTextBox;
+    private System.Windows.Forms.Button AddTeam;
+
+    private System.Windows.Forms.PictureBox HomeTeamColorBox;
+
+    private System.Windows.Forms.PictureBox AwayTeamColorBox;
 
     private System.Windows.Forms.Button MoveToHome;
     private System.Windows.Forms.Button MoveToAway;
@@ -251,12 +326,10 @@ partial class CreateMatchView
     private System.Windows.Forms.Button HomeMoveUp;
     private System.Windows.Forms.Button HomeTeamMoveDown;
 
-    private System.Windows.Forms.ColorDialog AwayTeamColor;
-
     private System.Windows.Forms.ListBox HomeTeamPlayersListBox;
 
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.ColorDialog HomeTeamColor;
+    private System.Windows.Forms.ColorDialog TeamColorSelector;
     private System.Windows.Forms.Button HomeTeamSetColor;
 
     private System.Windows.Forms.ComboBox HomeTeamDropDown;
