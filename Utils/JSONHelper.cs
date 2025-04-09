@@ -19,4 +19,13 @@ public static class JSONHelper
         
         return default;
     }
+
+    public static void SaveToJsonFile<T>(string filePath, T? objectToSave)
+    {
+        using (StreamWriter sw = new StreamWriter(filePath))
+        {
+            string jsonString = JsonSerializer.Serialize(objectToSave);
+            sw.Write(jsonString);
+        }
+    }
 }

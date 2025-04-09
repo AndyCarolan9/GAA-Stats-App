@@ -1,4 +1,6 @@
-﻿using StatsTracker.Events;
+using StatsTracker.Classes;
+using StatsTracker.Events;
+using StatsTracker.Utils;
 using StatsTracker.Views;
 
 namespace StatsTracker.Controller;
@@ -6,7 +8,7 @@ namespace StatsTracker.Controller;
 public class CreateMatchController : IStatsController
 {
     private CreateMatchView _view;
-    private Dictionary<string, List<string>> TeamsAndPlayers = new Dictionary<string, List<string>>();
+    private List<Team> _teams = new List<Team>();
     
     public event EventHandler<TeamSelectedEventArgs>? OnTeamSelected;
 
@@ -15,8 +17,16 @@ public class CreateMatchController : IStatsController
     public CreateMatchController()
     {
         _view = new CreateMatchView();
-        
-        _view.GetTeamDropDown().Items.AddRange(TeamsAndPlayers.Keys.ToArray());
+
+        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(
+            "C:\\Users\\Andy Carolan\\source\\repos\\GlenEmmets\\StatsTracker\\bin\\Teams.json");
+        if (teams != null)
+        {
+            _teams.AddRange(teams);
+            _view.GetTeamDropDown().Items.AddRange(GetTeamNames());
+            _view.GetHomeTeamDropDown().Items.AddRange(GetTeamNames());
+            _view.GetAwayTeamDropDown().Items.AddRange(GetTeamNames());
+        }
         
         // Home Events
         _view.OnHomeTeamColorClick += OnHomeTeamColorClick;
@@ -209,7 +219,7 @@ public class CreateMatchController : IStatsController
             return;
         }
         
-        TeamsAndPlayers.Add(teamName, []);
+        _teams.Add(new Team(teamName));
         
         UpdateTeamDropdown();
     }
@@ -228,7 +238,13 @@ public class CreateMatchController : IStatsController
             return;
         }
         
-        TeamsAndPlayers[selectedTeam].Add(playerName);
+        Team? team = FindTeam(selectedTeam);
+        if (team == null)
+        {
+            return;
+        }
+        
+        team.AddPlayerToTeamSheet(playerName);
         
         OnTeamDropDownIndexChanged(sender, e);
     }
@@ -241,12 +257,13 @@ public class CreateMatchController : IStatsController
             return;
         }
         
-        if (TeamsAndPlayers.ContainsKey(selectedTeam))
+        Team? team = FindTeam(selectedTeam);
+        if (team != null)
         {
             ListBox teamsListBox = _view.GetTeamListBox();
             teamsListBox.BeginUpdate();
             teamsListBox.Items.Clear();
-            teamsListBox.Items.AddRange(TeamsAndPlayers[selectedTeam].ToArray());
+            teamsListBox.Items.AddRange(team.TeamSheet.ToArray());
             teamsListBox.EndUpdate();
         }
     }
@@ -283,8 +300,24 @@ public class CreateMatchController : IStatsController
     {
         _view.GetTeamDropDown().BeginUpdate();
         _view.GetTeamDropDown().Items.Clear();
-        _view.GetTeamDropDown().Items.AddRange(TeamsAndPlayers.Keys.ToArray());
+        _view.GetTeamDropDown().Items.AddRange(GetTeamNames());
         _view.GetTeamDropDown().EndUpdate();
+    }
+
+    private string[] GetTeamNames()
+    {
+        List<string> teamNames = new List<string>();
+        foreach (var team in _teams)
+        {
+            teamNames.Add(team.TeamName);
+        }
+        
+        return teamNames.ToArray();
+    }
+
+    private Team? FindTeam(string teamName)
+    {
+        return _teams.Find(team => team.TeamName == teamName);
     }
     #endregion
 }
