@@ -54,6 +54,8 @@ partial class CreateMatchView
         AddTeam = new System.Windows.Forms.Button();
         AddTeamTextBox = new System.Windows.Forms.TextBox();
         AddPlayerTextBox = new System.Windows.Forms.TextBox();
+        CreateMatchBtn = new System.Windows.Forms.Button();
+        CancelBtn = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)AwayTeamColorBox).BeginInit();
         SuspendLayout();
@@ -234,7 +236,7 @@ partial class CreateMatchView
         // 
         // AddPlayer
         // 
-        AddPlayer.Location = new System.Drawing.Point(194, 425);
+        AddPlayer.Location = new System.Drawing.Point(486, 465);
         AddPlayer.Name = "AddPlayer";
         AddPlayer.Size = new System.Drawing.Size(104, 23);
         AddPlayer.TabIndex = 19;
@@ -244,7 +246,7 @@ partial class CreateMatchView
         // 
         // AddTeam
         // 
-        AddTeam.Location = new System.Drawing.Point(672, 426);
+        AddTeam.Location = new System.Drawing.Point(488, 437);
         AddTeam.Name = "AddTeam";
         AddTeam.Size = new System.Drawing.Size(104, 23);
         AddTeam.TabIndex = 20;
@@ -254,23 +256,51 @@ partial class CreateMatchView
         // 
         // AddTeamTextBox
         // 
-        AddTeamTextBox.Location = new System.Drawing.Point(488, 425);
+        AddTeamTextBox.Location = new System.Drawing.Point(304, 436);
         AddTeamTextBox.Name = "AddTeamTextBox";
         AddTeamTextBox.Size = new System.Drawing.Size(178, 23);
         AddTeamTextBox.TabIndex = 21;
         // 
         // AddPlayerTextBox
         // 
-        AddPlayerTextBox.Location = new System.Drawing.Point(12, 425);
+        AddPlayerTextBox.Location = new System.Drawing.Point(304, 465);
         AddPlayerTextBox.Name = "AddPlayerTextBox";
         AddPlayerTextBox.Size = new System.Drawing.Size(178, 23);
         AddPlayerTextBox.TabIndex = 22;
+        // 
+        // CreateMatchBtn
+        // 
+        CreateMatchBtn.BackColor = System.Drawing.Color.PaleGreen;
+        CreateMatchBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+        CreateMatchBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+        CreateMatchBtn.Location = new System.Drawing.Point(10, 505);
+        CreateMatchBtn.Name = "CreateMatchBtn";
+        CreateMatchBtn.Size = new System.Drawing.Size(286, 33);
+        CreateMatchBtn.TabIndex = 23;
+        CreateMatchBtn.Text = "Create Match";
+        CreateMatchBtn.UseVisualStyleBackColor = false;
+        CreateMatchBtn.MouseClick += CreateMatchBtn_MouseClick;
+        // 
+        // CancelBtn
+        // 
+        CancelBtn.BackColor = System.Drawing.Color.Tomato;
+        CancelBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+        CancelBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+        CancelBtn.Location = new System.Drawing.Point(490, 505);
+        CancelBtn.Name = "CancelBtn";
+        CancelBtn.Size = new System.Drawing.Size(286, 33);
+        CancelBtn.TabIndex = 24;
+        CancelBtn.Text = "Cancel";
+        CancelBtn.UseVisualStyleBackColor = false;
+        CancelBtn.MouseClick += CancelBtn_MouseClick;
         // 
         // CreateMatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(786, 461);
+        ClientSize = new System.Drawing.Size(786, 546);
+        Controls.Add(CancelBtn);
+        Controls.Add(CreateMatchBtn);
         Controls.Add(AddPlayerTextBox);
         Controls.Add(AddTeamTextBox);
         Controls.Add(AddTeam);
@@ -299,6 +329,10 @@ partial class CreateMatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button CreateMatchBtn;
+
+    private System.Windows.Forms.Button CancelBtn;
 
     private System.Windows.Forms.TextBox AddPlayerTextBox;
 

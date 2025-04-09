@@ -27,6 +27,9 @@ public partial class CreateMatchView : Form, IStatsView
     
     public event EventHandler<MouseEventArgs>? OnAddPlayerClick;
     public event EventHandler<MouseEventArgs>? OnAddTeamClick;
+    
+    public event EventHandler<MouseEventArgs>? OnCreateMatchClick;
+    public event EventHandler<MouseEventArgs>? OnCancelClick;
     #endregion
     
     #region View Items
@@ -170,5 +173,15 @@ public partial class CreateMatchView : Form, IStatsView
     private void AddTeam_MouseClick(object sender, MouseEventArgs e)
     {
         OnAddTeamClick?.Invoke(this, e);
+    }
+
+    private void CreateMatchBtn_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnCreateMatchClick?.Invoke(this, e);
+    }
+
+    private void CancelBtn_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnCancelClick?.Invoke(this, e);
     }
 }

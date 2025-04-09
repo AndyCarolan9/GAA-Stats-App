@@ -1,4 +1,5 @@
-﻿using StatsTracker.Views;
+﻿using StatsTracker.Events;
+using StatsTracker.Views;
 
 namespace StatsTracker.Controller;
 
@@ -6,6 +7,10 @@ public class CreateMatchController : IStatsController
 {
     private CreateMatchView _view;
     private Dictionary<string, List<string>> TeamsAndPlayers = new Dictionary<string, List<string>>();
+    
+    public event EventHandler<TeamSelectedEventArgs>? OnTeamSelected;
+
+    public event EventHandler? OnCancelBtnClick;
 
     public CreateMatchController()
     {
@@ -29,6 +34,10 @@ public class CreateMatchController : IStatsController
         _view.OnTeamDropDownIndexChanged += OnTeamDropDownIndexChanged;
         _view.OnAddPlayerClick += AddPlayerToTeam;
         _view.OnAddTeamClick += AddNewTeamToTeamList;
+        
+        // Confim/Cancel
+        _view.OnCreateMatchClick += OnTeamSelectedClick;
+        _view.OnCancelClick += OnCancelClick;
         
         _view.ShowDialog();
     }
@@ -242,6 +251,32 @@ public class CreateMatchController : IStatsController
         }
     }
     #endregion
+
+    private void OnTeamSelectedClick(object? sender, MouseEventArgs e)
+    {
+        string? homeTeamName = _view.GetHomeTeamDropDown().SelectedItem?.ToString();
+        string? awayTeamName = _view.GetAwayTeamDropDown().SelectedItem?.ToString();
+        string[] homePlayers = _view.GetHomeTeamListBox().Items.Cast<string>().ToArray();
+        string[] awayPlayers = _view.GetAwayTeamListBox().Items.Cast<string>().ToArray();
+
+        if (string.IsNullOrEmpty(homeTeamName) || string.IsNullOrEmpty(awayTeamName))
+        {
+            return;
+        }
+        
+        TeamSelectedEventArgs teamSelectedEventArgs = new TeamSelectedEventArgs();
+        teamSelectedEventArgs.HomeTeamName = homeTeamName;
+        teamSelectedEventArgs.AwayTeamName = awayTeamName;
+        teamSelectedEventArgs.HomePlayers = homePlayers;
+        teamSelectedEventArgs.AwayPlayers = awayPlayers;
+        
+        OnTeamSelected?.Invoke(this, teamSelectedEventArgs);
+    }
+
+    private void OnCancelClick(object? sender, MouseEventArgs e)
+    {
+        OnCancelBtnClick?.Invoke(this, e);
+    }
     
     #region View Method
     private void UpdateTeamDropdown()
