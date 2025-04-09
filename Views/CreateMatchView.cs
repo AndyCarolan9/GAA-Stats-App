@@ -13,10 +13,12 @@ public partial class CreateMatchView : Form, IStatsView
     }
     
     #region Events
+    public event EventHandler OnHomeTeamDropdownChanged;
     public event EventHandler<MouseEventArgs>? OnHomeTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveDownClick;
     
+    public event EventHandler OnAwayTeamDropdownChanged;
     public event EventHandler<MouseEventArgs>? OnAwayTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveDownClick;
@@ -183,5 +185,15 @@ public partial class CreateMatchView : Form, IStatsView
     private void CancelBtn_MouseClick(object sender, MouseEventArgs e)
     {
         OnCancelClick?.Invoke(this, e);
+    }
+
+    private void HomeTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        OnHomeTeamDropdownChanged?.Invoke(this, e);
+    }
+
+    private void AwayTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        OnAwayTeamDropdownChanged?.Invoke(this, e);
     }
 }

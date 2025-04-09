@@ -67,6 +67,7 @@ partial class CreateMatchView
         HomeTeamDropDown.Name = "HomeTeamDropDown";
         HomeTeamDropDown.Size = new System.Drawing.Size(178, 23);
         HomeTeamDropDown.TabIndex = 0;
+        HomeTeamDropDown.SelectedIndexChanged += HomeTeamDropDown_SelectedIndexChanged;
         // 
         // label1
         // 
@@ -195,6 +196,7 @@ partial class CreateMatchView
         AwayTeamDropDown.Name = "AwayTeamDropDown";
         AwayTeamDropDown.Size = new System.Drawing.Size(178, 23);
         AwayTeamDropDown.TabIndex = 8;
+        AwayTeamDropDown.SelectedIndexChanged += AwayTeamDropDown_SelectedIndexChanged;
         // 
         // MoveToHome
         // 

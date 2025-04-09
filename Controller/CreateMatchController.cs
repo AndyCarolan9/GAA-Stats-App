@@ -1,4 +1,4 @@
-using StatsTracker.Classes;
+﻿using StatsTracker.Classes;
 using StatsTracker.Events;
 using StatsTracker.Utils;
 using StatsTracker.Views;
@@ -29,12 +29,14 @@ public class CreateMatchController : IStatsController
         }
         
         // Home Events
+        _view.OnHomeTeamDropdownChanged += HomeTeamDropdownChanged;
         _view.OnHomeTeamColorClick += OnHomeTeamColorClick;
         _view.OnMoveToHomeClick += MovePlayerToHome;
         _view.OnHomeTeamMoveUpClick += OnHomeTeamMoveUpClicked;
         _view.OnHomeTeamMoveDownClick += OnHomeTeamMoveDownClicked;
         
         // Away Events
+        _view.OnAwayTeamDropdownChanged += AwayTeamDropdownChanged;
         _view.OnAwayTeamColorClick += OnAwayTeamColorClick;
         _view.OnMoveToAwayClick += MovePlayerToAway;
         _view.OnAwayTeamMoveUpClick += OnAwayTeamMoveUpClicked;
@@ -58,6 +60,24 @@ public class CreateMatchController : IStatsController
     }
 
     #region Home Events
+
+    private void HomeTeamDropdownChanged(object? sender, EventArgs e)
+    {
+        string? selectedTeamName = _view.GetHomeTeamDropDown().SelectedItem?.ToString();
+        if (selectedTeamName == null)
+        {
+            return;
+        }
+        
+        Team? selectedTeam = FindTeam(selectedTeamName);
+        if (selectedTeam == null)
+        {
+            return;
+        }
+        
+        _view.GetHomeTeamPictureBox().BackColor = selectedTeam.TeamColor;
+    }
+    
     private void OnHomeTeamColorClick(object? sender, MouseEventArgs e)
     {
         if (e.Button == MouseButtons.Left)
@@ -70,6 +90,20 @@ public class CreateMatchController : IStatsController
             {
                 Color selectedColor = colorSelector.Color;
                 homeTeamColorBox.BackColor = selectedColor;
+
+                string? homeTeamName = _view.GetHomeTeamDropDown().SelectedItem?.ToString();
+                if (homeTeamName == null)
+                {
+                    return;
+                }
+                
+                Team? homeTeam = FindTeam(homeTeamName);
+                if (homeTeam == null)
+                {
+                    return;
+                }
+                
+                homeTeam.TeamColor = selectedColor;
             }
         }
     }
@@ -134,6 +168,23 @@ public class CreateMatchController : IStatsController
     #endregion Home Events
     
     #region Away Events
+
+    private void AwayTeamDropdownChanged(object? sender, EventArgs e)
+    {
+        string? selectedTeamName = _view.GetAwayTeamDropDown().SelectedItem?.ToString();
+        if (selectedTeamName == null)
+        {
+            return;
+        }
+        
+        Team? selectedTeam = FindTeam(selectedTeamName);
+        if (selectedTeam == null)
+        {
+            return;
+        }
+        
+        _view.GetAwayTeamPictureBox().BackColor = selectedTeam.TeamColor;
+    }
     private void OnAwayTeamColorClick(object? sender, MouseEventArgs e)
     {
         if (e.Button == MouseButtons.Left)
@@ -146,6 +197,20 @@ public class CreateMatchController : IStatsController
             {
                 Color selectedColor = colorSelector.Color;
                 awayTeamColorBox.BackColor = selectedColor;
+                
+                string? awayTeamName = _view.GetAwayTeamDropDown().SelectedItem?.ToString();
+                if (awayTeamName == null)
+                {
+                    return;
+                }
+                
+                Team? awayTeam = FindTeam(awayTeamName);
+                if (awayTeam == null)
+                {
+                    return;
+                }
+                
+                awayTeam.TeamColor = selectedColor;
             }
         }
     }

@@ -8,8 +8,15 @@ public static class JSONHelper
     {
         using (StreamReader sr = new StreamReader(filePath))
         {
+            var options = new JsonSerializerOptions()
+            {
+                Converters = {
+                    new ColorJsonConverter()
+                }
+            };
+            
             string jsonString = sr.ReadToEnd();
-            T? json = JsonSerializer.Deserialize<T>(jsonString);
+            T? json = JsonSerializer.Deserialize<T>(jsonString, options);
 
             if (json != null)
             {
@@ -24,7 +31,14 @@ public static class JSONHelper
     {
         using (StreamWriter sw = new StreamWriter(filePath))
         {
-            string jsonString = JsonSerializer.Serialize(objectToSave);
+            var options = new JsonSerializerOptions()
+            {
+                Converters = {
+                    new ColorJsonConverter()
+                }
+            };
+            
+            string jsonString = JsonSerializer.Serialize(objectToSave, options);
             sw.Write(jsonString);
         }
     }
