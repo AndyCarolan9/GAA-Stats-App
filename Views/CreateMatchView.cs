@@ -17,11 +17,13 @@ public partial class CreateMatchView : Form, IStatsView
     public event EventHandler<MouseEventArgs>? OnHomeTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnHomeTeamMoveDownClick;
+    public event EventHandler<MouseEventArgs>? OnHomeTeamRemovePlayerClick;
     
     public event EventHandler OnAwayTeamDropdownChanged;
     public event EventHandler<MouseEventArgs>? OnAwayTeamColorClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveUpClick;
     public event EventHandler<MouseEventArgs>? OnAwayTeamMoveDownClick;
+    public event EventHandler<MouseEventArgs>? OnAwayTeamRemovePlayerClick;
     
     public event EventHandler? OnTeamDropDownIndexChanged;
     public event EventHandler<MouseEventArgs>? OnMoveToHomeClick;
@@ -195,5 +197,15 @@ public partial class CreateMatchView : Form, IStatsView
     private void AwayTeamDropDown_SelectedIndexChanged(object sender, EventArgs e)
     {
         OnAwayTeamDropdownChanged?.Invoke(this, e);
+    }
+
+    private void HomeRemovePlayer_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnHomeTeamRemovePlayerClick?.Invoke(this, e);
+    }
+
+    private void AwayRemovePlayer_MouseClick(object sender, MouseEventArgs e)
+    {
+        OnAwayTeamRemovePlayerClick?.Invoke(this, e);
     }
 }

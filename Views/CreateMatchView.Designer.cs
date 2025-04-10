@@ -56,6 +56,8 @@ partial class CreateMatchView
         AddPlayerTextBox = new System.Windows.Forms.TextBox();
         CreateMatchBtn = new System.Windows.Forms.Button();
         CancelBtn = new System.Windows.Forms.Button();
+        HomeRemovePlayer = new System.Windows.Forms.Button();
+        AwayRemovePlayer = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)AwayTeamColorBox).BeginInit();
         SuspendLayout();
@@ -296,11 +298,33 @@ partial class CreateMatchView
         CancelBtn.UseVisualStyleBackColor = false;
         CancelBtn.MouseClick += CancelBtn_MouseClick;
         // 
+        // HomeRemovePlayer
+        // 
+        HomeRemovePlayer.Location = new System.Drawing.Point(194, 187);
+        HomeRemovePlayer.Name = "HomeRemovePlayer";
+        HomeRemovePlayer.Size = new System.Drawing.Size(104, 23);
+        HomeRemovePlayer.TabIndex = 25;
+        HomeRemovePlayer.Text = "Remove Player";
+        HomeRemovePlayer.UseVisualStyleBackColor = true;
+        HomeRemovePlayer.MouseClick += HomeRemovePlayer_MouseClick;
+        // 
+        // AwayRemovePlayer
+        // 
+        AwayRemovePlayer.Location = new System.Drawing.Point(490, 187);
+        AwayRemovePlayer.Name = "AwayRemovePlayer";
+        AwayRemovePlayer.Size = new System.Drawing.Size(104, 23);
+        AwayRemovePlayer.TabIndex = 26;
+        AwayRemovePlayer.Text = "Remove Player";
+        AwayRemovePlayer.UseVisualStyleBackColor = true;
+        AwayRemovePlayer.MouseClick += AwayRemovePlayer_MouseClick;
+        // 
         // CreateMatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(786, 546);
+        Controls.Add(AwayRemovePlayer);
+        Controls.Add(HomeRemovePlayer);
         Controls.Add(CancelBtn);
         Controls.Add(CreateMatchBtn);
         Controls.Add(AddPlayerTextBox);
@@ -331,6 +355,9 @@ partial class CreateMatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button HomeRemovePlayer;
+    private System.Windows.Forms.Button AwayRemovePlayer;
 
     private System.Windows.Forms.Button CreateMatchBtn;
 

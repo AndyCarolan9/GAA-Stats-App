@@ -35,6 +35,7 @@ public class CreateMatchController : IStatsController
         _view.OnMoveToHomeClick += MovePlayerToHome;
         _view.OnHomeTeamMoveUpClick += OnHomeTeamMoveUpClicked;
         _view.OnHomeTeamMoveDownClick += OnHomeTeamMoveDownClicked;
+        _view.OnHomeTeamRemovePlayerClick += RemovePlayerFromHomeTeam;
         
         // Away Events
         _view.OnAwayTeamDropdownChanged += AwayTeamDropdownChanged;
@@ -42,6 +43,7 @@ public class CreateMatchController : IStatsController
         _view.OnMoveToAwayClick += MovePlayerToAway;
         _view.OnAwayTeamMoveUpClick += OnAwayTeamMoveUpClicked;
         _view.OnAwayTeamMoveDownClick += OnAwayTeamMoveDownClicked;
+        _view.OnAwayTeamRemovePlayerClick += RemovePlayerFromAwayTeam;
         
         // Team Events
         _view.OnTeamDropDownIndexChanged += OnTeamDropDownIndexChanged;
@@ -166,6 +168,27 @@ public class CreateMatchController : IStatsController
         homeTeamListBox.SelectedItem = selectedItem;
         homeTeamListBox.EndUpdate();
     }
+
+    private void RemovePlayerFromHomeTeam(object? sender, MouseEventArgs e)
+    {
+        ListBox homeTeamListBox = _view.GetHomeTeamListBox();
+        object? selectedItem = homeTeamListBox.SelectedItem;
+        if (selectedItem == null)
+        {
+            return;
+        }
+        
+        int index = homeTeamListBox.Items.IndexOf(selectedItem);
+        if (index == -1)
+        {
+            return;
+        }
+        
+        homeTeamListBox.BeginUpdate();
+        homeTeamListBox.Items.RemoveAt(index);
+        homeTeamListBox.SelectedItem = null;
+        homeTeamListBox.EndUpdate();
+    }
     #endregion Home Events
     
     #region Away Events
@@ -271,6 +294,27 @@ public class CreateMatchController : IStatsController
         awayTeamListBox.Items.RemoveAt(index);
         awayTeamListBox.Items.Insert(index + 1, selectedItem);
         awayTeamListBox.SelectedItem = selectedItem;
+        awayTeamListBox.EndUpdate();
+    }
+    
+    private void RemovePlayerFromAwayTeam(object? sender, MouseEventArgs e)
+    {
+        ListBox awayTeamListBox = _view.GetAwayTeamListBox();
+        object? selectedItem = awayTeamListBox.SelectedItem;
+        if (selectedItem == null)
+        {
+            return;
+        }
+        
+        int index = awayTeamListBox.Items.IndexOf(selectedItem);
+        if (index == -1)
+        {
+            return;
+        }
+        
+        awayTeamListBox.BeginUpdate();
+        awayTeamListBox.Items.RemoveAt(index);
+        awayTeamListBox.SelectedItem = null;
         awayTeamListBox.EndUpdate();
     }
     #endregion Away Events
