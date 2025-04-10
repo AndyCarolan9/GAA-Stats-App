@@ -53,8 +53,6 @@ public class CreateMatchController : IStatsController
         // Confim/Cancel
         _view.OnCreateMatchClick += OnTeamSelectedClick;
         _view.OnCancelClick += OnCancelClick;
-        
-        _view.ShowDialog();
     }
     
     public IStatsView GetView()
@@ -396,6 +394,8 @@ public class CreateMatchController : IStatsController
         teamSelectedEventArgs.AwayTeamName = awayTeamName;
         teamSelectedEventArgs.HomePlayers = homePlayers;
         teamSelectedEventArgs.AwayPlayers = awayPlayers;
+        teamSelectedEventArgs.HomeTeamColor = _view.GetHomeTeamPictureBox().BackColor;
+        teamSelectedEventArgs.AwayTeamColor = _view.GetAwayTeamPictureBox().BackColor;
         
         JSONHelper.SaveToJsonFile(_filePath, _teams.ToArray());
         

@@ -9,4 +9,8 @@ public class TeamSelectedEventArgs : EventArgs
     public string[] HomePlayers { get; set; }
     
     public string[] AwayPlayers { get; set; }
+    
+    public Color HomeTeamColor { get; set; }
+    
+    public Color AwayTeamColor { get; set; }
 }

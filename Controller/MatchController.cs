@@ -16,9 +16,21 @@ public class MatchController : IStatsController
     private Match _match;
     private MatchView _view;
     private PlayerSelectWindow? _selectWindow = null;
+    private CreateMatchController? _createMatchController = null;
 
     private Timer? _timeDisplayTimer;
 
+    public MatchController()
+    {
+        _match = new Match();
+        _view = new MatchView();
+        
+        BindViewEvents();
+        BindTimerButtons();
+        SetTeamDataInView();
+        SetupStatisticBars();
+    }
+    
     public MatchController(Match match)
     {
         _match = match;
@@ -41,6 +53,7 @@ public class MatchController : IStatsController
     private void BindViewEvents()
     {
         _view.OnStatEntered += OnStatEntered;
+        _view.OnNewGamePressed += OpenCreateMatchMenu;
     }
 
     /// <summary>
@@ -222,8 +235,16 @@ public class MatchController : IStatsController
     #region View Displays
     private void SetTeamDataInView()
     {
-        _view.GetHomeTeamNameLabel().Text = _match.GetHomeTeam().TeamName;
-        _view.GetAwayTeamNameLabel().Text = _match.GetAwayTeam().TeamName;
+        string homeTeamName = string.IsNullOrEmpty(_match.GetHomeTeam().TeamName)
+            ? "Home Team"
+            : _match.GetHomeTeam().TeamName;
+        
+        string awayTeamName = string.IsNullOrEmpty(_match.GetAwayTeam().TeamName) 
+            ? "Away Team" 
+            : _match.GetAwayTeam().TeamName;
+        
+        _view.GetHomeTeamNameLabel().Text = homeTeamName;
+        _view.GetAwayTeamNameLabel().Text = awayTeamName;
     }
 
     private void SetupStatisticBars()
@@ -317,6 +338,29 @@ public class MatchController : IStatsController
         }
         
         _view.GetFreeStatisticBar().UpdateValues(frees.HomeTeamValue, frees.AwayTeamValue);
+    }
+    #endregion
+    
+    #region Create Match
+    private void OpenCreateMatchMenu(object? sender, EventArgs e)
+    {
+        _createMatchController = new CreateMatchController();
+        _createMatchController.OnTeamSelected += CreateNewMatch;
+        _createMatchController.OnCancelBtnClick += CloseCreateMatchMenu;
+
+        _createMatchController.GetView().GetForm().ShowDialog();
+    }
+
+    private void CreateNewMatch(object? sender, TeamSelectedEventArgs e)
+    {
+        _match =  new Match(new Team(e.HomeTeamName, e.HomeTeamColor, e.HomePlayers.ToList()), new Team(e.AwayTeamName, e.AwayTeamColor, e.AwayPlayers.ToList()));
+        SetTeamDataInView();
+        CloseCreateMatchMenu(sender, e);
+    }
+
+    private void CloseCreateMatchMenu(object? sender, EventArgs e)
+    {
+        _createMatchController?.GetView().GetForm().Close();
     }
     #endregion
 }
