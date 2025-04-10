@@ -10,6 +10,8 @@ public class CreateMatchController : IStatsController
     private CreateMatchView _view;
     private List<Team> _teams = new List<Team>();
     
+    private readonly string _filePath = "C:\\Users\\Andy Carolan\\source\\repos\\GlenEmmets\\StatsTracker\\bin\\Teams.json";
+    
     public event EventHandler<TeamSelectedEventArgs>? OnTeamSelected;
 
     public event EventHandler? OnCancelBtnClick;
@@ -18,8 +20,7 @@ public class CreateMatchController : IStatsController
     {
         _view = new CreateMatchView();
 
-        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(
-            "C:\\Users\\Andy Carolan\\source\\repos\\GlenEmmets\\StatsTracker\\bin\\Teams.json");
+        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(_filePath);
         if (teams != null)
         {
             _teams.AddRange(teams);
@@ -351,6 +352,8 @@ public class CreateMatchController : IStatsController
         teamSelectedEventArgs.AwayTeamName = awayTeamName;
         teamSelectedEventArgs.HomePlayers = homePlayers;
         teamSelectedEventArgs.AwayPlayers = awayPlayers;
+        
+        JSONHelper.SaveToJsonFile(_filePath, _teams.ToArray());
         
         OnTeamSelected?.Invoke(this, teamSelectedEventArgs);
     }
