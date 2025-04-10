@@ -19,6 +19,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnTimerStartStopPressed;
     
     public event EventHandler? OnTimerPausePressed;
+    
+    public event EventHandler? OnNewGamePressed;
 
     private Point _inputLocation = new Point(0, 0);
     
@@ -356,5 +358,10 @@ public partial class MatchView : Form, IStatsView
     private void Pause_MouseClick(object sender, MouseEventArgs e)
     {
         OnTimerPausePressed?.Invoke(sender, e);
+    }
+
+    private void newToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        OnNewGamePressed?.Invoke(sender, e);
     }
 }

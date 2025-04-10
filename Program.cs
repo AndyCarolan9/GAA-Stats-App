@@ -1,5 +1,7 @@
+using StatsTracker.Classes;
 using StatsTracker.Controller;
 using StatsTracker.Model;
+using StatsTracker.Utils;
 using StatsTracker.Views;
 
 namespace StatsTracker;
@@ -16,8 +18,7 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         
-        Match match = new Match();
-        MatchController controller = new MatchController(match);
+        MatchController controller = new MatchController();
         
         Application.Run(controller.GetView().GetForm());
     }

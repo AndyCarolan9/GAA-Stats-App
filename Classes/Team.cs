@@ -16,6 +16,14 @@ public class Team
         CurrentTeam = new string[15];
     }
 
+    public Team(string name)
+    {
+        TeamName = name;
+        TeamColor = new Color();
+        TeamSheet = new List<string>();
+        CurrentTeam = new string[15];
+    }
+
     public Team(string teamName, Color teamColor, List<string> teamSheet)
     {
         TeamName = teamName;
