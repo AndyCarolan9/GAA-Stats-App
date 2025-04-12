@@ -240,13 +240,13 @@ public class MatchController : IStatsController
     #region View Displays
     private void SetTeamDataInView()
     {
-        string homeTeamName = string.IsNullOrEmpty(_match.GetHomeTeam().TeamName)
+        string homeTeamName = string.IsNullOrEmpty(_match.HomeTeam.TeamName)
             ? "Home Team"
-            : _match.GetHomeTeam().TeamName;
+            : _match.HomeTeam.TeamName;
         
-        string awayTeamName = string.IsNullOrEmpty(_match.GetAwayTeam().TeamName) 
+        string awayTeamName = string.IsNullOrEmpty(_match.AwayTeam.TeamName) 
             ? "Away Team" 
-            : _match.GetAwayTeam().TeamName;
+            : _match.AwayTeam.TeamName;
         
         _view.GetHomeTeamNameLabel().Text = homeTeamName;
         _view.GetAwayTeamNameLabel().Text = awayTeamName;
@@ -264,7 +264,7 @@ public class MatchController : IStatsController
     private void SetupStatisticBar(StatisticBar statisticBar)
     {
         statisticBar.InitialiseValues();
-        statisticBar.SetTeamColors(_match.GetHomeTeam().TeamColor, _match.GetAwayTeam().TeamColor);
+        statisticBar.SetTeamColors(_match.HomeTeam.TeamColor, _match.AwayTeam.TeamColor);
     }
     
     private void UpdateView()

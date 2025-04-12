@@ -57,17 +57,14 @@ public class Match
     }
     #endregion
     
-    #region Getters
+    #region Properties
+    public string MatchName => _matchName;
+    
+    public List<MatchEvent> MatchEvents => _matchEvents;
+    
+    public Team HomeTeam => _homeTeam;
 
-    public Team GetHomeTeam()
-    {
-        return _homeTeam;
-    }
-
-    public Team GetAwayTeam()
-    {
-        return _awayTeam;
-    }
+    public Team AwayTeam => _awayTeam;
     #endregion
     
     #region Methods
