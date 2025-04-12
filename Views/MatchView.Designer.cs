@@ -46,11 +46,6 @@ partial class MatchView
         toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
         saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-        printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +161,7 @@ partial class MatchView
         // 
         // fileToolStripMenuItem
         // 
-        fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, toolStripSeparator, saveToolStripMenuItem, saveAsToolStripMenuItem, toolStripSeparator1, printToolStripMenuItem, printPreviewToolStripMenuItem, toolStripSeparator2, exitToolStripMenuItem });
+        fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, toolStripSeparator, saveToolStripMenuItem, saveAsToolStripMenuItem });
         fileToolStripMenuItem.Name = "fileToolStripMenuItem";
         fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
         fileToolStripMenuItem.Text = "&File";
@@ -213,39 +208,6 @@ partial class MatchView
         saveAsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
         saveAsToolStripMenuItem.Text = "Save &As";
         saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
-        // 
-        // toolStripSeparator1
-        // 
-        toolStripSeparator1.Name = "toolStripSeparator1";
-        toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
-        // 
-        // printToolStripMenuItem
-        // 
-        printToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("printToolStripMenuItem.Image"));
-        printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        printToolStripMenuItem.Name = "printToolStripMenuItem";
-        printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
-        printToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-        printToolStripMenuItem.Text = "&Print";
-        // 
-        // printPreviewToolStripMenuItem
-        // 
-        printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("printPreviewToolStripMenuItem.Image"));
-        printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-        printPreviewToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-        printPreviewToolStripMenuItem.Text = "Print Pre&view";
-        // 
-        // toolStripSeparator2
-        // 
-        toolStripSeparator2.Name = "toolStripSeparator2";
-        toolStripSeparator2.Size = new System.Drawing.Size(187, 6);
-        // 
-        // exitToolStripMenuItem
-        // 
-        exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-        exitToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-        exitToolStripMenuItem.Text = "E&xit";
         // 
         // editToolStripMenuItem
         // 
@@ -772,11 +734,6 @@ partial class MatchView
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-    private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
