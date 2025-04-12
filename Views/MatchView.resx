@@ -396,29 +396,6 @@
         zCcC79+zrESpkHfC/KjAlESpkHfCfFaAErX4EviHRAcu5pVEM6Pl6wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="printToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVFhH7ZJBDoMgEEU9Qs/k3qt4hiZ6AI/mDTyAC+yC
-        2dIM6ZjmtxOiQCoNk7yFBv5/oE2jDBG5lGB+cDAgFswPjmxs2zaK/xHYzOMQVaAKVIGyBIwxN2vtnYg2
-        2ZBa4I2Nu7hzLyei+cvCXALC7CVeJ3frurppmlzXdfvmHPR977u4k7v5W/tr53JcnAuWkM+x/2xy8mEY
-        P64zFZwtEsuy+N7ov/0o0iO9qgA+p6IcgVyUJyDvz6LlXVdAA4NC4H7kegIasQKYh/xeQBsUOEuwSJvL
-        CKQC84ODAbFgvswTDOtFjgCC36oAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="printPreviewToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGTSURBVFhH3ZS/SsRAEMbzBOIT+AY+giCpTWWrVQq7gPXV
-        Nid49wAWCkIqQa66KrUWgkXA0kosIuT/plyZhVnC5JJsdteALnyw2dnM95vdSRynZzDGuAW9pWm6T3Mr
-        jR3JdKUHgQlc19WS53k8jmN9CFMAYwgKkKW5knD/cnltBmEKAHMjCBsARhC2ALQhbAIMQVBfOWwDUAjM
-        T33lMAUY0/8FGNPfAwiCgIdhyMuyEirykudZ0UmsqskAfaqqqpNcRUoAjLE1blg8vPCDi5A7p7dCMIc1
-        jFODMY0CNE1zjMHDy0dpTAUxnZMYBWCMPWHlaHZyteXb1w8hmOM6nsSUnlABEIG983tpjmsohIA98FwW
-        ZceoT0oAX9+ZrBKqpgCwhnEBUKpfw2SA5/fP+QFAR4vN/FdQ1/UdNWk3IZzGrzVh2/xsHUmTPln9DIfM
-        oWK8DhAcu9Uf0ZA5PGOMamrlvQBj5kmS8CiKRKeDKTTclDunUgJoV+77vnxpdbMyVgeAXgE9dnzBtiQA
-        bcK5tfMznBPoB/vY8aU1slQTAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="cutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -455,4 +432,10 @@
         5wV+tu57GqrT861mkQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="SaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>268, 17</value>
+  </metadata>
+  <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>399, 17</value>
+  </metadata>
 </root>

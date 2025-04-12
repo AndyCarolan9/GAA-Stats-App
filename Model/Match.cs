@@ -11,14 +11,6 @@ public class Match
 
     private Stopwatch _matchTimer;
 
-    private List<MatchEvent> _matchEvents;
-
-    private string _matchName;
-    
-    private Team _homeTeam;
-    
-    private Team _awayTeam;
-
     private int _half = 0;
 
     private bool _isHomeTeamInPossession = false;
@@ -31,43 +23,41 @@ public class Match
 
     public Match()
     {
-        _matchName = Guid.NewGuid().ToString();
-        _matchEvents = new List<MatchEvent>();
+        MatchName = Guid.NewGuid().ToString();
+        MatchEvents = new List<MatchEvent>();
         _matchTimer = new Stopwatch();
-        _homeTeam = new Team();
-        _awayTeam = new Team();
+        HomeTeam = new Team();
+        AwayTeam = new Team();
     }
 
     public Match(Team homeTeam, Team awayTeam)
     {
-        _matchName = Guid.NewGuid().ToString();
-        _matchEvents = new List<MatchEvent>();
+        MatchName = Guid.NewGuid().ToString();
+        MatchEvents = new List<MatchEvent>();
         _matchTimer = new Stopwatch();
-        _homeTeam = homeTeam;
-        _awayTeam = awayTeam;
+        HomeTeam = homeTeam;
+        AwayTeam = awayTeam;
     }
 
     public Match(Team homeTeam, Team awayTeam, string matchName, List<MatchEvent> matchEvents)
     {
-        _homeTeam = homeTeam;
-        _awayTeam = awayTeam;
-        _matchName = matchName;
-        _matchEvents = matchEvents;
+        HomeTeam = homeTeam;
+        AwayTeam = awayTeam;
+        MatchName = matchName;
+        MatchEvents = matchEvents;
         _matchTimer = new Stopwatch();
     }
     #endregion
     
-    #region Getters
+    #region Properties
+    public string MatchName { get; set; }
 
-    public Team GetHomeTeam()
-    {
-        return _homeTeam;
-    }
+    public List<MatchEvent> MatchEvents { get; set; }
 
-    public Team GetAwayTeam()
-    {
-        return _awayTeam;
-    }
+    public Team HomeTeam { get; set; }
+
+    public Team AwayTeam { get; set; }
+
     #endregion
     
     #region Methods
@@ -137,7 +127,7 @@ public class Match
     #region Event Methods
     public void AddEvent(MatchEvent matchEvent)
     {
-        _matchEvents.Add(matchEvent);
+        MatchEvents.Add(matchEvent);
         if (matchEvent.Type.IsTurnoverEvent())
         {
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
@@ -146,7 +136,7 @@ public class Match
 
     public void RemoveEvent(MatchEvent matchEvent)
     {
-        _matchEvents.Remove(matchEvent);
+        MatchEvents.Remove(matchEvent);
     }
 
     public void AddEvent(InputStatEventArgs statArgs)
@@ -165,7 +155,7 @@ public class Match
         
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.Team.TeamName, _half);
-        _matchEvents.Add(matchEvent);
+        MatchEvents.Add(matchEvent);
 
         if (statArgs.EventType.IsTurnoverEvent())
         {
@@ -177,7 +167,7 @@ public class Match
     {
         var matchEvent = new ShotEvent(shotArgs.Location, shotArgs.Player, _matchTimer.ElapsedMilliseconds,
             shotArgs.EventType, shotArgs.Team.TeamName, _half, shotArgs.ActionType, shotArgs.ResultType);
-        _matchEvents.Add(matchEvent);
+        MatchEvents.Add(matchEvent);
 
         if (shotArgs.IsTurnedOver)
         {
@@ -189,7 +179,7 @@ public class Match
     {
         var matchEvent = new KickOutEvent(kickOutEventArgs.Location, kickOutEventArgs.Player, _matchTimer.ElapsedMilliseconds,
             kickOutEventArgs.EventType, kickOutEventArgs.Team.TeamName, _half, kickOutEventArgs.ResultType);
-        _matchEvents.Add(matchEvent);
+        MatchEvents.Add(matchEvent);
 
         if (!kickOutEventArgs.ResultType.IsKickOutWon())
         {
@@ -213,33 +203,33 @@ public class Match
     {
         if (_isHomeTeamInPossession)
         {
-            return _homeTeam;
+            return HomeTeam;
         }
         
-        return _awayTeam;
+        return AwayTeam;
     }
 
     public Team GetDefendingTeam()
     {
         if (_isHomeTeamInPossession)
         {
-            return _awayTeam;
+            return AwayTeam;
         }
         
-        return _homeTeam;
+        return HomeTeam;
     }
     #endregion
     
     #region Statistic Methods
     public StatisticPair GetStatisticForEvent(EventType eventType)
     {
-        List<MatchEvent> events = _matchEvents.FindAll(matchEvent => matchEvent.Type == eventType);
+        List<MatchEvent> events = MatchEvents.FindAll(matchEvent => matchEvent.Type == eventType);
         return GetStatisticPairForEvent(events);
     }
 
     public StatisticPair GetStatisticForShotResult(ShotResultType resultType)
     {
-        List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
+        List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
         {
             if (matchEvent is ShotEvent shotEvent)
             {
@@ -253,7 +243,7 @@ public class Match
 
     public StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType)
     {
-        List<MatchEvent> events = _matchEvents.FindAll(matchEvent =>
+        List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
         {
             if (matchEvent is KickOutEvent kickOutEvent)
             {
@@ -268,14 +258,14 @@ public class Match
 
     private StatisticPair GetStatisticPairByPredicate(Predicate<MatchEvent> predicate)
     {
-        List<MatchEvent> events = _matchEvents.FindAll(predicate);
+        List<MatchEvent> events = MatchEvents.FindAll(predicate);
         return GetStatisticPairForEvent(events);
     }
 
     private StatisticPair GetStatisticPairForEvent(List<MatchEvent> matchEvents)
     {
-        int homeCount = matchEvents.Count(matchEvent => matchEvent.TeamName == _homeTeam.TeamName);
-        int awayCount = matchEvents.Count(matchEvent => matchEvent.TeamName == _awayTeam.TeamName);
+        int homeCount = matchEvents.Count(matchEvent => matchEvent.TeamName == HomeTeam.TeamName);
+        int awayCount = matchEvents.Count(matchEvent => matchEvent.TeamName == AwayTeam.TeamName);
 
         return new StatisticPair(homeCount, awayCount);
     }

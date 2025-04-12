@@ -2,6 +2,7 @@
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
+using StatsTracker.Utils;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
 using Timer = System.Windows.Forms.Timer;
@@ -19,6 +20,8 @@ public class MatchController : IStatsController
     private CreateMatchController? _createMatchController = null;
 
     private Timer? _timeDisplayTimer;
+
+    private string? _filePath;
 
     public MatchController()
     {
@@ -54,6 +57,9 @@ public class MatchController : IStatsController
     {
         _view.OnStatEntered += OnStatEntered;
         _view.OnNewGamePressed += OpenCreateMatchMenu;
+        _view.OnSaveGamePressed += SaveGame;
+        _view.OnSaveAsGamePressed += SaveGameAsJson;
+        _view.OnOpenGamePressed += OpenGame;
     }
 
     /// <summary>
@@ -235,13 +241,13 @@ public class MatchController : IStatsController
     #region View Displays
     private void SetTeamDataInView()
     {
-        string homeTeamName = string.IsNullOrEmpty(_match.GetHomeTeam().TeamName)
+        string homeTeamName = string.IsNullOrEmpty(_match.HomeTeam.TeamName)
             ? "Home Team"
-            : _match.GetHomeTeam().TeamName;
+            : _match.HomeTeam.TeamName;
         
-        string awayTeamName = string.IsNullOrEmpty(_match.GetAwayTeam().TeamName) 
+        string awayTeamName = string.IsNullOrEmpty(_match.AwayTeam.TeamName) 
             ? "Away Team" 
-            : _match.GetAwayTeam().TeamName;
+            : _match.AwayTeam.TeamName;
         
         _view.GetHomeTeamNameLabel().Text = homeTeamName;
         _view.GetAwayTeamNameLabel().Text = awayTeamName;
@@ -259,7 +265,7 @@ public class MatchController : IStatsController
     private void SetupStatisticBar(StatisticBar statisticBar)
     {
         statisticBar.InitialiseValues();
-        statisticBar.SetTeamColors(_match.GetHomeTeam().TeamColor, _match.GetAwayTeam().TeamColor);
+        statisticBar.SetTeamColors(_match.HomeTeam.TeamColor, _match.AwayTeam.TeamColor);
     }
     
     private void UpdateView()
@@ -355,12 +361,73 @@ public class MatchController : IStatsController
     {
         _match =  new Match(new Team(e.HomeTeamName, e.HomeTeamColor, e.HomePlayers.ToList()), new Team(e.AwayTeamName, e.AwayTeamColor, e.AwayPlayers.ToList()));
         SetTeamDataInView();
+        _filePath = null;
+        SetupStatisticBars();
         CloseCreateMatchMenu(sender, e);
     }
 
     private void CloseCreateMatchMenu(object? sender, EventArgs e)
     {
         _createMatchController?.GetView().GetForm().Close();
+    }
+    #endregion
+    
+    #region Save/Open Game
+    private void SaveGame(object? sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(_filePath))
+        {
+            SaveGameAsJson(sender, e);
+            return;
+        }
+        
+        JSONHelper.SaveToJsonFile(_filePath, _match);
+    }
+
+    private void SaveGameAsJson(object? sender, EventArgs e)
+    {
+        SaveFileDialog saveDialog = _view.GetSaveFileDialog();
+        saveDialog.Filter = "JSON files (*.json)|*.json";
+        saveDialog.Title = "Save Game As JSON";
+
+        if (saveDialog.ShowDialog() == DialogResult.OK)
+        {
+            if (string.IsNullOrEmpty(saveDialog.FileName))
+            {
+                return;
+            }
+            
+            _filePath = saveDialog.FileName;
+            
+            JSONHelper.SaveToJsonFile(_filePath, _match);
+        }
+    }
+
+    private void OpenGame(object? sender, EventArgs e)
+    {
+        OpenFileDialog openFileDialog = _view.GetOpenFileDialog();
+        openFileDialog.Filter = "JSON files (*.json)|*.json";
+        openFileDialog.Title = "Open Game";
+
+        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            if (string.IsNullOrEmpty(openFileDialog.FileName))
+            {
+                return;
+            }
+            
+            _filePath = openFileDialog.FileName;
+            
+            Match? loadedMatch = JSONHelper.LoadFromJsonFile<Match>(_filePath);
+            if (loadedMatch == null)
+            {
+                return;
+            }
+            
+            _match = loadedMatch;
+            SetTeamDataInView();
+            SetupStatisticBars();
+        }
     }
     #endregion
 }
