@@ -59,6 +59,7 @@ public class MatchController : IStatsController
         _view.OnNewGamePressed += OpenCreateMatchMenu;
         _view.OnSaveGamePressed += SaveGame;
         _view.OnSaveAsGamePressed += SaveGameAsJson;
+        _view.OnOpenGamePressed += OpenGame;
     }
 
     /// <summary>
@@ -371,7 +372,7 @@ public class MatchController : IStatsController
     }
     #endregion
     
-    #region Save Game
+    #region Save/Open Game
     private void SaveGame(object? sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(_filePath))
@@ -399,6 +400,33 @@ public class MatchController : IStatsController
             _filePath = saveDialog.FileName;
             
             JSONHelper.SaveToJsonFile(_filePath, _match);
+        }
+    }
+
+    private void OpenGame(object? sender, EventArgs e)
+    {
+        OpenFileDialog openFileDialog = _view.GetOpenFileDialog();
+        openFileDialog.Filter = "JSON files (*.json)|*.json";
+        openFileDialog.Title = "Open Game";
+
+        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            if (string.IsNullOrEmpty(openFileDialog.FileName))
+            {
+                return;
+            }
+            
+            _filePath = openFileDialog.FileName;
+            
+            Match? loadedMatch = JSONHelper.LoadFromJsonFile<Match>(_filePath);
+            if (loadedMatch == null)
+            {
+                return;
+            }
+            
+            _match = loadedMatch;
+            SetTeamDataInView();
+            SetupStatisticBars();
         }
     }
     #endregion

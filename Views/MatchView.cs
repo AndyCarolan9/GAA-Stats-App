@@ -25,6 +25,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnSaveGamePressed; 
     
     public event EventHandler? OnSaveAsGamePressed; 
+    
+    public event EventHandler? OnOpenGamePressed; 
 
     private Point _inputLocation = new Point(0, 0);
     
@@ -131,6 +133,11 @@ public partial class MatchView : Form, IStatsView
     public SaveFileDialog GetSaveFileDialog()
     {
         return SaveFileDialog;
+    }
+
+    public OpenFileDialog GetOpenFileDialog()
+    {
+        return OpenFileDialog;
     }
     #endregion
     
@@ -382,5 +389,10 @@ public partial class MatchView : Form, IStatsView
     private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         OnSaveAsGamePressed?.Invoke(sender, e);
+    }
+
+    private void openToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        OnOpenGamePressed?.Invoke(sender, e);
     }
 }
