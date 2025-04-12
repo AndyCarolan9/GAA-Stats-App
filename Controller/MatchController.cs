@@ -361,6 +361,7 @@ public class MatchController : IStatsController
         _match =  new Match(new Team(e.HomeTeamName, e.HomeTeamColor, e.HomePlayers.ToList()), new Team(e.AwayTeamName, e.AwayTeamColor, e.AwayPlayers.ToList()));
         SetTeamDataInView();
         _filePath = null;
+        SetupStatisticBars();
         CloseCreateMatchMenu(sender, e);
     }
 
