@@ -102,6 +102,7 @@ partial class MatchView
         MinutesLabel = new System.Windows.Forms.Label();
         label5 = new System.Windows.Forms.Label();
         SecondsLabel = new System.Windows.Forms.Label();
+        SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -201,12 +202,14 @@ partial class MatchView
         saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
         saveToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
         saveToolStripMenuItem.Text = "&Save";
+        saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
         // 
         // saveAsToolStripMenuItem
         // 
         saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
         saveAsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
         saveAsToolStripMenuItem.Text = "Save &As";
+        saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
         // 
         // toolStripSeparator1
         // 
@@ -252,20 +255,20 @@ partial class MatchView
         // 
         undoToolStripMenuItem.Name = "undoToolStripMenuItem";
         undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z));
-        undoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         undoToolStripMenuItem.Text = "&Undo";
         // 
         // redoToolStripMenuItem
         // 
         redoToolStripMenuItem.Name = "redoToolStripMenuItem";
         redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y));
-        redoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         redoToolStripMenuItem.Text = "&Redo";
         // 
         // toolStripSeparator3
         // 
         toolStripSeparator3.Name = "toolStripSeparator3";
-        toolStripSeparator3.Size = new System.Drawing.Size(181, 6);
+        toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
         // 
         // cutToolStripMenuItem
         // 
@@ -273,7 +276,7 @@ partial class MatchView
         cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         cutToolStripMenuItem.Name = "cutToolStripMenuItem";
         cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X));
-        cutToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         cutToolStripMenuItem.Text = "Cu&t";
         // 
         // copyToolStripMenuItem
@@ -282,7 +285,7 @@ partial class MatchView
         copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         copyToolStripMenuItem.Name = "copyToolStripMenuItem";
         copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C));
-        copyToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         copyToolStripMenuItem.Text = "&Copy";
         // 
         // pasteToolStripMenuItem
@@ -291,18 +294,18 @@ partial class MatchView
         pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
         pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V));
-        pasteToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         pasteToolStripMenuItem.Text = "&Paste";
         // 
         // toolStripSeparator4
         // 
         toolStripSeparator4.Name = "toolStripSeparator4";
-        toolStripSeparator4.Size = new System.Drawing.Size(181, 6);
+        toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
         // 
         // selectAllToolStripMenuItem
         // 
         selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-        selectAllToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+        selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         selectAllToolStripMenuItem.Text = "Select &All";
         // 
         // toolsToolStripMenuItem
@@ -700,6 +703,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.SaveFileDialog SaveFileDialog;
 
     private System.Windows.Forms.Label SecondsLabel;
 

@@ -21,6 +21,10 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnTimerPausePressed;
     
     public event EventHandler? OnNewGamePressed;
+    
+    public event EventHandler? OnSaveGamePressed; 
+    
+    public event EventHandler? OnSaveAsGamePressed; 
 
     private Point _inputLocation = new Point(0, 0);
     
@@ -122,6 +126,11 @@ public partial class MatchView : Form, IStatsView
     public Button GetPauseButton()
     {
         return Pause;
+    }
+
+    public SaveFileDialog GetSaveFileDialog()
+    {
+        return SaveFileDialog;
     }
     #endregion
     
@@ -363,5 +372,15 @@ public partial class MatchView : Form, IStatsView
     private void newToolStripMenuItem_Click(object sender, EventArgs e)
     {
         OnNewGamePressed?.Invoke(sender, e);
+    }
+
+    private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        OnSaveGamePressed?.Invoke(sender, e);
+    }
+
+    private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        OnSaveAsGamePressed?.Invoke(sender, e);
     }
 }
