@@ -18,6 +18,7 @@ public class MatchController : IStatsController
     private MatchView _view;
     private PlayerSelectWindow? _selectWindow = null;
     private CreateMatchController? _createMatchController = null;
+    private IStatsView? _openStatsView = null;
 
     private Timer? _timeDisplayTimer;
 
@@ -60,6 +61,7 @@ public class MatchController : IStatsController
         _view.OnSaveGamePressed += SaveGame;
         _view.OnSaveAsGamePressed += SaveGameAsJson;
         _view.OnOpenGamePressed += OpenGame;
+        _view.OnAllStatsPressed += OpenAllStatsView;
     }
 
     /// <summary>
@@ -428,6 +430,13 @@ public class MatchController : IStatsController
             SetTeamDataInView();
             SetupStatisticBars();
         }
+    }
+    #endregion
+    
+    #region Stats Views
+    private void OpenAllStatsView(object? sender, EventArgs e)
+    {
+        // TODO create new view here
     }
     #endregion
 }

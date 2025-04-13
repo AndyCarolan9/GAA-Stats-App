@@ -55,9 +55,9 @@ partial class MatchView
         pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
         selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +99,7 @@ partial class MatchView
         SecondsLabel = new System.Windows.Forms.Label();
         SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+        toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -152,7 +153,7 @@ partial class MatchView
         // HeaderBar
         // 
         HeaderBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
+        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
         HeaderBar.Location = new System.Drawing.Point(0, 0);
         HeaderBar.Name = "HeaderBar";
         HeaderBar.Size = new System.Drawing.Size(1902, 24);
@@ -172,7 +173,7 @@ partial class MatchView
         newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         newToolStripMenuItem.Name = "newToolStripMenuItem";
         newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
-        newToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        newToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
         newToolStripMenuItem.Text = "&New";
         newToolStripMenuItem.Click += newToolStripMenuItem_Click;
         // 
@@ -182,14 +183,14 @@ partial class MatchView
         openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         openToolStripMenuItem.Name = "openToolStripMenuItem";
         openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O));
-        openToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        openToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
         openToolStripMenuItem.Text = "&Open";
         openToolStripMenuItem.Click += openToolStripMenuItem_Click;
         // 
         // toolStripSeparator
         // 
         toolStripSeparator.Name = "toolStripSeparator";
-        toolStripSeparator.Size = new System.Drawing.Size(187, 6);
+        toolStripSeparator.Size = new System.Drawing.Size(183, 6);
         // 
         // saveToolStripMenuItem
         // 
@@ -197,7 +198,7 @@ partial class MatchView
         saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         saveToolStripMenuItem.Name = "saveToolStripMenuItem";
         saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
-        saveToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        saveToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
         saveToolStripMenuItem.Text = "&Save";
         saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
         // 
@@ -205,7 +206,7 @@ partial class MatchView
         // 
         saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
         saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S));
-        saveAsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
         saveAsToolStripMenuItem.Text = "Save &As";
         saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
         // 
@@ -273,24 +274,25 @@ partial class MatchView
         selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
         selectAllToolStripMenuItem.Text = "Select &All";
         // 
-        // toolsToolStripMenuItem
+        // ViewToolStripMenuItem
         // 
-        toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customizeToolStripMenuItem, optionsToolStripMenuItem });
-        toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-        toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-        toolsToolStripMenuItem.Text = "&Tools";
+        ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AllStatsToolStripMenuItem, GraphsToolStripMenuItem });
+        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
+        ViewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+        ViewToolStripMenuItem.Text = "&View";
         // 
-        // customizeToolStripMenuItem
+        // AllStatsToolStripMenuItem
         // 
-        customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-        customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-        customizeToolStripMenuItem.Text = "&Customize";
+        AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
+        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+        AllStatsToolStripMenuItem.Text = "&All Stats";
+        AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
-        // optionsToolStripMenuItem
+        // GraphsToolStripMenuItem
         // 
-        optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-        optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-        optionsToolStripMenuItem.Text = "&Options";
+        GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
+        GraphsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+        GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // helpToolStripMenuItem
         // 
@@ -621,6 +623,11 @@ partial class MatchView
         SecondsLabel.Text = "00";
         SecondsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
         // 
+        // toolStripMenuItem10
+        // 
+        toolStripMenuItem10.Name = "toolStripMenuItem10";
+        toolStripMenuItem10.Size = new System.Drawing.Size(32, 19);
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -668,6 +675,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
 
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 
@@ -743,9 +752,9 @@ partial class MatchView
     private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ViewToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem AllStatsToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem GraphsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
