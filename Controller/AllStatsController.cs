@@ -1,4 +1,6 @@
-﻿using StatsTracker.Model;
+﻿using StatsTracker.Classes;
+using StatsTracker.Enums;
+using StatsTracker.Model;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
 using StatsTracker.Views.Statistics;
@@ -7,8 +9,8 @@ namespace StatsTracker.Controller;
 
 public class AllStatsController : IStatsController
 {
-    private AllStatsView _view;
-    private Match _match;
+    private readonly AllStatsView _view;
+    private readonly Match _match;
 
     public AllStatsController(Match match)
     {
@@ -54,6 +56,7 @@ public class AllStatsController : IStatsController
     private void UpdateViewData()
     {
         // TODO Get the selected team and update the view with it's data.
+        SetKickOutStatBarsValues();
     }
 
     private void InitialiseStatisticBars()
@@ -64,6 +67,32 @@ public class AllStatsController : IStatsController
         {
             bar.InitialiseValues();
             bar.SetTeamColors(_match.HomeTeam.TeamColor,  _match.AwayTeam.TeamColor);
+        }
+    }
+
+    private void SetKickOutStatBarsValues()
+    {
+        StatisticBar totalKickoutsStatsBar = _view.GetTotalKickoutsStatsBar();
+        StatisticPair totalKoPair = _match.GetStatisticForEvent(EventType.KickOut);
+        if (!totalKoPair.IsStatisticsEmpty())
+        {
+            totalKickoutsStatsBar.UpdateValues(totalKoPair.HomeTeamValue, totalKoPair.AwayTeamValue);
+        }
+        
+        StatisticBar[] statBars = _view.GetAllStatisticsBars().Where(bar =>
+        {
+            string name = bar.StatName.Replace(" ", "");
+            return Enum.IsDefined(typeof(KickOutResultType), name);
+        }).ToArray();
+
+        foreach (var bar in statBars)
+        {
+            Enum.TryParse(bar.StatName.Replace(" ", ""), out KickOutResultType resultType);
+            StatisticPair statsPair = _match.GetStatisticPairForKickOutResult(resultType);
+            if (!statsPair.IsStatisticsEmpty())
+            {
+                bar.UpdateValues(statsPair.HomeTeamValue, statsPair.AwayTeamValue);
+            }
         }
     }
     #endregion

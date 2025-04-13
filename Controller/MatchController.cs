@@ -78,7 +78,7 @@ public class MatchController : IStatsController
     {
         if (inputStatEventArgs is KickOutEventArgs kickOutEventArgs)
         {
-            if (kickOutEventArgs.ResultType == KickOutResultType.Lost 
+            if (kickOutEventArgs.ResultType == KickOutResultType.LostClean
                 || kickOutEventArgs.ResultType == KickOutResultType.LostMark
                 || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
             {

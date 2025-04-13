@@ -5,9 +5,9 @@
 /// </summary>
 public enum KickOutResultType
 {
-    Won,
+    WonClean,
     WonMark,
-    Lost,
+    LostClean,
     LostMark,
     WonBreak,
     LostBreak
@@ -83,7 +83,7 @@ static class KickOutResultExtensions
     {
         switch (kickOutResult)
         {
-            case KickOutResultType.Lost:
+            case KickOutResultType.LostClean:
             case KickOutResultType.LostMark:
             case KickOutResultType.LostBreak:
                 return false;
