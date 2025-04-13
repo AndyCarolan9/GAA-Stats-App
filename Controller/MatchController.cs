@@ -51,6 +51,11 @@ public class MatchController : IStatsController
         return _view;
     }
 
+    public DialogResult ShowDialog()
+    {
+        return _view.GetForm().ShowDialog();
+    }
+
     /// <summary>
     /// Binds events from the match view.
     /// </summary>
@@ -356,7 +361,7 @@ public class MatchController : IStatsController
         _createMatchController.OnTeamSelected += CreateNewMatch;
         _createMatchController.OnCancelBtnClick += CloseCreateMatchMenu;
 
-        _createMatchController.GetView().GetForm().ShowDialog();
+        _createMatchController.ShowDialog();
     }
 
     private void CreateNewMatch(object? sender, TeamSelectedEventArgs e)

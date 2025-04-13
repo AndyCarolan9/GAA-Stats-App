@@ -60,6 +60,11 @@ public class CreateMatchController : IStatsController
         return _view;
     }
 
+    public DialogResult ShowDialog()
+    {
+        return _view.GetForm().ShowDialog();
+    }
+
     #region Home Events
 
     private void HomeTeamDropdownChanged(object? sender, EventArgs e)
