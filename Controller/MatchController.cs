@@ -18,7 +18,7 @@ public class MatchController : IStatsController
     private MatchView _view;
     private PlayerSelectWindow? _selectWindow = null;
     private CreateMatchController? _createMatchController = null;
-    private IStatsView? _openStatsView = null;
+    private IStatsController? _openStatsController = null;
 
     private Timer? _timeDisplayTimer;
 
@@ -442,6 +442,8 @@ public class MatchController : IStatsController
     private void OpenAllStatsView(object? sender, EventArgs e)
     {
         // TODO create new view here
+        _openStatsController = new AllStatsController(_match);
+        _openStatsController.ShowDialog();
     }
     #endregion
 }

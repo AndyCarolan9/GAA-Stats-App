@@ -31,11 +31,29 @@ partial class AllStatsView
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "AllStatsView";
+        TeamSelectorBox = new System.Windows.Forms.ComboBox();
+        SuspendLayout();
+        // 
+        // TeamSelectorBox
+        // 
+        TeamSelectorBox.FormattingEnabled = true;
+        TeamSelectorBox.Location = new System.Drawing.Point(10, 10);
+        TeamSelectorBox.Name = "TeamSelectorBox";
+        TeamSelectorBox.Size = new System.Drawing.Size(200, 28);
+        TeamSelectorBox.TabIndex = 0;
+        TeamSelectorBox.SelectedIndexChanged += TeamSelectBox_SelectedIndexChanged;
+        // 
+        // AllStatsView
+        // 
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        ClientSize = new System.Drawing.Size(1902, 1033);
+        Controls.Add(TeamSelectorBox);
+        Text = "AllStatsView";
+        ResumeLayout(false);
     }
+
+    private System.Windows.Forms.ComboBox TeamSelectorBox;
 
     #endregion
 }
