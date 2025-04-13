@@ -1,4 +1,6 @@
-﻿namespace StatsTracker.Views.Statistics;
+﻿using StatsTracker.View_Elements;
+
+namespace StatsTracker.Views.Statistics;
 
 public partial class AllStatsView : Form, IStatsView
 {
@@ -20,6 +22,48 @@ public partial class AllStatsView : Form, IStatsView
     public ComboBox GetTeamSelector()
     {
         return TeamSelectorBox;
+    }
+    
+    #region Kickouts
+    public StatisticBar GetTotalKickoutsStatsBar()
+    {
+        return TotalKickoutsBar;
+    }
+
+    public StatisticBar GetKoWonCleanStatsBar()
+    {
+        return KOWonCleanBar;
+    }
+
+    public StatisticBar GetKoWonMarkStatsBar()
+    {
+        return KOWonMarkBar;
+    }
+
+    public StatisticBar GetKoWonBreakStatsBar()
+    {
+        return KOWonBreak;
+    }
+
+    public StatisticBar GetKoLostCleanStatsBar()
+    {
+        return KOLostCleanBar;
+    }
+
+    public StatisticBar GetKoLostMarkStatsBar()
+    {
+        return KOLostMarkBar;
+    }
+
+    public StatisticBar GetKoLostBreakStatsBar()
+    {
+        return KOLostBreakBar;
+    }
+    #endregion
+
+    public StatisticBar[] GetAllStatisticsBars()
+    {
+        return Controls.OfType<StatisticBar>().ToArray();
     }
     #endregion
 

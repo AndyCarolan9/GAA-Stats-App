@@ -1,4 +1,5 @@
 ﻿using StatsTracker.Model;
+using StatsTracker.View_Elements;
 using StatsTracker.Views;
 using StatsTracker.Views.Statistics;
 
@@ -14,6 +15,7 @@ public class AllStatsController : IStatsController
         _match = match;
         _view = new AllStatsView();
         SetupInitialViewData();
+        InitialiseStatisticBars();
         BindViewEvents();
         UpdateViewData();
     }
@@ -52,6 +54,17 @@ public class AllStatsController : IStatsController
     private void UpdateViewData()
     {
         // TODO Get the selected team and update the view with it's data.
+    }
+
+    private void InitialiseStatisticBars()
+    {
+        StatisticBar[] statBars = _view.GetAllStatisticsBars();
+
+        foreach (var bar in statBars)
+        {
+            bar.InitialiseValues();
+            bar.SetTeamColors(_match.HomeTeam.TeamColor,  _match.AwayTeam.TeamColor);
+        }
     }
     #endregion
 }
