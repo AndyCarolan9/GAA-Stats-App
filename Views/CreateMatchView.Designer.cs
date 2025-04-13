@@ -67,7 +67,7 @@ partial class CreateMatchView
         HomeTeamDropDown.FormattingEnabled = true;
         HomeTeamDropDown.Location = new System.Drawing.Point(10, 51);
         HomeTeamDropDown.Name = "HomeTeamDropDown";
-        HomeTeamDropDown.Size = new System.Drawing.Size(178, 23);
+        HomeTeamDropDown.Size = new System.Drawing.Size(178, 28);
         HomeTeamDropDown.TabIndex = 0;
         HomeTeamDropDown.SelectedIndexChanged += HomeTeamDropDown_SelectedIndexChanged;
         // 
@@ -98,10 +98,9 @@ partial class CreateMatchView
         // HomeTeamPlayersListBox
         // 
         HomeTeamPlayersListBox.FormattingEnabled = true;
-        HomeTeamPlayersListBox.ItemHeight = 15;
         HomeTeamPlayersListBox.Location = new System.Drawing.Point(10, 82);
         HomeTeamPlayersListBox.Name = "HomeTeamPlayersListBox";
-        HomeTeamPlayersListBox.Size = new System.Drawing.Size(178, 319);
+        HomeTeamPlayersListBox.Size = new System.Drawing.Size(178, 304);
         HomeTeamPlayersListBox.TabIndex = 3;
         // 
         // HomeMoveUp
@@ -127,10 +126,9 @@ partial class CreateMatchView
         // PlayersList
         // 
         PlayersList.FormattingEnabled = true;
-        PlayersList.ItemHeight = 15;
         PlayersList.Location = new System.Drawing.Point(304, 82);
         PlayersList.Name = "PlayersList";
-        PlayersList.Size = new System.Drawing.Size(178, 319);
+        PlayersList.Size = new System.Drawing.Size(178, 304);
         PlayersList.TabIndex = 7;
         // 
         // TeamDropdown
@@ -138,7 +136,7 @@ partial class CreateMatchView
         TeamDropdown.FormattingEnabled = true;
         TeamDropdown.Location = new System.Drawing.Point(304, 51);
         TeamDropdown.Name = "TeamDropdown";
-        TeamDropdown.Size = new System.Drawing.Size(178, 23);
+        TeamDropdown.Size = new System.Drawing.Size(178, 28);
         TeamDropdown.TabIndex = 6;
         TeamDropdown.SelectedIndexChanged += TeamDropdown_SelectedIndexChanged;
         // 
@@ -165,10 +163,9 @@ partial class CreateMatchView
         // AwayTeamPlayersList
         // 
         AwayTeamPlayersList.FormattingEnabled = true;
-        AwayTeamPlayersList.ItemHeight = 15;
         AwayTeamPlayersList.Location = new System.Drawing.Point(598, 82);
         AwayTeamPlayersList.Name = "AwayTeamPlayersList";
-        AwayTeamPlayersList.Size = new System.Drawing.Size(178, 319);
+        AwayTeamPlayersList.Size = new System.Drawing.Size(178, 304);
         AwayTeamPlayersList.TabIndex = 11;
         // 
         // AwayTeamSetColor
@@ -196,7 +193,7 @@ partial class CreateMatchView
         AwayTeamDropDown.FormattingEnabled = true;
         AwayTeamDropDown.Location = new System.Drawing.Point(598, 51);
         AwayTeamDropDown.Name = "AwayTeamDropDown";
-        AwayTeamDropDown.Size = new System.Drawing.Size(178, 23);
+        AwayTeamDropDown.Size = new System.Drawing.Size(178, 28);
         AwayTeamDropDown.TabIndex = 8;
         AwayTeamDropDown.SelectedIndexChanged += AwayTeamDropDown_SelectedIndexChanged;
         // 
@@ -262,14 +259,14 @@ partial class CreateMatchView
         // 
         AddTeamTextBox.Location = new System.Drawing.Point(304, 436);
         AddTeamTextBox.Name = "AddTeamTextBox";
-        AddTeamTextBox.Size = new System.Drawing.Size(178, 23);
+        AddTeamTextBox.Size = new System.Drawing.Size(178, 27);
         AddTeamTextBox.TabIndex = 21;
         // 
         // AddPlayerTextBox
         // 
         AddPlayerTextBox.Location = new System.Drawing.Point(304, 465);
         AddPlayerTextBox.Name = "AddPlayerTextBox";
-        AddPlayerTextBox.Size = new System.Drawing.Size(178, 23);
+        AddPlayerTextBox.Size = new System.Drawing.Size(178, 27);
         AddPlayerTextBox.TabIndex = 22;
         // 
         // CreateMatchBtn
@@ -320,8 +317,9 @@ partial class CreateMatchView
         // 
         // CreateMatchView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(786, 546);
         Controls.Add(AwayRemovePlayer);
         Controls.Add(HomeRemovePlayer);
@@ -349,6 +347,7 @@ partial class CreateMatchView
         Controls.Add(HomeTeamSetColor);
         Controls.Add(label1);
         Controls.Add(HomeTeamDropDown);
+        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "Create Match";
         ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).EndInit();
         ((System.ComponentModel.ISupportInitialize)AwayTeamColorBox).EndInit();

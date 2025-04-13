@@ -118,8 +118,9 @@ partial class ActionSelectWindow
         // 
         // ActionSelectWindow
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(649, 461);
         Controls.Add(pictureBox2);
         Controls.Add(Sideline);
@@ -128,6 +129,7 @@ partial class ActionSelectWindow
         Controls.Add(From45);
         Controls.Add(Free);
         Controls.Add(Play);
+        Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
         Text = "Action Select Window";
         Controls.SetChildIndex(Play, 0);
         Controls.SetChildIndex(Free, 0);

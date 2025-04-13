@@ -414,8 +414,8 @@ partial class AllStatsView
         // 
         // AllStatsView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         ClientSize = new System.Drawing.Size(1902, 1033);
         Controls.Add(KOLostBreakBar);
         Controls.Add(KOLostMarkBar);

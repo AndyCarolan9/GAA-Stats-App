@@ -223,8 +223,9 @@ partial class PlayerSelectWindow
         // 
         // PlayerSelectWindow
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(484, 461);
         Controls.Add(TurnOverCheckBox);
         Controls.Add(CancelStatButton);
@@ -244,6 +245,7 @@ partial class PlayerSelectWindow
         Controls.Add(Player3);
         Controls.Add(Player2);
         Controls.Add(Player1);
+        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "PlayerSelectWindow";
         ResumeLayout(false);
     }
