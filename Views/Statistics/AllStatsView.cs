@@ -60,6 +60,63 @@ public partial class AllStatsView : Form, IStatsView
         return KOLostBreakBar;
     }
     #endregion
+    
+    #region Shooting
+    public Label GetHomeTeamLabel()
+    {
+        return HomeTeamLabel;
+    }
+
+    public Label GetAwayTeamLabel()
+    {
+        return AwayTeamLabel;
+    }
+
+    public Label GetHomeTeamScore()
+    {
+        return HomeTeamScore;
+    }
+
+    public Label GetAwayTeamScore()
+    {
+        return AwayTeamScore;
+    }
+
+    public StatisticBar GetTotalShotsBar()
+    {
+        return TotalShots;
+    }
+
+    public StatisticBar GetTotalPointShotBar()
+    {
+        return TotalPointShots;
+    }
+
+    public StatisticBar GetTotal2PointShotBar()
+    {
+        return Total2PointShots;
+    }
+
+    public StatisticBar GetTotalGoalShotBar()
+    {
+        return TotalGoalShots;
+    }
+
+    public StatisticBar GetPointsScoredBar()
+    {
+        return TotalPointsScored;
+    }
+
+    public StatisticBar GetTotal2PointScoredBar()
+    {
+        return Total2PointScored;
+    }
+
+    public StatisticBar GetTotalGoalScoredBar()
+    {
+        return TotalGoalsScored;
+    }
+    #endregion
 
     public StatisticBar[] GetAllStatisticsBars()
     {
