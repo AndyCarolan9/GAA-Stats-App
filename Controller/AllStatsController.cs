@@ -58,6 +58,7 @@ public class AllStatsController : IStatsController
         // TODO Get the selected team and update the view with it's data.
         SetKickOutStatBarsValues();
         SetScoreCardValues();
+        SetShootingStatBarValues();
     }
 
     private void InitialiseStatisticBars()
@@ -108,6 +109,28 @@ public class AllStatsController : IStatsController
         _view.GetAwayTeamLabel().Text = awayTeamName;
         _view.GetHomeTeamScore().Text = homeTeamScore;
         _view.GetAwayTeamScore().Text = awayTeamScore;
+    }
+
+    private void SetShootingStatBarValues()
+    {
+        StatisticPair pointShots = _match.GetStatisticForEvent(EventType.PointShot);
+        StatisticPair doublePointShots = _match.GetStatisticForEvent(EventType.DoublePointShot);
+        StatisticPair goalShots = _match.GetStatisticForEvent(EventType.GoalShot);
+        
+        _view.GetTotalShotsBar().UpdateValues(
+            pointShots.HomeTeamValue + doublePointShots.HomeTeamValue + goalShots.HomeTeamValue, 
+            pointShots.AwayTeamValue + doublePointShots.AwayTeamValue + goalShots.AwayTeamValue);
+        _view.GetTotalPointShotBar().UpdateValues(pointShots.HomeTeamValue, pointShots.AwayTeamValue);
+        _view.GetTotal2PointShotBar().UpdateValues(doublePointShots.HomeTeamValue, doublePointShots.AwayTeamValue);
+        _view.GetTotalGoalShotBar().UpdateValues(goalShots.HomeTeamValue, goalShots.AwayTeamValue);
+
+        StatisticPair pointsScored = _match.GetStatisticForShotResult(ShotResultType.Point);
+        StatisticPair doublePointsScored = _match.GetStatisticForShotResult(ShotResultType.DoublePoint);
+        StatisticPair goalScored = _match.GetStatisticForShotResult(ShotResultType.Goal);
+        
+        _view.GetPointsScoredBar().UpdateValues(pointsScored.HomeTeamValue, pointsScored.AwayTeamValue);
+        _view.GetTotal2PointScoredBar().UpdateValues(doublePointsScored.HomeTeamValue, doublePointsScored.AwayTeamValue);
+        _view.GetTotalGoalScoredBar().UpdateValues(goalScored.HomeTeamValue, goalScored.AwayTeamValue);
     }
     #endregion
 }
