@@ -57,6 +57,7 @@ public class AllStatsController : IStatsController
     {
         // TODO Get the selected team and update the view with it's data.
         SetKickOutStatBarsValues();
+        SetScoreCardValues();
     }
 
     private void InitialiseStatisticBars()
@@ -94,6 +95,19 @@ public class AllStatsController : IStatsController
                 bar.UpdateValues(statsPair.HomeTeamValue, statsPair.AwayTeamValue);
             }
         }
+    }
+
+    private void SetScoreCardValues()
+    {
+        string homeTeamName = _match.HomeTeam.TeamName[new Range(0, 4)];
+        string awayTeamName = _match.AwayTeam.TeamName[new Range(0, 4)];
+
+        _match.GetTeamScoreStrings(out var homeTeamScore, out var awayTeamScore);
+        
+        _view.GetHomeTeamLabel().Text = homeTeamName;
+        _view.GetAwayTeamLabel().Text = awayTeamName;
+        _view.GetHomeTeamScore().Text = homeTeamScore;
+        _view.GetAwayTeamScore().Text = awayTeamScore;
     }
     #endregion
 }
