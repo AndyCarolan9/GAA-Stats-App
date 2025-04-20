@@ -278,6 +278,48 @@ public class Match
         return GetStatisticPairForEvent(events);
     }
 
+    public StatisticPair GetStatisticPairForTurnoverType(TurnoverType turnoverType, string homeTeamName)
+    {
+        List<MatchEvent> turnOvers = MatchEvents.FindAll(matchEvent =>
+        {
+            if (matchEvent is TurnoverEvent turnoverEvent)
+            {
+                return turnoverEvent.TurnoverType == turnoverType;
+            }
+
+            return false;
+        });
+
+        int homeTeamWonCount = turnOvers.Count(matchEvent =>
+        {
+            if (matchEvent.TeamName == homeTeamName && matchEvent.Type == EventType.TurnoverWon)
+            {
+                return true;
+            }
+            else if (matchEvent.TeamName != homeTeamName && matchEvent.Type == EventType.TurnoverLost)
+            {
+                return true;
+            }
+
+            return false;
+        });
+        int awayTeamWonCount = turnOvers.Count(matchEvent =>
+        {
+            if (matchEvent.TeamName != homeTeamName && matchEvent.Type == EventType.TurnoverWon)
+            {
+                return true;
+            }
+            else if (matchEvent.TeamName == homeTeamName && matchEvent.Type == EventType.TurnoverLost)
+            {
+                return true;
+            }
+
+            return false;
+        });
+
+        return new StatisticPair(homeTeamWonCount, awayTeamWonCount);
+    }
+
     private StatisticPair GetStatisticPairByPredicate(Predicate<MatchEvent> predicate)
     {
         List<MatchEvent> events = MatchEvents.FindAll(predicate);

@@ -134,6 +134,28 @@ public partial class AllStatsView : Form, IStatsView
     }
     #endregion
 
+    #region Turnovers
+    public StatisticBar GetTotalTurnoversWonBar()
+    {
+        return TurnoversWon;
+    }
+
+    public StatisticBar GetTurnoverFreeWonBar()
+    {
+        return Free;
+    }
+
+    public StatisticBar GetTurnoverTackleWonBar()
+    {
+        return Tackle;
+    }
+
+    public StatisticBar GetTurnoverInterceptWonBar()
+    {
+        return Intercept;
+    }
+    #endregion
+
     public StatisticBar[] GetAllStatisticsBars()
     {
         return Controls.OfType<StatisticBar>().ToArray();

@@ -44,6 +44,7 @@ public class AllStatsController : IStatsController
         SetKickOutStatBarsValues();
         SetScoreCardValues();
         SetShootingStatBarValues();
+        SetTurnoverStatBarValues();
     }
 
     private void InitialiseStatisticBars()
@@ -126,6 +127,30 @@ public class AllStatsController : IStatsController
         _view.GetTotalSavedShotsBar().UpdateValues(new StatisticPair(saved.HomeTeamValue + saved45.HomeTeamValue, 
             saved.AwayTeamValue + saved45.AwayTeamValue));
         _view.GetTotalShortShotsBar().UpdateValues(shortShots);
+    }
+
+    private void SetTurnoverStatBarValues()
+    {
+        StatisticBar totalTurnoversBar = _view.GetTotalTurnoversWonBar();
+        StatisticPair turnoversWon = _match.GetStatisticForEvent(EventType.TurnoverWon);
+        StatisticPair turnoversLost = _match.GetStatisticForEvent(EventType.TurnoverLost);
+        StatisticPair totalTurnovers = new StatisticPair(turnoversWon.HomeTeamValue + turnoversLost.AwayTeamValue,
+            turnoversWon.AwayTeamValue + turnoversLost.HomeTeamValue);
+        
+        totalTurnoversBar.UpdateValues(totalTurnovers);
+        
+        StatisticBar[] statBars = _view.GetAllStatisticsBars().Where(bar =>
+        {
+            string name = bar.Name.Replace(" ", "");
+            return Enum.IsDefined(typeof(TurnoverType), name);
+        }).ToArray();
+
+        foreach (var bar in statBars)
+        {
+            Enum.TryParse(bar.Name.Replace(" ", ""), out TurnoverType turnOverType);
+            StatisticPair statsPair = _match.GetStatisticPairForTurnoverType(turnOverType, _match.HomeTeam.TeamName);
+            bar.UpdateValues(statsPair);
+        }
     }
     #endregion
 }
