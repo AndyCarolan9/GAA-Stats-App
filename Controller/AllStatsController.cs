@@ -78,7 +78,7 @@ public class AllStatsController : IStatsController
         StatisticPair totalKoPair = _match.GetStatisticForEvent(EventType.KickOut);
         if (!totalKoPair.IsStatisticsEmpty())
         {
-            totalKickoutsStatsBar.UpdateValues(totalKoPair.HomeTeamValue, totalKoPair.AwayTeamValue);
+            totalKickoutsStatsBar.UpdateValues(totalKoPair);
         }
         
         StatisticBar[] statBars = _view.GetAllStatisticsBars().Where(bar =>
@@ -91,10 +91,7 @@ public class AllStatsController : IStatsController
         {
             Enum.TryParse(bar.StatName.Replace(" ", ""), out KickOutResultType resultType);
             StatisticPair statsPair = _match.GetStatisticPairForKickOutResult(resultType);
-            if (!statsPair.IsStatisticsEmpty())
-            {
-                bar.UpdateValues(statsPair.HomeTeamValue, statsPair.AwayTeamValue);
-            }
+            bar.UpdateValues(statsPair);
         }
     }
 
@@ -117,20 +114,20 @@ public class AllStatsController : IStatsController
         StatisticPair doublePointShots = _match.GetStatisticForEvent(EventType.DoublePointShot);
         StatisticPair goalShots = _match.GetStatisticForEvent(EventType.GoalShot);
         
-        _view.GetTotalShotsBar().UpdateValues(
+        _view.GetTotalShotsBar().UpdateValues(new StatisticPair(
             pointShots.HomeTeamValue + doublePointShots.HomeTeamValue + goalShots.HomeTeamValue, 
-            pointShots.AwayTeamValue + doublePointShots.AwayTeamValue + goalShots.AwayTeamValue);
-        _view.GetTotalPointShotBar().UpdateValues(pointShots.HomeTeamValue, pointShots.AwayTeamValue);
-        _view.GetTotal2PointShotBar().UpdateValues(doublePointShots.HomeTeamValue, doublePointShots.AwayTeamValue);
-        _view.GetTotalGoalShotBar().UpdateValues(goalShots.HomeTeamValue, goalShots.AwayTeamValue);
+            pointShots.AwayTeamValue + doublePointShots.AwayTeamValue + goalShots.AwayTeamValue));
+        _view.GetTotalPointShotBar().UpdateValues(pointShots);
+        _view.GetTotal2PointShotBar().UpdateValues(doublePointShots);
+        _view.GetTotalGoalShotBar().UpdateValues(goalShots);
 
         StatisticPair pointsScored = _match.GetStatisticForShotResult(ShotResultType.Point);
         StatisticPair doublePointsScored = _match.GetStatisticForShotResult(ShotResultType.DoublePoint);
         StatisticPair goalScored = _match.GetStatisticForShotResult(ShotResultType.Goal);
         
-        _view.GetPointsScoredBar().UpdateValues(pointsScored.HomeTeamValue, pointsScored.AwayTeamValue);
-        _view.GetTotal2PointScoredBar().UpdateValues(doublePointsScored.HomeTeamValue, doublePointsScored.AwayTeamValue);
-        _view.GetTotalGoalScoredBar().UpdateValues(goalScored.HomeTeamValue, goalScored.AwayTeamValue);
+        _view.GetPointsScoredBar().UpdateValues(pointsScored);
+        _view.GetTotal2PointScoredBar().UpdateValues(doublePointsScored);
+        _view.GetTotalGoalScoredBar().UpdateValues(goalScored);
         
         StatisticPair wides = _match.GetStatisticForShotResult(ShotResultType.Wide);
         StatisticPair outFor45 = _match.GetStatisticForShotResult(ShotResultType.OutFor45);
@@ -138,12 +135,12 @@ public class AllStatsController : IStatsController
         StatisticPair saved = _match.GetStatisticForShotResult(ShotResultType.Saved);
         StatisticPair shortShots = _match.GetStatisticForShotResult(ShotResultType.Short);
         
-        _view.GetTotalWidesBar().UpdateValues(wides.HomeTeamValue, wides.AwayTeamValue);
-        _view.GetTotalOutFor45Bar().UpdateValues(outFor45.HomeTeamValue + saved45.HomeTeamValue,
-            outFor45.AwayTeamValue + saved45.AwayTeamValue);
-        _view.GetTotalSavedShotsBar().UpdateValues(saved.HomeTeamValue + saved45.HomeTeamValue, 
-            saved.AwayTeamValue + saved45.AwayTeamValue);
-        _view.GetTotalShortShotsBar().UpdateValues(shortShots.HomeTeamValue, shortShots.AwayTeamValue);
+        _view.GetTotalWidesBar().UpdateValues(wides);
+        _view.GetTotalOutFor45Bar().UpdateValues(new StatisticPair(outFor45.HomeTeamValue + saved45.HomeTeamValue,
+            outFor45.AwayTeamValue + saved45.AwayTeamValue));
+        _view.GetTotalSavedShotsBar().UpdateValues(new StatisticPair(saved.HomeTeamValue + saved45.HomeTeamValue, 
+            saved.AwayTeamValue + saved45.AwayTeamValue));
+        _view.GetTotalShortShotsBar().UpdateValues(shortShots);
     }
     #endregion
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using StatsTracker.Classes;
 
 namespace StatsTracker.View_Elements
 {
@@ -41,14 +42,19 @@ namespace StatsTracker.View_Elements
             StatSplitBar.Value = 1;
         }
 
-        public void UpdateValues(int homeValue, int awayValue)
+        public void UpdateValues(StatisticPair valuePair)
         {
-            SetHomeValue(homeValue);
-            SetAwayValue(awayValue);
+            if (valuePair.IsStatisticsEmpty())
+            {
+                return;
+            }
+            
+            SetHomeValue(valuePair.HomeTeamValue);
+            SetAwayValue(valuePair.AwayTeamValue);
         
-            int total = homeValue + awayValue;
+            int total = valuePair.TotalValue;
             StatSplitBar.Maximum = total;
-            StatSplitBar.Value = homeValue;
+            StatSplitBar.Value = valuePair.HomeTeamValue;
         }
 
         public void SetTeamColors(Color homeTeamColor, Color awayTeamColor)

@@ -295,7 +295,7 @@ public class MatchController : IStatsController
         
         StatisticBar bar = _view.GetTurnoverStatisticBar();
         
-        bar.UpdateValues(turnOvers.HomeTeamValue, turnOvers.AwayTeamValue);
+        bar.UpdateValues(turnOvers);
     }
 
     private void UpdateKickOutsWonBar()
@@ -306,7 +306,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetKickoutStatisticBar().UpdateValues(kickOutsWon.HomeTeamValue, kickOutsWon.AwayTeamValue);
+        _view.GetKickoutStatisticBar().UpdateValues(kickOutsWon);
     }
 
     private void UpdatePointShotsBar()
@@ -317,7 +317,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetShotsStatisticBar().UpdateValues(pointShots.HomeTeamValue, pointShots.AwayTeamValue);
+        _view.GetShotsStatisticBar().UpdateValues(pointShots);
     }
 
     private void UpdateGoalShotsBar()
@@ -328,7 +328,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetGoalShotsStatisticBar().UpdateValues(goalShots.HomeTeamValue, goalShots.AwayTeamValue);
+        _view.GetGoalShotsStatisticBar().UpdateValues(goalShots);
     }
 
     private void UpdateWidesBar()
@@ -339,7 +339,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetWidesStatisticBar().UpdateValues(wides.HomeTeamValue, wides.AwayTeamValue);
+        _view.GetWidesStatisticBar().UpdateValues(wides);
     }
 
     private void UpdateFreesBar()
@@ -350,7 +350,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetFreeStatisticBar().UpdateValues(frees.HomeTeamValue, frees.AwayTeamValue);
+        _view.GetFreeStatisticBar().UpdateValues(frees);
     }
     #endregion
     
