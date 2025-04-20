@@ -154,4 +154,9 @@ public partial class PlayerSelectWindow : Form, IStatsView
         
         return _selectedPlayerButton.Text;
     }
+
+    protected Button GetEnterStatButton()
+    {
+        return EnterStatButton;
+    }
 }

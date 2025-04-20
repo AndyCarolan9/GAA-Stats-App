@@ -30,6 +30,9 @@
       <Compile Update="Views\Statistics\AllStatsView.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\TurnoverTypeSelectWindow.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>
