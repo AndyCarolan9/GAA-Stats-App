@@ -6,6 +6,11 @@ public static class JSONHelper
 {
     public static T? LoadFromJsonFile<T>(string filePath)
     {
+        if (!File.Exists(filePath))
+        {
+            return default;
+        }
+        
         using (StreamReader sr = new StreamReader(filePath))
         {
             var options = new JsonSerializerOptions()

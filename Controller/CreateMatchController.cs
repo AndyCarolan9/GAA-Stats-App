@@ -10,7 +10,7 @@ public class CreateMatchController : IStatsController
     private CreateMatchView _view;
     private List<Team> _teams = new List<Team>();
     
-    private readonly string _filePath = "C:\\Users\\Andy Carolan\\source\\repos\\GlenEmmets\\StatsTracker\\bin\\Teams.json";
+    private readonly string _filePath = "Teams.json";
     
     public event EventHandler<TeamSelectedEventArgs>? OnTeamSelected;
 
@@ -19,8 +19,8 @@ public class CreateMatchController : IStatsController
     public CreateMatchController()
     {
         _view = new CreateMatchView();
-
-        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(_filePath);
+        
+        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(GetSavePath());
         if (teams != null)
         {
             _teams.AddRange(teams);
@@ -333,6 +333,7 @@ public class CreateMatchController : IStatsController
         }
         
         _teams.Add(new Team(teamName));
+        _view.GetAddTeamTextBox().Text = "";
         
         UpdateTeamDropdown();
     }
@@ -358,6 +359,7 @@ public class CreateMatchController : IStatsController
         }
         
         team.AddPlayerToTeamSheet(playerName);
+        _view.GetAddPlayerTextBox().Text = "";
         
         OnTeamDropDownIndexChanged(sender, e);
     }
@@ -402,9 +404,14 @@ public class CreateMatchController : IStatsController
         teamSelectedEventArgs.HomeTeamColor = _view.GetHomeTeamPictureBox().BackColor;
         teamSelectedEventArgs.AwayTeamColor = _view.GetAwayTeamPictureBox().BackColor;
         
-        JSONHelper.SaveToJsonFile(_filePath, _teams.ToArray());
+        JSONHelper.SaveToJsonFile(GetSavePath(), _teams.ToArray());
         
         OnTeamSelected?.Invoke(this, teamSelectedEventArgs);
+    }
+
+    private string GetSavePath()
+    {
+        return Application.StartupPath + "\\" + _filePath;
     }
 
     private void OnCancelClick(object? sender, MouseEventArgs e)
@@ -419,6 +426,16 @@ public class CreateMatchController : IStatsController
         _view.GetTeamDropDown().Items.Clear();
         _view.GetTeamDropDown().Items.AddRange(GetTeamNames());
         _view.GetTeamDropDown().EndUpdate();
+        
+        _view.GetHomeTeamDropDown().BeginUpdate();
+        _view.GetHomeTeamDropDown().Items.Clear();
+        _view.GetHomeTeamDropDown().Items.AddRange(GetTeamNames());
+        _view.GetHomeTeamDropDown().EndUpdate();
+        
+        _view.GetAwayTeamDropDown().BeginUpdate();
+        _view.GetAwayTeamDropDown().Items.Clear();
+        _view.GetAwayTeamDropDown().Items.AddRange(GetTeamNames());
+        _view.GetAwayTeamDropDown().EndUpdate();
     }
 
     private string[] GetTeamNames()
