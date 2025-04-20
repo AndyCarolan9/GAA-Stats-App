@@ -96,6 +96,10 @@ public class MatchController : IStatsController
             BindActionViewEvents();
             _selectWindow.ShowDialog();
         }
+        else if (inputStatEventArgs is TurnoverEventArgs turnoverEventArgs)
+        {
+            // TODO create a new window specific to turnover events.
+        }
         else
         {
             _selectWindow = new PlayerSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType), inputStatEventArgs);
