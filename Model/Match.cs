@@ -158,6 +158,12 @@ public class Match
             AddEvent(kickOutArgs);
             return;
         }
+
+        if (statArgs is TurnoverEventArgs turnOverArgs)
+        {
+            AddEvent(turnOverArgs);
+            return;
+        }
         
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.Team.TeamName, _half);
@@ -191,6 +197,16 @@ public class Match
         {
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
         }
+    }
+
+    private void AddEvent(TurnoverEventArgs turnoverEventArgs)
+    {
+        var matchEvent = new TurnoverEvent(turnoverEventArgs.Location, turnoverEventArgs.Player,
+            _matchTimer.ElapsedMilliseconds,
+            turnoverEventArgs.EventType, turnoverEventArgs.Team.TeamName, _half, turnoverEventArgs.TurnoverType);
+        MatchEvents.Add(matchEvent);
+
+        _isHomeTeamInPossession = !_isHomeTeamInPossession;
     }
     #endregion
     

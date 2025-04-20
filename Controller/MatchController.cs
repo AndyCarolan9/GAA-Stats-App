@@ -100,6 +100,7 @@ public class MatchController : IStatsController
         {
             _selectWindow = new TurnoverTypeSelectWindow(_match.GetTeamForEvent(inputStatEventArgs.EventType),
                 turnoverEventArgs);
+            BindActionViewEvents();
             _selectWindow.ShowDialog();
         }
         else
