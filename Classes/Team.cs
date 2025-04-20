@@ -97,5 +97,10 @@ public class Team
         
         return playerOffName;
     }
+
+    public bool IsTeamValid()
+    {
+        return !string.IsNullOrEmpty(TeamName) && !TeamColor.IsEmpty;
+    }
     #endregion
 }

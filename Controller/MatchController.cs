@@ -441,7 +441,11 @@ public class MatchController : IStatsController
     #region Stats Views
     private void OpenAllStatsView(object? sender, EventArgs e)
     {
-        // TODO create new view here
+        if (!_match.IsMatchValid())
+        {
+            return;
+        }
+        
         _openStatsController = new AllStatsController(_match);
         _openStatsController.ShowDialog();
     }

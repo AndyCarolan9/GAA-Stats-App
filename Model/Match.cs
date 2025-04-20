@@ -61,6 +61,12 @@ public class Match
     #endregion
     
     #region Methods
+
+    public bool IsMatchValid()
+    {
+        return HomeTeam.IsTeamValid() && AwayTeam.IsTeamValid();
+    }
+    
     #region Timer Methods
     /// <summary>
     /// Starts the match timer and increments the half number.
