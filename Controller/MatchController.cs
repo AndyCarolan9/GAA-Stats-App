@@ -18,6 +18,7 @@ public class MatchController : IStatsController
     private MatchView _view;
     private PlayerSelectWindow? _selectWindow = null;
     private CreateMatchController? _createMatchController = null;
+    private IStatsController? _openStatsController = null;
 
     private Timer? _timeDisplayTimer;
 
@@ -50,6 +51,11 @@ public class MatchController : IStatsController
         return _view;
     }
 
+    public DialogResult ShowDialog()
+    {
+        return _view.GetForm().ShowDialog();
+    }
+
     /// <summary>
     /// Binds events from the match view.
     /// </summary>
@@ -60,6 +66,7 @@ public class MatchController : IStatsController
         _view.OnSaveGamePressed += SaveGame;
         _view.OnSaveAsGamePressed += SaveGameAsJson;
         _view.OnOpenGamePressed += OpenGame;
+        _view.OnAllStatsPressed += OpenAllStatsView;
     }
 
     /// <summary>
@@ -71,7 +78,7 @@ public class MatchController : IStatsController
     {
         if (inputStatEventArgs is KickOutEventArgs kickOutEventArgs)
         {
-            if (kickOutEventArgs.ResultType == KickOutResultType.Lost 
+            if (kickOutEventArgs.ResultType == KickOutResultType.LostClean
                 || kickOutEventArgs.ResultType == KickOutResultType.LostMark
                 || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
             {
@@ -288,7 +295,7 @@ public class MatchController : IStatsController
         
         StatisticBar bar = _view.GetTurnoverStatisticBar();
         
-        bar.UpdateValues(turnOvers.HomeTeamValue, turnOvers.AwayTeamValue);
+        bar.UpdateValues(turnOvers);
     }
 
     private void UpdateKickOutsWonBar()
@@ -299,7 +306,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetKickoutStatisticBar().UpdateValues(kickOutsWon.HomeTeamValue, kickOutsWon.AwayTeamValue);
+        _view.GetKickoutStatisticBar().UpdateValues(kickOutsWon);
     }
 
     private void UpdatePointShotsBar()
@@ -310,7 +317,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetShotsStatisticBar().UpdateValues(pointShots.HomeTeamValue, pointShots.AwayTeamValue);
+        _view.GetShotsStatisticBar().UpdateValues(pointShots);
     }
 
     private void UpdateGoalShotsBar()
@@ -321,7 +328,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetGoalShotsStatisticBar().UpdateValues(goalShots.HomeTeamValue, goalShots.AwayTeamValue);
+        _view.GetGoalShotsStatisticBar().UpdateValues(goalShots);
     }
 
     private void UpdateWidesBar()
@@ -332,7 +339,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetWidesStatisticBar().UpdateValues(wides.HomeTeamValue, wides.AwayTeamValue);
+        _view.GetWidesStatisticBar().UpdateValues(wides);
     }
 
     private void UpdateFreesBar()
@@ -343,7 +350,7 @@ public class MatchController : IStatsController
             return;
         }
         
-        _view.GetFreeStatisticBar().UpdateValues(frees.HomeTeamValue, frees.AwayTeamValue);
+        _view.GetFreeStatisticBar().UpdateValues(frees);
     }
     #endregion
     
@@ -354,7 +361,7 @@ public class MatchController : IStatsController
         _createMatchController.OnTeamSelected += CreateNewMatch;
         _createMatchController.OnCancelBtnClick += CloseCreateMatchMenu;
 
-        _createMatchController.GetView().GetForm().ShowDialog();
+        _createMatchController.ShowDialog();
     }
 
     private void CreateNewMatch(object? sender, TeamSelectedEventArgs e)
@@ -428,6 +435,15 @@ public class MatchController : IStatsController
             SetTeamDataInView();
             SetupStatisticBars();
         }
+    }
+    #endregion
+    
+    #region Stats Views
+    private void OpenAllStatsView(object? sender, EventArgs e)
+    {
+        // TODO create new view here
+        _openStatsController = new AllStatsController(_match);
+        _openStatsController.ShowDialog();
     }
     #endregion
 }

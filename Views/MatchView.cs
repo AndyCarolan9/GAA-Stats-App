@@ -26,7 +26,9 @@ public partial class MatchView : Form, IStatsView
     
     public event EventHandler? OnSaveAsGamePressed; 
     
-    public event EventHandler? OnOpenGamePressed; 
+    public event EventHandler? OnOpenGamePressed;
+    
+    public event EventHandler? OnAllStatsPressed;
 
     private Point _inputLocation = new Point(0, 0);
     
@@ -394,5 +396,10 @@ public partial class MatchView : Form, IStatsView
     private void openToolStripMenuItem_Click(object sender, EventArgs e)
     {
         OnOpenGamePressed?.Invoke(sender, e);
+    }
+
+    private void AllStatsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        OnAllStatsPressed?.Invoke(sender, e);
     }
 }

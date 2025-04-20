@@ -80,8 +80,8 @@ partial class StatisticBar
         // 
         // StatisticBar
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         Controls.Add(AwayTeamValue);
         Controls.Add(HomeTeamValue);

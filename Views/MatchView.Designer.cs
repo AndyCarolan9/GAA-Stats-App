@@ -55,9 +55,9 @@ partial class MatchView
         pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
         selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +99,7 @@ partial class MatchView
         SecondsLabel = new System.Windows.Forms.Label();
         SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+        toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -113,9 +114,9 @@ partial class MatchView
         FootballFieldInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         FootballFieldInput.ContextMenuStrip = EventInputMenu;
         FootballFieldInput.Dock = System.Windows.Forms.DockStyle.Left;
-        FootballFieldInput.Location = new System.Drawing.Point(0, 24);
+        FootballFieldInput.Location = new System.Drawing.Point(0, 28);
         FootballFieldInput.Name = "FootballFieldInput";
-        FootballFieldInput.Size = new System.Drawing.Size(700, 1009);
+        FootballFieldInput.Size = new System.Drawing.Size(700, 1005);
         FootballFieldInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         FootballFieldInput.TabIndex = 0;
         FootballFieldInput.TabStop = false;
@@ -152,10 +153,10 @@ partial class MatchView
         // HeaderBar
         // 
         HeaderBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
+        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
         HeaderBar.Location = new System.Drawing.Point(0, 0);
         HeaderBar.Name = "HeaderBar";
-        HeaderBar.Size = new System.Drawing.Size(1902, 24);
+        HeaderBar.Size = new System.Drawing.Size(1902, 28);
         HeaderBar.TabIndex = 1;
         HeaderBar.Text = "menuStrip1";
         // 
@@ -163,7 +164,7 @@ partial class MatchView
         // 
         fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, toolStripSeparator, saveToolStripMenuItem, saveAsToolStripMenuItem });
         fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-        fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+        fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
         fileToolStripMenuItem.Text = "&File";
         // 
         // newToolStripMenuItem
@@ -172,7 +173,7 @@ partial class MatchView
         newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         newToolStripMenuItem.Name = "newToolStripMenuItem";
         newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
-        newToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        newToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
         newToolStripMenuItem.Text = "&New";
         newToolStripMenuItem.Click += newToolStripMenuItem_Click;
         // 
@@ -182,14 +183,14 @@ partial class MatchView
         openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         openToolStripMenuItem.Name = "openToolStripMenuItem";
         openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O));
-        openToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        openToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
         openToolStripMenuItem.Text = "&Open";
         openToolStripMenuItem.Click += openToolStripMenuItem_Click;
         // 
         // toolStripSeparator
         // 
         toolStripSeparator.Name = "toolStripSeparator";
-        toolStripSeparator.Size = new System.Drawing.Size(187, 6);
+        toolStripSeparator.Size = new System.Drawing.Size(230, 6);
         // 
         // saveToolStripMenuItem
         // 
@@ -197,7 +198,7 @@ partial class MatchView
         saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         saveToolStripMenuItem.Name = "saveToolStripMenuItem";
         saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
-        saveToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        saveToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
         saveToolStripMenuItem.Text = "&Save";
         saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
         // 
@@ -205,7 +206,7 @@ partial class MatchView
         // 
         saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
         saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S));
-        saveAsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+        saveAsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
         saveAsToolStripMenuItem.Text = "Save &As";
         saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
         // 
@@ -213,27 +214,27 @@ partial class MatchView
         // 
         editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem, toolStripSeparator3, cutToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem, toolStripSeparator4, selectAllToolStripMenuItem });
         editToolStripMenuItem.Name = "editToolStripMenuItem";
-        editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+        editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
         editToolStripMenuItem.Text = "&Edit";
         // 
         // undoToolStripMenuItem
         // 
         undoToolStripMenuItem.Name = "undoToolStripMenuItem";
         undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z));
-        undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        undoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         undoToolStripMenuItem.Text = "&Undo";
         // 
         // redoToolStripMenuItem
         // 
         redoToolStripMenuItem.Name = "redoToolStripMenuItem";
         redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y));
-        redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        redoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         redoToolStripMenuItem.Text = "&Redo";
         // 
         // toolStripSeparator3
         // 
         toolStripSeparator3.Name = "toolStripSeparator3";
-        toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+        toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
         // 
         // cutToolStripMenuItem
         // 
@@ -241,7 +242,7 @@ partial class MatchView
         cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         cutToolStripMenuItem.Name = "cutToolStripMenuItem";
         cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X));
-        cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        cutToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         cutToolStripMenuItem.Text = "Cu&t";
         // 
         // copyToolStripMenuItem
@@ -250,7 +251,7 @@ partial class MatchView
         copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         copyToolStripMenuItem.Name = "copyToolStripMenuItem";
         copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C));
-        copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        copyToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         copyToolStripMenuItem.Text = "&Copy";
         // 
         // pasteToolStripMenuItem
@@ -259,73 +260,74 @@ partial class MatchView
         pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
         pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V));
-        pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        pasteToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         pasteToolStripMenuItem.Text = "&Paste";
         // 
         // toolStripSeparator4
         // 
         toolStripSeparator4.Name = "toolStripSeparator4";
-        toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+        toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
         // 
         // selectAllToolStripMenuItem
         // 
         selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-        selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+        selectAllToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         selectAllToolStripMenuItem.Text = "Select &All";
         // 
-        // toolsToolStripMenuItem
+        // ViewToolStripMenuItem
         // 
-        toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customizeToolStripMenuItem, optionsToolStripMenuItem });
-        toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-        toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-        toolsToolStripMenuItem.Text = "&Tools";
+        ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AllStatsToolStripMenuItem, GraphsToolStripMenuItem });
+        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
+        ViewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+        ViewToolStripMenuItem.Text = "&View";
         // 
-        // customizeToolStripMenuItem
+        // AllStatsToolStripMenuItem
         // 
-        customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-        customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-        customizeToolStripMenuItem.Text = "&Customize";
+        AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
+        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+        AllStatsToolStripMenuItem.Text = "&All Stats";
+        AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
-        // optionsToolStripMenuItem
+        // GraphsToolStripMenuItem
         // 
-        optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-        optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-        optionsToolStripMenuItem.Text = "&Options";
+        GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
+        GraphsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+        GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // helpToolStripMenuItem
         // 
         helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator5, aboutToolStripMenuItem });
         helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-        helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+        helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
         helpToolStripMenuItem.Text = "&Help";
         // 
         // contentsToolStripMenuItem
         // 
         contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-        contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+        contentsToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
         contentsToolStripMenuItem.Text = "&Contents";
         // 
         // indexToolStripMenuItem
         // 
         indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-        indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+        indexToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
         indexToolStripMenuItem.Text = "&Index";
         // 
         // searchToolStripMenuItem
         // 
         searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-        searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+        searchToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
         searchToolStripMenuItem.Text = "&Search";
         // 
         // toolStripSeparator5
         // 
         toolStripSeparator5.Name = "toolStripSeparator5";
-        toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+        toolStripSeparator5.Size = new System.Drawing.Size(147, 6);
         // 
         // aboutToolStripMenuItem
         // 
         aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+        aboutToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
         aboutToolStripMenuItem.Text = "&About...";
         // 
         // toolStripMenuItem4
@@ -621,10 +623,15 @@ partial class MatchView
         SecondsLabel.Text = "00";
         SecondsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
         // 
+        // toolStripMenuItem10
+        // 
+        toolStripMenuItem10.Name = "toolStripMenuItem10";
+        toolStripMenuItem10.Size = new System.Drawing.Size(32, 19);
+        // 
         // MatchView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(1902, 1033);
         Controls.Add(SecondsLabel);
@@ -668,6 +675,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
 
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 
@@ -743,9 +752,9 @@ partial class MatchView
     private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ViewToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem AllStatsToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem GraphsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;

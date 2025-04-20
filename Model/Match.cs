@@ -302,6 +302,19 @@ public class Match
         return new StatisticPair(freesConceded.HomeTeamValue + fouledFrees.AwayTeamValue,
             freesConceded.AwayTeamValue + fouledFrees.HomeTeamValue);
     }
+
+    public void GetTeamScoreStrings(out string homeTeamScore, out string awayTeamScore)
+    {
+        StatisticPair goals = GetStatisticForShotResult(ShotResultType.Goal);
+        StatisticPair points = GetStatisticForShotResult(ShotResultType.Point);
+        StatisticPair doublePoints = GetStatisticForShotResult(ShotResultType.DoublePoint);
+
+        int homeTotalPoints = points.HomeTeamValue + (doublePoints.HomeTeamValue * 2);
+        int awayTotalPoints = points.AwayTeamValue + (doublePoints.AwayTeamValue * 2);
+
+        homeTeamScore = goals.HomeTeamValue.ToString() + "-" + homeTotalPoints.ToString();
+        awayTeamScore = goals.AwayTeamValue.ToString() + "-" + awayTotalPoints.ToString();
+    }
     #endregion
     #endregion
 }
