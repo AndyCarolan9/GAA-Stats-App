@@ -180,6 +180,16 @@ public partial class MatchView : Form, IStatsView
         longShot.Name = "DoublePointShot";
         AddSubMenuItemsForShots(longShot);
         EventInputMenu.Items.Add(longShot);
+
+        ToolStripMenuItem turnOverWon = new ToolStripMenuItem("Turnover Won");
+        turnOverWon.Name = "TurnOverWon";
+        AddSubMenuItemsForTurnovers(turnOverWon);
+        EventInputMenu.Items.Add(turnOverWon);
+
+        ToolStripMenuItem turnOverLost = new ToolStripMenuItem("Turnover Lost");
+        turnOverLost.Name = "TurnOverLost";
+        AddSubMenuItemsForTurnovers(turnOverLost);
+        EventInputMenu.Items.Add(turnOverLost);
         
         ToolStripMenuItem kickout = new ToolStripMenuItem("Kick Out");
         EventInputMenu.Items.Add(kickout);
@@ -267,6 +277,36 @@ public partial class MatchView : Form, IStatsView
         ShotEventArgs shotEventArgs = new ShotEventArgs() { Location = _inputLocation, EventType = eventType, 
             ResultType = resultType };
         OnStatEntered?.Invoke(this, shotEventArgs);
+    }
+
+    private void TurnoverItemClick(object? sender, MouseEventArgs mouseEventArgs)
+    {
+        if (sender is null)
+        {
+            return;
+        }
+        
+        ToolStripMenuItem item = (ToolStripMenuItem)sender;
+        ToolStrip? toolStrip = item.GetCurrentParent();
+        if (toolStrip is null)
+        {
+            return;
+        }
+        
+        string? name = toolStrip.AccessibilityObject.Name;
+        if (name is null)
+        {
+            return;
+        }
+        
+        Enum.TryParse(name.Replace(" ", ""), out EventType eventType);
+        Enum.TryParse(item.Name, out TurnoverType turnoverType);
+        TurnoverEventArgs turnOverEventArgs = new TurnoverEventArgs()
+        {
+            Location = _inputLocation, EventType = eventType,
+            TurnoverType = turnoverType
+        };
+        OnStatEntered?.Invoke(this, turnOverEventArgs);
     }
 
     private void KickOutItemClicked(object? sender, MouseEventArgs mouseEventArgs)
@@ -366,6 +406,24 @@ public partial class MatchView : Form, IStatsView
         outFor45.Name = "OutFor45";
         outFor45.MouseDown += ShotItemClicked;
         parent.DropDownItems.Add(outFor45);
+    }
+
+    private void AddSubMenuItemsForTurnovers(ToolStripMenuItem parent)
+    {
+        ToolStripMenuItem tackled = new ToolStripMenuItem("Tackled");
+        tackled.Name = "Tackle";
+        tackled.MouseDown += TurnoverItemClick;
+        parent.DropDownItems.Add(tackled);
+
+        ToolStripMenuItem free = new ToolStripMenuItem("Free");
+        free.Name = "Free";
+        free.MouseDown += TurnoverItemClick;
+        parent.DropDownItems.Add(free);
+
+        ToolStripMenuItem intercept = new ToolStripMenuItem("Intercept");
+        intercept.Name = "Intercept";
+        intercept.MouseDown += TurnoverItemClick;
+        parent.DropDownItems.Add(intercept);
     }
 
     private void StartStopButton_MouseClick(object sender, MouseEventArgs e)
