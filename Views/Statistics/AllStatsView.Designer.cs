@@ -132,7 +132,6 @@ partial class AllStatsView
         splitCountBar64 = new StatsTracker.View_Elements.SplitCountBar(components);
         splitCountBar65 = new StatsTracker.View_Elements.SplitCountBar(components);
         splitCountBar66 = new StatsTracker.View_Elements.SplitCountBar(components);
-        pictureBox5 = new System.Windows.Forms.PictureBox();
         TotalGoalShots = new StatsTracker.View_Elements.StatisticBar();
         object_d09333d9_2291_414a_a0e5_464f4b9ae9a5 = new StatsTracker.View_Elements.SplitCountBar(components);
         splitCountBar67 = new StatsTracker.View_Elements.SplitCountBar(components);
@@ -145,6 +144,75 @@ partial class AllStatsView
         splitCountBar74 = new StatsTracker.View_Elements.SplitCountBar(components);
         splitCountBar75 = new StatsTracker.View_Elements.SplitCountBar(components);
         splitCountBar76 = new StatsTracker.View_Elements.SplitCountBar(components);
+        TotalWides = new StatsTracker.View_Elements.StatisticBar();
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar77 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar78 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar79 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar80 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar81 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar82 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar83 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar84 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar85 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar86 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar87 = new StatsTracker.View_Elements.SplitCountBar(components);
+        TotalBlockedShots = new StatsTracker.View_Elements.StatisticBar();
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar88 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar89 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar90 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar91 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar92 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar93 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar94 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar95 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar96 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar97 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar98 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar99 = new StatsTracker.View_Elements.SplitCountBar(components);
+        TotalSavedShots = new StatsTracker.View_Elements.StatisticBar();
+        splitCountBar100 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar101 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar102 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar103 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar104 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar105 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar106 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar107 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar108 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar109 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar110 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar111 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar112 = new StatsTracker.View_Elements.SplitCountBar(components);
+        TotalShortShots = new StatsTracker.View_Elements.StatisticBar();
+        splitCountBar113 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar114 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar115 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar116 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar117 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar118 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar119 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar120 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar121 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar122 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar123 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar124 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar125 = new StatsTracker.View_Elements.SplitCountBar(components);
+        TotalOutFor45 = new StatsTracker.View_Elements.StatisticBar();
+        splitCountBar126 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar127 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar128 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar129 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar130 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar131 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar132 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar133 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar134 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar135 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar136 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar137 = new StatsTracker.View_Elements.SplitCountBar(components);
+        splitCountBar138 = new StatsTracker.View_Elements.SplitCountBar(components);
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         KOWonCleanBar.SuspendLayout();
@@ -161,8 +229,12 @@ partial class AllStatsView
         TotalPointsScored.SuspendLayout();
         Total2PointScored.SuspendLayout();
         TotalGoalsScored.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
         TotalGoalShots.SuspendLayout();
+        TotalWides.SuspendLayout();
+        TotalBlockedShots.SuspendLayout();
+        TotalSavedShots.SuspendLayout();
+        TotalShortShots.SuspendLayout();
+        TotalOutFor45.SuspendLayout();
         SuspendLayout();
         // 
         // TeamSelectorBox
@@ -1237,15 +1309,6 @@ partial class AllStatsView
         splitCountBar66.TabIndex = 0;
         splitCountBar66.Value = 1;
         // 
-        // pictureBox5
-        // 
-        pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox5.Location = new System.Drawing.Point(739, 558);
-        pictureBox5.Name = "pictureBox5";
-        pictureBox5.Size = new System.Drawing.Size(528, 12);
-        pictureBox5.TabIndex = 23;
-        pictureBox5.TabStop = false;
-        // 
         // TotalGoalShots
         // 
         TotalGoalShots.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1377,13 +1440,771 @@ partial class AllStatsView
         splitCountBar76.TabIndex = 0;
         splitCountBar76.Value = 1;
         // 
+        // TotalWides
+        // 
+        TotalWides.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        TotalWides.Controls.Add(object_6015a485_a4bf_433c_925b_98e2e6ad86b2);
+        TotalWides.Controls.Add(splitCountBar77);
+        TotalWides.Controls.Add(splitCountBar78);
+        TotalWides.Controls.Add(splitCountBar79);
+        TotalWides.Controls.Add(splitCountBar80);
+        TotalWides.Controls.Add(splitCountBar81);
+        TotalWides.Controls.Add(splitCountBar82);
+        TotalWides.Controls.Add(splitCountBar83);
+        TotalWides.Controls.Add(splitCountBar84);
+        TotalWides.Controls.Add(splitCountBar85);
+        TotalWides.Controls.Add(splitCountBar86);
+        TotalWides.Controls.Add(splitCountBar87);
+        TotalWides.Location = new System.Drawing.Point(750, 560);
+        TotalWides.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TotalWides.Name = "TotalWides";
+        TotalWides.Size = new System.Drawing.Size(492, 60);
+        TotalWides.StatName = "# Wides";
+        TotalWides.TabIndex = 25;
+        // 
+        // object_6015a485_a4bf_433c_925b_98e2e6ad86b2
+        // 
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.Location = new System.Drawing.Point(0, 39);
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.Maximum = 2;
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.Name = "object_6015a485_a4bf_433c_925b_98e2e6ad86b2";
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.Size = new System.Drawing.Size(499, 27);
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.TabIndex = 0;
+        object_6015a485_a4bf_433c_925b_98e2e6ad86b2.Value = 1;
+        // 
+        // splitCountBar77
+        // 
+        splitCountBar77.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar77.Location = new System.Drawing.Point(0, 39);
+        splitCountBar77.Maximum = 2;
+        splitCountBar77.Name = "splitCountBar77";
+        splitCountBar77.Size = new System.Drawing.Size(499, 27);
+        splitCountBar77.TabIndex = 0;
+        splitCountBar77.Value = 1;
+        // 
+        // splitCountBar78
+        // 
+        splitCountBar78.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar78.Location = new System.Drawing.Point(0, 39);
+        splitCountBar78.Maximum = 2;
+        splitCountBar78.Name = "splitCountBar78";
+        splitCountBar78.Size = new System.Drawing.Size(499, 27);
+        splitCountBar78.TabIndex = 0;
+        splitCountBar78.Value = 1;
+        // 
+        // splitCountBar79
+        // 
+        splitCountBar79.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar79.Location = new System.Drawing.Point(0, 39);
+        splitCountBar79.Maximum = 2;
+        splitCountBar79.Name = "splitCountBar79";
+        splitCountBar79.Size = new System.Drawing.Size(499, 27);
+        splitCountBar79.TabIndex = 0;
+        splitCountBar79.Value = 1;
+        // 
+        // splitCountBar80
+        // 
+        splitCountBar80.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar80.Location = new System.Drawing.Point(0, 39);
+        splitCountBar80.Maximum = 2;
+        splitCountBar80.Name = "splitCountBar80";
+        splitCountBar80.Size = new System.Drawing.Size(499, 27);
+        splitCountBar80.TabIndex = 0;
+        splitCountBar80.Value = 1;
+        // 
+        // splitCountBar81
+        // 
+        splitCountBar81.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar81.Location = new System.Drawing.Point(0, 39);
+        splitCountBar81.Maximum = 2;
+        splitCountBar81.Name = "splitCountBar81";
+        splitCountBar81.Size = new System.Drawing.Size(499, 27);
+        splitCountBar81.TabIndex = 0;
+        splitCountBar81.Value = 1;
+        // 
+        // splitCountBar82
+        // 
+        splitCountBar82.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar82.Location = new System.Drawing.Point(0, 39);
+        splitCountBar82.Maximum = 2;
+        splitCountBar82.Name = "splitCountBar82";
+        splitCountBar82.Size = new System.Drawing.Size(499, 27);
+        splitCountBar82.TabIndex = 0;
+        splitCountBar82.Value = 1;
+        // 
+        // splitCountBar83
+        // 
+        splitCountBar83.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar83.Location = new System.Drawing.Point(0, 39);
+        splitCountBar83.Maximum = 2;
+        splitCountBar83.Name = "splitCountBar83";
+        splitCountBar83.Size = new System.Drawing.Size(499, 27);
+        splitCountBar83.TabIndex = 0;
+        splitCountBar83.Value = 1;
+        // 
+        // splitCountBar84
+        // 
+        splitCountBar84.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar84.Location = new System.Drawing.Point(0, 39);
+        splitCountBar84.Maximum = 2;
+        splitCountBar84.Name = "splitCountBar84";
+        splitCountBar84.Size = new System.Drawing.Size(499, 27);
+        splitCountBar84.TabIndex = 0;
+        splitCountBar84.Value = 1;
+        // 
+        // splitCountBar85
+        // 
+        splitCountBar85.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar85.Location = new System.Drawing.Point(0, 39);
+        splitCountBar85.Maximum = 2;
+        splitCountBar85.Name = "splitCountBar85";
+        splitCountBar85.Size = new System.Drawing.Size(499, 27);
+        splitCountBar85.TabIndex = 0;
+        splitCountBar85.Value = 1;
+        // 
+        // splitCountBar86
+        // 
+        splitCountBar86.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar86.Location = new System.Drawing.Point(0, 39);
+        splitCountBar86.Maximum = 2;
+        splitCountBar86.Name = "splitCountBar86";
+        splitCountBar86.Size = new System.Drawing.Size(499, 27);
+        splitCountBar86.TabIndex = 0;
+        splitCountBar86.Value = 1;
+        // 
+        // splitCountBar87
+        // 
+        splitCountBar87.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar87.Location = new System.Drawing.Point(0, 39);
+        splitCountBar87.Maximum = 2;
+        splitCountBar87.Name = "splitCountBar87";
+        splitCountBar87.Size = new System.Drawing.Size(499, 27);
+        splitCountBar87.TabIndex = 0;
+        splitCountBar87.Value = 1;
+        // 
+        // TotalBlockedShots
+        // 
+        TotalBlockedShots.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        TotalBlockedShots.Controls.Add(object_4aebd246_5a08_4ee9_b6ff_c8de61027839);
+        TotalBlockedShots.Controls.Add(splitCountBar88);
+        TotalBlockedShots.Controls.Add(splitCountBar89);
+        TotalBlockedShots.Controls.Add(splitCountBar90);
+        TotalBlockedShots.Controls.Add(splitCountBar91);
+        TotalBlockedShots.Controls.Add(splitCountBar92);
+        TotalBlockedShots.Controls.Add(splitCountBar93);
+        TotalBlockedShots.Controls.Add(splitCountBar94);
+        TotalBlockedShots.Controls.Add(splitCountBar95);
+        TotalBlockedShots.Controls.Add(splitCountBar96);
+        TotalBlockedShots.Controls.Add(splitCountBar97);
+        TotalBlockedShots.Controls.Add(splitCountBar98);
+        TotalBlockedShots.Controls.Add(splitCountBar99);
+        TotalBlockedShots.Location = new System.Drawing.Point(750, 633);
+        TotalBlockedShots.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TotalBlockedShots.Name = "TotalBlockedShots";
+        TotalBlockedShots.Size = new System.Drawing.Size(492, 60);
+        TotalBlockedShots.StatName = "# Of Shots Blocked";
+        TotalBlockedShots.TabIndex = 26;
+        // 
+        // object_4aebd246_5a08_4ee9_b6ff_c8de61027839
+        // 
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.Location = new System.Drawing.Point(0, 39);
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.Maximum = 2;
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.Name = "object_4aebd246_5a08_4ee9_b6ff_c8de61027839";
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.Size = new System.Drawing.Size(499, 27);
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.TabIndex = 0;
+        object_4aebd246_5a08_4ee9_b6ff_c8de61027839.Value = 1;
+        // 
+        // splitCountBar88
+        // 
+        splitCountBar88.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar88.Location = new System.Drawing.Point(0, 39);
+        splitCountBar88.Maximum = 2;
+        splitCountBar88.Name = "splitCountBar88";
+        splitCountBar88.Size = new System.Drawing.Size(499, 27);
+        splitCountBar88.TabIndex = 0;
+        splitCountBar88.Value = 1;
+        // 
+        // splitCountBar89
+        // 
+        splitCountBar89.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar89.Location = new System.Drawing.Point(0, 39);
+        splitCountBar89.Maximum = 2;
+        splitCountBar89.Name = "splitCountBar89";
+        splitCountBar89.Size = new System.Drawing.Size(499, 27);
+        splitCountBar89.TabIndex = 0;
+        splitCountBar89.Value = 1;
+        // 
+        // splitCountBar90
+        // 
+        splitCountBar90.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar90.Location = new System.Drawing.Point(0, 39);
+        splitCountBar90.Maximum = 2;
+        splitCountBar90.Name = "splitCountBar90";
+        splitCountBar90.Size = new System.Drawing.Size(499, 27);
+        splitCountBar90.TabIndex = 0;
+        splitCountBar90.Value = 1;
+        // 
+        // splitCountBar91
+        // 
+        splitCountBar91.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar91.Location = new System.Drawing.Point(0, 39);
+        splitCountBar91.Maximum = 2;
+        splitCountBar91.Name = "splitCountBar91";
+        splitCountBar91.Size = new System.Drawing.Size(499, 27);
+        splitCountBar91.TabIndex = 0;
+        splitCountBar91.Value = 1;
+        // 
+        // splitCountBar92
+        // 
+        splitCountBar92.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar92.Location = new System.Drawing.Point(0, 39);
+        splitCountBar92.Maximum = 2;
+        splitCountBar92.Name = "splitCountBar92";
+        splitCountBar92.Size = new System.Drawing.Size(499, 27);
+        splitCountBar92.TabIndex = 0;
+        splitCountBar92.Value = 1;
+        // 
+        // splitCountBar93
+        // 
+        splitCountBar93.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar93.Location = new System.Drawing.Point(0, 39);
+        splitCountBar93.Maximum = 2;
+        splitCountBar93.Name = "splitCountBar93";
+        splitCountBar93.Size = new System.Drawing.Size(499, 27);
+        splitCountBar93.TabIndex = 0;
+        splitCountBar93.Value = 1;
+        // 
+        // splitCountBar94
+        // 
+        splitCountBar94.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar94.Location = new System.Drawing.Point(0, 39);
+        splitCountBar94.Maximum = 2;
+        splitCountBar94.Name = "splitCountBar94";
+        splitCountBar94.Size = new System.Drawing.Size(499, 27);
+        splitCountBar94.TabIndex = 0;
+        splitCountBar94.Value = 1;
+        // 
+        // splitCountBar95
+        // 
+        splitCountBar95.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar95.Location = new System.Drawing.Point(0, 39);
+        splitCountBar95.Maximum = 2;
+        splitCountBar95.Name = "splitCountBar95";
+        splitCountBar95.Size = new System.Drawing.Size(499, 27);
+        splitCountBar95.TabIndex = 0;
+        splitCountBar95.Value = 1;
+        // 
+        // splitCountBar96
+        // 
+        splitCountBar96.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar96.Location = new System.Drawing.Point(0, 39);
+        splitCountBar96.Maximum = 2;
+        splitCountBar96.Name = "splitCountBar96";
+        splitCountBar96.Size = new System.Drawing.Size(499, 27);
+        splitCountBar96.TabIndex = 0;
+        splitCountBar96.Value = 1;
+        // 
+        // splitCountBar97
+        // 
+        splitCountBar97.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar97.Location = new System.Drawing.Point(0, 39);
+        splitCountBar97.Maximum = 2;
+        splitCountBar97.Name = "splitCountBar97";
+        splitCountBar97.Size = new System.Drawing.Size(499, 27);
+        splitCountBar97.TabIndex = 0;
+        splitCountBar97.Value = 1;
+        // 
+        // splitCountBar98
+        // 
+        splitCountBar98.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar98.Location = new System.Drawing.Point(0, 39);
+        splitCountBar98.Maximum = 2;
+        splitCountBar98.Name = "splitCountBar98";
+        splitCountBar98.Size = new System.Drawing.Size(499, 27);
+        splitCountBar98.TabIndex = 0;
+        splitCountBar98.Value = 1;
+        // 
+        // splitCountBar99
+        // 
+        splitCountBar99.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar99.Location = new System.Drawing.Point(0, 39);
+        splitCountBar99.Maximum = 2;
+        splitCountBar99.Name = "splitCountBar99";
+        splitCountBar99.Size = new System.Drawing.Size(499, 27);
+        splitCountBar99.TabIndex = 0;
+        splitCountBar99.Value = 1;
+        // 
+        // TotalSavedShots
+        // 
+        TotalSavedShots.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        TotalSavedShots.Controls.Add(splitCountBar100);
+        TotalSavedShots.Controls.Add(splitCountBar101);
+        TotalSavedShots.Controls.Add(splitCountBar102);
+        TotalSavedShots.Controls.Add(splitCountBar103);
+        TotalSavedShots.Controls.Add(splitCountBar104);
+        TotalSavedShots.Controls.Add(splitCountBar105);
+        TotalSavedShots.Controls.Add(splitCountBar106);
+        TotalSavedShots.Controls.Add(splitCountBar107);
+        TotalSavedShots.Controls.Add(splitCountBar108);
+        TotalSavedShots.Controls.Add(splitCountBar109);
+        TotalSavedShots.Controls.Add(splitCountBar110);
+        TotalSavedShots.Controls.Add(splitCountBar111);
+        TotalSavedShots.Controls.Add(splitCountBar112);
+        TotalSavedShots.Location = new System.Drawing.Point(750, 706);
+        TotalSavedShots.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TotalSavedShots.Name = "TotalSavedShots";
+        TotalSavedShots.Size = new System.Drawing.Size(492, 60);
+        TotalSavedShots.StatName = "# Of Saved Shots";
+        TotalSavedShots.TabIndex = 27;
+        // 
+        // splitCountBar100
+        // 
+        splitCountBar100.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar100.Location = new System.Drawing.Point(0, 39);
+        splitCountBar100.Maximum = 2;
+        splitCountBar100.Name = "splitCountBar100";
+        splitCountBar100.Size = new System.Drawing.Size(499, 27);
+        splitCountBar100.TabIndex = 0;
+        splitCountBar100.Value = 1;
+        // 
+        // splitCountBar101
+        // 
+        splitCountBar101.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar101.Location = new System.Drawing.Point(0, 39);
+        splitCountBar101.Maximum = 2;
+        splitCountBar101.Name = "splitCountBar101";
+        splitCountBar101.Size = new System.Drawing.Size(499, 27);
+        splitCountBar101.TabIndex = 0;
+        splitCountBar101.Value = 1;
+        // 
+        // splitCountBar102
+        // 
+        splitCountBar102.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar102.Location = new System.Drawing.Point(0, 39);
+        splitCountBar102.Maximum = 2;
+        splitCountBar102.Name = "splitCountBar102";
+        splitCountBar102.Size = new System.Drawing.Size(499, 27);
+        splitCountBar102.TabIndex = 0;
+        splitCountBar102.Value = 1;
+        // 
+        // splitCountBar103
+        // 
+        splitCountBar103.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar103.Location = new System.Drawing.Point(0, 39);
+        splitCountBar103.Maximum = 2;
+        splitCountBar103.Name = "splitCountBar103";
+        splitCountBar103.Size = new System.Drawing.Size(499, 27);
+        splitCountBar103.TabIndex = 0;
+        splitCountBar103.Value = 1;
+        // 
+        // splitCountBar104
+        // 
+        splitCountBar104.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar104.Location = new System.Drawing.Point(0, 39);
+        splitCountBar104.Maximum = 2;
+        splitCountBar104.Name = "splitCountBar104";
+        splitCountBar104.Size = new System.Drawing.Size(499, 27);
+        splitCountBar104.TabIndex = 0;
+        splitCountBar104.Value = 1;
+        // 
+        // splitCountBar105
+        // 
+        splitCountBar105.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar105.Location = new System.Drawing.Point(0, 39);
+        splitCountBar105.Maximum = 2;
+        splitCountBar105.Name = "splitCountBar105";
+        splitCountBar105.Size = new System.Drawing.Size(499, 27);
+        splitCountBar105.TabIndex = 0;
+        splitCountBar105.Value = 1;
+        // 
+        // splitCountBar106
+        // 
+        splitCountBar106.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar106.Location = new System.Drawing.Point(0, 39);
+        splitCountBar106.Maximum = 2;
+        splitCountBar106.Name = "splitCountBar106";
+        splitCountBar106.Size = new System.Drawing.Size(499, 27);
+        splitCountBar106.TabIndex = 0;
+        splitCountBar106.Value = 1;
+        // 
+        // splitCountBar107
+        // 
+        splitCountBar107.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar107.Location = new System.Drawing.Point(0, 39);
+        splitCountBar107.Maximum = 2;
+        splitCountBar107.Name = "splitCountBar107";
+        splitCountBar107.Size = new System.Drawing.Size(499, 27);
+        splitCountBar107.TabIndex = 0;
+        splitCountBar107.Value = 1;
+        // 
+        // splitCountBar108
+        // 
+        splitCountBar108.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar108.Location = new System.Drawing.Point(0, 39);
+        splitCountBar108.Maximum = 2;
+        splitCountBar108.Name = "splitCountBar108";
+        splitCountBar108.Size = new System.Drawing.Size(499, 27);
+        splitCountBar108.TabIndex = 0;
+        splitCountBar108.Value = 1;
+        // 
+        // splitCountBar109
+        // 
+        splitCountBar109.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar109.Location = new System.Drawing.Point(0, 39);
+        splitCountBar109.Maximum = 2;
+        splitCountBar109.Name = "splitCountBar109";
+        splitCountBar109.Size = new System.Drawing.Size(499, 27);
+        splitCountBar109.TabIndex = 0;
+        splitCountBar109.Value = 1;
+        // 
+        // splitCountBar110
+        // 
+        splitCountBar110.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar110.Location = new System.Drawing.Point(0, 39);
+        splitCountBar110.Maximum = 2;
+        splitCountBar110.Name = "splitCountBar110";
+        splitCountBar110.Size = new System.Drawing.Size(499, 27);
+        splitCountBar110.TabIndex = 0;
+        splitCountBar110.Value = 1;
+        // 
+        // splitCountBar111
+        // 
+        splitCountBar111.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar111.Location = new System.Drawing.Point(0, 39);
+        splitCountBar111.Maximum = 2;
+        splitCountBar111.Name = "splitCountBar111";
+        splitCountBar111.Size = new System.Drawing.Size(499, 27);
+        splitCountBar111.TabIndex = 0;
+        splitCountBar111.Value = 1;
+        // 
+        // splitCountBar112
+        // 
+        splitCountBar112.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar112.Location = new System.Drawing.Point(0, 39);
+        splitCountBar112.Maximum = 2;
+        splitCountBar112.Name = "splitCountBar112";
+        splitCountBar112.Size = new System.Drawing.Size(499, 27);
+        splitCountBar112.TabIndex = 0;
+        splitCountBar112.Value = 1;
+        // 
+        // TotalShortShots
+        // 
+        TotalShortShots.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        TotalShortShots.Controls.Add(splitCountBar113);
+        TotalShortShots.Controls.Add(splitCountBar114);
+        TotalShortShots.Controls.Add(splitCountBar115);
+        TotalShortShots.Controls.Add(splitCountBar116);
+        TotalShortShots.Controls.Add(splitCountBar117);
+        TotalShortShots.Controls.Add(splitCountBar118);
+        TotalShortShots.Controls.Add(splitCountBar119);
+        TotalShortShots.Controls.Add(splitCountBar120);
+        TotalShortShots.Controls.Add(splitCountBar121);
+        TotalShortShots.Controls.Add(splitCountBar122);
+        TotalShortShots.Controls.Add(splitCountBar123);
+        TotalShortShots.Controls.Add(splitCountBar124);
+        TotalShortShots.Controls.Add(splitCountBar125);
+        TotalShortShots.Location = new System.Drawing.Point(750, 779);
+        TotalShortShots.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TotalShortShots.Name = "TotalShortShots";
+        TotalShortShots.Size = new System.Drawing.Size(492, 60);
+        TotalShortShots.StatName = "# Short Shots";
+        TotalShortShots.TabIndex = 28;
+        // 
+        // splitCountBar113
+        // 
+        splitCountBar113.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar113.Location = new System.Drawing.Point(0, 39);
+        splitCountBar113.Maximum = 2;
+        splitCountBar113.Name = "splitCountBar113";
+        splitCountBar113.Size = new System.Drawing.Size(499, 27);
+        splitCountBar113.TabIndex = 0;
+        splitCountBar113.Value = 1;
+        // 
+        // splitCountBar114
+        // 
+        splitCountBar114.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar114.Location = new System.Drawing.Point(0, 39);
+        splitCountBar114.Maximum = 2;
+        splitCountBar114.Name = "splitCountBar114";
+        splitCountBar114.Size = new System.Drawing.Size(499, 27);
+        splitCountBar114.TabIndex = 0;
+        splitCountBar114.Value = 1;
+        // 
+        // splitCountBar115
+        // 
+        splitCountBar115.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar115.Location = new System.Drawing.Point(0, 39);
+        splitCountBar115.Maximum = 2;
+        splitCountBar115.Name = "splitCountBar115";
+        splitCountBar115.Size = new System.Drawing.Size(499, 27);
+        splitCountBar115.TabIndex = 0;
+        splitCountBar115.Value = 1;
+        // 
+        // splitCountBar116
+        // 
+        splitCountBar116.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar116.Location = new System.Drawing.Point(0, 39);
+        splitCountBar116.Maximum = 2;
+        splitCountBar116.Name = "splitCountBar116";
+        splitCountBar116.Size = new System.Drawing.Size(499, 27);
+        splitCountBar116.TabIndex = 0;
+        splitCountBar116.Value = 1;
+        // 
+        // splitCountBar117
+        // 
+        splitCountBar117.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar117.Location = new System.Drawing.Point(0, 39);
+        splitCountBar117.Maximum = 2;
+        splitCountBar117.Name = "splitCountBar117";
+        splitCountBar117.Size = new System.Drawing.Size(499, 27);
+        splitCountBar117.TabIndex = 0;
+        splitCountBar117.Value = 1;
+        // 
+        // splitCountBar118
+        // 
+        splitCountBar118.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar118.Location = new System.Drawing.Point(0, 39);
+        splitCountBar118.Maximum = 2;
+        splitCountBar118.Name = "splitCountBar118";
+        splitCountBar118.Size = new System.Drawing.Size(499, 27);
+        splitCountBar118.TabIndex = 0;
+        splitCountBar118.Value = 1;
+        // 
+        // splitCountBar119
+        // 
+        splitCountBar119.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar119.Location = new System.Drawing.Point(0, 39);
+        splitCountBar119.Maximum = 2;
+        splitCountBar119.Name = "splitCountBar119";
+        splitCountBar119.Size = new System.Drawing.Size(499, 27);
+        splitCountBar119.TabIndex = 0;
+        splitCountBar119.Value = 1;
+        // 
+        // splitCountBar120
+        // 
+        splitCountBar120.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar120.Location = new System.Drawing.Point(0, 39);
+        splitCountBar120.Maximum = 2;
+        splitCountBar120.Name = "splitCountBar120";
+        splitCountBar120.Size = new System.Drawing.Size(499, 27);
+        splitCountBar120.TabIndex = 0;
+        splitCountBar120.Value = 1;
+        // 
+        // splitCountBar121
+        // 
+        splitCountBar121.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar121.Location = new System.Drawing.Point(0, 39);
+        splitCountBar121.Maximum = 2;
+        splitCountBar121.Name = "splitCountBar121";
+        splitCountBar121.Size = new System.Drawing.Size(499, 27);
+        splitCountBar121.TabIndex = 0;
+        splitCountBar121.Value = 1;
+        // 
+        // splitCountBar122
+        // 
+        splitCountBar122.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar122.Location = new System.Drawing.Point(0, 39);
+        splitCountBar122.Maximum = 2;
+        splitCountBar122.Name = "splitCountBar122";
+        splitCountBar122.Size = new System.Drawing.Size(499, 27);
+        splitCountBar122.TabIndex = 0;
+        splitCountBar122.Value = 1;
+        // 
+        // splitCountBar123
+        // 
+        splitCountBar123.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar123.Location = new System.Drawing.Point(0, 39);
+        splitCountBar123.Maximum = 2;
+        splitCountBar123.Name = "splitCountBar123";
+        splitCountBar123.Size = new System.Drawing.Size(499, 27);
+        splitCountBar123.TabIndex = 0;
+        splitCountBar123.Value = 1;
+        // 
+        // splitCountBar124
+        // 
+        splitCountBar124.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar124.Location = new System.Drawing.Point(0, 39);
+        splitCountBar124.Maximum = 2;
+        splitCountBar124.Name = "splitCountBar124";
+        splitCountBar124.Size = new System.Drawing.Size(499, 27);
+        splitCountBar124.TabIndex = 0;
+        splitCountBar124.Value = 1;
+        // 
+        // splitCountBar125
+        // 
+        splitCountBar125.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar125.Location = new System.Drawing.Point(0, 39);
+        splitCountBar125.Maximum = 2;
+        splitCountBar125.Name = "splitCountBar125";
+        splitCountBar125.Size = new System.Drawing.Size(499, 27);
+        splitCountBar125.TabIndex = 0;
+        splitCountBar125.Value = 1;
+        // 
+        // TotalOutFor45
+        // 
+        TotalOutFor45.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        TotalOutFor45.Controls.Add(splitCountBar126);
+        TotalOutFor45.Controls.Add(splitCountBar127);
+        TotalOutFor45.Controls.Add(splitCountBar128);
+        TotalOutFor45.Controls.Add(splitCountBar129);
+        TotalOutFor45.Controls.Add(splitCountBar130);
+        TotalOutFor45.Controls.Add(splitCountBar131);
+        TotalOutFor45.Controls.Add(splitCountBar132);
+        TotalOutFor45.Controls.Add(splitCountBar133);
+        TotalOutFor45.Controls.Add(splitCountBar134);
+        TotalOutFor45.Controls.Add(splitCountBar135);
+        TotalOutFor45.Controls.Add(splitCountBar136);
+        TotalOutFor45.Controls.Add(splitCountBar137);
+        TotalOutFor45.Controls.Add(splitCountBar138);
+        TotalOutFor45.Location = new System.Drawing.Point(750, 852);
+        TotalOutFor45.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TotalOutFor45.Name = "TotalOutFor45";
+        TotalOutFor45.Size = new System.Drawing.Size(492, 60);
+        TotalOutFor45.StatName = "# Out For 45";
+        TotalOutFor45.TabIndex = 29;
+        // 
+        // splitCountBar126
+        // 
+        splitCountBar126.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar126.Location = new System.Drawing.Point(0, 39);
+        splitCountBar126.Maximum = 2;
+        splitCountBar126.Name = "splitCountBar126";
+        splitCountBar126.Size = new System.Drawing.Size(499, 27);
+        splitCountBar126.TabIndex = 0;
+        splitCountBar126.Value = 1;
+        // 
+        // splitCountBar127
+        // 
+        splitCountBar127.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar127.Location = new System.Drawing.Point(0, 39);
+        splitCountBar127.Maximum = 2;
+        splitCountBar127.Name = "splitCountBar127";
+        splitCountBar127.Size = new System.Drawing.Size(499, 27);
+        splitCountBar127.TabIndex = 0;
+        splitCountBar127.Value = 1;
+        // 
+        // splitCountBar128
+        // 
+        splitCountBar128.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar128.Location = new System.Drawing.Point(0, 39);
+        splitCountBar128.Maximum = 2;
+        splitCountBar128.Name = "splitCountBar128";
+        splitCountBar128.Size = new System.Drawing.Size(499, 27);
+        splitCountBar128.TabIndex = 0;
+        splitCountBar128.Value = 1;
+        // 
+        // splitCountBar129
+        // 
+        splitCountBar129.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar129.Location = new System.Drawing.Point(0, 39);
+        splitCountBar129.Maximum = 2;
+        splitCountBar129.Name = "splitCountBar129";
+        splitCountBar129.Size = new System.Drawing.Size(499, 27);
+        splitCountBar129.TabIndex = 0;
+        splitCountBar129.Value = 1;
+        // 
+        // splitCountBar130
+        // 
+        splitCountBar130.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar130.Location = new System.Drawing.Point(0, 39);
+        splitCountBar130.Maximum = 2;
+        splitCountBar130.Name = "splitCountBar130";
+        splitCountBar130.Size = new System.Drawing.Size(499, 27);
+        splitCountBar130.TabIndex = 0;
+        splitCountBar130.Value = 1;
+        // 
+        // splitCountBar131
+        // 
+        splitCountBar131.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar131.Location = new System.Drawing.Point(0, 39);
+        splitCountBar131.Maximum = 2;
+        splitCountBar131.Name = "splitCountBar131";
+        splitCountBar131.Size = new System.Drawing.Size(499, 27);
+        splitCountBar131.TabIndex = 0;
+        splitCountBar131.Value = 1;
+        // 
+        // splitCountBar132
+        // 
+        splitCountBar132.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar132.Location = new System.Drawing.Point(0, 39);
+        splitCountBar132.Maximum = 2;
+        splitCountBar132.Name = "splitCountBar132";
+        splitCountBar132.Size = new System.Drawing.Size(499, 27);
+        splitCountBar132.TabIndex = 0;
+        splitCountBar132.Value = 1;
+        // 
+        // splitCountBar133
+        // 
+        splitCountBar133.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar133.Location = new System.Drawing.Point(0, 39);
+        splitCountBar133.Maximum = 2;
+        splitCountBar133.Name = "splitCountBar133";
+        splitCountBar133.Size = new System.Drawing.Size(499, 27);
+        splitCountBar133.TabIndex = 0;
+        splitCountBar133.Value = 1;
+        // 
+        // splitCountBar134
+        // 
+        splitCountBar134.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar134.Location = new System.Drawing.Point(0, 39);
+        splitCountBar134.Maximum = 2;
+        splitCountBar134.Name = "splitCountBar134";
+        splitCountBar134.Size = new System.Drawing.Size(499, 27);
+        splitCountBar134.TabIndex = 0;
+        splitCountBar134.Value = 1;
+        // 
+        // splitCountBar135
+        // 
+        splitCountBar135.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar135.Location = new System.Drawing.Point(0, 39);
+        splitCountBar135.Maximum = 2;
+        splitCountBar135.Name = "splitCountBar135";
+        splitCountBar135.Size = new System.Drawing.Size(499, 27);
+        splitCountBar135.TabIndex = 0;
+        splitCountBar135.Value = 1;
+        // 
+        // splitCountBar136
+        // 
+        splitCountBar136.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar136.Location = new System.Drawing.Point(0, 39);
+        splitCountBar136.Maximum = 2;
+        splitCountBar136.Name = "splitCountBar136";
+        splitCountBar136.Size = new System.Drawing.Size(499, 27);
+        splitCountBar136.TabIndex = 0;
+        splitCountBar136.Value = 1;
+        // 
+        // splitCountBar137
+        // 
+        splitCountBar137.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar137.Location = new System.Drawing.Point(0, 39);
+        splitCountBar137.Maximum = 2;
+        splitCountBar137.Name = "splitCountBar137";
+        splitCountBar137.Size = new System.Drawing.Size(499, 27);
+        splitCountBar137.TabIndex = 0;
+        splitCountBar137.Value = 1;
+        // 
+        // splitCountBar138
+        // 
+        splitCountBar138.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        splitCountBar138.Location = new System.Drawing.Point(0, 39);
+        splitCountBar138.Maximum = 2;
+        splitCountBar138.Name = "splitCountBar138";
+        splitCountBar138.Size = new System.Drawing.Size(499, 27);
+        splitCountBar138.TabIndex = 0;
+        splitCountBar138.Value = 1;
+        // 
         // AllStatsView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         ClientSize = new System.Drawing.Size(1902, 1033);
+        Controls.Add(TotalOutFor45);
+        Controls.Add(TotalShortShots);
+        Controls.Add(TotalSavedShots);
+        Controls.Add(TotalBlockedShots);
+        Controls.Add(TotalWides);
         Controls.Add(TotalGoalShots);
-        Controls.Add(pictureBox5);
         Controls.Add(TotalGoalsScored);
         Controls.Add(Total2PointScored);
         Controls.Add(TotalPointsScored);
@@ -1424,10 +2245,85 @@ partial class AllStatsView
         TotalPointsScored.ResumeLayout(false);
         Total2PointScored.ResumeLayout(false);
         TotalGoalsScored.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
         TotalGoalShots.ResumeLayout(false);
+        TotalWides.ResumeLayout(false);
+        TotalBlockedShots.ResumeLayout(false);
+        TotalSavedShots.ResumeLayout(false);
+        TotalShortShots.ResumeLayout(false);
+        TotalOutFor45.ResumeLayout(false);
         ResumeLayout(false);
     }
+
+    private StatsTracker.View_Elements.StatisticBar TotalBlockedShots;
+    private StatsTracker.View_Elements.SplitCountBar object_4aebd246_5a08_4ee9_b6ff_c8de61027839;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar88;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar89;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar90;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar91;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar92;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar93;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar94;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar95;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar96;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar97;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar98;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar99;
+    private StatsTracker.View_Elements.StatisticBar TotalSavedShots;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar100;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar101;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar102;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar103;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar104;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar105;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar106;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar107;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar108;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar109;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar110;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar111;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar112;
+    private StatsTracker.View_Elements.StatisticBar TotalShortShots;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar113;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar114;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar115;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar116;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar117;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar118;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar119;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar120;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar121;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar122;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar123;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar124;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar125;
+    private StatsTracker.View_Elements.StatisticBar TotalOutFor45;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar126;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar127;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar128;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar129;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar130;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar131;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar132;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar133;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar134;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar135;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar136;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar137;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar138;
+
+    private StatsTracker.View_Elements.StatisticBar TotalWides;
+    private StatsTracker.View_Elements.SplitCountBar object_6015a485_a4bf_433c_925b_98e2e6ad86b2;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar77;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar78;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar79;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar80;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar81;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar82;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar83;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar84;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar85;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar86;
+    private StatsTracker.View_Elements.SplitCountBar splitCountBar87;
 
     private StatsTracker.View_Elements.StatisticBar TotalGoalShots;
     private StatsTracker.View_Elements.SplitCountBar object_d09333d9_2291_414a_a0e5_464f4b9ae9a5;
@@ -1441,8 +2337,6 @@ partial class AllStatsView
     private StatsTracker.View_Elements.SplitCountBar splitCountBar74;
     private StatsTracker.View_Elements.SplitCountBar splitCountBar75;
     private StatsTracker.View_Elements.SplitCountBar splitCountBar76;
-
-    private System.Windows.Forms.PictureBox pictureBox5;
 
     private System.Windows.Forms.Label HomeTeamLabel;
     private System.Windows.Forms.Label AwayTeamLabel;

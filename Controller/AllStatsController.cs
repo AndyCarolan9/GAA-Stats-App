@@ -131,6 +131,19 @@ public class AllStatsController : IStatsController
         _view.GetPointsScoredBar().UpdateValues(pointsScored.HomeTeamValue, pointsScored.AwayTeamValue);
         _view.GetTotal2PointScoredBar().UpdateValues(doublePointsScored.HomeTeamValue, doublePointsScored.AwayTeamValue);
         _view.GetTotalGoalScoredBar().UpdateValues(goalScored.HomeTeamValue, goalScored.AwayTeamValue);
+        
+        StatisticPair wides = _match.GetStatisticForShotResult(ShotResultType.Wide);
+        StatisticPair outFor45 = _match.GetStatisticForShotResult(ShotResultType.OutFor45);
+        StatisticPair saved45 = _match.GetStatisticForShotResult(ShotResultType.SavedOutFor45);
+        StatisticPair saved = _match.GetStatisticForShotResult(ShotResultType.Saved);
+        StatisticPair shortShots = _match.GetStatisticForShotResult(ShotResultType.Short);
+        
+        _view.GetTotalWidesBar().UpdateValues(wides.HomeTeamValue, wides.AwayTeamValue);
+        _view.GetTotalOutFor45Bar().UpdateValues(outFor45.HomeTeamValue + saved45.HomeTeamValue,
+            outFor45.AwayTeamValue + saved45.AwayTeamValue);
+        _view.GetTotalSavedShotsBar().UpdateValues(saved.HomeTeamValue + saved45.HomeTeamValue, 
+            saved.AwayTeamValue + saved45.AwayTeamValue);
+        _view.GetTotalShortShotsBar().UpdateValues(shortShots.HomeTeamValue, shortShots.AwayTeamValue);
     }
     #endregion
 }

@@ -116,6 +116,31 @@ public partial class AllStatsView : Form, IStatsView
     {
         return TotalGoalsScored;
     }
+
+    public StatisticBar GetTotalWidesBar()
+    {
+        return TotalWides;
+    }
+
+    public StatisticBar GetTotalBlockedShotsBar()
+    {
+        return TotalBlockedShots;
+    }
+
+    public StatisticBar GetTotalShortShotsBar()
+    {
+        return TotalShortShots;
+    }
+
+    public StatisticBar GetTotalSavedShotsBar()
+    {
+        return TotalSavedShots;
+    }
+
+    public StatisticBar GetTotalOutFor45Bar()
+    {
+        return TotalOutFor45;
+    }
     #endregion
 
     public StatisticBar[] GetAllStatisticsBars()
