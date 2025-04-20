@@ -274,9 +274,20 @@ public class MatchController : IStatsController
         statisticBar.InitialiseValues();
         statisticBar.SetTeamColors(_match.HomeTeam.TeamColor, _match.AwayTeam.TeamColor);
     }
+
+    private void UpdateScoreCard()
+    {
+        _match.GetTeamScoreStrings(out var homeTeamScore, out var awayTeamScore);
+        _view.GetHomeTeamScoreLabel().Text = homeTeamScore;
+        _view.GetAwayTeamScoreLabel().Text = awayTeamScore;
+    }
     
+    /// <summary>
+    /// Updates the scorecard and the statistic bars in the view.
+    /// </summary>
     private void UpdateView()
     {
+        UpdateScoreCard();
         UpdateTurnOversBar();
         UpdateKickOutsWonBar();
         UpdatePointShotsBar();
@@ -369,6 +380,7 @@ public class MatchController : IStatsController
         _match =  new Match(new Team(e.HomeTeamName, e.HomeTeamColor, e.HomePlayers.ToList()), new Team(e.AwayTeamName, e.AwayTeamColor, e.AwayPlayers.ToList()));
         SetTeamDataInView();
         _filePath = null;
+        UpdateScoreCard();
         SetupStatisticBars();
         CloseCreateMatchMenu(sender, e);
     }
@@ -434,6 +446,7 @@ public class MatchController : IStatsController
             _match = loadedMatch;
             SetTeamDataInView();
             SetupStatisticBars();
+            UpdateView();
         }
     }
     #endregion
