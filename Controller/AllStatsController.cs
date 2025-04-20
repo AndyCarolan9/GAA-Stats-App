@@ -16,9 +16,7 @@ public class AllStatsController : IStatsController
     {
         _match = match;
         _view = new AllStatsView();
-        SetupInitialViewData();
         InitialiseStatisticBars();
-        BindViewEvents();
         UpdateViewData();
     }
     
@@ -31,11 +29,6 @@ public class AllStatsController : IStatsController
     {
         return _view.GetForm().ShowDialog();
     }
-
-    private void BindViewEvents()
-    {
-        _view.OnTeamChanged += SelectedTeamChanged;
-    }
     
     #region View Event Methods
     private void SelectedTeamChanged(object? sender, EventArgs e)
@@ -45,14 +38,6 @@ public class AllStatsController : IStatsController
     #endregion
     
     #region View Display Methods
-    private void SetupInitialViewData()
-    {
-        ComboBox teamSelector = _view.GetTeamSelector();
-        teamSelector.Items.Add(_match.HomeTeam.TeamName);
-        teamSelector.Items.Add(_match.AwayTeam.TeamName);
-        teamSelector.SelectedIndex = 0;
-    }
-
     private void UpdateViewData()
     {
         // TODO Get the selected team and update the view with it's data.
