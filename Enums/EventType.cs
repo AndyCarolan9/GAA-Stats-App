@@ -62,4 +62,9 @@ static class EventTypeExtensions
                 return false;
         }
     }
+
+    public static string GetEventName(this EventType eventType)
+    {
+        return string.Concat(eventType.ToString().Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+    }
 }

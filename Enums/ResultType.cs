@@ -69,6 +69,11 @@ static class ShotResultTyeExtensions
                 return false;
         }
     }
+    
+    public static string GetEventName(this ShotResultType eventType)
+    {
+        return string.Concat(eventType.ToString().Select(x => Char.IsUpper(x) || Char.IsNumber(x) ? " " + x : x.ToString())).TrimStart(' ');
+    }
 }
 
 static class KickOutResultExtensions
@@ -90,5 +95,10 @@ static class KickOutResultExtensions
             default:
                 return true;
         }
+    }
+    
+    public static string GetEventName(this KickOutResultType eventType)
+    {
+        return string.Concat(eventType.ToString().Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
     }
 }

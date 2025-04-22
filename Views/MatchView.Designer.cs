@@ -100,6 +100,7 @@ partial class MatchView
         SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
         toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+        EventListBox = new System.Windows.Forms.ListBox();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -628,12 +629,21 @@ partial class MatchView
         toolStripMenuItem10.Name = "toolStripMenuItem10";
         toolStripMenuItem10.Size = new System.Drawing.Size(32, 19);
         // 
+        // EventListBox
+        // 
+        EventListBox.FormattingEnabled = true;
+        EventListBox.Location = new System.Drawing.Point(723, 219);
+        EventListBox.Name = "EventListBox";
+        EventListBox.Size = new System.Drawing.Size(591, 544);
+        EventListBox.TabIndex = 33;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(1902, 1033);
+        Controls.Add(EventListBox);
         Controls.Add(SecondsLabel);
         Controls.Add(label5);
         Controls.Add(MinutesLabel);
@@ -675,6 +685,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ListBox EventListBox;
 
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
 

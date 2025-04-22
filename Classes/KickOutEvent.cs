@@ -20,4 +20,13 @@ public class KickOutEvent : MatchEvent
     #region Properties
     public KickOutResultType  ResultType { get; set; }
     #endregion
+
+    public override string ToString()
+    {
+        string formattedTime = FormatTime();
+        string eventTypeString = Type.GetEventName();
+        string resultTypeString = ResultType.GetEventName();
+        
+        return formattedTime + " " + TeamName + " " + eventTypeString + "-" + resultTypeString + " by " + Player;
+    }
 }

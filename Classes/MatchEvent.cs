@@ -40,4 +40,18 @@ public class MatchEvent
     public int HalfIndex { get; set; }
 
     #endregion
+
+    public override string ToString()
+    {
+        string formattedTime = FormatTime();
+        string eventTypeString = Type.GetEventName();
+        return formattedTime + " " + TeamName + " " + eventTypeString + " " + Player;
+    }
+
+    protected string FormatTime()
+    {
+        TimeSpan time = TimeSpan.FromMilliseconds(Time);
+        string half = HalfIndex == 1 ? "1st" : "2nd";
+        return time.Minutes + ":" + time.Seconds + " mins " + half + " half"; 
+    }
 }

@@ -141,6 +141,11 @@ public partial class MatchView : Form, IStatsView
     {
         return OpenFileDialog;
     }
+
+    public ListBox GetEventListBox()
+    {
+        return EventListBox;
+    }
     #endregion
     
     /// <summary>

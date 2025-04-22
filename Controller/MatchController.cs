@@ -288,12 +288,27 @@ public class MatchController : IStatsController
     private void UpdateView()
     {
         UpdateScoreCard();
+        UpdateEventList();
         UpdateTurnOversBar();
         UpdateKickOutsWonBar();
         UpdatePointShotsBar();
         UpdateGoalShotsBar();
         UpdateWidesBar();
         UpdateFreesBar();
+    }
+
+    private void UpdateEventList()
+    {
+        ListBox eventList = _view.GetEventListBox();
+        eventList.BeginUpdate();
+        eventList.Items.Clear();
+        List<MatchEvent> events = _match.MatchEvents;
+        events.Reverse();
+        foreach (var matchEvent in events)
+        {
+            eventList.Items.Add(matchEvent);
+        }
+        eventList.EndUpdate();
     }
 
     private void UpdateTurnOversBar()

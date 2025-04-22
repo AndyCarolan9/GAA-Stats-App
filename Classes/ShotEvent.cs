@@ -23,4 +23,14 @@ public class ShotEvent : MatchEvent
     
     public ShotResultType ResultType { get; set; }
     #endregion
+
+    public override string ToString()
+    {
+        string formattedTime = FormatTime();
+        string eventTypeString = Type.GetEventName();
+        string resultTypeString = ResultType.GetEventName();
+        
+        return formattedTime + " " + TeamName + " " + eventTypeString + "-" + resultTypeString + " from " 
+               + ActionType + " by " + Player;
+    }
 }
