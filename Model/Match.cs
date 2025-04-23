@@ -61,7 +61,11 @@ public class Match
     #endregion
     
     #region Methods
-
+    public bool IsHomeTeamInPossession()
+    {
+        return _isHomeTeamInPossession;
+    }
+    
     public bool IsMatchValid()
     {
         return HomeTeam.IsTeamValid() && AwayTeam.IsTeamValid();

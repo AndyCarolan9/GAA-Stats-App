@@ -101,12 +101,18 @@ partial class MatchView
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
         toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
         EventListBox = new System.Windows.Forms.ListBox();
+        HomePitchLabel = new System.Windows.Forms.Label();
+        AwayPitchLabel = new System.Windows.Forms.Label();
+        HomePitchHighlight = new System.Windows.Forms.PictureBox();
+        AwayPitchHighlight = new System.Windows.Forms.PictureBox();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)HomePitchHighlight).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)AwayPitchHighlight).BeginInit();
         SuspendLayout();
         // 
         // FootballFieldInput
@@ -114,10 +120,9 @@ partial class MatchView
         FootballFieldInput.BackgroundImage = ((System.Drawing.Image)resources.GetObject("FootballFieldInput.BackgroundImage"));
         FootballFieldInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         FootballFieldInput.ContextMenuStrip = EventInputMenu;
-        FootballFieldInput.Dock = System.Windows.Forms.DockStyle.Left;
-        FootballFieldInput.Location = new System.Drawing.Point(0, 28);
+        FootballFieldInput.Location = new System.Drawing.Point(5, 28);
         FootballFieldInput.Name = "FootballFieldInput";
-        FootballFieldInput.Size = new System.Drawing.Size(700, 1005);
+        FootballFieldInput.Size = new System.Drawing.Size(700, 964);
         FootballFieldInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         FootballFieldInput.TabIndex = 0;
         FootballFieldInput.TabStop = false;
@@ -637,12 +642,60 @@ partial class MatchView
         EventListBox.Size = new System.Drawing.Size(591, 544);
         EventListBox.TabIndex = 33;
         // 
+        // HomePitchLabel
+        // 
+        HomePitchLabel.BackColor = System.Drawing.Color.Black;
+        HomePitchLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+        HomePitchLabel.ForeColor = System.Drawing.Color.White;
+        HomePitchLabel.Location = new System.Drawing.Point(607, 28);
+        HomePitchLabel.Name = "HomePitchLabel";
+        HomePitchLabel.Size = new System.Drawing.Size(93, 52);
+        HomePitchLabel.TabIndex = 34;
+        HomePitchLabel.Text = "Home";
+        HomePitchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // AwayPitchLabel
+        // 
+        AwayPitchLabel.BackColor = System.Drawing.Color.Black;
+        AwayPitchLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+        AwayPitchLabel.ForeColor = System.Drawing.Color.White;
+        AwayPitchLabel.Location = new System.Drawing.Point(607, 930);
+        AwayPitchLabel.Name = "AwayPitchLabel";
+        AwayPitchLabel.Size = new System.Drawing.Size(93, 52);
+        AwayPitchLabel.TabIndex = 37;
+        AwayPitchLabel.Text = "Away";
+        AwayPitchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // HomePitchHighlight
+        // 
+        HomePitchHighlight.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)128)), ((int)((byte)0)));
+        HomePitchHighlight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        HomePitchHighlight.Location = new System.Drawing.Point(607, 70);
+        HomePitchHighlight.Name = "HomePitchHighlight";
+        HomePitchHighlight.Size = new System.Drawing.Size(93, 16);
+        HomePitchHighlight.TabIndex = 38;
+        HomePitchHighlight.TabStop = false;
+        // 
+        // AwayPitchHighlight
+        // 
+        AwayPitchHighlight.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)128)), ((int)((byte)0)));
+        AwayPitchHighlight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        AwayPitchHighlight.Location = new System.Drawing.Point(607, 976);
+        AwayPitchHighlight.Name = "AwayPitchHighlight";
+        AwayPitchHighlight.Size = new System.Drawing.Size(93, 16);
+        AwayPitchHighlight.TabIndex = 39;
+        AwayPitchHighlight.TabStop = false;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        ClientSize = new System.Drawing.Size(1902, 1033);
+        ClientSize = new System.Drawing.Size(1902, 996);
+        Controls.Add(AwayPitchHighlight);
+        Controls.Add(HomePitchHighlight);
+        Controls.Add(AwayPitchLabel);
+        Controls.Add(HomePitchLabel);
         Controls.Add(EventListBox);
         Controls.Add(SecondsLabel);
         Controls.Add(label5);
@@ -682,9 +735,18 @@ partial class MatchView
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+        ((System.ComponentModel.ISupportInitialize)HomePitchHighlight).EndInit();
+        ((System.ComponentModel.ISupportInitialize)AwayPitchHighlight).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.PictureBox AwayPitchHighlight;
+
+    private System.Windows.Forms.Label AwayPitchLabel;
+    private System.Windows.Forms.PictureBox HomePitchHighlight;
+
+    private System.Windows.Forms.Label HomePitchLabel;
 
     private System.Windows.Forms.ListBox EventListBox;
 

@@ -146,6 +146,31 @@ public partial class MatchView : Form, IStatsView
     {
         return EventListBox;
     }
+
+    public Label GetHomePitchLabel()
+    {
+        return HomePitchLabel;
+    }
+
+    public Label GetAwayPitchLabel()
+    {
+        return AwayPitchLabel;
+    }
+
+    public PictureBox GetHomePitchHighlight()
+    {
+        return HomePitchHighlight;
+    }
+
+    public PictureBox GetAwayPitchHighlight()
+    {
+        return AwayPitchHighlight;
+    }
+
+    public PictureBox GetPitchInput()
+    {
+        return FootballFieldInput;
+    }
     #endregion
     
     /// <summary>

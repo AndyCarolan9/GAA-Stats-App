@@ -275,6 +275,29 @@ public class MatchController : IStatsController
         statisticBar.SetTeamColors(_match.HomeTeam.TeamColor, _match.AwayTeam.TeamColor);
     }
 
+    private void SetupTeamPitchLabels()
+    {
+        PictureBox parent = _view.GetPitchInput();
+        
+        Label homeLabel = _view.GetHomePitchLabel();
+        homeLabel.Parent = parent;
+        int homePosX = homeLabel.Location.X - parent.Location.X;
+        int homePosY = homeLabel.Location.Y - parent.Location.Y;
+        homeLabel.Location = new Point(homePosX, homePosY);
+        homeLabel.BackColor = Color.Transparent;
+        homeLabel.Text = _match.HomeTeam.TeamName[new Range(0, 4)];
+        _view.GetHomePitchHighlight().Visible = false;
+        
+        Label awayLabel = _view.GetAwayPitchLabel();
+        awayLabel.Parent = _view.GetPitchInput();
+        int awayPosX = awayLabel.Location.X - parent.Location.X;
+        int awayPosY = awayLabel.Location.Y - parent.Location.Y;
+        awayLabel.Location = new Point(awayPosX, awayPosY);
+        awayLabel.BackColor = Color.Transparent;
+        awayLabel.Text = _match.AwayTeam.TeamName[new Range(0, 4)];
+        _view.GetAwayPitchHighlight().Visible = false;
+    }
+
     private void UpdateScoreCard()
     {
         _match.GetTeamScoreStrings(out var homeTeamScore, out var awayTeamScore);
@@ -288,6 +311,7 @@ public class MatchController : IStatsController
     private void UpdateView()
     {
         UpdateScoreCard();
+        UpdateTeamInPossessionHighlight();
         UpdateEventList();
         UpdateTurnOversBar();
         UpdateKickOutsWonBar();
@@ -295,6 +319,12 @@ public class MatchController : IStatsController
         UpdateGoalShotsBar();
         UpdateWidesBar();
         UpdateFreesBar();
+    }
+
+    private void UpdateTeamInPossessionHighlight()
+    {
+        _view.GetHomePitchHighlight().Visible = _match.IsHomeTeamInPossession();
+        _view.GetAwayPitchHighlight().Visible = !_match.IsHomeTeamInPossession();
     }
 
     private void UpdateEventList()
@@ -397,6 +427,7 @@ public class MatchController : IStatsController
         _filePath = null;
         UpdateScoreCard();
         SetupStatisticBars();
+        SetupTeamPitchLabels();
         CloseCreateMatchMenu(sender, e);
     }
 
@@ -461,6 +492,7 @@ public class MatchController : IStatsController
             _match = loadedMatch;
             SetTeamDataInView();
             SetupStatisticBars();
+            SetupTeamPitchLabels();
             UpdateView();
         }
     }
