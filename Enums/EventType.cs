@@ -18,7 +18,8 @@ public enum EventType
     RedCard2Y,
     YellowCard,
     TurnoverWon,
-    TurnoverLost
+    TurnoverLost,
+    ThrowInWon
 }
 
 /// <summary>

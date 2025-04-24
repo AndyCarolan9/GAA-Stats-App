@@ -177,6 +177,14 @@ public class Match
         {
             _isHomeTeamInPossession = !_isHomeTeamInPossession;
         }
+
+        if (statArgs.EventType == EventType.ThrowInWon)
+        {
+            if (GetInPossessionTeam().TeamName != statArgs.Team.TeamName)
+            {
+                _isHomeTeamInPossession = !_isHomeTeamInPossession;
+            }
+        }
     }
 
     private void AddEvent(ShotEventArgs shotArgs)
