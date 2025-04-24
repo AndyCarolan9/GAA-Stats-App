@@ -26,6 +26,18 @@ public class Team
 
     public Team(string teamName, Color teamColor, List<string> teamSheet)
     {
+        if (teamSheet.Count < 15)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                if (string.IsNullOrEmpty(teamSheet.ElementAtOrDefault(i)))
+                {
+                    int pos = i + 1;
+                    teamSheet.Add(pos.ToString());
+                }
+            }
+        }
+        
         TeamName = teamName;
         TeamColor = teamColor;
         TeamSheet = teamSheet;
