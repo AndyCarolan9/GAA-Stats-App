@@ -168,6 +168,12 @@ public class Match
             AddEvent(turnOverArgs);
             return;
         }
+
+        if (statArgs is SubstitutionEventArgs subEventArgs)
+        {
+            AddEvent(subEventArgs);
+            return;
+        }
         
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.Team.TeamName, _half);
@@ -219,6 +225,14 @@ public class Match
         MatchEvents.Add(matchEvent);
 
         _isHomeTeamInPossession = !_isHomeTeamInPossession;
+    }
+
+    private void AddEvent(SubstitutionEventArgs substitutionEventArgs)
+    {
+        var matchEvent = new SubstitutionEvent(substitutionEventArgs.Player, substitutionEventArgs.SubstitutePlayer,
+            _matchTimer.ElapsedMilliseconds, EventType.Substitution, substitutionEventArgs.Team.TeamName,
+            _half);
+        MatchEvents.Add(matchEvent);
     }
     #endregion
     

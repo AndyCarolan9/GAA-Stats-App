@@ -67,6 +67,7 @@ public class MatchController : IStatsController
         _view.OnOpenGamePressed += OpenGame;
         _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnContextMenuOpened += ContextMenuOpened;
+        _view.OnOpenSubsButtonPressed += OpenSubMenu;
     }
 
     #region Context Menu
@@ -371,6 +372,26 @@ public class MatchController : IStatsController
         parent.DropDownItems.Add(intercept);
     }
     #endregion
+
+    private void OpenSubMenu(object? sender, EventArgs e)
+    {
+        Button? subsButton = sender as Button;
+        if (subsButton == null)
+        {
+            return;
+        }
+        
+        bool isHomeTeam = subsButton.Name.Contains("Home");
+        Team selectedTeam = isHomeTeam ? _match.HomeTeam : _match.AwayTeam;
+
+        SubstitutionEventArgs eventArgs = new SubstitutionEventArgs();
+        eventArgs.Team = selectedTeam;
+        eventArgs.EventType = EventType.Substitution;
+
+        _selectWindow = new SubstituteSelectWindow(eventArgs);
+        BindActionViewEvents();
+        _selectWindow.ShowDialog();
+    }
 
     /// <summary>
     /// Called when a stat is entered on the pitch input of the match view.

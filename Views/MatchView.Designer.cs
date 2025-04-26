@@ -446,6 +446,7 @@ partial class MatchView
         HomeTeamSubs.TabIndex = 9;
         HomeTeamSubs.Text = "Subs";
         HomeTeamSubs.UseVisualStyleBackColor = true;
+        HomeTeamSubs.MouseClick += SubsMenuButtonClick;
         // 
         // AwayTeamSubs
         // 
@@ -456,6 +457,7 @@ partial class MatchView
         AwayTeamSubs.TabIndex = 10;
         AwayTeamSubs.Text = "Subs";
         AwayTeamSubs.UseVisualStyleBackColor = true;
+        AwayTeamSubs.MouseClick += SubsMenuButtonClick;
         // 
         // pictureBox3
         // 

@@ -20,7 +20,7 @@ public class CreateMatchController : IStatsController
     {
         _view = new CreateMatchView();
         
-        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(GetSavePath());
+        Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(JSONHelper.GetFilePath(_filePath));
         if (teams != null)
         {
             _teams.AddRange(teams);
@@ -404,14 +404,9 @@ public class CreateMatchController : IStatsController
         teamSelectedEventArgs.HomeTeamColor = _view.GetHomeTeamPictureBox().BackColor;
         teamSelectedEventArgs.AwayTeamColor = _view.GetAwayTeamPictureBox().BackColor;
         
-        JSONHelper.SaveToJsonFile(GetSavePath(), _teams.ToArray());
+        JSONHelper.SaveToJsonFile(JSONHelper.GetFilePath(_filePath), _teams.ToArray());
         
         OnTeamSelected?.Invoke(this, teamSelectedEventArgs);
-    }
-
-    private string GetSavePath()
-    {
-        return Application.StartupPath + "\\" + _filePath;
     }
 
     private void OnCancelClick(object? sender, MouseEventArgs e)

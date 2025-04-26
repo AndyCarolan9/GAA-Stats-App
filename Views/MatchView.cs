@@ -26,6 +26,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnAllStatsPressed;
     
     public event EventHandler? OnContextMenuOpened;
+    
+    public event EventHandler? OnOpenSubsButtonPressed; 
 
     private Point _inputLocation = new Point(0, 0);
     
@@ -192,6 +194,11 @@ public partial class MatchView : Form, IStatsView
             _inputLocation = mouseEventArgs.Location;
             EventInputMenu.Show(this, mouseEventArgs.Location);
         }
+    }
+
+    private void SubsMenuButtonClick(object? sender, MouseEventArgs mouseEventArgs)
+    {
+        OnOpenSubsButtonPressed?.Invoke(sender, mouseEventArgs);
     }
 
     /// <summary>

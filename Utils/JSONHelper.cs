@@ -47,4 +47,9 @@ public static class JSONHelper
             sw.Write(jsonString);
         }
     }
+    
+    public static string GetFilePath(string fileName)
+    {
+        return Application.StartupPath + "\\" + fileName;
+    }
 }
