@@ -40,6 +40,8 @@ static class EventTypeExtensions
         {
             case EventType.TurnoverLost:
             case EventType.PointShot:
+            case EventType.DoublePointShot:
+            case EventType.GoalShot:
             case EventType.KickOut:
                 return true;
             default:

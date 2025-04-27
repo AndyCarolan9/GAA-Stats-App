@@ -91,7 +91,7 @@ public class MatchController : IStatsController
         AddSubMenuItemsForShots(goalShot);
         eventInputMenu.Items.Add(goalShot);
         
-        ToolStripMenuItem longShot = new ToolStripMenuItem("2 Point Shot");
+        ToolStripMenuItem longShot = new ToolStripMenuItem("Double Point Shot");
         longShot.Name = "DoublePointShot";
         AddSubMenuItemsForShots(longShot);
         eventInputMenu.Items.Add(longShot);
@@ -320,7 +320,7 @@ public class MatchController : IStatsController
             parent.DropDownItems.Add(saved45);
         }
 
-        if (parent.Name == "2PointShot")
+        if (parent.Name == "DoublePointShot")
         {
             ToolStripMenuItem doublePointScored = new ToolStripMenuItem("2 Pointer Scored");
             doublePointScored.Name = "DoublePoint";
