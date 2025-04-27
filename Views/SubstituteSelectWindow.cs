@@ -15,6 +15,11 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
 
     private void LoadSubsitutes()
     {
+        if (InputStatEventArgs == null)
+        {
+            return;
+        }
+        
         Team[]? teams = JSONHelper.LoadFromJsonFile<Team[]>(JSONHelper.GetFilePath("Teams.json"));
         if (teams == null)
         {
@@ -27,9 +32,18 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
             return;
         }
         
+        List<string> availablePlayers = new List<string>();
+        foreach (string player in selectedTeam.TeamSheet)
+        {
+            if (!InputStatEventArgs.Team.CurrentTeam.Contains(player))
+            {
+                availablePlayers.Add(player);
+            }
+        }
+        
         PlayerListbox.BeginUpdate();
         PlayerListbox.Items.Clear();
-        PlayerListbox.Items.AddRange(selectedTeam.TeamSheet.ToArray());
+        PlayerListbox.Items.AddRange(availablePlayers.ToArray());
         PlayerListbox.EndUpdate();
     }
 
