@@ -125,6 +125,7 @@ public class CreateMatchController : IStatsController
         if (!_view.GetHomeTeamListBox().Items.Contains(selectedPlayer))
         {
             _view.GetHomeTeamListBox().Items.Add(selectedPlayer);
+            _view.GetTeamListBox().Items.Remove(selectedPlayer);
         }
     }
 
@@ -186,6 +187,8 @@ public class CreateMatchController : IStatsController
         {
             return;
         }
+        
+        _view.GetTeamListBox().Items.Add(selectedItem);
         
         homeTeamListBox.BeginUpdate();
         homeTeamListBox.Items.RemoveAt(index);
@@ -253,6 +256,7 @@ public class CreateMatchController : IStatsController
         if (!_view.GetAwayTeamListBox().Items.Contains(selectedPlayer))
         {
             _view.GetAwayTeamListBox().Items.Add(selectedPlayer);
+            _view.GetTeamListBox().Items.Remove(selectedPlayer);
         }
     }
     
@@ -314,6 +318,8 @@ public class CreateMatchController : IStatsController
         {
             return;
         }
+        
+        _view.GetTeamListBox().Items.Add(selectedItem);
         
         awayTeamListBox.BeginUpdate();
         awayTeamListBox.Items.RemoveAt(index);
