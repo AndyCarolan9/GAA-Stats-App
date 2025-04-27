@@ -233,6 +233,9 @@ public class Match
             _matchTimer.ElapsedMilliseconds, EventType.Substitution, substitutionEventArgs.Team.TeamName,
             _half);
         MatchEvents.Add(matchEvent);
+
+        substitutionEventArgs.Team.MakeSubstitution(substitutionEventArgs.SubstitutePlayer,
+            substitutionEventArgs.Player);
     }
     #endregion
     

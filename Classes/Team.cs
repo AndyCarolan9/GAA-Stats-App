@@ -95,13 +95,31 @@ public class Team
         TeamSheet.Remove(playerName);
     }
 
+    public void MakeSubstitution(string playerOn, string playerOff)
+    {
+        int index = -1;
+
+        for (int i = 0; i < CurrentTeam.Length; i++)
+        {
+            if (CurrentTeam[i] == playerOff)
+            {
+                index = i;
+            }
+        }
+
+        if (index != -1)
+        {
+            MakeSubstitution(playerOn, index);
+        }
+    }
+
     /// <summary>
     /// Replaces the player in position index with the new player.
     /// </summary>
     /// <param name="playerOn">The name of the player coming on.</param>
     /// <param name="position">The index of the position they are going on for.</param>
     /// <returns>The name of the player who came off.</returns>
-    public string MakeSub(string playerOn, int position)
+    public string MakeSubstitution(string playerOn, int position)
     {
         string playerOffName = CurrentTeam[position];
         
