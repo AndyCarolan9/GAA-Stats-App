@@ -52,6 +52,7 @@ public class MatchEvent
     {
         TimeSpan time = TimeSpan.FromMilliseconds(Time);
         string half = HalfIndex == 1 ? "1st" : "2nd";
-        return time.Minutes + ":" + time.Seconds + " mins " + half + " half"; 
+        string seconds = time.Seconds < 10 ? "0" + time.Seconds.ToString() : time.Seconds.ToString();
+        return time.Minutes + ":" + seconds + " mins " + half + " half"; 
     }
 }

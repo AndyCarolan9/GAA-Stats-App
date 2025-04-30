@@ -401,7 +401,7 @@ public class MatchController : IStatsController
     {
         if (inputStatEventArgs is KickOutEventArgs kickOutEventArgs)
         {
-            if (kickOutEventArgs.ResultType == KickOutResultType.LostClean
+            if (kickOutEventArgs.ResultType == KickOutResultType.Lost
                 || kickOutEventArgs.ResultType == KickOutResultType.LostMark
                 || kickOutEventArgs.ResultType == KickOutResultType.LostBreak)
             {
@@ -662,11 +662,7 @@ public class MatchController : IStatsController
         eventList.BeginUpdate();
         eventList.Items.Clear();
         List<MatchEvent> events = _match.MatchEvents;
-        events.Reverse();
-        foreach (var matchEvent in events)
-        {
-            eventList.Items.Add(matchEvent);
-        }
+        eventList.Items.AddRange(events.OrderByDescending(x => x.Time).ToArray());
         eventList.EndUpdate();
     }
 
