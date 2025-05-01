@@ -70,6 +70,16 @@ public class Match
     {
         return HomeTeam.IsTeamValid() && AwayTeam.IsTeamValid();
     }
+
+    public MatchEvent? GetLastMatchEvent()
+    {
+        if (MatchEvents.Count == 0)
+        {
+            return null;
+        }
+        
+        return MatchEvents[MatchEvents.Count - 1];
+    }
     
     #region Timer Methods
     /// <summary>

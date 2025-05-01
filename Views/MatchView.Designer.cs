@@ -126,7 +126,9 @@ partial class MatchView
         FootballFieldInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         FootballFieldInput.TabIndex = 0;
         FootballFieldInput.TabStop = false;
+        FootballFieldInput.Paint += FootballFieldInput_Paint;
         FootballFieldInput.MouseClick += FootballFieldInput_MouseClick;
+        FootballFieldInput.MouseUp += FootballFieldInput_MouseUp;
         // 
         // EventInputMenu
         // 

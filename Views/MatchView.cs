@@ -30,6 +30,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnOpenSubsButtonPressed; 
 
     private Point _inputLocation = new Point(0, 0);
+
+    private MatchEvent? _lastMatchEvent;
     
     public MatchView()
     {
@@ -43,6 +45,12 @@ public partial class MatchView : Form, IStatsView
     public Form GetForm()
     {
         return this;
+    }
+
+    public void SetLastMatchEvent(MatchEvent lastMatchEvent)
+    {
+        _lastMatchEvent = lastMatchEvent;
+        Refresh();
     }
 
     public Point GetInputLocation()
@@ -191,7 +199,6 @@ public partial class MatchView : Form, IStatsView
     {
         if (mouseEventArgs.Button == MouseButtons.Right)
         {
-            _inputLocation = mouseEventArgs.Location;
             EventInputMenu.Show(this, mouseEventArgs.Location);
         }
     }
@@ -244,5 +251,21 @@ public partial class MatchView : Form, IStatsView
     private void AllStatsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         OnAllStatsPressed?.Invoke(sender, e);
+    }
+
+    private void FootballFieldInput_Paint(object sender, PaintEventArgs e)
+    {
+        if (_lastMatchEvent == null)
+        {
+            return;
+        }
+        
+        e.Graphics.FillRectangle(Brushes.IndianRed, _lastMatchEvent.Location.X - 5, _lastMatchEvent.Location.Y - 5, 10, 10);
+    }
+
+    private void FootballFieldInput_MouseUp(object sender, MouseEventArgs e)
+    {
+        if(e.Button == MouseButtons.Right)
+            _inputLocation = e.Location;
     }
 }

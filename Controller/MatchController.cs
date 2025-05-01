@@ -639,6 +639,7 @@ public class MatchController : IStatsController
     /// </summary>
     private void UpdateView()
     {
+        UpdateLastMatchEvent();
         UpdateScoreCard();
         UpdateTeamInPossessionHighlight();
         UpdateEventList();
@@ -648,6 +649,17 @@ public class MatchController : IStatsController
         UpdateGoalShotsBar();
         UpdateWidesBar();
         UpdateFreesBar();
+    }
+
+    private void UpdateLastMatchEvent()
+    {
+        MatchEvent? lastEvent = _match.GetLastMatchEvent();
+        if (lastEvent == null)
+        {
+            return;
+        }
+        
+        _view.SetLastMatchEvent(lastEvent);
     }
 
     private void UpdateTeamInPossessionHighlight()
