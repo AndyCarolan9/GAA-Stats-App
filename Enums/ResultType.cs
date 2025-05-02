@@ -69,6 +69,19 @@ static class ShotResultTyeExtensions
                 return false;
         }
     }
+
+    public static bool IsScore(this ShotResultType resultType)
+    {
+        switch (resultType)
+        {
+            case ShotResultType.Goal:
+            case ShotResultType.DoublePoint:
+            case ShotResultType.Point:
+                return true;
+            default:
+                return false;
+        }
+    }
     
     public static string GetEventName(this ShotResultType eventType)
     {

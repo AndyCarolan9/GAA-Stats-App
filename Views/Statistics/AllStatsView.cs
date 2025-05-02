@@ -1,9 +1,15 @@
-﻿using StatsTracker.View_Elements;
+﻿using StatsTracker.Classes;
+using StatsTracker.Enums;
+using StatsTracker.View_Elements;
 
 namespace StatsTracker.Views.Statistics;
 
 public partial class AllStatsView : Form, IStatsView
 {
+    private MatchEvent[] _selectedEvents = new MatchEvent[0];
+    
+    public event EventHandler? OnStatBarSelected; 
+    
     public AllStatsView()
     {
         InitializeComponent();
@@ -156,9 +162,77 @@ public partial class AllStatsView : Form, IStatsView
     }
     #endregion
 
+    public Label GetHomeTeamName()
+    {
+        return HomeTeamName;
+    }
+
+    public Label GetAwayTeamName()
+    {
+        return AwayTeamName;
+    }
+
     public StatisticBar[] GetAllStatisticsBars()
     {
         return Controls.OfType<StatisticBar>().ToArray();
     }
     #endregion
+
+    private void OnStatBarClicked(object? sender, EventArgs e)
+    {
+        OnStatBarSelected?.Invoke(sender, e);
+    }
+
+    public void SetSelectedEvents(MatchEvent[] selectedEvents)
+    {
+        _selectedEvents = selectedEvents;
+        Refresh();
+    }
+
+    private void DisplayPitch_Paint(object sender, PaintEventArgs e)
+    {
+        if (_selectedEvents.Length == 0)
+            return;
+
+        foreach (var selectedEvent in _selectedEvents)
+        {
+            Brush brush = IsPositiveEvent(selectedEvent) ? Brushes.Green : Brushes.Red;
+            
+            if (selectedEvent.TeamName[new Range(0, 4)] == HomeTeamLabel.Text)
+            {
+                e.Graphics.FillRectangle(brush,
+                    selectedEvent.Location.X - 5,
+                    selectedEvent.Location.Y - 5,
+                    10, 10);
+            }
+            else
+            {
+                e.Graphics.FillEllipse(
+                    brush,
+                    selectedEvent.Location.X - 5,
+                    selectedEvent.Location.Y - 5,
+                    10, 10);
+            }
+        }
+    }
+
+    private bool IsPositiveEvent(MatchEvent matchEvent)
+    {
+        if (matchEvent is KickOutEvent KOEvent)
+        {
+            return KOEvent.ResultType.IsKickOutWon();
+        }
+
+        if (matchEvent is ShotEvent shotEvent)
+        {
+            return shotEvent.ResultType.IsScore();
+        }
+
+        if (matchEvent is TurnoverEvent turnoverEvent)
+        {
+            return turnoverEvent.Type == EventType.TurnoverWon;
+        }
+        
+        return false;
+    }
 }

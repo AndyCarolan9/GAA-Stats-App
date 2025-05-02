@@ -11,6 +11,7 @@ public class AllStatsController : IStatsController
 {
     private readonly AllStatsView _view;
     private readonly Match _match;
+    private MatchEvent[] selectedEvents;
 
     public AllStatsController(Match match)
     {
@@ -18,6 +19,7 @@ public class AllStatsController : IStatsController
         _view = new AllStatsView();
         InitialiseStatisticBars();
         UpdateViewData();
+        _view.OnStatBarSelected += StatBarSelected;
     }
     
     public IStatsView GetView()
@@ -31,9 +33,81 @@ public class AllStatsController : IStatsController
     }
     
     #region View Event Methods
-    private void SelectedTeamChanged(object? sender, EventArgs e)
+    private void StatBarSelected(object? sender, EventArgs e)
     {
+        if (sender == null)
+        {
+            return;
+        }
         
+        var selectedBar = (StatisticBar)sender;
+        if (selectedBar == null)
+        {
+            return;
+        }
+        
+        string statName = selectedBar.Name;
+
+        switch (statName)
+        {
+            case "TotalKickoutsBar":
+                HighlightMatchEventsOfType<KickOutEvent>();
+                break;
+            case "KOWonCleanBar":
+                break;
+            case "KOWonMarkBar":
+                break;
+            case "KOWonBreak":
+                break;
+            case "KOLostCleanBar":
+                break;
+            case "KOLostMarkBar":
+                break;
+            case "KOLostBreakbar":
+                break;
+            case "TurnoversWon":
+                HighlightMatchEventsOfType<TurnoverEvent>();
+                break;
+            case "Free":
+                break;
+            case "Tackle":
+                break;
+            case "Intercept":
+                break;
+            case "TotalShots":
+                HighlightMatchEventsOfType<ShotEvent>();
+                break;
+            case "TotalPointShots":
+                break;
+            case "Total2PointShots":
+                break;
+            case "TotalGoalShots":
+                break;
+            case "TotalPointsScored":
+                break;
+            case "Total2PointScored":
+                break;
+            case "TotalGoalScored":
+                break;
+            case "TotalWides":
+                break;
+            case "TotalBlockedShots":
+                break;
+            case "TotalSavedShots":
+                break;
+            case "TotalShortShots":
+                break;
+            case "TotalOutFor45":
+                break;
+            default:
+                _view.SetSelectedEvents(new MatchEvent[] {});
+                break;
+        }
+    }
+
+    private void HighlightMatchEventsOfType<T>()
+    {
+        _view.SetSelectedEvents(_match.GetMatchEventsOfType<T>());
     }
     #endregion
     
@@ -92,6 +166,8 @@ public class AllStatsController : IStatsController
         _view.GetAwayTeamLabel().Text = awayTeamName;
         _view.GetHomeTeamScore().Text = homeTeamScore;
         _view.GetAwayTeamScore().Text = awayTeamScore;
+        _view.GetHomeTeamName().Text = homeTeamName;
+        _view.GetAwayTeamName().Text = awayTeamName;
     }
 
     private void SetShootingStatBarValues()

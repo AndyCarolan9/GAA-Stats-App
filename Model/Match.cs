@@ -247,6 +247,11 @@ public class Match
         substitutionEventArgs.Team.MakeSubstitution(substitutionEventArgs.SubstitutePlayer,
             substitutionEventArgs.Player);
     }
+
+    public MatchEvent[] GetMatchEventsOfType<T>()
+    {
+        return MatchEvents.FindAll(me => me is T).ToArray();
+    }
     #endregion
     
     #region Team Methods
