@@ -88,7 +88,7 @@ partial class ActionSelectWindow
         // Penalty
         // 
         Penalty.BackColor = System.Drawing.Color.LightCoral;
-        Penalty.Font = new System.Drawing.Font("Segoe UI", 12F);
+        Penalty.Font = new System.Drawing.Font("Segoe UI", 10F);
         Penalty.Location = new System.Drawing.Point(516, 295);
         Penalty.Name = "Penalty";
         Penalty.Size = new System.Drawing.Size(125, 63);
@@ -99,7 +99,7 @@ partial class ActionSelectWindow
         // Sideline
         // 
         Sideline.BackColor = System.Drawing.Color.LightCoral;
-        Sideline.Font = new System.Drawing.Font("Segoe UI", 12F);
+        Sideline.Font = new System.Drawing.Font("Segoe UI", 10F);
         Sideline.Location = new System.Drawing.Point(516, 364);
         Sideline.Name = "Sideline";
         Sideline.Size = new System.Drawing.Size(125, 63);
@@ -120,7 +120,6 @@ partial class ActionSelectWindow
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(649, 461);
         Controls.Add(pictureBox2);
         Controls.Add(Sideline);

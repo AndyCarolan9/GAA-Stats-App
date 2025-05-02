@@ -74,6 +74,7 @@ public partial class ActionSelectWindow : PlayerSelectWindow
         shotEventArgs.Player = GetSelectedPlayerName();
         Enum.TryParse(_selectedActionButton.Name, out ActionType actionType);
         shotEventArgs.ActionType = actionType;
+        shotEventArgs.IsTurnedOver = GetTurnOverCheckBox().Checked;
         OnEnterStatInvoked(shotEventArgs);
     }
 }
