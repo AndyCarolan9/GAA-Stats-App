@@ -54,50 +54,70 @@ public class AllStatsController : IStatsController
                 HighlightMatchEventsOfType<KickOutEvent>();
                 break;
             case "KOWonCleanBar":
+                HighlightKickOutEventsOfType(KickOutResultType.Won);
                 break;
             case "KOWonMarkBar":
+                HighlightKickOutEventsOfType(KickOutResultType.WonMark);
                 break;
             case "KOWonBreak":
+                HighlightKickOutEventsOfType(KickOutResultType.WonBreak);
                 break;
             case "KOLostCleanBar":
+                HighlightKickOutEventsOfType(KickOutResultType.Lost);
                 break;
             case "KOLostMarkBar":
+                HighlightKickOutEventsOfType(KickOutResultType.LostMark);
                 break;
-            case "KOLostBreakbar":
+            case "KOLostBreakBar":
+                HighlightKickOutEventsOfType(KickOutResultType.LostBreak);
                 break;
             case "TurnoversWon":
                 HighlightMatchEventsOfType<TurnoverEvent>();
                 break;
             case "Free":
+                HighlightTurnoverEventsOfType(TurnoverType.Free);
                 break;
             case "Tackle":
+                HighlightTurnoverEventsOfType(TurnoverType.Tackle);
                 break;
             case "Intercept":
+                HighlightTurnoverEventsOfType(TurnoverType.Intercept);
                 break;
             case "TotalShots":
                 HighlightMatchEventsOfType<ShotEvent>();
                 break;
             case "TotalPointShots":
+                HighlightMatchEventsOfType(EventType.PointShot);
                 break;
             case "Total2PointShots":
+                HighlightMatchEventsOfType(EventType.DoublePointShot);
                 break;
             case "TotalGoalShots":
+                HighlightMatchEventsOfType(EventType.GoalShot);
                 break;
             case "TotalPointsScored":
+                HighlightShotEventsOfResultType(ShotResultType.Point);
                 break;
             case "Total2PointScored":
+                HighlightShotEventsOfResultType(ShotResultType.DoublePoint);
                 break;
             case "TotalGoalScored":
+                HighlightShotEventsOfResultType(ShotResultType.Goal);
                 break;
             case "TotalWides":
+                HighlightShotEventsOfResultType(ShotResultType.Wide);
                 break;
             case "TotalBlockedShots":
+                HighlightShotEventsOfResultType(ShotResultType.Blocked);
                 break;
             case "TotalSavedShots":
+                HighlightShotEventsOfResultType(ShotResultType.Saved);
                 break;
             case "TotalShortShots":
+                HighlightShotEventsOfResultType(ShotResultType.Short);
                 break;
             case "TotalOutFor45":
+                HighlightShotEventsOfResultType(ShotResultType.OutFor45);
                 break;
             default:
                 _view.SetSelectedEvents(new MatchEvent[] {});
@@ -108,6 +128,26 @@ public class AllStatsController : IStatsController
     private void HighlightMatchEventsOfType<T>()
     {
         _view.SetSelectedEvents(_match.GetMatchEventsOfType<T>());
+    }
+
+    private void HighlightKickOutEventsOfType(KickOutResultType resultType)
+    {
+        _view.SetSelectedEvents(_match.GetKickOutEventsOfType(resultType));
+    }
+
+    private void HighlightTurnoverEventsOfType(TurnoverType turnoverType)
+    {
+        _view.SetSelectedEvents(_match.GetTurnoverEventsOfType(turnoverType));
+    }
+
+    private void HighlightShotEventsOfResultType(ShotResultType resultType)
+    {
+        _view.SetSelectedEvents(_match.GetShotEventsOfType(resultType));
+    }
+
+    private void HighlightMatchEventsOfType(EventType eventType)
+    {
+        _view.SetSelectedEvents(_match.GetMatchEventsOfType(eventType));
     }
     #endregion
     

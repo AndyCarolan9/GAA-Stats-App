@@ -252,6 +252,50 @@ public class Match
     {
         return MatchEvents.FindAll(me => me is T).ToArray();
     }
+
+    public MatchEvent[] GetMatchEventsOfType(EventType eventType)
+    {
+        return MatchEvents.FindAll(me => me.Type == eventType).ToArray();
+    }
+
+    public MatchEvent[] GetKickOutEventsOfType(KickOutResultType resultType)
+    {
+        return MatchEvents.FindAll(me =>
+        {
+            if (me is KickOutEvent kickOutEvent)
+            {
+                return kickOutEvent.ResultType == resultType;
+            }
+
+            return false;
+        }).ToArray();
+    }
+
+    public MatchEvent[] GetTurnoverEventsOfType(TurnoverType turnoverType)
+    {
+        return MatchEvents.FindAll(me =>
+        {
+            if (me is TurnoverEvent turnoverEvent)
+            {
+                return turnoverEvent.TurnoverType == turnoverType;
+            }
+
+            return false;
+        }).ToArray();
+    }
+
+    public MatchEvent[] GetShotEventsOfType(ShotResultType resultType)
+    {
+        return MatchEvents.FindAll(me =>
+        {
+            if (me is ShotEvent shotEvent)
+            {
+                return shotEvent.ResultType == resultType;
+            }
+
+            return false;
+        }).ToArray();
+    }
     #endregion
     
     #region Team Methods
