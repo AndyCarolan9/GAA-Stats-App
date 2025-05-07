@@ -346,7 +346,7 @@ partial class AllStatsView
         KOWonCleanBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOWonCleanBar.Name = "KOWonCleanBar";
         KOWonCleanBar.Size = new System.Drawing.Size(492, 60);
-        KOWonCleanBar.StatName = "Won Clean";
+        KOWonCleanBar.StatName = "Won";
         KOWonCleanBar.TabIndex = 4;
         KOWonCleanBar.Click += OnStatBarClicked;
         // 
@@ -458,7 +458,7 @@ partial class AllStatsView
         KOLostCleanBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOLostCleanBar.Name = "KOLostCleanBar";
         KOLostCleanBar.Size = new System.Drawing.Size(492, 60);
-        KOLostCleanBar.StatName = "Lost Clean";
+        KOLostCleanBar.StatName = "Lost";
         KOLostCleanBar.TabIndex = 8;
         KOLostCleanBar.Click += OnStatBarClicked;
         // 
