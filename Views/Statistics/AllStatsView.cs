@@ -13,6 +13,11 @@ public partial class AllStatsView : Form, IStatsView
     public AllStatsView()
     {
         InitializeComponent();
+
+        foreach (var statBar in GetAllStatisticsBars())
+        {
+            statBar.StatBarClicked += OnStatBarClicked;
+        }
     }
 
     public Form GetForm()

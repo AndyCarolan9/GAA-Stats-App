@@ -336,7 +336,6 @@ partial class AllStatsView
         TotalKickoutsBar.Size = new System.Drawing.Size(492, 60);
         TotalKickoutsBar.StatName = "Total";
         TotalKickoutsBar.TabIndex = 3;
-        TotalKickoutsBar.Click += OnStatBarClicked;
         // 
         // KOWonCleanBar
         // 
@@ -348,7 +347,6 @@ partial class AllStatsView
         KOWonCleanBar.Size = new System.Drawing.Size(492, 60);
         KOWonCleanBar.StatName = "Won";
         KOWonCleanBar.TabIndex = 4;
-        KOWonCleanBar.Click += OnStatBarClicked;
         // 
         // StatSplitBar
         // 
@@ -381,7 +379,6 @@ partial class AllStatsView
         KOWonMarkBar.Size = new System.Drawing.Size(492, 60);
         KOWonMarkBar.StatName = "Won Mark";
         KOWonMarkBar.TabIndex = 6;
-        KOWonMarkBar.Click += OnStatBarClicked;
         // 
         // object_4f1641f2_92c2_46c8_a2b7_2daf7901bc29
         // 
@@ -415,7 +412,6 @@ partial class AllStatsView
         KOWonBreak.Size = new System.Drawing.Size(492, 60);
         KOWonBreak.StatName = "Won Break";
         KOWonBreak.TabIndex = 7;
-        KOWonBreak.Click += OnStatBarClicked;
         // 
         // object_d764597b_1a89_44bf_90dc_c422991bdb6e
         // 
@@ -460,7 +456,6 @@ partial class AllStatsView
         KOLostCleanBar.Size = new System.Drawing.Size(492, 60);
         KOLostCleanBar.StatName = "Lost";
         KOLostCleanBar.TabIndex = 8;
-        KOLostCleanBar.Click += OnStatBarClicked;
         // 
         // object_dc80317d_725f_498a_a84d_c335d06e7ff7
         // 
@@ -516,7 +511,6 @@ partial class AllStatsView
         KOLostMarkBar.Size = new System.Drawing.Size(492, 60);
         KOLostMarkBar.StatName = "Lost Mark";
         KOLostMarkBar.TabIndex = 9;
-        KOLostMarkBar.Click += OnStatBarClicked;
         // 
         // object_dcbb98d9_53c9_4165_876e_a29608eedee9
         // 
@@ -583,7 +577,6 @@ partial class AllStatsView
         KOLostBreakBar.Size = new System.Drawing.Size(492, 60);
         KOLostBreakBar.StatName = "Lost Break";
         KOLostBreakBar.TabIndex = 10;
-        KOLostBreakBar.Click += OnStatBarClicked;
         // 
         // object_9cf9d193_b9bf_486f_af84_3eb3afad7171
         // 
@@ -670,7 +663,6 @@ partial class AllStatsView
         TotalShots.Size = new System.Drawing.Size(492, 60);
         TotalShots.StatName = "# Of Shots";
         TotalShots.TabIndex = 12;
-        TotalShots.Click += OnStatBarClicked;
         // 
         // object_4093396e_d1ee_4aa1_b405_c765c0626573
         // 
@@ -808,7 +800,6 @@ partial class AllStatsView
         TotalPointShots.Size = new System.Drawing.Size(492, 60);
         TotalPointShots.StatName = "# Of Point Shots";
         TotalPointShots.TabIndex = 18;
-        TotalPointShots.Click += OnStatBarClicked;
         // 
         // object_5441156f_2c83_4615_a5c3_758029a4b7ac
         // 
@@ -908,7 +899,6 @@ partial class AllStatsView
         Total2PointShots.Size = new System.Drawing.Size(492, 60);
         Total2PointShots.StatName = "# Of 2 Point Shots";
         Total2PointShots.TabIndex = 19;
-        Total2PointShots.Click += OnStatBarClicked;
         // 
         // object_cf89cf65_b8d5_45d6_869c_737dc4582179
         // 
@@ -1019,7 +1009,6 @@ partial class AllStatsView
         TotalPointsScored.Size = new System.Drawing.Size(492, 60);
         TotalPointsScored.StatName = "# Points Scored";
         TotalPointsScored.TabIndex = 20;
-        TotalPointsScored.Click += OnStatBarClicked;
         // 
         // object_2eb4ba7c_5347_4910_a317_26ca020782a5
         // 
@@ -1141,7 +1130,6 @@ partial class AllStatsView
         Total2PointScored.Size = new System.Drawing.Size(492, 60);
         Total2PointScored.StatName = "# 2 Points Scored";
         Total2PointScored.TabIndex = 21;
-        Total2PointScored.Click += OnStatBarClicked;
         // 
         // object_a8522b3d_b621_4d0f_8519_519a7d4b607c
         // 
@@ -1273,7 +1261,6 @@ partial class AllStatsView
         TotalGoalsScored.Size = new System.Drawing.Size(492, 60);
         TotalGoalsScored.StatName = "# Goal Scored";
         TotalGoalsScored.TabIndex = 22;
-        TotalGoalsScored.Click += OnStatBarClicked;
         // 
         // splitCountBar56
         // 
@@ -1405,7 +1392,6 @@ partial class AllStatsView
         TotalGoalShots.Size = new System.Drawing.Size(492, 60);
         TotalGoalShots.StatName = "# Of Goal Shots";
         TotalGoalShots.TabIndex = 24;
-        TotalGoalShots.Click += OnStatBarClicked;
         // 
         // object_d09333d9_2291_414a_a0e5_464f4b9ae9a5
         // 
@@ -1538,7 +1524,6 @@ partial class AllStatsView
         TotalWides.Size = new System.Drawing.Size(492, 60);
         TotalWides.StatName = "# Wides";
         TotalWides.TabIndex = 25;
-        TotalWides.Click += OnStatBarClicked;
         // 
         // object_6015a485_a4bf_433c_925b_98e2e6ad86b2
         // 
@@ -1682,7 +1667,6 @@ partial class AllStatsView
         TotalBlockedShots.Size = new System.Drawing.Size(492, 60);
         TotalBlockedShots.StatName = "# Of Shots Blocked";
         TotalBlockedShots.TabIndex = 26;
-        TotalBlockedShots.Click += OnStatBarClicked;
         // 
         // object_4aebd246_5a08_4ee9_b6ff_c8de61027839
         // 
@@ -1836,7 +1820,6 @@ partial class AllStatsView
         TotalSavedShots.Size = new System.Drawing.Size(492, 60);
         TotalSavedShots.StatName = "# Of Saved Shots";
         TotalSavedShots.TabIndex = 27;
-        TotalSavedShots.Click += OnStatBarClicked;
         // 
         // splitCountBar100
         // 
@@ -1990,7 +1973,6 @@ partial class AllStatsView
         TotalShortShots.Size = new System.Drawing.Size(492, 60);
         TotalShortShots.StatName = "# Short Shots";
         TotalShortShots.TabIndex = 28;
-        TotalShortShots.Click += OnStatBarClicked;
         // 
         // splitCountBar113
         // 
@@ -2144,7 +2126,6 @@ partial class AllStatsView
         TotalOutFor45.Size = new System.Drawing.Size(492, 60);
         TotalOutFor45.StatName = "# Out For 45";
         TotalOutFor45.TabIndex = 29;
-        TotalOutFor45.Click += OnStatBarClicked;
         // 
         // splitCountBar126
         // 
@@ -2299,7 +2280,6 @@ partial class AllStatsView
         TurnoversWon.Size = new System.Drawing.Size(492, 60);
         TurnoversWon.StatName = "Turnovers Won";
         TurnoversWon.TabIndex = 30;
-        TurnoversWon.Click += OnStatBarClicked;
         // 
         // object_e38b8216_6b77_4738_a699_29880d5c8f3c
         // 
@@ -2475,7 +2455,6 @@ partial class AllStatsView
         Free.Size = new System.Drawing.Size(492, 60);
         Free.StatName = "Won By Free";
         Free.TabIndex = 32;
-        Free.Click += OnStatBarClicked;
         // 
         // object_b97524bd_9c0c_41bc_9dec_ee50e6d39cb1
         // 
@@ -2651,7 +2630,6 @@ partial class AllStatsView
         Tackle.Size = new System.Drawing.Size(492, 60);
         Tackle.StatName = "Won In the Tackle";
         Tackle.TabIndex = 33;
-        Tackle.Click += OnStatBarClicked;
         // 
         // splitCountBar166
         // 
@@ -2827,7 +2805,6 @@ partial class AllStatsView
         Intercept.Size = new System.Drawing.Size(492, 60);
         Intercept.StatName = "Intercepted Passes";
         Intercept.TabIndex = 34;
-        Intercept.Click += OnStatBarClicked;
         // 
         // splitCountBar181
         // 

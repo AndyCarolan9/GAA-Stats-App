@@ -5,6 +5,8 @@ namespace StatsTracker.View_Elements
 {
     public partial class StatisticBar : UserControl
     {
+        public event EventHandler? StatBarClicked;
+        
         public StatisticBar()
         {
             InitializeComponent();
@@ -12,6 +14,11 @@ namespace StatsTracker.View_Elements
             // Set default bar values so that it is always split 50/50 event when the real value are 0
             StatSplitBar.Maximum = 2;
             StatSplitBar.Value = 1;
+
+            foreach (Control control in Controls)
+            {
+                control.Click += OnControlClick;
+            }
         }
 
         #region Properties
@@ -22,6 +29,11 @@ namespace StatsTracker.View_Elements
             set => StatNameLabel.Text = value;
         }
         #endregion
+
+        private void OnControlClick(object? sender, EventArgs e)
+        {
+            StatBarClicked?.Invoke(this, e);
+        }
 
         public void SetHomeValue(int value)
         {
