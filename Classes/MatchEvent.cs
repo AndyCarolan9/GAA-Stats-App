@@ -1,10 +1,17 @@
-﻿using StatsTracker.Enums;
+﻿using System.Text.Json.Serialization;
+using StatsTracker.Controller;
+using StatsTracker.Enums;
 
 namespace StatsTracker.Classes;
 
 /// <summary>
 /// Match Event class which is used to define when a relevant statistic is recorded.
 /// </summary>
+[JsonDerivedType(typeof(MatchEvent), typeDiscriminator: "MatchEvent")]
+[JsonDerivedType(typeof(KickOutEvent), typeDiscriminator: "KickOutEvent")]
+[JsonDerivedType(typeof(ShotEvent), typeDiscriminator: "ShotEvent")]
+[JsonDerivedType(typeof(SubstitutionEvent), typeDiscriminator: "SubstitutionEvent")]
+[JsonDerivedType(typeof(TurnoverEvent), typeDiscriminator: "TurnoverEvent")]
 public class MatchEvent
 {
     #region Constructors

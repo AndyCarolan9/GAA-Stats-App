@@ -15,6 +15,7 @@ public static class JSONHelper
         {
             var options = new JsonSerializerOptions()
             {
+                WriteIndented = true,
                 Converters = {
                     new ColorJsonConverter()
                 }
@@ -38,6 +39,7 @@ public static class JSONHelper
         {
             var options = new JsonSerializerOptions()
             {
+                WriteIndented = true,
                 Converters = {
                     new ColorJsonConverter()
                 }
