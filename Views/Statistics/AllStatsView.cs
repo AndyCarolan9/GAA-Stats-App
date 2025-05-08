@@ -7,6 +7,9 @@ namespace StatsTracker.Views.Statistics;
 public partial class AllStatsView : Form, IStatsView
 {
     private MatchEvent[] _selectedEvents = new MatchEvent[0];
+
+    private bool _showOnlyHomeEvents = false;
+    private bool _showBothTeamEvents = true;
     
     public event EventHandler? OnStatBarSelected; 
     
@@ -203,14 +206,14 @@ public partial class AllStatsView : Form, IStatsView
         {
             Brush brush = IsPositiveEvent(selectedEvent) ? Brushes.Green : Brushes.Red;
             
-            if (selectedEvent.TeamName[new Range(0, 4)] == HomeTeamLabel.Text)
+            if (CanShowHomeEvent() && selectedEvent.TeamName[new Range(0, 4)] == HomeTeamLabel.Text)
             {
                 e.Graphics.FillRectangle(brush,
                     selectedEvent.Location.X - 5,
                     selectedEvent.Location.Y - 5,
                     10, 10);
             }
-            else
+            else if(CanShowAwayEvent() && selectedEvent.TeamName[new Range(0, 4)] == AwayTeamLabel.Text)
             {
                 e.Graphics.FillEllipse(
                     brush,
@@ -239,5 +242,71 @@ public partial class AllStatsView : Form, IStatsView
         }
         
         return false;
+    }
+
+    private bool CanShowHomeEvent()
+    {
+        return _showBothTeamEvents || _showOnlyHomeEvents;
+    }
+
+    private bool CanShowAwayEvent()
+    {
+        return _showBothTeamEvents || !_showOnlyHomeEvents;
+    }
+
+    private void HomeTeam_Click(object sender, EventArgs e)
+    {
+        if (_showBothTeamEvents)
+        {
+            _showBothTeamEvents = false;
+            _showOnlyHomeEvents = true;
+            UpdateTextBackColor();
+            Refresh();
+            return;
+        }
+
+        if (_showOnlyHomeEvents && !_showBothTeamEvents)
+        {
+            _showBothTeamEvents = true;
+            UpdateTextBackColor();
+            Refresh();
+            return;
+        }
+        
+        _showOnlyHomeEvents = true;
+        UpdateTextBackColor();
+        Refresh();
+    }
+
+    private void AwayTeam_Click(object? sender, EventArgs e)
+    {
+        if (_showBothTeamEvents)
+        {
+            _showBothTeamEvents = false;
+            _showOnlyHomeEvents = false;
+            UpdateTextBackColor();
+            Refresh();
+            return;
+        }
+
+        if (!_showOnlyHomeEvents && !_showBothTeamEvents)
+        {
+            _showBothTeamEvents = true;
+            UpdateTextBackColor();
+            Refresh();
+            return;
+        }
+        
+        _showOnlyHomeEvents = false;
+        UpdateTextBackColor();
+        Refresh();
+    }
+
+    private void UpdateTextBackColor()
+    {
+        HomeTeamLabel.BackColor = !_showBothTeamEvents && _showOnlyHomeEvents ? Color.Green : SystemColors.Control;
+        HomeTeamName. BackColor = !_showBothTeamEvents && _showOnlyHomeEvents ? Color.Green : SystemColors.Control;
+        AwayTeamLabel.BackColor = !_showBothTeamEvents && !_showOnlyHomeEvents ? Color.Green : SystemColors.Control;
+        AwayTeamName.BackColor = !_showBothTeamEvents && !_showOnlyHomeEvents ? Color.Green : SystemColors.Control;
     }
 }

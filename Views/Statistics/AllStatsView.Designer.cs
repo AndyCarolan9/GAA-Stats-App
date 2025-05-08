@@ -2976,6 +2976,7 @@ partial class AllStatsView
         HomeTeamName.TabIndex = 36;
         HomeTeamName.Text = "Home";
         HomeTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        HomeTeamName.Click += HomeTeam_Click;
         // 
         // AwayTeamName
         // 
@@ -2986,6 +2987,7 @@ partial class AllStatsView
         AwayTeamName.TabIndex = 37;
         AwayTeamName.Text = "Away";
         AwayTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        AwayTeamName.Click += AwayTeam_Click;
         // 
         // AllStatsView
         // 
