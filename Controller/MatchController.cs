@@ -704,7 +704,7 @@ public class MatchController : IStatsController
 
     private void UpdatePointShotsBar()
     {
-        StatisticPair pointShots = _match.GetStatisticForEvent(EventType.PointShot);
+        StatisticPair pointShots = _match.GetStatisticPairForShots();
         if (pointShots.IsStatisticsEmpty())
         {
             return;

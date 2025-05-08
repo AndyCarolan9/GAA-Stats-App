@@ -422,6 +422,16 @@ public class Match
         return new StatisticPair(homeCount, awayCount);
     }
 
+    public StatisticPair GetStatisticPairForShots()
+    {
+        StatisticPair pointShots = GetStatisticForEvent(EventType.PointShot);
+        StatisticPair doublePointShots = GetStatisticForEvent(EventType.DoublePointShot);
+        StatisticPair goalShots = GetStatisticForEvent(EventType.GoalShot);
+        
+        return new StatisticPair(pointShots.HomeTeamValue + doublePointShots.HomeTeamValue + goalShots.HomeTeamValue,
+            pointShots.AwayTeamValue + doublePointShots.AwayTeamValue +  goalShots.AwayTeamValue);
+    }
+
     public StatisticPair GetTurnOvers()
     {
         StatisticPair turnOversWon = GetStatisticForEvent(EventType.TurnoverWon); 
