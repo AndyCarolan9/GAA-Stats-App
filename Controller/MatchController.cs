@@ -674,7 +674,7 @@ public class MatchController : IStatsController
         eventList.BeginUpdate();
         eventList.Items.Clear();
         List<MatchEvent> events = _match.MatchEvents;
-        eventList.Items.AddRange(events.OrderByDescending(x => x.Time).ToArray());
+        eventList.Items.AddRange(events.OrderByDescending(x => x.HalfIndex).ThenByDescending(x => x.Time).ToArray());
         eventList.EndUpdate();
     }
 
