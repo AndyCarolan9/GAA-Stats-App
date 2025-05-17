@@ -68,6 +68,10 @@ public class MatchController : IStatsController
         _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnContextMenuOpened += ContextMenuOpened;
         _view.OnOpenSubsButtonPressed += OpenSubMenu;
+
+        #region Export Events
+        _view.OnExportJournalistData += ExportJournalistData;
+        #endregion
     }
 
     #region Context Menu
@@ -845,6 +849,14 @@ public class MatchController : IStatsController
         
         _openStatsController = new AllStatsController(_match);
         _openStatsController.ShowDialog();
+    }
+    #endregion
+    
+    #region Export Methods
+    private void ExportJournalistData(object? sender, EventArgs e)
+    {
+        //_match.GetTeamAndSubsString();
+        Clipboard.SetText(_match.GetTeamAndSubsString());
     }
     #endregion
 }

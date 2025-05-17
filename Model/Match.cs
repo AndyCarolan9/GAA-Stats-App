@@ -328,6 +328,107 @@ public class Match
         
         return HomeTeam;
     }
+
+    public string GetTeamAndSubsString()
+    {
+        string returnString = "";
+        string[] team = HomeTeam.TeamSheet.ToArray();
+        MatchEvent[] subs = MatchEvents.FindAll(me => me.Type == EventType.Substitution && me.TeamName == HomeTeam.TeamName).ToArray();
+        MatchEvent[] scores = MatchEvents.FindAll(me => me.TeamName == HomeTeam.TeamName && me is ShotEvent).ToArray();
+        
+        for(int i = 0; i < team.Length; i++)
+        {
+            int playerNum = i + 1;
+            returnString += playerNum + " " + team[i] + "\n";
+        }
+
+        returnString += "\n";
+
+        foreach (var sub in subs)
+        {
+            SubstitutionEvent subEvent = (SubstitutionEvent)sub;
+            returnString += "Sub Off: " + subEvent.Player + " : Sub On: " + subEvent.PlayerOnName + "\n";
+        }
+
+        returnString += "\n";
+        returnString += "Scorers:\n";
+
+        Dictionary<string, List<ShotEvent>> playerScores = new Dictionary<string, List<ShotEvent>>();
+        foreach (var score in scores)
+        {
+            ShotEvent scoreEvent = (ShotEvent)score;
+            if (scoreEvent.ResultType.IsScore())
+            {
+                if (playerScores.ContainsKey(scoreEvent.Player))
+                {
+                    playerScores[scoreEvent.Player].Add(scoreEvent);
+                }
+                else
+                {
+                    playerScores.Add(scoreEvent.Player, [scoreEvent]);
+                }
+            }
+        }
+
+        foreach (var playerScore in playerScores)
+        {
+            int frees = 0;
+            int doublePoints = 0;
+            int doublePointFree = 0;
+            int goals = 0;
+            int points = 0;
+
+            foreach (var shot in playerScore.Value)
+            {
+                if (shot.ResultType == ShotResultType.Goal)
+                {
+                    goals += 1;
+                }
+                else if (shot.ResultType == ShotResultType.Point)
+                {
+                    points += 1;
+
+                    if (shot.ActionType == ActionType.Free)
+                    {
+                        frees += 1;
+                    }
+                }
+                else if (shot.ResultType == ShotResultType.DoublePoint)
+                {
+                    points += 2;
+                    
+                    if (shot.ActionType == ActionType.Free)
+                    {
+                        doublePointFree += 1;
+                    }
+                    else
+                    {
+                        doublePoints += 1;
+                    }
+                }
+            }
+
+            returnString += playerScore.Key + ": " + goals + "-" + points + " ";
+            if (frees > 0)
+            {
+                returnString += frees + "f ";
+            }
+
+            if (doublePointFree > 0)
+            {
+                returnString += doublePointFree + "x2pf ";
+            }
+
+            if (doublePoints > 0)
+            {
+                returnString += doublePoints + "x2p";
+            }
+
+            returnString += "\n";
+        }
+
+        return returnString;
+    }
     #endregion
     
     #region Statistic Methods

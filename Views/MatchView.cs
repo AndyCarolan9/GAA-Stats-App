@@ -27,7 +27,9 @@ public partial class MatchView : Form, IStatsView
     
     public event EventHandler? OnContextMenuOpened;
     
-    public event EventHandler? OnOpenSubsButtonPressed; 
+    public event EventHandler? OnOpenSubsButtonPressed;
+
+    public event EventHandler? OnExportJournalistData; 
 
     private Point _inputLocation = new Point(0, 0);
 
@@ -267,5 +269,10 @@ public partial class MatchView : Form, IStatsView
     {
         if(e.Button == MouseButtons.Right)
             _inputLocation = e.Location;
+    }
+
+    private void JournalistData_Click(object sender, EventArgs e)
+    {
+        OnExportJournalistData?.Invoke(sender, e);
     }
 }

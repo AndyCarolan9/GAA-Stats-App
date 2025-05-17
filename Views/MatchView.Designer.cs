@@ -55,6 +55,7 @@ partial class MatchView
         pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
         selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,6 +106,15 @@ partial class MatchView
         AwayPitchLabel = new System.Windows.Forms.Label();
         HomePitchHighlight = new System.Windows.Forms.PictureBox();
         AwayPitchHighlight = new System.Windows.Forms.PictureBox();
+        toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+        toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+        toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
+        JournalistData = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -161,7 +171,7 @@ partial class MatchView
         // HeaderBar
         // 
         HeaderBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
+        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ExportToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
         HeaderBar.Location = new System.Drawing.Point(0, 0);
         HeaderBar.Name = "HeaderBar";
         HeaderBar.Size = new System.Drawing.Size(1902, 28);
@@ -281,6 +291,13 @@ partial class MatchView
         selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
         selectAllToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
         selectAllToolStripMenuItem.Text = "Select &All";
+        // 
+        // ExportToolStripMenuItem
+        // 
+        ExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { JournalistData });
+        ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
+        ExportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+        ExportToolStripMenuItem.Text = "Export";
         // 
         // ViewToolStripMenuItem
         // 
@@ -690,6 +707,57 @@ partial class MatchView
         AwayPitchHighlight.TabIndex = 39;
         AwayPitchHighlight.TabStop = false;
         // 
+        // toolStripMenuItem12
+        // 
+        toolStripMenuItem12.Name = "toolStripMenuItem12";
+        toolStripMenuItem12.Size = new System.Drawing.Size(32, 19);
+        // 
+        // toolStripMenuItem13
+        // 
+        toolStripMenuItem13.Name = "toolStripMenuItem13";
+        toolStripMenuItem13.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem13.Text = "toolStripMenuItem13";
+        // 
+        // toolStripMenuItem14
+        // 
+        toolStripMenuItem14.Name = "toolStripMenuItem14";
+        toolStripMenuItem14.Size = new System.Drawing.Size(32, 19);
+        // 
+        // toolStripSeparator1
+        // 
+        toolStripSeparator1.Name = "toolStripSeparator1";
+        toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
+        // 
+        // toolStripSeparator2
+        // 
+        toolStripSeparator2.Name = "toolStripSeparator2";
+        toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
+        // 
+        // toolStripMenuItem15
+        // 
+        toolStripMenuItem15.Name = "toolStripMenuItem15";
+        toolStripMenuItem15.Size = new System.Drawing.Size(32, 19);
+        // 
+        // toolStripMenuItem16
+        // 
+        toolStripMenuItem16.Name = "toolStripMenuItem16";
+        toolStripMenuItem16.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem16.Text = "toolStripMenuItem16";
+        // 
+        // toolStripMenuItem17
+        // 
+        toolStripMenuItem17.Name = "toolStripMenuItem17";
+        toolStripMenuItem17.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem17.Text = "toolStripMenuItem17";
+        // 
+        // JournalistData
+        // 
+        JournalistData.Name = "JournalistData";
+        JournalistData.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
+        JournalistData.Size = new System.Drawing.Size(240, 26);
+        JournalistData.Text = "Journalist Data";
+        JournalistData.Click += JournalistData_Click;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -744,6 +812,22 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
+    private System.Windows.Forms.ToolStripMenuItem JournalistData;
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
+
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripMenuItem ExportToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
 
     private System.Windows.Forms.PictureBox AwayPitchHighlight;
 
