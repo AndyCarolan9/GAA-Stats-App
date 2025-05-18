@@ -29,7 +29,9 @@ public partial class MatchView : Form, IStatsView
     
     public event EventHandler? OnOpenSubsButtonPressed;
 
-    public event EventHandler? OnExportJournalistData; 
+    public event EventHandler? OnExportJournalistData;
+
+    public event EventHandler<KeyEventArgs>? OnCopySelectedEvent;
 
     private Point _inputLocation = new Point(0, 0);
 
@@ -274,5 +276,10 @@ public partial class MatchView : Form, IStatsView
     private void JournalistData_Click(object sender, EventArgs e)
     {
         OnExportJournalistData?.Invoke(sender, e);
+    }
+
+    private void EventListBox_KeyDown(object sender, KeyEventArgs e)
+    {
+        OnCopySelectedEvent?.Invoke(sender, e);
     }
 }

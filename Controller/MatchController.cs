@@ -68,6 +68,7 @@ public class MatchController : IStatsController
         _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnContextMenuOpened += ContextMenuOpened;
         _view.OnOpenSubsButtonPressed += OpenSubMenu;
+        _view.OnCopySelectedEvent += CopySelectedEvent;
 
         #region Export Events
         _view.OnExportJournalistData += ExportJournalistData;
@@ -376,6 +377,16 @@ public class MatchController : IStatsController
         parent.DropDownItems.Add(intercept);
     }
     #endregion
+
+    private void CopySelectedEvent(object? sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.C)
+        {
+            string? s = _view.GetEventListBox().SelectedItem?.ToString();
+            if(s != null)
+                Clipboard.SetData(DataFormats.StringFormat, s);
+        }
+    }
 
     private void OpenSubMenu(object? sender, EventArgs e)
     {

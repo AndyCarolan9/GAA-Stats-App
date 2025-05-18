@@ -56,6 +56,7 @@ partial class MatchView
         toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
         selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        JournalistData = new System.Windows.Forms.ToolStripMenuItem();
         ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +115,6 @@ partial class MatchView
         toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
-        JournalistData = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -298,6 +298,14 @@ partial class MatchView
         ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
         ExportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
         ExportToolStripMenuItem.Text = "Export";
+        // 
+        // JournalistData
+        // 
+        JournalistData.Name = "JournalistData";
+        JournalistData.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
+        JournalistData.Size = new System.Drawing.Size(240, 26);
+        JournalistData.Text = "Journalist Data";
+        JournalistData.Click += JournalistData_Click;
         // 
         // ViewToolStripMenuItem
         // 
@@ -662,6 +670,7 @@ partial class MatchView
         EventListBox.Name = "EventListBox";
         EventListBox.Size = new System.Drawing.Size(591, 544);
         EventListBox.TabIndex = 33;
+        EventListBox.KeyDown += EventListBox_KeyDown;
         // 
         // HomePitchLabel
         // 
@@ -749,14 +758,6 @@ partial class MatchView
         toolStripMenuItem17.Name = "toolStripMenuItem17";
         toolStripMenuItem17.Size = new System.Drawing.Size(32, 19);
         toolStripMenuItem17.Text = "toolStripMenuItem17";
-        // 
-        // JournalistData
-        // 
-        JournalistData.Name = "JournalistData";
-        JournalistData.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
-        JournalistData.Size = new System.Drawing.Size(240, 26);
-        JournalistData.Text = "Journalist Data";
-        JournalistData.Click += JournalistData_Click;
         // 
         // MatchView
         // 
