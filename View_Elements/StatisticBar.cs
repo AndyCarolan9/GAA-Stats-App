@@ -22,7 +22,7 @@ namespace StatsTracker.View_Elements
         }
 
         #region Properties
-        [Description("Test text displayed in the textbox"),Category("Data")] 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string StatName
         {
             get => StatNameLabel.Text;
