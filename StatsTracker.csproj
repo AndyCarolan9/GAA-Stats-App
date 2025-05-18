@@ -36,6 +36,9 @@
       <Compile Update="Views\SubstituteSelectWindow.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\Statistics\ScorersView.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

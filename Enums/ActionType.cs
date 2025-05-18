@@ -13,3 +13,11 @@ public enum ActionType
     Play,
     Mark,
 }
+
+static class ActionTypeExtensions
+{
+    public static bool IsPlacedBallAction(this ActionType actionType)
+    {
+        return actionType != ActionType.Play;
+    }
+}

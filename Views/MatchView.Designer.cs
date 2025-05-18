@@ -115,6 +115,9 @@ partial class MatchView
         toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
+        toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
+        Scorers = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -309,7 +312,7 @@ partial class MatchView
         // 
         // ViewToolStripMenuItem
         // 
-        ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AllStatsToolStripMenuItem, GraphsToolStripMenuItem });
+        ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { Scorers, AllStatsToolStripMenuItem, GraphsToolStripMenuItem });
         ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
         ViewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
         ViewToolStripMenuItem.Text = "&View";
@@ -317,14 +320,14 @@ partial class MatchView
         // AllStatsToolStripMenuItem
         // 
         AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
-        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
         AllStatsToolStripMenuItem.Text = "&All Stats";
         AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
         // GraphsToolStripMenuItem
         // 
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
-        GraphsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+        GraphsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
         GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // helpToolStripMenuItem
@@ -759,6 +762,24 @@ partial class MatchView
         toolStripMenuItem17.Size = new System.Drawing.Size(32, 19);
         toolStripMenuItem17.Text = "toolStripMenuItem17";
         // 
+        // toolStripMenuItem18
+        // 
+        toolStripMenuItem18.Name = "toolStripMenuItem18";
+        toolStripMenuItem18.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem18.Text = "toolStripMenuItem18";
+        // 
+        // toolStripMenuItem19
+        // 
+        toolStripMenuItem19.Name = "toolStripMenuItem19";
+        toolStripMenuItem19.Size = new System.Drawing.Size(32, 19);
+        // 
+        // Scorers
+        // 
+        Scorers.Name = "Scorers";
+        Scorers.Size = new System.Drawing.Size(224, 26);
+        Scorers.Text = "Scorers";
+        Scorers.Click += Scorers_Click;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -813,6 +834,11 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem Scorers;
+
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
 
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
     private System.Windows.Forms.ToolStripMenuItem JournalistData;

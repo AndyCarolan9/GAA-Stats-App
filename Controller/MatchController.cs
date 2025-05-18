@@ -69,6 +69,7 @@ public class MatchController : IStatsController
         _view.OnContextMenuOpened += ContextMenuOpened;
         _view.OnOpenSubsButtonPressed += OpenSubMenu;
         _view.OnCopySelectedEvent += CopySelectedEvent;
+        _view.OnScorersButtonPressed += ScorersButtonPressed;
 
         #region Export Events
         _view.OnExportJournalistData += ExportJournalistData;
@@ -859,6 +860,17 @@ public class MatchController : IStatsController
         }
         
         _openStatsController = new AllStatsController(_match);
+        _openStatsController.ShowDialog();
+    }
+
+    private void ScorersButtonPressed(object? sender, EventArgs e)
+    {
+        if (!_match.IsMatchValid())
+        {
+            return;
+        }
+
+        _openStatsController = new ScorersController(_match, true);
         _openStatsController.ShowDialog();
     }
     #endregion
