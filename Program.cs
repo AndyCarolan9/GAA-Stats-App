@@ -1,8 +1,4 @@
-using StatsTracker.Classes;
 using StatsTracker.Controller;
-using StatsTracker.Model;
-using StatsTracker.Utils;
-using StatsTracker.Views;
 
 namespace StatsTracker;
 
