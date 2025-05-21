@@ -5,6 +5,7 @@ using StatsTracker.Model;
 using StatsTracker.Utils;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
+using StatsTracker.Views.Graphs;
 using Timer = System.Windows.Forms.Timer;
 
 namespace StatsTracker.Controller;
@@ -65,11 +66,15 @@ public class MatchController : IStatsController
         _view.OnSaveGamePressed += SaveGame;
         _view.OnSaveAsGamePressed += SaveGameAsJson;
         _view.OnOpenGamePressed += OpenGame;
-        _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnContextMenuOpened += ContextMenuOpened;
         _view.OnOpenSubsButtonPressed += OpenSubMenu;
         _view.OnCopySelectedEvent += CopySelectedEvent;
+        
+        #region Stats view Events
+        _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnScorersButtonPressed += ScorersButtonPressed;
+        _view.OnScoreTimeLinePressed += ScoreTimeLinePressed;
+        #endregion
 
         #region Export Events
         _view.OnExportJournalistData += ExportJournalistData;
@@ -872,6 +877,17 @@ public class MatchController : IStatsController
 
         _openStatsController = new ScorersController(_match, true);
         _openStatsController.ShowDialog();
+    }
+
+    private void ScoreTimeLinePressed(object? sender, EventArgs e)
+    {
+        if (!_match.IsMatchValid())
+        {
+            return;
+        }
+
+        ScoreTimeLineView view = new ScoreTimeLineView(_match);
+        view.ShowDialog();
     }
     #endregion
     

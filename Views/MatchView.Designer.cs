@@ -58,6 +58,7 @@ partial class MatchView
         ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         JournalistData = new System.Windows.Forms.ToolStripMenuItem();
         ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        Scorers = new System.Windows.Forms.ToolStripMenuItem();
         AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,7 +118,7 @@ partial class MatchView
         toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-        Scorers = new System.Windows.Forms.ToolStripMenuItem();
+        ScoreTimeLine = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -317,6 +318,13 @@ partial class MatchView
         ViewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
         ViewToolStripMenuItem.Text = "&View";
         // 
+        // Scorers
+        // 
+        Scorers.Name = "Scorers";
+        Scorers.Size = new System.Drawing.Size(224, 26);
+        Scorers.Text = "Scorers";
+        Scorers.Click += Scorers_Click;
+        // 
         // AllStatsToolStripMenuItem
         // 
         AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
@@ -326,6 +334,7 @@ partial class MatchView
         // 
         // GraphsToolStripMenuItem
         // 
+        GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine });
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
         GraphsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
         GraphsToolStripMenuItem.Text = "&Graphs";
@@ -505,7 +514,6 @@ partial class MatchView
         TurnoverStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         TurnoverStatBar.Name = "TurnoverStatBar";
         TurnoverStatBar.Size = new System.Drawing.Size(500, 101);
-        TurnoverStatBar.StatName = "Turnovers";
         TurnoverStatBar.TabIndex = 14;
         // 
         // ShotsStatBar
@@ -515,7 +523,6 @@ partial class MatchView
         ShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         ShotsStatBar.Name = "ShotsStatBar";
         ShotsStatBar.Size = new System.Drawing.Size(500, 101);
-        ShotsStatBar.StatName = "Shots";
         ShotsStatBar.TabIndex = 15;
         // 
         // KickoutsStatsBar
@@ -525,7 +532,6 @@ partial class MatchView
         KickoutsStatsBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KickoutsStatsBar.Name = "KickoutsStatsBar";
         KickoutsStatsBar.Size = new System.Drawing.Size(500, 101);
-        KickoutsStatsBar.StatName = "Kickouts";
         KickoutsStatsBar.TabIndex = 16;
         // 
         // GoalShotsStatBar
@@ -535,7 +541,6 @@ partial class MatchView
         GoalShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         GoalShotsStatBar.Name = "GoalShotsStatBar";
         GoalShotsStatBar.Size = new System.Drawing.Size(500, 101);
-        GoalShotsStatBar.StatName = "Goal Shots";
         GoalShotsStatBar.TabIndex = 17;
         // 
         // WidesStatBar
@@ -545,7 +550,6 @@ partial class MatchView
         WidesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         WidesStatBar.Name = "WidesStatBar";
         WidesStatBar.Size = new System.Drawing.Size(500, 101);
-        WidesStatBar.StatName = "Wides";
         WidesStatBar.TabIndex = 18;
         // 
         // AttacksStatBar
@@ -555,7 +559,6 @@ partial class MatchView
         AttacksStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         AttacksStatBar.Name = "AttacksStatBar";
         AttacksStatBar.Size = new System.Drawing.Size(500, 101);
-        AttacksStatBar.StatName = "Attacks";
         AttacksStatBar.TabIndex = 19;
         // 
         // FreesStatBar
@@ -565,7 +568,6 @@ partial class MatchView
         FreesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         FreesStatBar.Name = "FreesStatBar";
         FreesStatBar.Size = new System.Drawing.Size(500, 101);
-        FreesStatBar.StatName = "Frees";
         FreesStatBar.TabIndex = 20;
         // 
         // HalfLabel
@@ -773,12 +775,12 @@ partial class MatchView
         toolStripMenuItem19.Name = "toolStripMenuItem19";
         toolStripMenuItem19.Size = new System.Drawing.Size(32, 19);
         // 
-        // Scorers
+        // ScoreTimeLine
         // 
-        Scorers.Name = "Scorers";
-        Scorers.Size = new System.Drawing.Size(224, 26);
-        Scorers.Text = "Scorers";
-        Scorers.Click += Scorers_Click;
+        ScoreTimeLine.Name = "ScoreTimeLine";
+        ScoreTimeLine.Size = new System.Drawing.Size(224, 26);
+        ScoreTimeLine.Text = "Score Time Line";
+        ScoreTimeLine.Click += ScoreTimeLine_Click;
         // 
         // MatchView
         // 
@@ -834,6 +836,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem ScoreTimeLine;
 
     private System.Windows.Forms.ToolStripMenuItem Scorers;
 
