@@ -31,6 +31,7 @@ partial class ScoreTimeLineView
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScoreTimeLineView));
         label1 = new System.Windows.Forms.Label();
         label2 = new System.Windows.Forms.Label();
         SuspendLayout();
@@ -62,7 +63,8 @@ partial class ScoreTimeLineView
         ClientSize = new System.Drawing.Size(1902, 603);
         Controls.Add(label2);
         Controls.Add(label1);
-        Text = "ScoreTimeLineView";
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        Text = "Score Timeline";
         Load += ScoreTimeLineView_Load;
         ResumeLayout(false);
     }

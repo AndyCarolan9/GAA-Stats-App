@@ -31,6 +31,7 @@ partial class SubstituteSelectWindow
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubstituteSelectWindow));
         PlayerListbox = new System.Windows.Forms.ListBox();
         SuspendLayout();
         // 
@@ -42,14 +43,15 @@ partial class SubstituteSelectWindow
         PlayerListbox.Size = new System.Drawing.Size(234, 384);
         PlayerListbox.TabIndex = 18;
         // 
-        // SubsituteSelectWindow
+        // SubstituteSelectWindow
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(736, 467);
         Controls.Add(PlayerListbox);
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(45, 24, 45, 24);
-        Text = "SubsituteSelectWindow";
+        Text = "Subsitute Selection";
         Controls.SetChildIndex(PlayerListbox, 0);
         ResumeLayout(false);
     }

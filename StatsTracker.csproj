@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationIcon>Resources\StatsAppIcon.ico</ApplicationIcon>
+        <AssemblyName>GAA Intelligence</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

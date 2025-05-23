@@ -322,14 +322,14 @@ partial class MatchView
         // Scorers
         // 
         Scorers.Name = "Scorers";
-        Scorers.Size = new System.Drawing.Size(224, 26);
+        Scorers.Size = new System.Drawing.Size(146, 26);
         Scorers.Text = "Scorers";
         Scorers.Click += Scorers_Click;
         // 
         // AllStatsToolStripMenuItem
         // 
         AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
-        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
         AllStatsToolStripMenuItem.Text = "&All Stats";
         AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
@@ -337,20 +337,20 @@ partial class MatchView
         // 
         GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine, EventTimeLine });
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
-        GraphsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+        GraphsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
         GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // ScoreTimeLine
         // 
         ScoreTimeLine.Name = "ScoreTimeLine";
-        ScoreTimeLine.Size = new System.Drawing.Size(224, 26);
+        ScoreTimeLine.Size = new System.Drawing.Size(197, 26);
         ScoreTimeLine.Text = "Score Time Line";
         ScoreTimeLine.Click += ScoreTimeLine_Click;
         // 
         // EventTimeLine
         // 
         EventTimeLine.Name = "EventTimeLine";
-        EventTimeLine.Size = new System.Drawing.Size(224, 26);
+        EventTimeLine.Size = new System.Drawing.Size(197, 26);
         EventTimeLine.Text = "Event Time Line";
         EventTimeLine.Click += EventTimeLine_Click;
         // 
@@ -829,6 +829,7 @@ partial class MatchView
         Controls.Add(FootballFieldInput);
         Controls.Add(HeaderBar);
         DoubleBuffered = true;
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         MainMenuStrip = HeaderBar;
         Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "MatchView";

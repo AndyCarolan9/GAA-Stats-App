@@ -31,6 +31,7 @@ partial class PlayerSelectWindow
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerSelectWindow));
         Player1 = new System.Windows.Forms.Button();
         Player2 = new System.Windows.Forms.Button();
         Player3 = new System.Windows.Forms.Button();
@@ -245,8 +246,9 @@ partial class PlayerSelectWindow
         Controls.Add(Player3);
         Controls.Add(Player2);
         Controls.Add(Player1);
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-        Text = "PlayerSelectWindow";
+        Text = "Player Selection";
         ResumeLayout(false);
     }
 

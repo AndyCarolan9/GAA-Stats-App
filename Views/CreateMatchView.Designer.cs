@@ -31,6 +31,7 @@ partial class CreateMatchView
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateMatchView));
         HomeTeamDropDown = new System.Windows.Forms.ComboBox();
         label1 = new System.Windows.Forms.Label();
         TeamColorSelector = new System.Windows.Forms.ColorDialog();
@@ -347,6 +348,7 @@ partial class CreateMatchView
         Controls.Add(HomeTeamSetColor);
         Controls.Add(label1);
         Controls.Add(HomeTeamDropDown);
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "Create Match";
         ((System.ComponentModel.ISupportInitialize)HomeTeamColorBox).EndInit();

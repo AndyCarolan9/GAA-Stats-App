@@ -31,6 +31,7 @@ partial class ActionSelectWindow
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionSelectWindow));
         Play = new System.Windows.Forms.Button();
         Free = new System.Windows.Forms.Button();
         From45 = new System.Windows.Forms.Button();
@@ -128,6 +129,7 @@ partial class ActionSelectWindow
         Controls.Add(From45);
         Controls.Add(Free);
         Controls.Add(Play);
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
         Text = "Action Select Window";
         Controls.SetChildIndex(Play, 0);

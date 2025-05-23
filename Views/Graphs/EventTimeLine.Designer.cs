@@ -31,6 +31,7 @@ partial class EventTimeLine
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTimeLine));
         HomeTeamLabel = new System.Windows.Forms.Label();
         AwayTeamLabel = new System.Windows.Forms.Label();
         EventPanel = new System.Windows.Forms.Panel();
@@ -73,6 +74,7 @@ partial class EventTimeLine
         Controls.Add(AwayTeamLabel);
         Controls.Add(HomeTeamLabel);
         Controls.Add(EventPanel);
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Location = new System.Drawing.Point(19, 19);
         Text = "Shot Event Timeline";
         ResumeLayout(false);

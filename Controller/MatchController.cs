@@ -1,4 +1,4 @@
-﻿using StatsTracker.Classes;
+using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Model;
@@ -29,6 +29,7 @@ public class MatchController : IStatsController
     {
         _match = new Match();
         _view = new MatchView();
+        _view.Text = "GAA Intelligence";
         
         BindViewEvents();
         BindTimerButtons();
@@ -40,6 +41,7 @@ public class MatchController : IStatsController
     {
         _match = match;
         _view = new MatchView();
+        _view.Text = "GAA Intelligence";
         
         BindViewEvents();
         BindTimerButtons();
@@ -782,6 +784,7 @@ public class MatchController : IStatsController
     private void CreateNewMatch(object? sender, TeamSelectedEventArgs e)
     {
         _match =  new Match(new Team(e.HomeTeamName, e.HomeTeamColor, e.HomePlayers.ToList()), new Team(e.AwayTeamName, e.AwayTeamColor, e.AwayPlayers.ToList()));
+        _view.Text = "GAA Intelligence" + " - " + _match.HomeTeam.TeamName + " vs " + _match.AwayTeam.TeamName;
         SetTeamDataInView();
         _filePath = null;
         UpdateScoreCard();
@@ -849,6 +852,7 @@ public class MatchController : IStatsController
             }
             
             _match = loadedMatch;
+            _view.Text = "GAA Intelligence" + " - " + _match.HomeTeam.TeamName + " vs " + _match.AwayTeam.TeamName;
             SetTeamDataInView();
             SetupStatisticBars();
             SetupTeamPitchLabels();

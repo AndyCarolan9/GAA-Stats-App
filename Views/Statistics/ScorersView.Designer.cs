@@ -31,6 +31,7 @@ partial class ScorersView
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScorersView));
         ScorersGrid = new System.Windows.Forms.DataGridView();
         ((System.ComponentModel.ISupportInitialize)ScorersGrid).BeginInit();
         SuspendLayout();
@@ -55,7 +56,8 @@ partial class ScorersView
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
         Controls.Add(ScorersGrid);
-        Text = "ScorersView";
+        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        Text = "Scorers List";
         ((System.ComponentModel.ISupportInitialize)ScorersGrid).EndInit();
         ResumeLayout(false);
     }
