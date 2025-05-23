@@ -61,6 +61,8 @@ partial class MatchView
         Scorers = new System.Windows.Forms.ToolStripMenuItem();
         AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+        ScoreTimeLine = new System.Windows.Forms.ToolStripMenuItem();
+        EventTimeLine = new System.Windows.Forms.ToolStripMenuItem();
         helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,7 +120,6 @@ partial class MatchView
         toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-        ScoreTimeLine = new System.Windows.Forms.ToolStripMenuItem();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -334,10 +335,24 @@ partial class MatchView
         // 
         // GraphsToolStripMenuItem
         // 
-        GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine });
+        GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine, EventTimeLine });
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
         GraphsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
         GraphsToolStripMenuItem.Text = "&Graphs";
+        // 
+        // ScoreTimeLine
+        // 
+        ScoreTimeLine.Name = "ScoreTimeLine";
+        ScoreTimeLine.Size = new System.Drawing.Size(224, 26);
+        ScoreTimeLine.Text = "Score Time Line";
+        ScoreTimeLine.Click += ScoreTimeLine_Click;
+        // 
+        // EventTimeLine
+        // 
+        EventTimeLine.Name = "EventTimeLine";
+        EventTimeLine.Size = new System.Drawing.Size(224, 26);
+        EventTimeLine.Text = "Event Time Line";
+        EventTimeLine.Click += EventTimeLine_Click;
         // 
         // helpToolStripMenuItem
         // 
@@ -775,13 +790,6 @@ partial class MatchView
         toolStripMenuItem19.Name = "toolStripMenuItem19";
         toolStripMenuItem19.Size = new System.Drawing.Size(32, 19);
         // 
-        // ScoreTimeLine
-        // 
-        ScoreTimeLine.Name = "ScoreTimeLine";
-        ScoreTimeLine.Size = new System.Drawing.Size(224, 26);
-        ScoreTimeLine.Text = "Score Time Line";
-        ScoreTimeLine.Click += ScoreTimeLine_Click;
-        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -836,6 +844,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ToolStripMenuItem EventTimeLine;
 
     private System.Windows.Forms.ToolStripMenuItem ScoreTimeLine;
 

@@ -34,6 +34,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnScorersButtonPressed;
     
     public event EventHandler? OnScoreTimeLinePressed;
+    
+    public event EventHandler? OnEventTimeLinePressed;
 
     public event EventHandler<KeyEventArgs>? OnCopySelectedEvent;
 
@@ -295,5 +297,10 @@ public partial class MatchView : Form, IStatsView
     private void ScoreTimeLine_Click(object sender, EventArgs e)
     {
         OnScoreTimeLinePressed?.Invoke(sender, e);
+    }
+
+    private void EventTimeLine_Click(object sender, EventArgs e)
+    {
+        OnEventTimeLinePressed?.Invoke(sender, e);
     }
 }

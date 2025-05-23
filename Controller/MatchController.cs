@@ -74,6 +74,7 @@ public class MatchController : IStatsController
         _view.OnAllStatsPressed += OpenAllStatsView;
         _view.OnScorersButtonPressed += ScorersButtonPressed;
         _view.OnScoreTimeLinePressed += ScoreTimeLinePressed;
+        _view.OnEventTimeLinePressed += EventTimeLinePressed;
         #endregion
 
         #region Export Events
@@ -888,6 +889,17 @@ public class MatchController : IStatsController
 
         ScoreTimeLineView view = new ScoreTimeLineView(_match);
         view.ShowDialog();
+    }
+
+    private void EventTimeLinePressed(object? sender, EventArgs e)
+    {
+        if (!_match.IsMatchValid())
+        {
+            return;
+        }
+        
+        _openStatsController = new EventTimeLineController(_match);
+        _openStatsController.ShowDialog();
     }
     #endregion
     
