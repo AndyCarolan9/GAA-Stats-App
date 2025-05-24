@@ -163,6 +163,8 @@ public class AllStatsController : IStatsController
 
     private void InitialiseStatisticBars()
     {
+        _view.SetupStatBarNames();
+        
         StatisticBar[] statBars = _view.GetAllStatisticsBars();
 
         foreach (var bar in statBars)
@@ -243,6 +245,9 @@ public class AllStatsController : IStatsController
         _view.GetTotalSavedShotsBar().UpdateValues(new StatisticPair(saved.HomeTeamValue + saved45.HomeTeamValue, 
             saved.AwayTeamValue + saved45.AwayTeamValue));
         _view.GetTotalShortShotsBar().UpdateValues(shortShots);
+        
+        StatisticPair blocked = _match.GetStatisticForShotResult(ShotResultType.Blocked);
+        _view.GetTotalBlockedShotsBar().UpdateValues(blocked);
     }
 
     private void SetTurnoverStatBarValues()

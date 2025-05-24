@@ -833,6 +833,7 @@ partial class MatchView
         MainMenuStrip = HeaderBar;
         Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "MatchView";
+        Load += MatchView_Load;
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).EndInit();
         HeaderBar.ResumeLayout(false);
         HeaderBar.PerformLayout();

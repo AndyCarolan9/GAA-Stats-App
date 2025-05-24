@@ -309,4 +309,40 @@ public partial class AllStatsView : Form, IStatsView
         AwayTeamLabel.BackColor = !_showBothTeamEvents && !_showOnlyHomeEvents ? Color.Green : SystemColors.Control;
         AwayTeamName.BackColor = !_showBothTeamEvents && !_showOnlyHomeEvents ? Color.Green : SystemColors.Control;
     }
+
+    public void SetupStatBarNames()
+    {
+        #region Turnovers
+        TurnoversWon.StatName = "Total Turnovers Won";
+        Tackle.StatName = "Won in the Tackle";
+        Free.StatName = "Won By Free";
+        Intercept.StatName = "Won By Intercept";
+        #endregion
+
+        #region Kickouts
+        TotalKickoutsBar.StatName = "Total Kickouts";
+
+        KOWonCleanBar.StatName = KickOutResultType.Won.GetEventName();
+        KOWonMarkBar.StatName = KickOutResultType.WonMark.GetEventName();
+        KOWonBreak.StatName = KickOutResultType.WonBreak.GetEventName();
+        KOLostCleanBar.StatName = KickOutResultType.Lost.GetEventName();
+        KOLostMarkBar.StatName = KickOutResultType.LostMark.GetEventName();
+        KOLostBreakBar.StatName = KickOutResultType.LostBreak.GetEventName();
+        #endregion
+        
+        #region Shots
+        TotalShots.StatName = "# Shots";
+        TotalPointShots.StatName = "# Of Point Shots";
+        Total2PointShots.StatName = "# Of 2 Point Shots";
+        TotalGoalShots.StatName = "# Of Goal Shots";
+        TotalPointsScored.StatName = "# Of Points Scored";
+        Total2PointScored.StatName = "# Of 2 Points Scored";
+        TotalGoalsScored.StatName = "# Of Goals Scored";
+        TotalWides.StatName = "# Wides";
+        TotalBlockedShots.StatName = "# Of Blocked Shots";
+        TotalSavedShots.StatName = "# Of Saved Shots";
+        TotalShortShots.StatName = "# Of Short Shots";
+        TotalOutFor45.StatName = "# Out For 45";
+        #endregion
+    }
 }

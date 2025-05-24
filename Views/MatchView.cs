@@ -303,4 +303,15 @@ public partial class MatchView : Form, IStatsView
     {
         OnEventTimeLinePressed?.Invoke(sender, e);
     }
+
+    private void MatchView_Load(object sender, EventArgs e)
+    {
+        TurnoverStatBar.StatName = "Turnovers Won";
+        ShotsStatBar.StatName = "Total Shots";
+        GoalShotsStatBar.StatName = "Total Goal Shots";
+        WidesStatBar.StatName = "Total Wides";
+        KickoutsStatsBar.StatName = "Total Kickouts";
+        FreesStatBar.StatName = "Frees Conceded";
+        AttacksStatBar.StatName = "Total Attacks";
+    }
 }
