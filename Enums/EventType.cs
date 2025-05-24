@@ -62,7 +62,6 @@ static class EventTypeExtensions
         {
             case EventType.TurnoverLost:
             case EventType.TurnoverWon:
-            case EventType.FreeConceded:
                 return true;
             default:
                 return false;
