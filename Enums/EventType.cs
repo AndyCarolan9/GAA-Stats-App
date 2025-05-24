@@ -20,7 +20,9 @@ public enum EventType
     TurnoverWon,
     TurnoverLost,
     ThrowInWon,
-    Substitution
+    Substitution,
+    HalfStart,
+    HalfEnd,
 }
 
 /// <summary>

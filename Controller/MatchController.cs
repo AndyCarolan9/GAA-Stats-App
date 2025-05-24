@@ -524,6 +524,7 @@ public class MatchController : IStatsController
     {
         _match.StartHalf();
         SetHalfLabelText();
+        UpdateEventList();
         _view.GetStartStopButton().Text = !_match.IsMatchPlaying() ? "Start" : "Stop";
 
         if (_timeDisplayTimer is null)

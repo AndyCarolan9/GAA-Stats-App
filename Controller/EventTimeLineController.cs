@@ -52,7 +52,6 @@ public class EventTimeLineController : IStatsController
             TimeSpan time = TimeSpan.FromMilliseconds(shotEvent.Time);
             
             UpdateScoreForEvent(shotEvent, isHomeTeam, ref homeTotalScore, ref awayTotalScore);
-            float distance = GetDistanceFromGoal(isHomeTeam, shotEvent.Location);
             
             Panel eventPanel = new Panel
             {
@@ -112,7 +111,7 @@ public class EventTimeLineController : IStatsController
 
             Label lblShotDistance = new Label
             {
-                Text = GetDistanceFromGoal(isHomeTeam, shotEvent.Location) + " metres from goal.",
+                Text = GetDistanceFromGoal(isHomeTeam, shotEvent.Location) + "* metres from goal.",
                 Top = 130,
                 Left = 10,
                 Width = 180,

@@ -96,6 +96,7 @@ public class Match
         _matchTimer = Stopwatch.StartNew();
         _half += 1;
         _isPlayStarted = true;
+        AddEvent(new MatchEvent(new Point(), "", 0, EventType.HalfStart, "", _half));
     }
 
     /// <summary>
@@ -105,6 +106,7 @@ public class Match
     {
         _matchTimer.Stop();
         _isPlayStarted = false;
+        AddEvent(new MatchEvent(new Point(), "", _matchTimer.ElapsedMilliseconds, EventType.HalfEnd, "", _half));
     }
 
     /// <summary>

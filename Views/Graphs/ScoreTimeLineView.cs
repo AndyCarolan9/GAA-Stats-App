@@ -128,7 +128,14 @@ public partial class ScoreTimeLineView : Form, IStatsView
                 series.Points.AddXY(time.Minutes, totalScore);
             }
         }
-        
+
+        MatchEvent? halfEndEvent = _match.GetMatchEventsOfType(EventType.HalfEnd).FirstOrDefault(me => me.HalfIndex == halfIndex);
+        if (halfEndEvent != null)
+        {
+            TimeSpan time = TimeSpan.FromMilliseconds(halfEndEvent.Time);
+            series.Points.AddXY(time.Minutes, totalScore);
+        }
+
         return series;
     }
 }
