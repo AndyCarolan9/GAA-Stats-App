@@ -20,6 +20,7 @@ public class MatchController : IStatsController
     private PlayerSelectWindow? _selectWindow = null;
     private CreateMatchController? _createMatchController = null;
     private IStatsController? _openStatsController = null;
+    private static Timer _autosaveTimer;
 
     private Timer? _timeDisplayTimer;
 
@@ -810,6 +811,21 @@ public class MatchController : IStatsController
         }
         
         JSONHelper.SaveToJsonFile(_filePath, _match);
+        StartAutoSaveTimer();
+    }
+
+    private void StartAutoSaveTimer()
+    {
+        if (_autosaveTimer != null && _autosaveTimer.Enabled)
+        {
+            return;
+        }
+        
+        _autosaveTimer = new Timer();
+        _autosaveTimer.Interval = 120000; // 2 minutes
+        _autosaveTimer.Tick += SaveGame;
+        _autosaveTimer.Enabled = true;
+        _autosaveTimer.Start(); 
     }
 
     private void SaveGameAsJson(object? sender, EventArgs e)
@@ -828,6 +844,7 @@ public class MatchController : IStatsController
             _filePath = saveDialog.FileName;
             
             JSONHelper.SaveToJsonFile(_filePath, _match);
+            StartAutoSaveTimer();
         }
     }
 
