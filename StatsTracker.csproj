@@ -47,6 +47,9 @@
       <Compile Update="Views\Graphs\EventTimeLine.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\Graphs\PlayerPerformanceChart.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

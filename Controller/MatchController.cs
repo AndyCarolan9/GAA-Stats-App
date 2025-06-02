@@ -78,6 +78,7 @@ public class MatchController : IStatsController
         _view.OnScorersButtonPressed += ScorersButtonPressed;
         _view.OnScoreTimeLinePressed += ScoreTimeLinePressed;
         _view.OnEventTimeLinePressed += EventTimeLinePressed;
+        _view.GetPlayerPerformanceButton().Click += PlayerPerformanceClicked;
         #endregion
 
         #region Export Events
@@ -921,6 +922,17 @@ public class MatchController : IStatsController
         }
         
         _openStatsController = new EventTimeLineController(_match);
+        _openStatsController.ShowDialog();
+    }
+
+    private void PlayerPerformanceClicked(object? sender, EventArgs e)
+    {
+        if (!_match.IsMatchValid())
+        {
+            return;
+        }
+
+        _openStatsController = new PlayerPerformanceChartController(_match);
         _openStatsController.ShowDialog();
     }
     #endregion

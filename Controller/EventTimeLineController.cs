@@ -111,7 +111,7 @@ public class EventTimeLineController : IStatsController
 
             Label lblShotDistance = new Label
             {
-                Text = GetDistanceFromGoal(isHomeTeam, shotEvent.Location) + "* metres from goal.",
+                Text = _match.GetDistanceFromGoal(isHomeTeam, shotEvent.Location) + "* metres from goal.",
                 Top = 130,
                 Left = 10,
                 Width = 180,
@@ -178,28 +178,5 @@ public class EventTimeLineController : IStatsController
         result += scoreDifference > 0 ? "Up by: " : "Down by: ";
             
         return result + Math.Abs(scoreDifference);
-    }
-
-    private int GetDistanceFromGoal(bool isHomeEvent, Point shotLocation)
-    {
-        Vector2 realWorldHomeGoal = new Vector2(45, 0);
-        Vector2 realWorldAwayGoal = new Vector2(45, 145);
-        
-        int width = 700;
-        int height = 964;
-
-        float xPercent = (float)shotLocation.X / width;
-        float yPercent = (float)shotLocation.Y / height;
-        
-        float realWorldX = 90 * xPercent;
-        float realWorldY = 145 * yPercent;
-
-        float distance = 0.0f;
-        if (isHomeEvent)
-            distance = Vector2.Distance(new Vector2(realWorldX, realWorldY), realWorldAwayGoal);
-        else
-            distance = Vector2.Distance(new Vector2(realWorldX, realWorldY), realWorldHomeGoal);
-        
-        return Convert.ToInt32(distance);
     }
 }

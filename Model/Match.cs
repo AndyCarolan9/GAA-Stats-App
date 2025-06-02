@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Numerics;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
@@ -298,6 +299,76 @@ public class Match
             return false;
         }).ToArray();
     }
+
+    /// <summary>
+    /// Gets all positive events for player. Positive events are scores, turnovers won and kick outs won.
+    /// </summary>
+    /// <param name="playerName">The name of the player the events should match.</param>
+    public MatchEvent[] GetPositiveMatchEvents(string playerName)
+    {
+        List<MatchEvent> positiveEvents = new List<MatchEvent>();
+        foreach (var matchEvent in MatchEvents)
+        {
+            if (matchEvent.Player != playerName)
+            {
+                continue;
+            }
+
+            if (matchEvent is ShotEvent shotEvent)
+            {
+                if (shotEvent.ResultType.IsScore())
+                {
+                    positiveEvents.Add(matchEvent);
+                }
+            }
+
+            if (matchEvent is KickOutEvent kickOutEvent)
+            {
+                if (kickOutEvent.ResultType.IsKickOutWon())
+                {
+                    positiveEvents.Add(matchEvent);
+                }
+            }
+
+            if (matchEvent.Type == EventType.TurnoverWon)
+            {
+                positiveEvents.Add(matchEvent);
+            }
+        }
+
+        return positiveEvents.ToArray();
+    }
+
+    /// <summary>
+    /// Gets all negative events for player. Negative events are misses, turnovers lost and frees conceded.
+    /// </summary>
+    /// <param name="playerName">The name of the player the events should match.</param>
+    public MatchEvent[] GetNegativeMatchEvents(string playerName)
+    {
+        List<MatchEvent> negativeEvents = new List<MatchEvent>();
+        foreach (var matchEvent in MatchEvents)
+        {
+            if (matchEvent.Player != playerName)
+            {
+                continue;
+            }
+
+            if (matchEvent is ShotEvent shotEvent)
+            {
+                if (!shotEvent.ResultType.IsScore())
+                {
+                    negativeEvents.Add(matchEvent);
+                }
+            }
+
+            if (matchEvent.Type.IsNegativeEvent())
+            {
+                negativeEvents.Add(matchEvent);
+            }
+        }
+
+        return negativeEvents.ToArray();
+    }
     #endregion
     
     #region Team Methods
@@ -579,6 +650,29 @@ public class Match
 
         homeTeamScore = goals.HomeTeamValue.ToString() + "-" + homeTotalPoints.ToString();
         awayTeamScore = goals.AwayTeamValue.ToString() + "-" + awayTotalPoints.ToString();
+    }
+    
+    public int GetDistanceFromGoal(bool isHomeEvent, Point shotLocation)
+    {
+        Vector2 realWorldHomeGoal = new Vector2(45, 0);
+        Vector2 realWorldAwayGoal = new Vector2(45, 145);
+        
+        int width = 700;
+        int height = 964;
+
+        float xPercent = (float)shotLocation.X / width;
+        float yPercent = (float)shotLocation.Y / height;
+        
+        float realWorldX = 90 * xPercent;
+        float realWorldY = 145 * yPercent;
+
+        float distance = 0.0f;
+        if (isHomeEvent)
+            distance = Vector2.Distance(new Vector2(realWorldX, realWorldY), realWorldAwayGoal);
+        else
+            distance = Vector2.Distance(new Vector2(realWorldX, realWorldY), realWorldHomeGoal);
+        
+        return Convert.ToInt32(distance);
     }
     #endregion
     #endregion

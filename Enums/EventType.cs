@@ -68,6 +68,23 @@ static class EventTypeExtensions
         }
     }
 
+    public static bool IsNegativeEvent(this EventType eventType)
+    {
+        switch (eventType)
+        {
+            case EventType.BlackCard:
+            case EventType.RedCard:
+            case EventType.YellowCard:
+            case EventType.RedCard2Y:
+            case EventType.FreeConceded:
+            case EventType.PenaltyConceded:
+            case EventType.TurnoverLost:
+                return true;
+            default:
+                return false;
+        }
+    }
+
     public static string GetEventName(this EventType eventType)
     {
         return string.Concat(eventType.ToString().Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');

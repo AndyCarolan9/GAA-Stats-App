@@ -198,6 +198,11 @@ public partial class MatchView : Form, IStatsView
     {
         return EventInputMenu;
     }
+
+    public ToolStripMenuItem GetPlayerPerformanceButton()
+    {
+        return PlayerPerformance;
+    }
     #endregion
     
     /// <summary>
