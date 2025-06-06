@@ -124,6 +124,11 @@ public class Team
         string playerOffName = CurrentTeam[position];
         
         CurrentTeam[position] = playerOn;
+
+        if (!TeamSheet.Contains(playerOn))
+        {
+            TeamSheet.Add(playerOn);
+        }
         
         return playerOffName;
     }
