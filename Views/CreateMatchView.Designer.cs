@@ -75,9 +75,9 @@ partial class CreateMatchView
         // label1
         // 
         label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(10, 14);
+        label1.Location = new System.Drawing.Point(10, 6);
         label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(178, 27);
+        label1.Size = new System.Drawing.Size(178, 35);
         label1.TabIndex = 1;
         label1.Text = "Home Team";
         label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,7 +90,7 @@ partial class CreateMatchView
         // 
         HomeTeamSetColor.Location = new System.Drawing.Point(194, 82);
         HomeTeamSetColor.Name = "HomeTeamSetColor";
-        HomeTeamSetColor.Size = new System.Drawing.Size(104, 23);
+        HomeTeamSetColor.Size = new System.Drawing.Size(104, 24);
         HomeTeamSetColor.TabIndex = 2;
         HomeTeamSetColor.Text = "Color";
         HomeTeamSetColor.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@ partial class CreateMatchView
         // 
         HomeMoveUp.Location = new System.Drawing.Point(194, 129);
         HomeMoveUp.Name = "HomeMoveUp";
-        HomeMoveUp.Size = new System.Drawing.Size(104, 23);
+        HomeMoveUp.Size = new System.Drawing.Size(104, 28);
         HomeMoveUp.TabIndex = 4;
         HomeMoveUp.Text = "Move Up";
         HomeMoveUp.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ partial class CreateMatchView
         // 
         HomeTeamMoveDown.Location = new System.Drawing.Point(194, 158);
         HomeTeamMoveDown.Name = "HomeTeamMoveDown";
-        HomeTeamMoveDown.Size = new System.Drawing.Size(104, 23);
+        HomeTeamMoveDown.Size = new System.Drawing.Size(104, 30);
         HomeTeamMoveDown.TabIndex = 5;
         HomeTeamMoveDown.Text = "Move Down";
         HomeTeamMoveDown.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@ partial class CreateMatchView
         // 
         AwayMoveDown.Location = new System.Drawing.Point(488, 158);
         AwayMoveDown.Name = "AwayMoveDown";
-        AwayMoveDown.Size = new System.Drawing.Size(104, 23);
+        AwayMoveDown.Size = new System.Drawing.Size(104, 30);
         AwayMoveDown.TabIndex = 13;
         AwayMoveDown.Text = "Move Down";
         AwayMoveDown.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@ partial class CreateMatchView
         // 
         AwayMoveUp.Location = new System.Drawing.Point(488, 129);
         AwayMoveUp.Name = "AwayMoveUp";
-        AwayMoveUp.Size = new System.Drawing.Size(104, 23);
+        AwayMoveUp.Size = new System.Drawing.Size(104, 28);
         AwayMoveUp.TabIndex = 12;
         AwayMoveUp.Text = "Move Up";
         AwayMoveUp.UseVisualStyleBackColor = true;
@@ -171,9 +171,9 @@ partial class CreateMatchView
         // 
         // AwayTeamSetColor
         // 
-        AwayTeamSetColor.Location = new System.Drawing.Point(488, 83);
+        AwayTeamSetColor.Location = new System.Drawing.Point(488, 82);
         AwayTeamSetColor.Name = "AwayTeamSetColor";
-        AwayTeamSetColor.Size = new System.Drawing.Size(104, 23);
+        AwayTeamSetColor.Size = new System.Drawing.Size(104, 24);
         AwayTeamSetColor.TabIndex = 10;
         AwayTeamSetColor.Text = "Color";
         AwayTeamSetColor.UseVisualStyleBackColor = true;
@@ -182,9 +182,9 @@ partial class CreateMatchView
         // label2
         // 
         label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(598, 14);
+        label2.Location = new System.Drawing.Point(598, 6);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(178, 27);
+        label2.Size = new System.Drawing.Size(178, 35);
         label2.TabIndex = 9;
         label2.Text = "Away Team";
         label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -240,7 +240,7 @@ partial class CreateMatchView
         // 
         AddPlayer.Location = new System.Drawing.Point(486, 465);
         AddPlayer.Name = "AddPlayer";
-        AddPlayer.Size = new System.Drawing.Size(104, 23);
+        AddPlayer.Size = new System.Drawing.Size(104, 27);
         AddPlayer.TabIndex = 19;
         AddPlayer.Text = "Add Player";
         AddPlayer.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@ partial class CreateMatchView
         // 
         AddTeam.Location = new System.Drawing.Point(488, 437);
         AddTeam.Name = "AddTeam";
-        AddTeam.Size = new System.Drawing.Size(104, 23);
+        AddTeam.Size = new System.Drawing.Size(104, 26);
         AddTeam.TabIndex = 20;
         AddTeam.Text = "Add Team";
         AddTeam.UseVisualStyleBackColor = true;
@@ -275,9 +275,9 @@ partial class CreateMatchView
         CreateMatchBtn.BackColor = System.Drawing.Color.PaleGreen;
         CreateMatchBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
         CreateMatchBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-        CreateMatchBtn.Location = new System.Drawing.Point(10, 505);
+        CreateMatchBtn.Location = new System.Drawing.Point(10, 495);
         CreateMatchBtn.Name = "CreateMatchBtn";
-        CreateMatchBtn.Size = new System.Drawing.Size(286, 33);
+        CreateMatchBtn.Size = new System.Drawing.Size(286, 43);
         CreateMatchBtn.TabIndex = 23;
         CreateMatchBtn.Text = "Create Match";
         CreateMatchBtn.UseVisualStyleBackColor = false;
@@ -288,9 +288,9 @@ partial class CreateMatchView
         CancelBtn.BackColor = System.Drawing.Color.Tomato;
         CancelBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
         CancelBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-        CancelBtn.Location = new System.Drawing.Point(490, 505);
+        CancelBtn.Location = new System.Drawing.Point(490, 495);
         CancelBtn.Name = "CancelBtn";
-        CancelBtn.Size = new System.Drawing.Size(286, 33);
+        CancelBtn.Size = new System.Drawing.Size(286, 43);
         CancelBtn.TabIndex = 24;
         CancelBtn.Text = "Cancel";
         CancelBtn.UseVisualStyleBackColor = false;
@@ -298,9 +298,9 @@ partial class CreateMatchView
         // 
         // HomeRemovePlayer
         // 
-        HomeRemovePlayer.Location = new System.Drawing.Point(194, 187);
+        HomeRemovePlayer.Location = new System.Drawing.Point(194, 194);
         HomeRemovePlayer.Name = "HomeRemovePlayer";
-        HomeRemovePlayer.Size = new System.Drawing.Size(104, 23);
+        HomeRemovePlayer.Size = new System.Drawing.Size(104, 28);
         HomeRemovePlayer.TabIndex = 25;
         HomeRemovePlayer.Text = "Remove Player";
         HomeRemovePlayer.UseVisualStyleBackColor = true;
@@ -308,9 +308,9 @@ partial class CreateMatchView
         // 
         // AwayRemovePlayer
         // 
-        AwayRemovePlayer.Location = new System.Drawing.Point(490, 187);
+        AwayRemovePlayer.Location = new System.Drawing.Point(490, 194);
         AwayRemovePlayer.Name = "AwayRemovePlayer";
-        AwayRemovePlayer.Size = new System.Drawing.Size(104, 23);
+        AwayRemovePlayer.Size = new System.Drawing.Size(104, 28);
         AwayRemovePlayer.TabIndex = 26;
         AwayRemovePlayer.Text = "Remove Player";
         AwayRemovePlayer.UseVisualStyleBackColor = true;
