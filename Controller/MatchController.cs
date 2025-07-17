@@ -6,6 +6,7 @@ using StatsTracker.Utils;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
 using StatsTracker.Views.Graphs;
+using StatsTracker.Views.PlayerSelectViews;
 using Timer = System.Windows.Forms.Timer;
 
 namespace StatsTracker.Controller;
@@ -72,6 +73,8 @@ public class MatchController : IStatsController
         _view.OnContextMenuOpened += ContextMenuOpened;
         _view.OnOpenSubsButtonPressed += OpenSubMenu;
         _view.OnCopySelectedEvent += CopySelectedEvent;
+        _view.GetHomeCardsButton().Click += OpenCardsMenu;
+        _view.GetAwayCardsButton().Click += OpenCardsMenu;
         
         #region Stats view Events
         _view.OnAllStatsPressed += OpenAllStatsView;
@@ -415,6 +418,26 @@ public class MatchController : IStatsController
         eventArgs.EventType = EventType.Substitution;
 
         _selectWindow = new SubstituteSelectWindow(eventArgs);
+        BindActionViewEvents();
+        _selectWindow.ShowDialog();
+    }
+
+    private void OpenCardsMenu(object? sender, EventArgs e)
+    {
+        Button? subsButton = sender as Button;
+        if (subsButton == null)
+        {
+            return;
+        }
+        
+        bool isHomeTeam = subsButton.Name.Contains("Home");
+        Team selectedTeam = isHomeTeam ? _match.HomeTeam : _match.AwayTeam;
+        InputStatEventArgs eventArgs = new InputStatEventArgs
+        {
+            Team = selectedTeam
+        };
+        
+        _selectWindow = new PlayerCardSelectWindow(eventArgs);
         BindActionViewEvents();
         _selectWindow.ShowDialog();
     }

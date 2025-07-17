@@ -203,6 +203,16 @@ public partial class MatchView : Form, IStatsView
     {
         return PlayerPerformance;
     }
+
+    public Button GetHomeCardsButton()
+    {
+        return HomeCardsButton;
+    }
+
+    public Button GetAwayCardsButton()
+    {
+        return AwayCardsButton;
+    }
     #endregion
     
     /// <summary>

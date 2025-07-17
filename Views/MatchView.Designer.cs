@@ -63,6 +63,7 @@ partial class MatchView
         GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         ScoreTimeLine = new System.Windows.Forms.ToolStripMenuItem();
         EventTimeLine = new System.Windows.Forms.ToolStripMenuItem();
+        PlayerPerformance = new System.Windows.Forms.ToolStripMenuItem();
         helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,7 +121,8 @@ partial class MatchView
         toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
         toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-        PlayerPerformance = new System.Windows.Forms.ToolStripMenuItem();
+        HomeCardsButton = new System.Windows.Forms.Button();
+        AwayCardsButton = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -323,14 +325,14 @@ partial class MatchView
         // Scorers
         // 
         Scorers.Name = "Scorers";
-        Scorers.Size = new System.Drawing.Size(224, 26);
+        Scorers.Size = new System.Drawing.Size(146, 26);
         Scorers.Text = "Scorers";
         Scorers.Click += Scorers_Click;
         // 
         // AllStatsToolStripMenuItem
         // 
         AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
-        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
         AllStatsToolStripMenuItem.Text = "&All Stats";
         AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
@@ -338,22 +340,28 @@ partial class MatchView
         // 
         GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine, EventTimeLine, PlayerPerformance });
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
-        GraphsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+        GraphsToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
         GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // ScoreTimeLine
         // 
         ScoreTimeLine.Name = "ScoreTimeLine";
-        ScoreTimeLine.Size = new System.Drawing.Size(224, 26);
+        ScoreTimeLine.Size = new System.Drawing.Size(219, 26);
         ScoreTimeLine.Text = "Score Time Line";
         ScoreTimeLine.Click += ScoreTimeLine_Click;
         // 
         // EventTimeLine
         // 
         EventTimeLine.Name = "EventTimeLine";
-        EventTimeLine.Size = new System.Drawing.Size(224, 26);
+        EventTimeLine.Size = new System.Drawing.Size(219, 26);
         EventTimeLine.Text = "Event Time Line";
         EventTimeLine.Click += EventTimeLine_Click;
+        // 
+        // PlayerPerformance
+        // 
+        PlayerPerformance.Name = "PlayerPerformance";
+        PlayerPerformance.Size = new System.Drawing.Size(219, 26);
+        PlayerPerformance.Text = "Player Performance";
         // 
         // helpToolStripMenuItem
         // 
@@ -437,7 +445,7 @@ partial class MatchView
         // HomeTeamName
         // 
         HomeTeamName.Font = new System.Drawing.Font("Segoe UI", 24F);
-        HomeTeamName.Location = new System.Drawing.Point(1353, 35);
+        HomeTeamName.Location = new System.Drawing.Point(1343, 35);
         HomeTeamName.Name = "HomeTeamName";
         HomeTeamName.Size = new System.Drawing.Size(278, 51);
         HomeTeamName.TabIndex = 2;
@@ -461,17 +469,17 @@ partial class MatchView
         AwayTeamScore.Name = "AwayTeamScore";
         AwayTeamScore.Size = new System.Drawing.Size(244, 51);
         AwayTeamScore.TabIndex = 5;
-        AwayTeamScore.Text = "3-13";
+        AwayTeamScore.Text = "0-00";
         AwayTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // HomeTeamScore
         // 
         HomeTeamScore.Font = new System.Drawing.Font("Segoe UI", 24F);
-        HomeTeamScore.Location = new System.Drawing.Point(1353, 86);
+        HomeTeamScore.Location = new System.Drawing.Point(1343, 86);
         HomeTeamScore.Name = "HomeTeamScore";
         HomeTeamScore.Size = new System.Drawing.Size(278, 51);
         HomeTeamScore.TabIndex = 6;
-        HomeTeamScore.Text = "4-12";
+        HomeTeamScore.Text = "0-00";
         HomeTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // pictureBox1
@@ -495,7 +503,7 @@ partial class MatchView
         // HomeTeamSubs
         // 
         HomeTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
-        HomeTeamSubs.Location = new System.Drawing.Point(1429, 145);
+        HomeTeamSubs.Location = new System.Drawing.Point(1353, 144);
         HomeTeamSubs.Name = "HomeTeamSubs";
         HomeTeamSubs.Size = new System.Drawing.Size(122, 50);
         HomeTeamSubs.TabIndex = 9;
@@ -506,7 +514,7 @@ partial class MatchView
         // AwayTeamSubs
         // 
         AwayTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
-        AwayTeamSubs.Location = new System.Drawing.Point(1708, 145);
+        AwayTeamSubs.Location = new System.Drawing.Point(1648, 146);
         AwayTeamSubs.Name = "AwayTeamSubs";
         AwayTeamSubs.Size = new System.Drawing.Size(122, 49);
         AwayTeamSubs.TabIndex = 10;
@@ -791,11 +799,25 @@ partial class MatchView
         toolStripMenuItem19.Name = "toolStripMenuItem19";
         toolStripMenuItem19.Size = new System.Drawing.Size(32, 19);
         // 
-        // PlayerPerformance
+        // HomeCardsButton
         // 
-        PlayerPerformance.Name = "PlayerPerformance";
-        PlayerPerformance.Size = new System.Drawing.Size(224, 26);
-        PlayerPerformance.Text = "Player Performance";
+        HomeCardsButton.Font = new System.Drawing.Font("Segoe UI", 15F);
+        HomeCardsButton.Location = new System.Drawing.Point(1481, 144);
+        HomeCardsButton.Name = "HomeCardsButton";
+        HomeCardsButton.Size = new System.Drawing.Size(122, 50);
+        HomeCardsButton.TabIndex = 40;
+        HomeCardsButton.Text = "Cards";
+        HomeCardsButton.UseVisualStyleBackColor = true;
+        // 
+        // AwayCardsButton
+        // 
+        AwayCardsButton.Font = new System.Drawing.Font("Segoe UI", 15F);
+        AwayCardsButton.Location = new System.Drawing.Point(1776, 145);
+        AwayCardsButton.Name = "AwayCardsButton";
+        AwayCardsButton.Size = new System.Drawing.Size(122, 50);
+        AwayCardsButton.TabIndex = 41;
+        AwayCardsButton.Text = "Cards";
+        AwayCardsButton.UseVisualStyleBackColor = true;
         // 
         // MatchView
         // 
@@ -803,6 +825,8 @@ partial class MatchView
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(1902, 996);
+        Controls.Add(AwayCardsButton);
+        Controls.Add(HomeCardsButton);
         Controls.Add(AwayPitchHighlight);
         Controls.Add(HomePitchHighlight);
         Controls.Add(AwayPitchLabel);
@@ -853,6 +877,9 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button HomeCardsButton;
+    private System.Windows.Forms.Button AwayCardsButton;
 
     private System.Windows.Forms.ToolStripMenuItem PlayerPerformance;
 
