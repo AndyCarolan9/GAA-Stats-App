@@ -381,10 +381,13 @@ public class CreateMatchController : IStatsController
         Team? team = FindTeam(selectedTeam);
         if (team != null)
         {
+            var teamCopy = team.TeamSheet.ToArray();
+            Array.Sort(teamCopy, String.Compare);
+            
             ListBox teamsListBox = _view.GetTeamListBox();
             teamsListBox.BeginUpdate();
             teamsListBox.Items.Clear();
-            teamsListBox.Items.AddRange(team.TeamSheet.ToArray());
+            teamsListBox.Items.AddRange(teamCopy);
             teamsListBox.EndUpdate();
         }
     }
