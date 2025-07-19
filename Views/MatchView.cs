@@ -114,11 +114,6 @@ public partial class MatchView : Form, IStatsView
         return KickoutsStatsBar;
     }
 
-    public StatisticBar GetAttacksStatisticBar()
-    {
-        return AttacksStatBar;
-    }
-
     public StatisticBar GetFreeStatisticBar()
     {
         return FreesStatBar;
@@ -212,6 +207,16 @@ public partial class MatchView : Form, IStatsView
     public Button GetAwayCardsButton()
     {
         return AwayCardsButton;
+    }
+
+    public ListBox GetHomeTeamCardedPlayers()
+    {
+        return HomeTeamCardedPlayers;
+    }
+
+    public ListBox GetAwayTeamCardedPlayers()
+    {
+        return AwayTeamCardedPlayers;
     }
     #endregion
     
@@ -327,6 +332,5 @@ public partial class MatchView : Form, IStatsView
         WidesStatBar.StatName = "Total Wides";
         KickoutsStatsBar.StatName = "Total Kickouts";
         FreesStatBar.StatName = "Frees Conceded";
-        AttacksStatBar.StatName = "Total Attacks";
     }
 }

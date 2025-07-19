@@ -607,6 +607,46 @@ public class MatchController : IStatsController
         TimeSpan elapsedTime = _match.GetElapsedTime();
         _view.GetMinutesLabel().Text = GetTimeValue(elapsedTime.Minutes);
         _view.GetSecondsLabel().Text = GetTimeValue(elapsedTime.Seconds);
+        
+        UpdateCardedPlayersLists();
+    }
+
+    private void UpdateCardedPlayersLists()
+    {
+        Dictionary<string, long> cardedPlayers = _match.GetBlackCardedPlayers();
+        if (cardedPlayers.Count == 0)
+        {
+            return;
+        }
+        
+        _match.RefreshCardList();
+        
+        ListBox homeBox = _view.GetHomeTeamCardedPlayers();
+        ListBox awayBox = _view.GetAwayTeamCardedPlayers();
+        
+        homeBox.BeginUpdate();
+        awayBox.BeginUpdate();
+        homeBox.Items.Clear();
+        awayBox.Items.Clear();
+        
+        foreach (var cardedPlayer in cardedPlayers)
+        {
+            bool isHomeTeam = _match.HomeTeam.CurrentTeam.Contains(cardedPlayer.Key);
+
+            TimeSpan elaspedTime = TimeSpan.FromMilliseconds(_match.GetElapsedTimeInMilliseconds() - cardedPlayer.Value);
+            string displayText = cardedPlayer.Key + " : " + GetTimeValue(elaspedTime.Minutes) + ":" + GetTimeValue(elaspedTime.Seconds);
+            if (isHomeTeam)
+            {
+                homeBox.Items.Add(displayText);
+            }
+            else
+            {
+                awayBox.Items.Add(displayText);
+            }
+        }
+        
+        homeBox.EndUpdate();
+        awayBox.EndUpdate();
     }
 
     /// <summary>

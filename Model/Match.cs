@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Numerics;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
@@ -11,6 +11,9 @@ public class Match
     #region Fields
 
     private Stopwatch _matchTimer;
+    
+    // Dictionary storing which players have a black card and how much time has elapsed on their card.
+    private Dictionary<string, long> _blackCardedPlayers = new Dictionary<string, long>();
 
     private int _half = 0;
 
@@ -62,6 +65,11 @@ public class Match
     #endregion
     
     #region Methods
+    public Dictionary<string, long> GetBlackCardedPlayers()
+    {
+        return _blackCardedPlayers;
+    }
+    
     public bool IsHomeTeamInPossession()
     {
         return _isHomeTeamInPossession;
@@ -136,6 +144,11 @@ public class Match
         return _matchTimer.Elapsed;
     }
 
+    public long GetElapsedTimeInMilliseconds()
+    {
+        return _matchTimer.ElapsedMilliseconds;
+    }
+
     public int GetHalf()
     {
         return _half;
@@ -187,6 +200,12 @@ public class Match
             AddEvent(subEventArgs);
             return;
         }
+
+        if (statArgs.EventType == EventType.BlackCard)
+        {
+            // Start timer linked to main timer tracking when this player is back in play.
+            AddBlackCardEvent(statArgs);
+        }
         
         var matchEvent = new MatchEvent(statArgs.Location, statArgs.Player, _matchTimer.ElapsedMilliseconds, 
             statArgs.EventType, statArgs.Team.TeamName, _half);
@@ -202,6 +221,30 @@ public class Match
             if (GetInPossessionTeam().TeamName != statArgs.Team.TeamName)
             {
                 _isHomeTeamInPossession = !_isHomeTeamInPossession;
+            }
+        }
+    }
+
+    private void AddBlackCardEvent(InputStatEventArgs eventArgs)
+    {
+        if (_blackCardedPlayers.ContainsKey(eventArgs.Player))
+        {
+            return; // No duplicates
+        }
+        
+        // Player and when the card starts.
+        _blackCardedPlayers.Add(eventArgs.Player, _matchTimer.ElapsedMilliseconds);
+    }
+
+    public void RefreshCardList()
+    {
+        // find finished timer
+        foreach (var playerTimer in _blackCardedPlayers)
+        {
+            long timeSinceStartOfCard = _matchTimer.ElapsedMilliseconds -  playerTimer.Value;
+            if (timeSinceStartOfCard >= 600000)
+            {
+                _blackCardedPlayers.Remove(playerTimer.Key);
             }
         }
     }

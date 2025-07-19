@@ -92,7 +92,6 @@ partial class MatchView
         KickoutsStatsBar = new StatsTracker.View_Elements.StatisticBar();
         GoalShotsStatBar = new StatsTracker.View_Elements.StatisticBar();
         WidesStatBar = new StatsTracker.View_Elements.StatisticBar();
-        AttacksStatBar = new StatsTracker.View_Elements.StatisticBar();
         FreesStatBar = new StatsTracker.View_Elements.StatisticBar();
         HalfLabel = new System.Windows.Forms.Label();
         StartStopButton = new System.Windows.Forms.Button();
@@ -123,6 +122,8 @@ partial class MatchView
         toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
         HomeCardsButton = new System.Windows.Forms.Button();
         AwayCardsButton = new System.Windows.Forms.Button();
+        HomeTeamCardedPlayers = new System.Windows.Forms.ListBox();
+        AwayTeamCardedPlayers = new System.Windows.Forms.ListBox();
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -534,7 +535,7 @@ partial class MatchView
         // TurnoverStatBar
         // 
         TurnoverStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        TurnoverStatBar.Location = new System.Drawing.Point(1374, 216);
+        TurnoverStatBar.Location = new System.Drawing.Point(1374, 336);
         TurnoverStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         TurnoverStatBar.Name = "TurnoverStatBar";
         TurnoverStatBar.Size = new System.Drawing.Size(500, 101);
@@ -543,7 +544,7 @@ partial class MatchView
         // ShotsStatBar
         // 
         ShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        ShotsStatBar.Location = new System.Drawing.Point(1374, 410);
+        ShotsStatBar.Location = new System.Drawing.Point(1374, 554);
         ShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         ShotsStatBar.Name = "ShotsStatBar";
         ShotsStatBar.Size = new System.Drawing.Size(500, 101);
@@ -552,7 +553,7 @@ partial class MatchView
         // KickoutsStatsBar
         // 
         KickoutsStatsBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        KickoutsStatsBar.Location = new System.Drawing.Point(1374, 313);
+        KickoutsStatsBar.Location = new System.Drawing.Point(1374, 445);
         KickoutsStatsBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KickoutsStatsBar.Name = "KickoutsStatsBar";
         KickoutsStatsBar.Size = new System.Drawing.Size(500, 101);
@@ -561,7 +562,7 @@ partial class MatchView
         // GoalShotsStatBar
         // 
         GoalShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        GoalShotsStatBar.Location = new System.Drawing.Point(1374, 507);
+        GoalShotsStatBar.Location = new System.Drawing.Point(1374, 663);
         GoalShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         GoalShotsStatBar.Name = "GoalShotsStatBar";
         GoalShotsStatBar.Size = new System.Drawing.Size(500, 101);
@@ -570,25 +571,16 @@ partial class MatchView
         // WidesStatBar
         // 
         WidesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        WidesStatBar.Location = new System.Drawing.Point(1374, 603);
+        WidesStatBar.Location = new System.Drawing.Point(1374, 772);
         WidesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         WidesStatBar.Name = "WidesStatBar";
         WidesStatBar.Size = new System.Drawing.Size(500, 101);
         WidesStatBar.TabIndex = 18;
         // 
-        // AttacksStatBar
-        // 
-        AttacksStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        AttacksStatBar.Location = new System.Drawing.Point(1374, 701);
-        AttacksStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-        AttacksStatBar.Name = "AttacksStatBar";
-        AttacksStatBar.Size = new System.Drawing.Size(500, 101);
-        AttacksStatBar.TabIndex = 19;
-        // 
         // FreesStatBar
         // 
         FreesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        FreesStatBar.Location = new System.Drawing.Point(1374, 799);
+        FreesStatBar.Location = new System.Drawing.Point(1374, 881);
         FreesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         FreesStatBar.Name = "FreesStatBar";
         FreesStatBar.Size = new System.Drawing.Size(500, 101);
@@ -819,12 +811,30 @@ partial class MatchView
         AwayCardsButton.Text = "Cards";
         AwayCardsButton.UseVisualStyleBackColor = true;
         // 
+        // HomeTeamCardedPlayers
+        // 
+        HomeTeamCardedPlayers.FormattingEnabled = true;
+        HomeTeamCardedPlayers.Location = new System.Drawing.Point(1350, 218);
+        HomeTeamCardedPlayers.Name = "HomeTeamCardedPlayers";
+        HomeTeamCardedPlayers.Size = new System.Drawing.Size(260, 104);
+        HomeTeamCardedPlayers.TabIndex = 42;
+        // 
+        // AwayTeamCardedPlayers
+        // 
+        AwayTeamCardedPlayers.FormattingEnabled = true;
+        AwayTeamCardedPlayers.Location = new System.Drawing.Point(1638, 219);
+        AwayTeamCardedPlayers.Name = "AwayTeamCardedPlayers";
+        AwayTeamCardedPlayers.Size = new System.Drawing.Size(260, 104);
+        AwayTeamCardedPlayers.TabIndex = 43;
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         ClientSize = new System.Drawing.Size(1902, 996);
+        Controls.Add(AwayTeamCardedPlayers);
+        Controls.Add(HomeTeamCardedPlayers);
         Controls.Add(AwayCardsButton);
         Controls.Add(HomeCardsButton);
         Controls.Add(AwayPitchHighlight);
@@ -842,7 +852,6 @@ partial class MatchView
         Controls.Add(StartStopButton);
         Controls.Add(HalfLabel);
         Controls.Add(FreesStatBar);
-        Controls.Add(AttacksStatBar);
         Controls.Add(WidesStatBar);
         Controls.Add(GoalShotsStatBar);
         Controls.Add(KickoutsStatsBar);
@@ -877,6 +886,9 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ListBox HomeTeamCardedPlayers;
+    private System.Windows.Forms.ListBox AwayTeamCardedPlayers;
 
     private System.Windows.Forms.Button HomeCardsButton;
     private System.Windows.Forms.Button AwayCardsButton;
@@ -941,7 +953,6 @@ partial class MatchView
     private StatsTracker.View_Elements.StatisticBar KickoutsStatsBar;
     private StatsTracker.View_Elements.StatisticBar GoalShotsStatBar;
     private StatsTracker.View_Elements.StatisticBar WidesStatBar;
-    private StatsTracker.View_Elements.StatisticBar AttacksStatBar;
     private StatsTracker.View_Elements.StatisticBar FreesStatBar;
 
     private StatsTracker.View_Elements.StatisticBar TurnoverStatBar;

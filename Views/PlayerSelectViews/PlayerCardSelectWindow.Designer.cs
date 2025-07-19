@@ -40,7 +40,7 @@ partial class PlayerCardSelectWindow
         // YellowCard
         // 
         YellowCard.BackColor = System.Drawing.Color.LightCoral;
-        YellowCard.Location = new System.Drawing.Point(678, 8);
+        YellowCard.Location = new System.Drawing.Point(533, 8);
         YellowCard.Name = "YellowCard";
         YellowCard.Size = new System.Drawing.Size(159, 66);
         YellowCard.TabIndex = 18;
@@ -50,7 +50,7 @@ partial class PlayerCardSelectWindow
         // RedCard
         // 
         RedCard.BackColor = System.Drawing.Color.LightCoral;
-        RedCard.Location = new System.Drawing.Point(678, 80);
+        RedCard.Location = new System.Drawing.Point(533, 80);
         RedCard.Name = "RedCard";
         RedCard.Size = new System.Drawing.Size(159, 66);
         RedCard.TabIndex = 19;
@@ -60,7 +60,7 @@ partial class PlayerCardSelectWindow
         // RedCard2Y
         // 
         RedCard2Y.BackColor = System.Drawing.Color.LightCoral;
-        RedCard2Y.Location = new System.Drawing.Point(678, 152);
+        RedCard2Y.Location = new System.Drawing.Point(533, 152);
         RedCard2Y.Name = "RedCard2Y";
         RedCard2Y.Size = new System.Drawing.Size(159, 66);
         RedCard2Y.TabIndex = 20;
@@ -70,7 +70,7 @@ partial class PlayerCardSelectWindow
         // BlackCard
         // 
         BlackCard.BackColor = System.Drawing.Color.LightCoral;
-        BlackCard.Location = new System.Drawing.Point(678, 224);
+        BlackCard.Location = new System.Drawing.Point(533, 224);
         BlackCard.Name = "BlackCard";
         BlackCard.Size = new System.Drawing.Size(159, 66);
         BlackCard.TabIndex = 21;
@@ -81,7 +81,7 @@ partial class PlayerCardSelectWindow
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(845, 510);
+        ClientSize = new System.Drawing.Size(699, 492);
         Controls.Add(BlackCard);
         Controls.Add(RedCard2Y);
         Controls.Add(RedCard);
