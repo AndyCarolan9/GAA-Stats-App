@@ -29,6 +29,11 @@ public partial class AllStatsView : Form, IStatsView
     }
     
     #region Control Getters
+    public ComboBox GetHalfSelectBox()
+    {
+        return HalfSelectBox;
+    }
+    
     #region Kickouts
     public StatisticBar GetTotalKickoutsStatsBar()
     {

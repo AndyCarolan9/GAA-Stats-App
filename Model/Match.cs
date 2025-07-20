@@ -548,19 +548,28 @@ public class Match
     #endregion
     
     #region Statistic Methods
-    public StatisticPair GetStatisticForEvent(EventType eventType)
-    {
-        List<MatchEvent> events = MatchEvents.FindAll(matchEvent => matchEvent.Type == eventType);
-        return GetStatisticPairForEvent(events);
-    }
-
-    public StatisticPair GetStatisticForShotResult(ShotResultType resultType)
+    public StatisticPair GetStatisticForEvent(EventType eventType, HalfTime selectedHalf = HalfTime.FullGame)
     {
         List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
         {
-            if (matchEvent is ShotEvent shotEvent)
+            if (matchEvent.Type == eventType)
             {
-                return shotEvent.ResultType == resultType;
+                if (selectedHalf == HalfTime.FirstHalf && matchEvent.HalfIndex == 1)
+                {
+                    return true;
+                }
+                
+                if (selectedHalf == HalfTime.SecondHalf && matchEvent.HalfIndex == 2)
+                {
+                    return true;
+                }
+
+                if (selectedHalf == HalfTime.FullGame)
+                {
+                    return true;
+                }
+
+                return false;
             }
             
             return false;
@@ -568,13 +577,57 @@ public class Match
         return GetStatisticPairForEvent(events);
     }
 
-    public StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType)
+    public StatisticPair GetStatisticForShotResult(ShotResultType resultType, HalfTime selectedHalf = HalfTime.FullGame)
     {
         List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
         {
-            if (matchEvent is KickOutEvent kickOutEvent)
+            if (matchEvent is ShotEvent shotEvent && shotEvent.ResultType == resultType)
             {
-                return kickOutEvent.ResultType == resultType;
+                if (selectedHalf == HalfTime.FirstHalf && matchEvent.HalfIndex == 1)
+                {
+                    return true;
+                }
+                
+                if (selectedHalf == HalfTime.SecondHalf && matchEvent.HalfIndex == 2)
+                {
+                    return true;
+                }
+
+                if (selectedHalf == HalfTime.FullGame)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            
+            return false;
+        });
+        return GetStatisticPairForEvent(events);
+    }
+
+    public StatisticPair GetStatisticPairForKickOutResult(KickOutResultType resultType, HalfTime halfType = HalfTime.FullGame)
+    {
+        List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
+        {
+            if (matchEvent is KickOutEvent kickOutEvent && kickOutEvent.ResultType == resultType)
+            {
+                if (halfType == HalfTime.FirstHalf && matchEvent.HalfIndex == 1)
+                {
+                    return true;
+                }
+                
+                if (halfType == HalfTime.SecondHalf && matchEvent.HalfIndex == 2)
+                {
+                    return true;
+                }
+                
+                if (halfType == HalfTime.FullGame)
+                {
+                    return true;
+                }
+
+                return false;
             }
 
             return false;
@@ -583,13 +636,29 @@ public class Match
         return GetStatisticPairForEvent(events);
     }
 
-    public StatisticPair GetStatisticPairForTurnoverType(TurnoverType turnoverType, string homeTeamName)
+    public StatisticPair GetStatisticPairForTurnoverType(TurnoverType turnoverType, string homeTeamName, HalfTime halfType = HalfTime.FullGame)
     {
         List<MatchEvent> turnOvers = MatchEvents.FindAll(matchEvent =>
         {
-            if (matchEvent is TurnoverEvent turnoverEvent)
+            if (matchEvent is TurnoverEvent turnoverEvent && turnoverEvent.TeamName == homeTeamName 
+                                                          && turnoverEvent.TurnoverType == turnoverType)
             {
-                return turnoverEvent.TurnoverType == turnoverType;
+                if (halfType == HalfTime.FirstHalf && matchEvent.HalfIndex == 1)
+                {
+                    return true;
+                }
+                
+                if (halfType == HalfTime.SecondHalf && matchEvent.HalfIndex == 2)
+                {
+                    return true;
+                }
+                
+                if (halfType == HalfTime.FullGame)
+                {
+                    return true;
+                }
+
+                return false;
             }
 
             return false;

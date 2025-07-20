@@ -58,6 +58,7 @@ namespace StatsTracker.View_Elements
         {
             if (valuePair.IsStatisticsEmpty())
             {
+                InitialiseValues();
                 return;
             }
             

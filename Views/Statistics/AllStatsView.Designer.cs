@@ -280,6 +280,8 @@ partial class AllStatsView
         DisplayPitch = new System.Windows.Forms.PictureBox();
         HomeTeamName = new System.Windows.Forms.Label();
         AwayTeamName = new System.Windows.Forms.Label();
+        pictureBox5 = new System.Windows.Forms.PictureBox();
+        HalfSelectBox = new System.Windows.Forms.ComboBox();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         KOWonCleanBar.SuspendLayout();
@@ -307,6 +309,7 @@ partial class AllStatsView
         Tackle.SuspendLayout();
         Intercept.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)DisplayPitch).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
         SuspendLayout();
         // 
         // pictureBox1
@@ -330,7 +333,7 @@ partial class AllStatsView
         // TotalKickoutsBar
         // 
         TotalKickoutsBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        TotalKickoutsBar.Location = new System.Drawing.Point(16, 59);
+        TotalKickoutsBar.Location = new System.Drawing.Point(16, 115);
         TotalKickoutsBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         TotalKickoutsBar.Name = "TotalKickoutsBar";
         TotalKickoutsBar.Size = new System.Drawing.Size(492, 60);
@@ -340,7 +343,7 @@ partial class AllStatsView
         // 
         KOWonCleanBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         KOWonCleanBar.Controls.Add(StatSplitBar);
-        KOWonCleanBar.Location = new System.Drawing.Point(16, 127);
+        KOWonCleanBar.Location = new System.Drawing.Point(16, 183);
         KOWonCleanBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOWonCleanBar.Name = "KOWonCleanBar";
         KOWonCleanBar.Size = new System.Drawing.Size(492, 60);
@@ -359,7 +362,7 @@ partial class AllStatsView
         // KOLabel
         // 
         KOLabel.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
-        KOLabel.Location = new System.Drawing.Point(119, -1);
+        KOLabel.Location = new System.Drawing.Point(119, 55);
         KOLabel.Name = "KOLabel";
         KOLabel.Size = new System.Drawing.Size(286, 49);
         KOLabel.TabIndex = 5;
@@ -371,7 +374,7 @@ partial class AllStatsView
         KOWonMarkBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
         KOWonMarkBar.Controls.Add(object_4f1641f2_92c2_46c8_a2b7_2daf7901bc29);
         KOWonMarkBar.Controls.Add(splitCountBar1);
-        KOWonMarkBar.Location = new System.Drawing.Point(16, 200);
+        KOWonMarkBar.Location = new System.Drawing.Point(16, 256);
         KOWonMarkBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOWonMarkBar.Name = "KOWonMarkBar";
         KOWonMarkBar.Size = new System.Drawing.Size(492, 60);
@@ -403,7 +406,7 @@ partial class AllStatsView
         KOWonBreak.Controls.Add(object_d764597b_1a89_44bf_90dc_c422991bdb6e);
         KOWonBreak.Controls.Add(splitCountBar2);
         KOWonBreak.Controls.Add(splitCountBar3);
-        KOWonBreak.Location = new System.Drawing.Point(16, 268);
+        KOWonBreak.Location = new System.Drawing.Point(16, 324);
         KOWonBreak.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOWonBreak.Name = "KOWonBreak";
         KOWonBreak.Size = new System.Drawing.Size(492, 60);
@@ -446,7 +449,7 @@ partial class AllStatsView
         KOLostCleanBar.Controls.Add(splitCountBar4);
         KOLostCleanBar.Controls.Add(splitCountBar5);
         KOLostCleanBar.Controls.Add(splitCountBar6);
-        KOLostCleanBar.Location = new System.Drawing.Point(16, 341);
+        KOLostCleanBar.Location = new System.Drawing.Point(16, 397);
         KOLostCleanBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOLostCleanBar.Name = "KOLostCleanBar";
         KOLostCleanBar.Size = new System.Drawing.Size(492, 60);
@@ -500,7 +503,7 @@ partial class AllStatsView
         KOLostMarkBar.Controls.Add(splitCountBar8);
         KOLostMarkBar.Controls.Add(splitCountBar9);
         KOLostMarkBar.Controls.Add(splitCountBar10);
-        KOLostMarkBar.Location = new System.Drawing.Point(16, 414);
+        KOLostMarkBar.Location = new System.Drawing.Point(16, 470);
         KOLostMarkBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOLostMarkBar.Name = "KOLostMarkBar";
         KOLostMarkBar.Size = new System.Drawing.Size(492, 60);
@@ -565,7 +568,7 @@ partial class AllStatsView
         KOLostBreakBar.Controls.Add(splitCountBar13);
         KOLostBreakBar.Controls.Add(splitCountBar14);
         KOLostBreakBar.Controls.Add(splitCountBar15);
-        KOLostBreakBar.Location = new System.Drawing.Point(16, 487);
+        KOLostBreakBar.Location = new System.Drawing.Point(16, 543);
         KOLostBreakBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         KOLostBreakBar.Name = "KOLostBreakBar";
         KOLostBreakBar.Size = new System.Drawing.Size(492, 60);
@@ -634,7 +637,7 @@ partial class AllStatsView
         // pictureBox3
         // 
         pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox3.Location = new System.Drawing.Point(-2, 559);
+        pictureBox3.Location = new System.Drawing.Point(-2, 618);
         pictureBox3.Name = "pictureBox3";
         pictureBox3.Size = new System.Drawing.Size(528, 12);
         pictureBox3.TabIndex = 11;
@@ -2255,7 +2258,7 @@ partial class AllStatsView
         TurnoversWon.Controls.Add(splitCountBar149);
         TurnoversWon.Controls.Add(splitCountBar150);
         TurnoversWon.Controls.Add(splitCountBar151);
-        TurnoversWon.Location = new System.Drawing.Point(16, 634);
+        TurnoversWon.Location = new System.Drawing.Point(16, 693);
         TurnoversWon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         TurnoversWon.Name = "TurnoversWon";
         TurnoversWon.Size = new System.Drawing.Size(492, 60);
@@ -2404,7 +2407,7 @@ partial class AllStatsView
         // label1
         // 
         label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(119, 578);
+        label1.Location = new System.Drawing.Point(119, 637);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(286, 49);
         label1.TabIndex = 31;
@@ -2429,7 +2432,7 @@ partial class AllStatsView
         Free.Controls.Add(splitCountBar163);
         Free.Controls.Add(splitCountBar164);
         Free.Controls.Add(splitCountBar165);
-        Free.Location = new System.Drawing.Point(16, 707);
+        Free.Location = new System.Drawing.Point(16, 766);
         Free.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Free.Name = "Free";
         Free.Size = new System.Drawing.Size(492, 60);
@@ -2603,7 +2606,7 @@ partial class AllStatsView
         Tackle.Controls.Add(splitCountBar178);
         Tackle.Controls.Add(splitCountBar179);
         Tackle.Controls.Add(splitCountBar180);
-        Tackle.Location = new System.Drawing.Point(16, 775);
+        Tackle.Location = new System.Drawing.Point(16, 834);
         Tackle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Tackle.Name = "Tackle";
         Tackle.Size = new System.Drawing.Size(492, 60);
@@ -2777,7 +2780,7 @@ partial class AllStatsView
         Intercept.Controls.Add(splitCountBar193);
         Intercept.Controls.Add(splitCountBar194);
         Intercept.Controls.Add(splitCountBar195);
-        Intercept.Location = new System.Drawing.Point(16, 848);
+        Intercept.Location = new System.Drawing.Point(16, 907);
         Intercept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Intercept.Name = "Intercept";
         Intercept.Size = new System.Drawing.Size(492, 60);
@@ -2966,11 +2969,30 @@ partial class AllStatsView
         AwayTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         AwayTeamName.Click += AwayTeam_Click;
         // 
+        // pictureBox5
+        // 
+        pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+        pictureBox5.Location = new System.Drawing.Point(-2, 49);
+        pictureBox5.Name = "pictureBox5";
+        pictureBox5.Size = new System.Drawing.Size(528, 12);
+        pictureBox5.TabIndex = 38;
+        pictureBox5.TabStop = false;
+        // 
+        // HalfSelectBox
+        // 
+        HalfSelectBox.FormattingEnabled = true;
+        HalfSelectBox.Location = new System.Drawing.Point(16, 9);
+        HalfSelectBox.Name = "HalfSelectBox";
+        HalfSelectBox.Size = new System.Drawing.Size(169, 28);
+        HalfSelectBox.TabIndex = 39;
+        // 
         // AllStatsView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         ClientSize = new System.Drawing.Size(1902, 1033);
+        Controls.Add(HalfSelectBox);
+        Controls.Add(pictureBox5);
         Controls.Add(AwayTeamName);
         Controls.Add(HomeTeamName);
         Controls.Add(DisplayPitch);
@@ -3036,8 +3058,12 @@ partial class AllStatsView
         Tackle.ResumeLayout(false);
         Intercept.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)DisplayPitch).EndInit();
+        ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.PictureBox pictureBox5;
+    private System.Windows.Forms.ComboBox HalfSelectBox;
 
     private System.Windows.Forms.Label HomeTeamName;
 
