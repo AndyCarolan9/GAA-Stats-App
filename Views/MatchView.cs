@@ -218,6 +218,11 @@ public partial class MatchView : Form, IStatsView
     {
         return AwayTeamCardedPlayers;
     }
+
+    public ContextMenuStrip GetEventListContextMenu()
+    {
+        return EventListContextMenu;
+    }
     #endregion
     
     /// <summary>

@@ -19,6 +19,13 @@ public partial class ActionSelectWindow : PlayerSelectWindow
         SetupActionButtons();
     }
 
+    public ActionSelectWindow(Team team, MatchEvent matchEvent) : base(team, matchEvent)
+    {
+        InitializeComponent();
+        
+        SetupActionButtons();
+    }
+
     /// <summary>
     /// Sets up the action buttons.
     /// </summary>
@@ -32,6 +39,39 @@ public partial class ActionSelectWindow : PlayerSelectWindow
         Penalty.MouseClick += ActionButton_Click;
         Sideline.MouseClick += ActionButton_Click;
         Mark.MouseClick += ActionButton_Click;
+
+        if (MatchEvent is ShotEvent shotEvent)
+        {
+            switch (shotEvent.ActionType)
+            {
+                case ActionType.Play:
+                    _selectedActionButton = Play;
+                    Play.BackColor = Color.WhiteSmoke;
+                    break;
+                case ActionType.Free:
+                    _selectedActionButton = Free;
+                    Free.BackColor = Color.WhiteSmoke;
+                    break;
+                case ActionType.From45:
+                    _selectedActionButton = From45;
+                    From45.BackColor = Color.WhiteSmoke;
+                    break;
+                case ActionType.Penalty:
+                    _selectedActionButton = Penalty;
+                    Penalty.BackColor = Color.WhiteSmoke;
+                    break;
+                case ActionType.Sideline:
+                    _selectedActionButton = Sideline;
+                    Sideline.BackColor = Color.WhiteSmoke;
+                    break;
+                case ActionType.Mark:
+                    _selectedActionButton = Mark;
+                    Mark.BackColor = Color.WhiteSmoke;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     /// <summary>
@@ -64,17 +104,27 @@ public partial class ActionSelectWindow : PlayerSelectWindow
 
     protected override void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
-        ShotEventArgs? shotEventArgs = InputStatEventArgs as ShotEventArgs;
-        if (shotEventArgs is null || _selectedActionButton is null || SelectedTeam is null)
+        if (_selectedActionButton is null || SelectedTeam is null)
         {
             return;
         }
-        
-        shotEventArgs.Team = SelectedTeam;
-        shotEventArgs.Player = GetSelectedPlayerName();
+
         Enum.TryParse(_selectedActionButton.Name, out ActionType actionType);
-        shotEventArgs.ActionType = actionType;
-        shotEventArgs.IsTurnedOver = GetTurnOverCheckBox().Checked;
-        OnEnterStatInvoked(shotEventArgs);
+        
+        if (InputStatEventArgs is ShotEventArgs shotEventArgs)
+        {
+            shotEventArgs.Team = SelectedTeam;
+            shotEventArgs.Player = GetSelectedPlayerName();
+            shotEventArgs.ActionType = actionType;
+            shotEventArgs.IsTurnedOver = GetTurnOverCheckBox().Checked;
+            OnEnterStatInvoked(shotEventArgs);
+        }
+
+        if (MatchEvent is ShotEvent shotEvent)
+        {
+            shotEvent.ActionType = actionType;
+            shotEvent.Player = GetSelectedPlayerName();
+            OnEnterStatInvoked(new InputStatEventArgs());
+        }
     }
 }

@@ -8,7 +8,8 @@ public partial class PlayerSelectWindow : Form, IStatsView
 {
     private Button? _selectedPlayerButton;
     protected readonly Team? SelectedTeam;
-    protected readonly InputStatEventArgs? InputStatEventArgs;
+    protected readonly InputStatEventArgs? InputStatEventArgs = null;
+    protected readonly MatchEvent? MatchEvent = null;
     
     /// <summary>
     /// Called when the enter stat button is clicked.
@@ -29,6 +30,18 @@ public partial class PlayerSelectWindow : Form, IStatsView
     {
         SelectedTeam = team;
         InputStatEventArgs = inputStatEventArgs;
+        
+        InitializeComponent();
+        
+        SetupPlayerButtons();
+        
+        SetupPossessionCheckBox();
+    }
+
+    public PlayerSelectWindow(Team team, MatchEvent matchEvent)
+    {
+        SelectedTeam = team;
+        MatchEvent = matchEvent;
         
         InitializeComponent();
         
@@ -85,6 +98,15 @@ public partial class PlayerSelectWindow : Form, IStatsView
                 int index = Int32.Parse(strIndex) - 1;
                 button.Text = SelectedTeam.CurrentTeam[index];
                 button.BackColor = SelectedTeam.TeamColor;
+
+                if (MatchEvent is not null)
+                {
+                    if (button.Text == MatchEvent.Player)
+                    {
+                        _selectedPlayerButton = button;
+                        _selectedPlayerButton.BackColor = Color.WhiteSmoke;
+                    }
+                }
             }
         }
     }
@@ -125,9 +147,18 @@ public partial class PlayerSelectWindow : Form, IStatsView
     /// <param name="eventArgs">The event arguments of the button press.</param>
     protected virtual void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
-        InputStatEventArgs.Player = GetSelectedPlayerName();
-        InputStatEventArgs.Team = SelectedTeam;
-        OnEnterStatInvoked(InputStatEventArgs);
+        if (InputStatEventArgs is not null)
+        {
+            InputStatEventArgs.Player = GetSelectedPlayerName();
+            InputStatEventArgs.Team = SelectedTeam;
+            OnEnterStatInvoked(InputStatEventArgs);
+        }
+
+        if (MatchEvent is not null)
+        {
+            MatchEvent.Player = GetSelectedPlayerName();
+            OnEnterStatInvoked(new InputStatEventArgs());
+        }
     }
 
     /// <summary>

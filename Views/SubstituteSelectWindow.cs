@@ -13,6 +13,12 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
         LoadSubsitutes();
     }
 
+    public SubstituteSelectWindow(Team team, MatchEvent matchEvent) : base(team, matchEvent)
+    {
+        InitializeComponent();
+        LoadSubsitutes();
+    }
+
     private void LoadSubsitutes()
     {
         if (InputStatEventArgs == null)
@@ -45,6 +51,11 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
         PlayerListbox.Items.Clear();
         PlayerListbox.Items.AddRange(availablePlayers.ToArray());
         PlayerListbox.EndUpdate();
+
+        if (MatchEvent is SubstitutionEvent subEvent)
+        {
+            PlayerListbox.SelectedItem = subEvent.PlayerOnName;
+        }
     }
 
     private Team? GetTeam(Team[] teams)
@@ -65,21 +76,25 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
 
     protected override void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
-        string? selectedSub = (string)PlayerListbox.SelectedItem;
+        string? selectedSub = (string?)PlayerListbox.SelectedItem;
         if (selectedSub == null)
         {
             return;
         }
         
-        SubstitutionEventArgs? subsitutionEventArgs = (SubstitutionEventArgs)InputStatEventArgs;
-        if (subsitutionEventArgs == null)
+        if (InputStatEventArgs is SubstitutionEventArgs substitutionEventArgs)
         {
-            return;
+            substitutionEventArgs.Team = SelectedTeam;
+            substitutionEventArgs.SubstitutePlayer = selectedSub;
+            substitutionEventArgs.Player = GetSelectedPlayerName();
+            OnEnterStatInvoked(substitutionEventArgs);
         }
-        
-        subsitutionEventArgs.Team = SelectedTeam;
-        subsitutionEventArgs.SubstitutePlayer = selectedSub;
-        subsitutionEventArgs.Player = GetSelectedPlayerName();
-        OnEnterStatInvoked(subsitutionEventArgs);
+
+        if (MatchEvent is SubstitutionEvent substitutionEvent)
+        {
+            substitutionEvent.PlayerOnName = selectedSub;
+            substitutionEvent.Player = GetSelectedPlayerName();
+            OnEnterStatInvoked(new InputStatEventArgs());
+        }
     }
 }

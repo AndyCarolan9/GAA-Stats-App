@@ -1,4 +1,5 @@
-﻿using StatsTracker.Enums;
+﻿using StatsTracker.Classes;
+using StatsTracker.Enums;
 using StatsTracker.Events;
 
 namespace StatsTracker.Views.PlayerSelectViews;
@@ -15,6 +16,12 @@ public partial class PlayerCardSelectWindow : PlayerSelectWindow
         SetupCardButtons();
     }
 
+    public PlayerCardSelectWindow(Team team, MatchEvent matchEvent)
+    {
+        InitializeComponent();
+        SetupCardButtons();
+    }
+
     private void SetupCardButtons()
     {
         _buttonColor = YellowCard.BackColor;
@@ -23,6 +30,31 @@ public partial class PlayerCardSelectWindow : PlayerSelectWindow
         RedCard.MouseClick += CardButtonClick;
         RedCard2Y.MouseClick += CardButtonClick;
         BlackCard.MouseClick += CardButtonClick;
+
+        if (MatchEvent is not null)
+        {
+            switch (MatchEvent.Type)
+            {
+                case EventType.YellowCard:
+                    _selectedCardButton = YellowCard;
+                    YellowCard.BackColor = Color.WhiteSmoke;
+                    break;
+                case EventType.RedCard:
+                    _selectedCardButton = RedCard;
+                    RedCard.BackColor = Color.WhiteSmoke;
+                    break;
+                case EventType.BlackCard:
+                    _selectedCardButton = BlackCard;
+                    BlackCard.BackColor = Color.WhiteSmoke;
+                    break;
+                case EventType.RedCard2Y:
+                    _selectedCardButton = RedCard2Y;
+                    RedCard2Y.BackColor = Color.WhiteSmoke;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     private void CardButtonClick(object? sender, MouseEventArgs mouseEventArgs)
@@ -50,12 +82,23 @@ public partial class PlayerCardSelectWindow : PlayerSelectWindow
 
     protected override void EnterStat_Click(object? sender, EventArgs eventArgs)
     {
-        if(InputStatEventArgs is null || _selectedCardButton is null || SelectedTeam is null) return;
-        
-        InputStatEventArgs.Team = SelectedTeam;
-        InputStatEventArgs.Player = GetSelectedPlayerName();
+        if(_selectedCardButton is null || SelectedTeam is null) return;
+
         Enum.TryParse(_selectedCardButton.Name, out EventType cardType);
-        InputStatEventArgs.EventType = cardType;
-        OnEnterStatInvoked(InputStatEventArgs);
+        
+        if (InputStatEventArgs is not null)
+        {
+            InputStatEventArgs.Team = SelectedTeam;
+            InputStatEventArgs.Player = GetSelectedPlayerName();
+            InputStatEventArgs.EventType = cardType;
+            OnEnterStatInvoked(InputStatEventArgs);
+        }
+
+        if (MatchEvent is not null)
+        {
+            MatchEvent.Player = GetSelectedPlayerName();
+            MatchEvent.Type = cardType;
+            OnEnterStatInvoked(new InputStatEventArgs());
+        }
     }
 }

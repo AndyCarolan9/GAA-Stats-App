@@ -124,6 +124,7 @@ partial class MatchView
         AwayCardsButton = new System.Windows.Forms.Button();
         HomeTeamCardedPlayers = new System.Windows.Forms.ListBox();
         AwayTeamCardedPlayers = new System.Windows.Forms.ListBox();
+        EventListContextMenu = new System.Windows.Forms.ContextMenuStrip(components);
         ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -827,6 +828,12 @@ partial class MatchView
         AwayTeamCardedPlayers.Size = new System.Drawing.Size(260, 104);
         AwayTeamCardedPlayers.TabIndex = 43;
         // 
+        // contextMenuStrip1
+        // 
+        EventListContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+        EventListContextMenu.Name = "EventListContextMenu";
+        EventListContextMenu.Size = new System.Drawing.Size(211, 32);
+        // 
         // MatchView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -886,6 +893,8 @@ partial class MatchView
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ContextMenuStrip EventListContextMenu;
 
     private System.Windows.Forms.ListBox HomeTeamCardedPlayers;
     private System.Windows.Forms.ListBox AwayTeamCardedPlayers;

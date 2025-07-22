@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
@@ -75,6 +76,9 @@ public class MatchController : IStatsController
         _view.OnCopySelectedEvent += CopySelectedEvent;
         _view.GetHomeCardsButton().Click += OpenCardsMenu;
         _view.GetAwayCardsButton().Click += OpenCardsMenu;
+
+        _view.GetEventListBox().MouseDoubleClick += RightClickEventBox;
+        _view.GetEventListContextMenu().Opening += EventListContextMenuOnOpening;
         
         #region Stats view Events
         _view.OnAllStatsPressed += OpenAllStatsView;
@@ -390,8 +394,110 @@ public class MatchController : IStatsController
         intercept.MouseDown += TurnoverItemClick;
         parent.DropDownItems.Add(intercept);
     }
+    
+    private void EventListContextMenuOnOpening(object? sender, CancelEventArgs e)
+    {
+        ContextMenuStrip eventListContextMenu = _view.GetEventListContextMenu();
+        eventListContextMenu.Items.Clear();
+        
+        ToolStripMenuItem edit = new ToolStripMenuItem("Edit");
+        edit.Name = "Edit";
+        edit.Click += OnEditClick;
+        eventListContextMenu.Items.Add(edit);
+        
+        ToolStripMenuItem delete = new ToolStripMenuItem("Delete");
+        delete.Name = "Delete";
+        delete.Click += OnDeleteClick;
+        eventListContextMenu.Items.Add(delete);
+    }
+
+    private void OnEditClick(object? sender, EventArgs e)
+    {
+        MatchEvent? selectedEvent = (MatchEvent?)_view.GetEventListBox().SelectedItem;
+        if (selectedEvent is null)
+        {
+            return;
+        }
+
+        Team selectedTeam = _match.HomeTeam.TeamName == selectedEvent.TeamName ? _match.HomeTeam : _match.AwayTeam;
+
+        if (selectedEvent is ShotEvent shotEvent)
+        {
+            _selectWindow = new ActionSelectWindow(selectedTeam, shotEvent);
+            _selectWindow.OnEnterStatClicked += OnStatEdited;
+            _selectWindow.OnCancelled += OnEnterStatCancelled;
+            _selectWindow.Show();
+            return;
+        }
+
+        if (selectedEvent is SubstitutionEvent subsEvent)
+        {
+            _selectWindow = new SubstituteSelectWindow(selectedTeam, subsEvent);
+            _selectWindow.OnEnterStatClicked += OnStatEdited;
+            _selectWindow.OnCancelled += OnEnterStatCancelled;
+            _selectWindow.Show();
+            return;
+        }
+
+        if (selectedEvent.Type.IsCardEvent())
+        {
+            _selectWindow = new PlayerCardSelectWindow(selectedTeam, selectedEvent);
+            _selectWindow.OnEnterStatClicked += OnStatEdited;
+            _selectWindow.OnCancelled += OnEnterStatCancelled;
+            _selectWindow.Show();
+            return;
+        }
+        
+        _selectWindow = new PlayerSelectWindow(selectedTeam, selectedEvent);
+        _selectWindow.OnEnterStatClicked += OnStatEdited;
+        _selectWindow.OnCancelled += OnEnterStatCancelled;
+        _selectWindow.Show();
+    }
+
+    private void OnStatEdited(object? sender, InputStatEventArgs e)
+    {
+        UpdateView();
+        UnbindActionViewEvents();
+    }
+
+    private void OnDeleteClick(object? sender, EventArgs e)
+    {
+        MatchEvent? selectedEvent = (MatchEvent?)_view.GetEventListBox().SelectedItem;
+        if (selectedEvent is null)
+        {
+            return;
+        }
+
+        List<MatchEvent> matchEvents = _match.MatchEvents;
+
+        int index = matchEvents.IndexOf(selectedEvent);
+        if (index == matchEvents.Count - 1)
+        {
+            // This is only done if the last event is deleted as changing possession for a much earlier event will cause issues
+            if (selectedEvent is ShotEvent || selectedEvent is TurnoverEvent)
+            {
+                _match.SetIsHomeTeamInPossession(_match.HomeTeam.TeamName == selectedEvent.TeamName);
+            }
+        }
+        
+        matchEvents.Remove(selectedEvent);
+        UpdateView();
+    }
     #endregion
 
+    private void RightClickEventBox(object? sender, MouseEventArgs e)
+    {
+        ListBox eventBox = _view.GetEventListBox();
+        if (eventBox.Items.Count == 0)
+        {
+            return;
+        }
+        
+        eventBox.SelectedIndex = eventBox.IndexFromPoint(e.Location);
+        
+        _view.GetEventListContextMenu().Show(eventBox, e.Location);
+    }
+    
     private void CopySelectedEvent(object? sender, KeyEventArgs e)
     {
         if (e.KeyCode == Keys.C)

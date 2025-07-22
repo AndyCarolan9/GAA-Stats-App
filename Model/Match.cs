@@ -74,6 +74,11 @@ public class Match
     {
         return _isHomeTeamInPossession;
     }
+
+    public void SetIsHomeTeamInPossession(bool isHomeTeamInPossession)
+    {
+        _isHomeTeamInPossession = isHomeTeamInPossession;
+    }
     
     public bool IsMatchValid()
     {
