@@ -53,6 +53,9 @@
       <Compile Update="Views\PlayerSelectViews\PlayerCardSelectWindow.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\Statistics\DisciplineReportView.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

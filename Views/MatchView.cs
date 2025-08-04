@@ -36,6 +36,8 @@ public partial class MatchView : Form, IStatsView
     public event EventHandler? OnScoreTimeLinePressed;
     
     public event EventHandler? OnEventTimeLinePressed;
+    
+    public event EventHandler? OnDisciplineReportPressed;
 
     public event EventHandler<KeyEventArgs>? OnCopySelectedEvent;
 
@@ -337,5 +339,10 @@ public partial class MatchView : Form, IStatsView
         WidesStatBar.StatName = "Total Wides";
         KickoutsStatsBar.StatName = "Total Kickouts";
         FreesStatBar.StatName = "Frees Conceded";
+    }
+
+    private void DisciplineReport_Click(object sender, EventArgs e)
+    {
+        OnDisciplineReportPressed?.Invoke(sender, e);
     }
 }
