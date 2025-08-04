@@ -42,11 +42,21 @@ public class DisciplineReportController : IStatsController
 
     private void UpdateViewData()
     {
-        string selectedString = _view.GetTeamComboBox().SelectedText;
+        var selectedItem = _view.GetTeamComboBox().SelectedItem;
+        if (selectedItem != null)
+        {
+            string? selectedString = selectedItem.ToString();
         
-        Team selectedTeam = _match.HomeTeam.TeamName == selectedString ? _match.HomeTeam : _match.AwayTeam;
+            Team selectedTeam = _match.HomeTeam.TeamName == selectedString ? _match.HomeTeam : _match.AwayTeam;
+            Team opposition = _match.HomeTeam.TeamName != selectedString ? _match.HomeTeam : _match.AwayTeam;
         
-        UpdateTeamConcededFreesGrid(selectedTeam);
+            bool isHomeTeamAttacking = _match.HomeTeam.TeamName != selectedTeam.TeamName;
+        
+            UpdateTeamFreesGrid(_view.GetTeamConcededFreesDataGrid(), selectedTeam, isHomeTeamAttacking);
+            UpdateTeamFreesGrid(_view.GetTeamWonFreesDataGrid(), opposition, !isHomeTeamAttacking);
+            UpdatePlayerFreesGrid(_view.GetPlayerConcededFreesDataGrid(), selectedTeam, true);
+            UpdatePlayerFreesGrid(_view.GetPlayerWonFreesDataGrid(), selectedTeam, false);
+        }
     }
 
     private void InitialiseTables()
@@ -63,19 +73,19 @@ public class DisciplineReportController : IStatsController
         DataGridView playerWonGrid = _view.GetPlayerWonFreesDataGrid();
         playerWonGrid.AutoGenerateColumns = false;
         
-        AddColumnsToTable(teamConcededGrid);
-        AddColumnsToTable(playerConcededGrid);
-        AddColumnsToTable(teamWonGrid);
-        AddColumnsToTable(playerWonGrid);
+        AddColumnsToTeamTable(teamConcededGrid);
+        AddColumnsToPlayerTable(playerConcededGrid);
+        AddColumnsToTeamTable(teamWonGrid);
+        AddColumnsToPlayerTable(playerWonGrid);
     }
 
-    private void AddColumnsToTable(DataGridView dataGridView)
+    private void AddColumnsToTeamTable(DataGridView dataGridView)
     {
         dataGridView.DefaultCellStyle.Font = new Font("Segoe UI Emoji", 12);
         
         DataGridViewColumn typeColumn = new DataGridViewTextBoxColumn();
         typeColumn.HeaderText = "Type";
-        typeColumn.MinimumWidth = 300;
+        typeColumn.MinimumWidth = 200;
         
         DataGridViewColumn totalColumn = new DataGridViewTextBoxColumn();
         totalColumn.HeaderText = "Total";
@@ -92,13 +102,27 @@ public class DisciplineReportController : IStatsController
         dataGridView.Columns.Add(secondHalfColumn);
     }
 
-    private void UpdateTeamConcededFreesGrid(Team team)
+    private void AddColumnsToPlayerTable(DataGridView dataGridView)
     {
-        DataGridView dataGrid = _view.GetTeamConcededFreesDataGrid();
+        dataGridView.DefaultCellStyle.Font = new Font("Segoe UI Emoji", 12);
         
+        DataGridViewColumn typeColumn = new DataGridViewTextBoxColumn();
+        typeColumn.HeaderText = "Player";
+        typeColumn.MinimumWidth = 200;
+        
+        DataGridViewColumn totalColumn = new DataGridViewTextBoxColumn();
+        totalColumn.HeaderText = "Total";
+        
+        dataGridView.Columns.Add(typeColumn);
+        dataGridView.Columns.Add(totalColumn);
+    }
+
+    private void UpdateTeamFreesGrid(DataGridView dataGrid, Team team, bool isHomeTeamAttacking)
+    {
         MatchEvent[] freeConcededEvent = _match.GetMatchEventsOfType(EventType.FreeConceded).Where(me => me.TeamName == team.TeamName).ToArray();
         MatchEvent[] turnoverFree = _match.GetTurnoverEventsOfType(TurnoverType.Free)
-            .Where(me => me.Type == EventType.TurnoverLost && me.TeamName == team.TeamName).ToArray();
+            .Where(me => (me.Type == EventType.TurnoverLost && me.TeamName == team.TeamName) || 
+                         (me.Type == EventType.TurnoverWon && me.TeamName != team.TeamName)).ToArray();
         
         // Total Frees
         int totalConceded = freeConcededEvent.Length + turnoverFree.Length;
@@ -116,8 +140,6 @@ public class DisciplineReportController : IStatsController
         // Score-able frees
         int firstHalfScoreableFrees = 0;
         int secondHalfScoreableFrees = 0;
-        
-        bool isHomeTeamAttacking = _match.HomeTeam.TeamName != team.TeamName;
 
         foreach (MatchEvent e in freeConcededEvent)
         {
@@ -150,9 +172,47 @@ public class DisciplineReportController : IStatsController
         }
         
         dataGrid.Rows.Clear();
-        dataGrid.Rows.Add("Total Frees Conceded", totalConceded, concededFirstHalf, concededSecondHalf);
+        dataGrid.Rows.Add("Total Frees", totalConceded, concededFirstHalf, concededSecondHalf);
         dataGrid.Rows.Add("Turnover Frees", turnoverFree.Length, turnoverFirstHalf, turnoverSecondHalf);
-        dataGrid.Rows.Add("Free conceded without possession", freeConcededEvent.Length, freeConcededFirstHalf, freeConcededSecondHalf);
-        dataGrid.Rows.Add("Scoreable Frees Conceded", firstHalfScoreableFrees+secondHalfScoreableFrees, firstHalfScoreableFrees, secondHalfScoreableFrees);
+        dataGrid.Rows.Add("In Play Frees", freeConcededEvent.Length, freeConcededFirstHalf, freeConcededSecondHalf);
+        dataGrid.Rows.Add("Scoreable Frees", firstHalfScoreableFrees+secondHalfScoreableFrees, firstHalfScoreableFrees, secondHalfScoreableFrees);
+    }
+
+    private void UpdatePlayerFreesGrid(DataGridView dataGrid, Team team, bool isConcededFrees)
+    {
+        List<MatchEvent> allEvents =  new List<MatchEvent>();
+        if (isConcededFrees)
+        {
+            MatchEvent[] freeConcededEvent = _match.GetMatchEventsOfType(EventType.FreeConceded).Where(me => me.TeamName == team.TeamName).ToArray();
+            MatchEvent[] turnoverFree = _match.GetTurnoverEventsOfType(TurnoverType.Free)
+                .Where(me => me.Type == EventType.TurnoverLost && me.TeamName == team.TeamName).ToArray();
+            allEvents.AddRange(freeConcededEvent);
+            allEvents.AddRange(turnoverFree);
+        }
+        else
+        {
+            MatchEvent[] turnovers = _match.GetTurnoverEventsOfType(TurnoverType.Free)
+                .Where(me => me.Type == EventType.TurnoverWon && me.TeamName == team.TeamName).ToArray();
+            allEvents.AddRange(turnovers);
+        }
+        
+        Dictionary<string, List<MatchEvent>> matchEvents = new Dictionary<string, List<MatchEvent>>();
+        foreach (var matchEvent in allEvents)
+        {
+            if (!matchEvents.ContainsKey(matchEvent.Player))
+            {
+                matchEvents.Add(matchEvent.Player, new List<MatchEvent>());
+                matchEvents[matchEvent.Player].Add(matchEvent);
+                continue;
+            }
+            
+            matchEvents[matchEvent.Player].Add(matchEvent);
+        }
+
+        dataGrid.Rows.Clear();
+        foreach (var playerEvents in matchEvents)
+        {
+            dataGrid.Rows.Add(playerEvents.Key, playerEvents.Value.Count);
+        }
     }
 }

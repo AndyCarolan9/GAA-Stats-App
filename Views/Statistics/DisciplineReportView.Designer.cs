@@ -95,7 +95,7 @@ partial class DisciplineReportView
         TeamSelectBox.FormattingEnabled = true;
         TeamSelectBox.Location = new System.Drawing.Point(744, 9);
         TeamSelectBox.Name = "TeamSelectBox";
-        TeamSelectBox.Size = new System.Drawing.Size(177, 23);
+        TeamSelectBox.Size = new System.Drawing.Size(177, 28);
         TeamSelectBox.TabIndex = 4;
         // 
         // TeamConcededFreesGrid
@@ -104,7 +104,8 @@ partial class DisciplineReportView
         TeamConcededFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         TeamConcededFreesGrid.Location = new System.Drawing.Point(744, 107);
         TeamConcededFreesGrid.Name = "TeamConcededFreesGrid";
-        TeamConcededFreesGrid.Size = new System.Drawing.Size(789, 192);
+        TeamConcededFreesGrid.RowHeadersWidth = 51;
+        TeamConcededFreesGrid.Size = new System.Drawing.Size(630, 192);
         TeamConcededFreesGrid.TabIndex = 5;
         TeamConcededFreesGrid.Text = "dataGridView1";
         // 
@@ -114,7 +115,8 @@ partial class DisciplineReportView
         PlayerConcededFreesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PlayerConcededFreesView.Location = new System.Drawing.Point(745, 305);
         PlayerConcededFreesView.Name = "PlayerConcededFreesView";
-        PlayerConcededFreesView.Size = new System.Drawing.Size(789, 192);
+        PlayerConcededFreesView.RowHeadersWidth = 51;
+        PlayerConcededFreesView.Size = new System.Drawing.Size(404, 192);
         PlayerConcededFreesView.TabIndex = 6;
         PlayerConcededFreesView.Text = "dataGridView2";
         // 
@@ -124,7 +126,8 @@ partial class DisciplineReportView
         PlayerWonFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PlayerWonFreesGrid.Location = new System.Drawing.Point(745, 797);
         PlayerWonFreesGrid.Name = "PlayerWonFreesGrid";
-        PlayerWonFreesGrid.Size = new System.Drawing.Size(789, 192);
+        PlayerWonFreesGrid.RowHeadersWidth = 51;
+        PlayerWonFreesGrid.Size = new System.Drawing.Size(404, 192);
         PlayerWonFreesGrid.TabIndex = 8;
         PlayerWonFreesGrid.Text = "dataGridView3";
         // 
@@ -134,13 +137,14 @@ partial class DisciplineReportView
         TeamWonFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         TeamWonFreesGrid.Location = new System.Drawing.Point(744, 599);
         TeamWonFreesGrid.Name = "TeamWonFreesGrid";
-        TeamWonFreesGrid.Size = new System.Drawing.Size(789, 192);
+        TeamWonFreesGrid.RowHeadersWidth = 51;
+        TeamWonFreesGrid.Size = new System.Drawing.Size(630, 192);
         TeamWonFreesGrid.TabIndex = 7;
         TeamWonFreesGrid.Text = "dataGridView4";
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Bold);
+        label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
         label1.Location = new System.Drawing.Point(745, 51);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(372, 53);
@@ -149,7 +153,7 @@ partial class DisciplineReportView
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Bold);
+        label2.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
         label2.Location = new System.Drawing.Point(744, 543);
         label2.Name = "label2";
         label2.Size = new System.Drawing.Size(372, 53);
@@ -158,7 +162,7 @@ partial class DisciplineReportView
         // 
         // DisciplineReportView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(1555, 1041);
         Controls.Add(label2);
@@ -173,6 +177,7 @@ partial class DisciplineReportView
         Controls.Add(AwayTeamLabel);
         Controls.Add(pictureBox1);
         Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         Text = "DisciplineReportView";
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
