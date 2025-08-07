@@ -10,11 +10,14 @@ public class DisciplineReportController : IStatsController
 {
     private readonly DisciplineReportView _view;
     private readonly Match _match;
+    private Team _selectedTeam;
 
     public DisciplineReportController(Match match)
     {
         _match = match;
         _view = new DisciplineReportView();
+
+        _view.GetPitchBox().Paint += OnPaint;
         
         InitialiseTeamSelect();
         InitialiseTables();
@@ -47,15 +50,15 @@ public class DisciplineReportController : IStatsController
         {
             string? selectedString = selectedItem.ToString();
         
-            Team selectedTeam = _match.HomeTeam.TeamName == selectedString ? _match.HomeTeam : _match.AwayTeam;
+            _selectedTeam = _match.HomeTeam.TeamName == selectedString ? _match.HomeTeam : _match.AwayTeam;
             Team opposition = _match.HomeTeam.TeamName != selectedString ? _match.HomeTeam : _match.AwayTeam;
         
-            bool isHomeTeamAttacking = _match.HomeTeam.TeamName != selectedTeam.TeamName;
+            bool isHomeTeamAttacking = _match.HomeTeam.TeamName != _selectedTeam.TeamName;
         
-            UpdateTeamFreesGrid(_view.GetTeamConcededFreesDataGrid(), selectedTeam, isHomeTeamAttacking);
+            UpdateTeamFreesGrid(_view.GetTeamConcededFreesDataGrid(), _selectedTeam, isHomeTeamAttacking);
             UpdateTeamFreesGrid(_view.GetTeamWonFreesDataGrid(), opposition, !isHomeTeamAttacking);
-            UpdatePlayerFreesGrid(_view.GetPlayerConcededFreesDataGrid(), selectedTeam, true);
-            UpdatePlayerFreesGrid(_view.GetPlayerWonFreesDataGrid(), selectedTeam, false);
+            UpdatePlayerFreesGrid(_view.GetPlayerConcededFreesDataGrid(), _selectedTeam, true);
+            UpdatePlayerFreesGrid(_view.GetPlayerWonFreesDataGrid(), _selectedTeam, false);
         }
     }
 
@@ -100,6 +103,7 @@ public class DisciplineReportController : IStatsController
         dataGridView.Columns.Add(totalColumn);
         dataGridView.Columns.Add(firstHalfColumn);
         dataGridView.Columns.Add(secondHalfColumn);
+        dataGridView.ReadOnly = true;
     }
 
     private void AddColumnsToPlayerTable(DataGridView dataGridView)
@@ -115,6 +119,18 @@ public class DisciplineReportController : IStatsController
         
         dataGridView.Columns.Add(typeColumn);
         dataGridView.Columns.Add(totalColumn);
+        dataGridView.ReadOnly = true;
+    }
+
+    private MatchEvent[] GetAllFreeEvents()
+    {
+        MatchEvent[] freeConcededEvent = _match.GetMatchEventsOfType(EventType.FreeConceded);
+        MatchEvent[] turnoverFree = _match.GetTurnoverEventsOfType(TurnoverType.Free);
+        
+        List<MatchEvent> allFreesList = new List<MatchEvent>();
+        allFreesList.AddRange(freeConcededEvent);
+        allFreesList.AddRange(turnoverFree);
+        return allFreesList.ToArray();
     }
 
     private void UpdateTeamFreesGrid(DataGridView dataGrid, Team team, bool isHomeTeamAttacking)
@@ -213,6 +229,31 @@ public class DisciplineReportController : IStatsController
         foreach (var playerEvents in matchEvents)
         {
             dataGrid.Rows.Add(playerEvents.Key, playerEvents.Value.Count);
+        }
+    }
+
+    private void OnPaint(object? sender, PaintEventArgs e)
+    {
+        foreach (var freeEvent in GetAllFreeEvents())
+        {
+            if (freeEvent.Type == EventType.FreeConceded)
+            {
+                Brush pointColor = freeEvent.TeamName == _selectedTeam.TeamName ? Brushes.Red : Brushes.Green;
+                
+                e.Graphics.FillRectangle(pointColor,
+                    freeEvent.Location.X - 5,
+                    freeEvent.Location.Y - 5,
+                    10, 10);
+            }
+            else
+            {
+                Brush pointColor = freeEvent.Type == EventType.TurnoverWon ? Brushes.Green : Brushes.Red;
+                
+                e.Graphics.FillEllipse(pointColor,
+                    freeEvent.Location.X - 5,
+                    freeEvent.Location.Y - 5,
+                    10, 10);
+            }
         }
     }
 }
