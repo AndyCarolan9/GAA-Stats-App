@@ -10,7 +10,7 @@ public class DisciplineReportController : IStatsController
 {
     private readonly DisciplineReportView _view;
     private readonly Match _match;
-    private Team _selectedTeam;
+    private Team? _selectedTeam;
 
     public DisciplineReportController(Match match)
     {
@@ -22,6 +22,7 @@ public class DisciplineReportController : IStatsController
         InitialiseTeamSelect();
         InitialiseTables();
         
+        _view.GetTeamComboBox().SelectedIndexChanged += TeamChanged;
         UpdateViewData();
     }
     
@@ -60,6 +61,11 @@ public class DisciplineReportController : IStatsController
             UpdatePlayerFreesGrid(_view.GetPlayerConcededFreesDataGrid(), _selectedTeam, true);
             UpdatePlayerFreesGrid(_view.GetPlayerWonFreesDataGrid(), _selectedTeam, false);
         }
+    }
+
+    private void TeamChanged(object? sender, EventArgs e)
+    {
+        UpdateViewData();
     }
 
     private void InitialiseTables()
@@ -234,6 +240,11 @@ public class DisciplineReportController : IStatsController
 
     private void OnPaint(object? sender, PaintEventArgs e)
     {
+        if (_selectedTeam is null)
+        {
+            return;
+        }
+        
         foreach (var freeEvent in GetAllFreeEvents())
         {
             if (freeEvent.Type == EventType.FreeConceded)
