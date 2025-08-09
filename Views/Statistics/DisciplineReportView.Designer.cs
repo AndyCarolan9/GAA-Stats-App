@@ -43,12 +43,16 @@ partial class DisciplineReportView
         TeamWonFreesGrid = new System.Windows.Forms.DataGridView();
         label1 = new System.Windows.Forms.Label();
         label2 = new System.Windows.Forms.Label();
+        ScoreConcededGrid = new System.Windows.Forms.DataGridView();
+        TotalScoredGrid = new System.Windows.Forms.DataGridView();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)TeamConcededFreesGrid).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PlayerConcededFreesView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PlayerWonFreesGrid).BeginInit();
         ((System.ComponentModel.ISupportInitialize)TeamWonFreesGrid).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)ScoreConcededGrid).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)TotalScoredGrid).BeginInit();
         SuspendLayout();
         // 
         // pictureBox1
@@ -160,11 +164,35 @@ partial class DisciplineReportView
         label2.TabIndex = 10;
         label2.Text = "Frees Won";
         // 
+        // ScoreConcededGrid
+        // 
+        ScoreConcededGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+        ScoreConcededGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        ScoreConcededGrid.Location = new System.Drawing.Point(1155, 305);
+        ScoreConcededGrid.Name = "ScoreConcededGrid";
+        ScoreConcededGrid.RowHeadersWidth = 51;
+        ScoreConcededGrid.Size = new System.Drawing.Size(279, 192);
+        ScoreConcededGrid.TabIndex = 11;
+        ScoreConcededGrid.Text = "dataGridView2";
+        // 
+        // TotalScoredGrid
+        // 
+        TotalScoredGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+        TotalScoredGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        TotalScoredGrid.Location = new System.Drawing.Point(1155, 797);
+        TotalScoredGrid.Name = "TotalScoredGrid";
+        TotalScoredGrid.RowHeadersWidth = 51;
+        TotalScoredGrid.Size = new System.Drawing.Size(279, 192);
+        TotalScoredGrid.TabIndex = 12;
+        TotalScoredGrid.Text = "dataGridView2";
+        // 
         // DisciplineReportView
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(1555, 1041);
+        Controls.Add(TotalScoredGrid);
+        Controls.Add(ScoreConcededGrid);
         Controls.Add(label2);
         Controls.Add(label1);
         Controls.Add(PlayerWonFreesGrid);
@@ -185,8 +213,13 @@ partial class DisciplineReportView
         ((System.ComponentModel.ISupportInitialize)PlayerConcededFreesView).EndInit();
         ((System.ComponentModel.ISupportInitialize)PlayerWonFreesGrid).EndInit();
         ((System.ComponentModel.ISupportInitialize)TeamWonFreesGrid).EndInit();
+        ((System.ComponentModel.ISupportInitialize)ScoreConcededGrid).EndInit();
+        ((System.ComponentModel.ISupportInitialize)TotalScoredGrid).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.DataGridView ScoreConcededGrid;
+    private System.Windows.Forms.DataGridView TotalScoredGrid;
 
     private System.Windows.Forms.Label label2;
 

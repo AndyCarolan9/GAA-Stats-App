@@ -348,6 +348,19 @@ public class Match
         }).ToArray();
     }
 
+    public MatchEvent[] GetShotEventOfActionType(ActionType actionType)
+    {
+        return MatchEvents.FindAll(me =>
+        {
+            if (me is ShotEvent shotEvent)
+            {
+                return shotEvent.ActionType == actionType;
+            }
+
+            return false;
+        }).ToArray();
+    }
+
     /// <summary>
     /// Gets all positive events for player. Positive events are scores, turnovers won and kick outs won.
     /// </summary>

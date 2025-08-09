@@ -42,5 +42,15 @@ public partial class DisciplineReportView : Form, IStatsView
     {
         return PlayerWonFreesGrid;
     }
+
+    public DataGridView GetScoreConcededDataGrid()
+    {
+        return ScoreConcededGrid;
+    }
+
+    public DataGridView GetTotalScoredDataGrid()
+    {
+        return TotalScoredGrid;
+    }
     #endregion
 }

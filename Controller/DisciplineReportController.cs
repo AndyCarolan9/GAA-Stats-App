@@ -60,6 +60,8 @@ public class DisciplineReportController : IStatsController
             UpdateTeamFreesGrid(_view.GetTeamWonFreesDataGrid(), opposition, !isHomeTeamAttacking);
             UpdatePlayerFreesGrid(_view.GetPlayerConcededFreesDataGrid(), _selectedTeam, true);
             UpdatePlayerFreesGrid(_view.GetPlayerWonFreesDataGrid(), _selectedTeam, false);
+            UpdateScoreDataGrid(_view.GetScoreConcededDataGrid(), opposition);
+            UpdateScoreDataGrid(_view.GetTotalScoredDataGrid(), _selectedTeam);
         }
     }
 
@@ -86,6 +88,8 @@ public class DisciplineReportController : IStatsController
         AddColumnsToPlayerTable(playerConcededGrid);
         AddColumnsToTeamTable(teamWonGrid);
         AddColumnsToPlayerTable(playerWonGrid);
+        AddColumnsToScoreTable(_view.GetScoreConcededDataGrid());
+        AddColumnsToScoreTable(_view.GetTotalScoredDataGrid());
     }
 
     private void AddColumnsToTeamTable(DataGridView dataGridView)
@@ -125,6 +129,33 @@ public class DisciplineReportController : IStatsController
         
         dataGridView.Columns.Add(typeColumn);
         dataGridView.Columns.Add(totalColumn);
+        dataGridView.ReadOnly = true;
+    }
+
+    private void AddColumnsToScoreTable(DataGridView dataGridView)
+    {
+        dataGridView.DefaultCellStyle.Font = new Font("Segoe UI Emoji", 12);
+        
+        DataGridViewColumn typeColumn = new DataGridViewTextBoxColumn();
+        typeColumn.HeaderText = "Type";
+        typeColumn.Width = 75;
+        
+        DataGridViewColumn totalColumn = new DataGridViewTextBoxColumn();
+        totalColumn.HeaderText = "Total";
+        totalColumn.Width = 50;
+        
+        DataGridViewColumn firstHalfColumn = new DataGridViewTextBoxColumn();
+        firstHalfColumn.HeaderText = "1ST";
+        firstHalfColumn.Width = 50;
+        
+        DataGridViewColumn secondHalfColumn = new DataGridViewTextBoxColumn();
+        secondHalfColumn.HeaderText = "2ND";
+        secondHalfColumn.Width = 50;
+        
+        dataGridView.Columns.Add(typeColumn);
+        dataGridView.Columns.Add(totalColumn);
+        dataGridView.Columns.Add(firstHalfColumn);
+        dataGridView.Columns.Add(secondHalfColumn);
         dataGridView.ReadOnly = true;
     }
 
@@ -266,5 +297,70 @@ public class DisciplineReportController : IStatsController
                     10, 10);
             }
         }
+    }
+
+    private void UpdateScoreDataGrid(DataGridView dataGrid, Team team)
+    {
+        MatchEvent[] frees = _match.GetShotEventOfActionType(ActionType.Free).Where(me => me.TeamName == team.TeamName).ToArray();
+
+        int goals = 0;
+        int points = 0;
+        int misses = 0;
+        int sHGoals = 0;
+        int sHPoints = 0;
+        int sHMisses = 0;
+
+        foreach (var matchEvent in frees)
+        {
+            ShotEvent? shotEvent =  matchEvent as ShotEvent;
+            if (shotEvent is null)
+            {
+                continue;
+            }
+
+            if (shotEvent.HalfIndex == 1)
+            {
+                if (shotEvent.ResultType == ShotResultType.Goal)
+                {
+                    goals++;
+                }
+                else if (shotEvent.ResultType == ShotResultType.Point)
+                {
+                    points++;
+                }
+                else if (shotEvent.ResultType == ShotResultType.DoublePoint)
+                {
+                    points += 2;
+                }
+                else
+                {
+                    misses++;
+                }
+            }
+            else
+            {
+                if (shotEvent.ResultType == ShotResultType.Goal)
+                {
+                    sHGoals++;
+                }
+                else if (shotEvent.ResultType == ShotResultType.Point)
+                {
+                    sHPoints++;
+                }
+                else if (shotEvent.ResultType == ShotResultType.DoublePoint)
+                {
+                    sHPoints += 2;
+                }
+                else
+                {
+                    sHMisses++;
+                }
+            }
+        }
+        
+        dataGrid.Rows.Clear();
+        dataGrid.Rows.Add("Goals", goals + sHGoals, goals, sHGoals);
+        dataGrid.Rows.Add("Points", points + sHPoints, points, sHPoints);
+        dataGrid.Rows.Add("Misses", misses + sHMisses, misses, sHMisses);
     }
 }
