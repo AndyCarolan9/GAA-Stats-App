@@ -301,8 +301,10 @@ public class DisciplineReportController : IStatsController
 
     private void UpdateScoreDataGrid(DataGridView dataGrid, Team team)
     {
-        MatchEvent[] frees = _match.GetShotEventOfActionType(ActionType.Free).Where(me => me.TeamName == team.TeamName).ToArray();
-
+        List<MatchEvent> placedShots = new List<MatchEvent>();
+        placedShots.AddRange(_match.GetShotEventOfActionType(ActionType.Free).Where(me => me.TeamName == team.TeamName).ToArray());
+        placedShots.AddRange(_match.GetShotEventOfActionType(ActionType.Penalty).Where(me => me.TeamName == team.TeamName).ToArray());
+        
         int goals = 0;
         int points = 0;
         int misses = 0;
@@ -310,7 +312,7 @@ public class DisciplineReportController : IStatsController
         int sHPoints = 0;
         int sHMisses = 0;
 
-        foreach (var matchEvent in frees)
+        foreach (var matchEvent in placedShots)
         {
             ShotEvent? shotEvent =  matchEvent as ShotEvent;
             if (shotEvent is null)
