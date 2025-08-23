@@ -47,6 +47,7 @@ public partial class SubstituteSelectWindow : PlayerSelectWindow
             }
         }
         
+        availablePlayers.Sort();
         PlayerListbox.BeginUpdate();
         PlayerListbox.Items.Clear();
         PlayerListbox.Items.AddRange(availablePlayers.ToArray());
