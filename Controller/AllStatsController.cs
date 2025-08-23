@@ -1,6 +1,7 @@
 ﻿using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Model;
+using StatsTracker.Utils;
 using StatsTracker.View_Elements;
 using StatsTracker.Views;
 using StatsTracker.Views.Statistics;
@@ -45,14 +46,11 @@ public class AllStatsController : IStatsController
     {
         if (sender == null)
         {
+            LogSystem.Log(MessageType.Error, "StatBarSelected: sender is null.");
             return;
         }
         
         var selectedBar = (StatisticBar)sender;
-        if (selectedBar == null)
-        {
-            return;
-        }
         
         string statName = selectedBar.Name;
 

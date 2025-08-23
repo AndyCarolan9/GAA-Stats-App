@@ -99,6 +99,7 @@ public class MatchController : IStatsController
     {
         if (!_match.IsMatchValid() || !_match.IsMatchPlaying())
         {
+            LogSystem.Log(MessageType.Log, "Match is not valid or playing.");
             return;
         }
         
@@ -187,6 +188,7 @@ public class MatchController : IStatsController
     {
         if (sender is null)
         {
+            LogSystem.Log(MessageType.Error, "ThrowInWonItemClicked: sender is null");
             return;
         }
         
@@ -209,12 +211,14 @@ public class MatchController : IStatsController
     {
         if (sender is null)
         {
+            LogSystem.Log(MessageType.Error, "EventInputMenu_ItemClicked: sender is null");
             return;
         }
         
         string? eventName = ((ToolStripMenuItem)sender).Name;
         if (eventName == null)
         {
+            LogSystem.Log(MessageType.Error, "EventInputMenu_ItemClicked: event name is null");
             return;
         }
         
@@ -226,6 +230,7 @@ public class MatchController : IStatsController
     {
         if (sender is null)
         {
+            LogSystem.Log(MessageType.Error, "ShotItemClicked: sender is null");
             return;
         }
         
@@ -233,12 +238,14 @@ public class MatchController : IStatsController
         ToolStrip? toolStrip = item.GetCurrentParent();
         if (toolStrip is null)
         {
+            LogSystem.Log(MessageType.Error, "ShotItemClicked: toolstrip is null");
             return;
         }
         
         string? name = toolStrip.AccessibilityObject.Name;
         if (name is null)
         {
+            LogSystem.Log(MessageType.Error, "ShotItemClicked: name is null");
             return;
         }
         
@@ -253,6 +260,7 @@ public class MatchController : IStatsController
     {
         if (sender is null)
         {
+            LogSystem.Log(MessageType.Error, "TurnoverItemClick: sender is null");
             return;
         }
         
@@ -260,12 +268,14 @@ public class MatchController : IStatsController
         ToolStrip? toolStrip = item.GetCurrentParent();
         if (toolStrip is null)
         {
+            LogSystem.Log(MessageType.Error, "TurnoverItemClick: toolstrip is null");
             return;
         }
         
         string? name = toolStrip.AccessibilityObject.Name;
         if (name is null)
         {
+            LogSystem.Log(MessageType.Error, "TurnoverItemClick: name is null");
             return;
         }
         
@@ -283,6 +293,7 @@ public class MatchController : IStatsController
     {
         if (sender is null)
         {
+            LogSystem.Log(MessageType.Error, "KickOutItemClicked: sender is null");
             return;
         }
         
@@ -290,12 +301,14 @@ public class MatchController : IStatsController
         ToolStrip? toolStrip = item.GetCurrentParent();
         if (toolStrip is null)
         {
+            LogSystem.Log(MessageType.Error, "KickOutItemClicked: toolStrip is null");
             return;
         }
         
         string? name = toolStrip.AccessibilityObject.Name;
         if (name is null)
         {
+            LogSystem.Log(MessageType.Error, "KickOutItemClicked: name is null");
             return;
         }
         
@@ -417,6 +430,7 @@ public class MatchController : IStatsController
         MatchEvent? selectedEvent = (MatchEvent?)_view.GetEventListBox().SelectedItem;
         if (selectedEvent is null)
         {
+            LogSystem.Log(MessageType.Error, "OnEditClick: selectedEvent is null");
             return;
         }
 
@@ -466,6 +480,7 @@ public class MatchController : IStatsController
         MatchEvent? selectedEvent = (MatchEvent?)_view.GetEventListBox().SelectedItem;
         if (selectedEvent is null)
         {
+            LogSystem.Log(MessageType.Error, "OnDeleteClick: sender is null");
             return;
         }
 
@@ -491,6 +506,7 @@ public class MatchController : IStatsController
         ListBox eventBox = _view.GetEventListBox();
         if (eventBox.Items.Count == 0)
         {
+            LogSystem.Log(MessageType.Error, "RightClickEventBox: eventBox is empty");
             return;
         }
         
@@ -514,6 +530,7 @@ public class MatchController : IStatsController
         Button? subsButton = sender as Button;
         if (subsButton == null)
         {
+            LogSystem.Log(MessageType.Error, "OpenSubMenu: Casting sender to button failed.");
             return;
         }
         
@@ -531,13 +548,14 @@ public class MatchController : IStatsController
 
     private void OpenCardsMenu(object? sender, EventArgs e)
     {
-        Button? subsButton = sender as Button;
-        if (subsButton == null)
+        Button? cardsButton = sender as Button;
+        if (cardsButton == null)
         {
+            LogSystem.Log(MessageType.Error, "OpenCardsMenu: Casting sender to button failed.");
             return;
         }
         
-        bool isHomeTeam = subsButton.Name.Contains("Home");
+        bool isHomeTeam = cardsButton.Name.Contains("Home");
         Team selectedTeam = isHomeTeam ? _match.HomeTeam : _match.AwayTeam;
         InputStatEventArgs eventArgs = new InputStatEventArgs
         {
@@ -691,6 +709,7 @@ public class MatchController : IStatsController
     {
         if (_timeDisplayTimer is null)
         {
+            LogSystem.Log(MessageType.Error, "OnTimerPausedPressed: Display timer is null");
             return;
         }
         
@@ -853,6 +872,7 @@ public class MatchController : IStatsController
         MatchEvent? lastEvent = _match.GetLastMatchEvent();
         if (lastEvent == null)
         {
+            LogSystem.Log(MessageType.Error, "UpdateLastMatchEvent: Unable to find last match event.");
             return;
         }
         
@@ -1009,6 +1029,7 @@ public class MatchController : IStatsController
         {
             if (string.IsNullOrEmpty(saveDialog.FileName))
             {
+                LogSystem.Log(MessageType.Error, "SaveGameAsJson: File name is empty.");
                 return;
             }
             
@@ -1029,6 +1050,7 @@ public class MatchController : IStatsController
         {
             if (string.IsNullOrEmpty(openFileDialog.FileName))
             {
+                LogSystem.Log(MessageType.Error, "OpenGame: No game file selected.");
                 return;
             }
             
@@ -1037,6 +1059,7 @@ public class MatchController : IStatsController
             Match? loadedMatch = JSONHelper.LoadFromJsonFile<Match>(_filePath);
             if (loadedMatch == null)
             {
+                LogSystem.Log(MessageType.Error, "OpenGame: Failed to load game from file.");
                 return;
             }
             

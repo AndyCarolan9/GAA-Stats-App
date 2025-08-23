@@ -72,12 +72,14 @@ public class CreateMatchController : IStatsController
         string? selectedTeamName = _view.GetHomeTeamDropDown().SelectedItem?.ToString();
         if (selectedTeamName == null)
         {
+            LogSystem.Log(MessageType.Error, "HomeTeamDropdownChanged: selectedTeamName is null.");
             return;
         }
         
         Team? selectedTeam = FindTeam(selectedTeamName);
         if (selectedTeam == null)
         {
+            LogSystem.Log(MessageType.Error, "HomeTeamDropdownChanged: could not find team with the selected name.");
             return;
         }
         
@@ -100,12 +102,14 @@ public class CreateMatchController : IStatsController
                 string? homeTeamName = _view.GetHomeTeamDropDown().SelectedItem?.ToString();
                 if (homeTeamName == null)
                 {
+                    LogSystem.Log(MessageType.Error, "OnHomeTeamColorClick: home team name is null.");
                     return;
                 }
                 
                 Team? homeTeam = FindTeam(homeTeamName);
                 if (homeTeam == null)
                 {
+                    LogSystem.Log(MessageType.Error, "OnHomeTeamColorClick: could not find team with the selected name.");
                     return;
                 }
                 
@@ -119,6 +123,7 @@ public class CreateMatchController : IStatsController
         string? selectedPlayer = _view.GetTeamListBox().SelectedItem?.ToString();
         if (selectedPlayer == null)
         {
+            LogSystem.Log(MessageType.Error, "MovePlayerToHome: selectedPlayer is null.");
             return;
         }
 
@@ -135,12 +140,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = homeTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "OnHomeTeamMoveUpClicked: selectedItem is null.");
             return;
         }
         
         int index = homeTeamListBox.Items.IndexOf(selectedItem);
         if (index == 0)
         {
+            LogSystem.Log(MessageType.Warning, "OnHomeTeamMoveUpClicked: could not move up the player as it is already at the top.");
             return;
         }
         
@@ -157,12 +164,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = homeTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "OnHomeTeamMoveDownClicked: selectedItem is null.");   
             return;
         }
         
         int index = homeTeamListBox.Items.IndexOf(selectedItem);
         if (index == homeTeamListBox.Items.Count - 1)
         {
+            LogSystem.Log(MessageType.Warning, "OnHomeTeamMoveDownClicked: could not move down the player as it is already at the bottom.");
             return;
         }
         
@@ -179,12 +188,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = homeTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "RemovePlayerFromHomeTeam: selectedItem is null.");
             return;
         }
         
         int index = homeTeamListBox.Items.IndexOf(selectedItem);
         if (index == -1)
         {
+            LogSystem.Log(MessageType.Error, "RemovePlayerFromHomeTeam: could not index of player to remove.");
             return;
         }
         
@@ -204,12 +215,14 @@ public class CreateMatchController : IStatsController
         string? selectedTeamName = _view.GetAwayTeamDropDown().SelectedItem?.ToString();
         if (selectedTeamName == null)
         {
+            LogSystem.Log(MessageType.Error, "AwayTeamDropdownChanged: selectedTeamName is null.");
             return;
         }
         
         Team? selectedTeam = FindTeam(selectedTeamName);
         if (selectedTeam == null)
         {
+            LogSystem.Log(MessageType.Error, "AwayTeamDropdownChanged: could not team from name.");
             return;
         }
         
@@ -231,12 +244,14 @@ public class CreateMatchController : IStatsController
                 string? awayTeamName = _view.GetAwayTeamDropDown().SelectedItem?.ToString();
                 if (awayTeamName == null)
                 {
+                    LogSystem.Log(MessageType.Error, "AwayTeamDropdownChanged: awayTeamName is null.");
                     return;
                 }
                 
                 Team? awayTeam = FindTeam(awayTeamName);
                 if (awayTeam == null)
                 {
+                    LogSystem.Log(MessageType.Error, "AwayTeamDropdownChanged: could not find team by name.");
                     return;
                 }
                 
@@ -250,6 +265,7 @@ public class CreateMatchController : IStatsController
         string? selectedPlayer = _view.GetTeamListBox().SelectedItem?.ToString();
         if (selectedPlayer == null)
         {
+            LogSystem.Log(MessageType.Error, "MovePlayerToAway: selectedPlayer is null.");
             return;
         }
 
@@ -266,12 +282,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = awayTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "OnAwayTeamMoveUpClicked: selectedItem is null.");
             return;
         }
         
         int index = awayTeamListBox.Items.IndexOf(selectedItem);
         if (index == 0)
         {
+            LogSystem.Log(MessageType.Warning, "OnAwayTeamMoveUpClicked: could not move up the player as it is at the top.");
             return;
         }
         
@@ -288,12 +306,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = awayTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "OnAwayTeamMoveDownClicked: selectedItem is null.");
             return;
         }
         
         int index = awayTeamListBox.Items.IndexOf(selectedItem);
         if (index == awayTeamListBox.Items.Count - 1)
         {
+            LogSystem.Log(MessageType.Warning, "OnAwayTeamMoveDownClicked: could not move down the player as it is at the bottom.");
             return;
         }
         
@@ -310,12 +330,14 @@ public class CreateMatchController : IStatsController
         object? selectedItem = awayTeamListBox.SelectedItem;
         if (selectedItem == null)
         {
+            LogSystem.Log(MessageType.Error, "RemovePlayerFromAwayTeam: selectedItem is null.");
             return;
         }
         
         int index = awayTeamListBox.Items.IndexOf(selectedItem);
         if (index == -1)
         {
+            LogSystem.Log(MessageType.Warning, "RemovePlayerFromAwayTeam: could not remove player as it's index is invalid.");
             return;
         }
         
@@ -335,6 +357,7 @@ public class CreateMatchController : IStatsController
         string teamName = _view.GetAddTeamTextBox().Text;
         if (string.IsNullOrEmpty(teamName))
         {
+            LogSystem.Log(MessageType.Error, "AddNewTeamToTeamList: team name is null or empty.");
             return;
         }
         
@@ -349,18 +372,21 @@ public class CreateMatchController : IStatsController
         string? selectedTeam = _view.GetTeamDropDown().SelectedItem?.ToString();
         if (string.IsNullOrEmpty(selectedTeam))
         {
+            LogSystem.Log(MessageType.Error, "AddPlayerToTeam: selectedTeam is null.");
             return;
         }
         
         string playerName = _view.GetAddPlayerTextBox().Text;
         if (string.IsNullOrEmpty(playerName))
         {
+            LogSystem.Log(MessageType.Error, "AddPlayerToTeam: player name is null or empty.");
             return;
         }
         
         Team? team = FindTeam(selectedTeam);
         if (team == null)
         {
+            LogSystem.Log(MessageType.Error, "AddPlayerToTeam: could not find team by name.");
             return;
         }
         
@@ -375,6 +401,7 @@ public class CreateMatchController : IStatsController
         string? selectedTeam = _view.GetTeamDropDown().SelectedItem?.ToString();
         if (string.IsNullOrEmpty(selectedTeam))
         {
+            LogSystem.Log(MessageType.Error, "OnTeamDropDownIndexChanged: selectedTeam is null.");
             return;
         }
         
@@ -400,8 +427,15 @@ public class CreateMatchController : IStatsController
         string[] homePlayers = _view.GetHomeTeamListBox().Items.Cast<string>().ToArray();
         string[] awayPlayers = _view.GetAwayTeamListBox().Items.Cast<string>().ToArray();
 
-        if (string.IsNullOrEmpty(homeTeamName) || string.IsNullOrEmpty(awayTeamName))
+        if (string.IsNullOrEmpty(homeTeamName))
         {
+            LogSystem.Log(MessageType.Error, "OnTeamSelectedClick: homeTeamName is null.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(awayTeamName))
+        {
+            LogSystem.Log(MessageType.Error, "OnTeamSelectedClick: awayTeamName is null.");
             return;
         }
         
