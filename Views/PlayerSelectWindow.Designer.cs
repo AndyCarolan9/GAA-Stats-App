@@ -31,170 +31,186 @@ partial class PlayerSelectWindow
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerSelectWindow));
-        Player1 = new System.Windows.Forms.Button();
-        Player2 = new System.Windows.Forms.Button();
-        Player3 = new System.Windows.Forms.Button();
-        Player4 = new System.Windows.Forms.Button();
-        Player5 = new System.Windows.Forms.Button();
-        Player6 = new System.Windows.Forms.Button();
-        Player7 = new System.Windows.Forms.Button();
-        Player8 = new System.Windows.Forms.Button();
-        Player9 = new System.Windows.Forms.Button();
-        Player10 = new System.Windows.Forms.Button();
-        Player11 = new System.Windows.Forms.Button();
-        Player12 = new System.Windows.Forms.Button();
-        Player13 = new System.Windows.Forms.Button();
-        Player14 = new System.Windows.Forms.Button();
-        Player15 = new System.Windows.Forms.Button();
-        EnterStatButton = new System.Windows.Forms.Button();
-        CancelStatButton = new System.Windows.Forms.Button();
-        TurnOverCheckBox = new System.Windows.Forms.CheckBox();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(PlayerSelectWindow));
+        Player1 = new Button();
+        Player2 = new Button();
+        Player3 = new Button();
+        Player4 = new Button();
+        Player5 = new Button();
+        Player6 = new Button();
+        Player7 = new Button();
+        Player8 = new Button();
+        Player9 = new Button();
+        Player10 = new Button();
+        Player11 = new Button();
+        Player12 = new Button();
+        Player13 = new Button();
+        Player14 = new Button();
+        Player15 = new Button();
+        EnterStatButton = new Button();
+        CancelStatButton = new Button();
+        TurnOverCheckBox = new CheckBox();
         SuspendLayout();
         // 
         // Player1
         // 
-        Player1.Location = new System.Drawing.Point(178, 332);
+        Player1.Location = new Point(142, 266);
+        Player1.Margin = new Padding(2);
         Player1.Name = "Player1";
-        Player1.Size = new System.Drawing.Size(132, 43);
+        Player1.Size = new Size(106, 34);
         Player1.TabIndex = 0;
         Player1.Text = "button1";
         Player1.UseVisualStyleBackColor = true;
         // 
         // Player2
         // 
-        Player2.Location = new System.Drawing.Point(342, 272);
+        Player2.Location = new Point(274, 218);
+        Player2.Margin = new Padding(2);
         Player2.Name = "Player2";
-        Player2.Size = new System.Drawing.Size(132, 43);
+        Player2.Size = new Size(106, 34);
         Player2.TabIndex = 1;
         Player2.Text = "button2";
         Player2.UseVisualStyleBackColor = true;
         // 
         // Player3
         // 
-        Player3.Location = new System.Drawing.Point(178, 272);
+        Player3.Location = new Point(142, 218);
+        Player3.Margin = new Padding(2);
         Player3.Name = "Player3";
-        Player3.Size = new System.Drawing.Size(132, 43);
+        Player3.Size = new Size(106, 34);
         Player3.TabIndex = 2;
         Player3.Text = "button3";
         Player3.UseVisualStyleBackColor = true;
         // 
         // Player4
         // 
-        Player4.Location = new System.Drawing.Point(14, 272);
+        Player4.Location = new Point(11, 218);
+        Player4.Margin = new Padding(2);
         Player4.Name = "Player4";
-        Player4.Size = new System.Drawing.Size(132, 43);
+        Player4.Size = new Size(106, 34);
         Player4.TabIndex = 3;
         Player4.Text = "button4";
         Player4.UseVisualStyleBackColor = true;
         // 
         // Player5
         // 
-        Player5.Location = new System.Drawing.Point(342, 205);
+        Player5.Location = new Point(274, 164);
+        Player5.Margin = new Padding(2);
         Player5.Name = "Player5";
-        Player5.Size = new System.Drawing.Size(132, 43);
+        Player5.Size = new Size(106, 34);
         Player5.TabIndex = 4;
         Player5.Text = "button5";
         Player5.UseVisualStyleBackColor = true;
         // 
         // Player6
         // 
-        Player6.Location = new System.Drawing.Point(178, 205);
+        Player6.Location = new Point(142, 164);
+        Player6.Margin = new Padding(2);
         Player6.Name = "Player6";
-        Player6.Size = new System.Drawing.Size(132, 43);
+        Player6.Size = new Size(106, 34);
         Player6.TabIndex = 5;
         Player6.Text = "button6";
         Player6.UseVisualStyleBackColor = true;
         // 
         // Player7
         // 
-        Player7.Location = new System.Drawing.Point(14, 205);
+        Player7.Location = new Point(11, 164);
+        Player7.Margin = new Padding(2);
         Player7.Name = "Player7";
-        Player7.Size = new System.Drawing.Size(132, 43);
+        Player7.Size = new Size(106, 34);
         Player7.TabIndex = 6;
         Player7.Text = "button7";
         Player7.UseVisualStyleBackColor = true;
         // 
         // Player8
         // 
-        Player8.Location = new System.Drawing.Point(265, 140);
+        Player8.Location = new Point(212, 112);
+        Player8.Margin = new Padding(2);
         Player8.Name = "Player8";
-        Player8.Size = new System.Drawing.Size(132, 43);
+        Player8.Size = new Size(106, 34);
         Player8.TabIndex = 7;
         Player8.Text = "button8";
         Player8.UseVisualStyleBackColor = true;
         // 
         // Player9
         // 
-        Player9.Location = new System.Drawing.Point(97, 140);
+        Player9.Location = new Point(78, 112);
+        Player9.Margin = new Padding(2);
         Player9.Name = "Player9";
-        Player9.Size = new System.Drawing.Size(132, 43);
+        Player9.Size = new Size(106, 34);
         Player9.TabIndex = 8;
         Player9.Text = "button9";
         Player9.UseVisualStyleBackColor = true;
         // 
         // Player10
         // 
-        Player10.Location = new System.Drawing.Point(342, 77);
+        Player10.Location = new Point(274, 62);
+        Player10.Margin = new Padding(2);
         Player10.Name = "Player10";
-        Player10.Size = new System.Drawing.Size(132, 43);
+        Player10.Size = new Size(106, 34);
         Player10.TabIndex = 9;
         Player10.Text = "button10";
         Player10.UseVisualStyleBackColor = true;
         // 
         // Player11
         // 
-        Player11.Location = new System.Drawing.Point(178, 77);
+        Player11.Location = new Point(142, 62);
+        Player11.Margin = new Padding(2);
         Player11.Name = "Player11";
-        Player11.Size = new System.Drawing.Size(132, 43);
+        Player11.Size = new Size(106, 34);
         Player11.TabIndex = 10;
         Player11.Text = "button11";
         Player11.UseVisualStyleBackColor = true;
         // 
         // Player12
         // 
-        Player12.Location = new System.Drawing.Point(14, 77);
+        Player12.Location = new Point(11, 62);
+        Player12.Margin = new Padding(2);
         Player12.Name = "Player12";
-        Player12.Size = new System.Drawing.Size(132, 43);
+        Player12.Size = new Size(106, 34);
         Player12.TabIndex = 11;
         Player12.Text = "button12";
         Player12.UseVisualStyleBackColor = true;
         // 
         // Player13
         // 
-        Player13.Location = new System.Drawing.Point(342, 12);
+        Player13.Location = new Point(274, 10);
+        Player13.Margin = new Padding(2);
         Player13.Name = "Player13";
-        Player13.Size = new System.Drawing.Size(132, 43);
+        Player13.Size = new Size(106, 34);
         Player13.TabIndex = 12;
         Player13.Text = "button13";
         Player13.UseVisualStyleBackColor = true;
         // 
         // Player14
         // 
-        Player14.Location = new System.Drawing.Point(178, 12);
+        Player14.Location = new Point(142, 10);
+        Player14.Margin = new Padding(2);
         Player14.Name = "Player14";
-        Player14.Size = new System.Drawing.Size(132, 43);
+        Player14.Size = new Size(106, 34);
         Player14.TabIndex = 13;
         Player14.Text = "button14";
         Player14.UseVisualStyleBackColor = true;
         // 
         // Player15
         // 
-        Player15.Location = new System.Drawing.Point(14, 12);
+        Player15.Location = new Point(11, 10);
+        Player15.Margin = new Padding(2);
         Player15.Name = "Player15";
-        Player15.Size = new System.Drawing.Size(132, 43);
+        Player15.Size = new Size(106, 34);
         Player15.TabIndex = 14;
         Player15.Text = "button15";
         Player15.UseVisualStyleBackColor = true;
         // 
         // EnterStatButton
         // 
-        EnterStatButton.BackColor = System.Drawing.Color.ForestGreen;
-        EnterStatButton.Font = new System.Drawing.Font("Segoe UI", 20F);
-        EnterStatButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-        EnterStatButton.Location = new System.Drawing.Point(249, 417);
+        EnterStatButton.BackColor = Color.ForestGreen;
+        EnterStatButton.Font = new Font("Segoe UI", 20F);
+        EnterStatButton.ForeColor = SystemColors.ButtonHighlight;
+        EnterStatButton.Location = new Point(199, 334);
+        EnterStatButton.Margin = new Padding(2);
         EnterStatButton.Name = "EnterStatButton";
-        EnterStatButton.Size = new System.Drawing.Size(223, 43);
+        EnterStatButton.Size = new Size(178, 34);
         EnterStatButton.TabIndex = 15;
         EnterStatButton.Text = "Enter";
         EnterStatButton.UseVisualStyleBackColor = false;
@@ -202,12 +218,13 @@ partial class PlayerSelectWindow
         // 
         // CancelStatButton
         // 
-        CancelStatButton.BackColor = System.Drawing.Color.LightCoral;
-        CancelStatButton.Font = new System.Drawing.Font("Segoe UI", 20F);
-        CancelStatButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-        CancelStatButton.Location = new System.Drawing.Point(9, 417);
+        CancelStatButton.BackColor = Color.LightCoral;
+        CancelStatButton.Font = new Font("Segoe UI", 20F);
+        CancelStatButton.ForeColor = SystemColors.ButtonHighlight;
+        CancelStatButton.Location = new Point(7, 334);
+        CancelStatButton.Margin = new Padding(2);
         CancelStatButton.Name = "CancelStatButton";
-        CancelStatButton.Size = new System.Drawing.Size(218, 43);
+        CancelStatButton.Size = new Size(174, 34);
         CancelStatButton.TabIndex = 16;
         CancelStatButton.Text = "Cancel";
         CancelStatButton.UseVisualStyleBackColor = false;
@@ -215,19 +232,20 @@ partial class PlayerSelectWindow
         // 
         // TurnOverCheckBox
         // 
-        TurnOverCheckBox.Location = new System.Drawing.Point(159, 386);
+        TurnOverCheckBox.Location = new Point(127, 309);
+        TurnOverCheckBox.Margin = new Padding(2);
         TurnOverCheckBox.Name = "TurnOverCheckBox";
-        TurnOverCheckBox.Size = new System.Drawing.Size(171, 25);
+        TurnOverCheckBox.Size = new Size(137, 20);
         TurnOverCheckBox.TabIndex = 17;
         TurnOverCheckBox.Text = "Is possession turned over?";
         TurnOverCheckBox.UseVisualStyleBackColor = true;
         // 
         // PlayerSelectWindow
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        ClientSize = new System.Drawing.Size(484, 461);
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        ClientSize = new Size(387, 369);
         Controls.Add(TurnOverCheckBox);
         Controls.Add(CancelStatButton);
         Controls.Add(EnterStatButton);
@@ -246,8 +264,12 @@ partial class PlayerSelectWindow
         Controls.Add(Player3);
         Controls.Add(Player2);
         Controls.Add(Player1);
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
-        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        Icon = (Icon)resources.GetObject("$this.Icon");
+        Margin = new Padding(2, 3, 2, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "PlayerSelectWindow";
         Text = "Player Selection";
         ResumeLayout(false);
     }
