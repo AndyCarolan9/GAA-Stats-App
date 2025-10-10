@@ -31,64 +31,72 @@ partial class StatisticBar
     /// </summary>
     private void InitializeComponent()
     {
-        components = new System.ComponentModel.Container();
-        StatSplitBar = new StatsTracker.View_Elements.SplitCountBar(components);
-        StatNameLabel = new System.Windows.Forms.Label();
-        HomeTeamValue = new System.Windows.Forms.Label();
-        AwayTeamValue = new System.Windows.Forms.Label();
+        components = new Container();
+        StatSplitBar = new SplitCountBar(components);
+        StatNameLabel = new Label();
+        HomeTeamValue = new Label();
+        AwayTeamValue = new Label();
         SuspendLayout();
         // 
         // StatSplitBar
         // 
-        StatSplitBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        StatSplitBar.Location = new System.Drawing.Point(0, 39);
+        StatSplitBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        StatSplitBar.BackColor = SystemColors.ActiveCaptionText;
+        StatSplitBar.Location = new Point(1, 33);
+        StatSplitBar.Margin = new Padding(2);
         StatSplitBar.Maximum = 10;
+        StatSplitBar.MinimumSize = new Size(0, 10);
         StatSplitBar.Name = "StatSplitBar";
-        StatSplitBar.Size = new System.Drawing.Size(499, 27);
+        StatSplitBar.Size = new Size(477, 21);
         StatSplitBar.TabIndex = 0;
         StatSplitBar.Value = 5;
         // 
         // StatNameLabel
         // 
-        StatNameLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        StatNameLabel.Location = new System.Drawing.Point(81, 0);
+        StatNameLabel.Anchor = AnchorStyles.Top;
+        StatNameLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        StatNameLabel.Location = new Point(189, 1);
+        StatNameLabel.Margin = new Padding(2, 0, 2, 0);
         StatNameLabel.Name = "StatNameLabel";
-        StatNameLabel.Size = new System.Drawing.Size(338, 33);
+        StatNameLabel.Size = new Size(112, 30);
         StatNameLabel.TabIndex = 1;
         StatNameLabel.Text = "Stat Name";
-        StatNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        StatNameLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // HomeTeamValue
         // 
-        HomeTeamValue.Font = new System.Drawing.Font("Segoe UI", 20F);
-        HomeTeamValue.Location = new System.Drawing.Point(3, -5);
+        HomeTeamValue.Font = new Font("Segoe UI", 20F);
+        HomeTeamValue.Location = new Point(2, -4);
+        HomeTeamValue.Margin = new Padding(2, 0, 2, 0);
         HomeTeamValue.Name = "HomeTeamValue";
-        HomeTeamValue.Size = new System.Drawing.Size(72, 40);
+        HomeTeamValue.Size = new Size(58, 32);
         HomeTeamValue.TabIndex = 2;
         HomeTeamValue.Text = "40";
-        HomeTeamValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        HomeTeamValue.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // AwayTeamValue
         // 
-        AwayTeamValue.Font = new System.Drawing.Font("Segoe UI", 20F);
-        AwayTeamValue.Location = new System.Drawing.Point(425, -5);
+        AwayTeamValue.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        AwayTeamValue.Font = new Font("Segoe UI", 20F);
+        AwayTeamValue.Location = new Point(426, -4);
+        AwayTeamValue.Margin = new Padding(2, 0, 2, 0);
         AwayTeamValue.Name = "AwayTeamValue";
-        AwayTeamValue.Size = new System.Drawing.Size(72, 40);
+        AwayTeamValue.Size = new Size(58, 32);
         AwayTeamValue.TabIndex = 3;
         AwayTeamValue.Text = "40";
-        AwayTeamValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        AwayTeamValue.TextAlign = ContentAlignment.MiddleRight;
         // 
         // StatisticBar
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode = AutoScaleMode.Dpi;
         Controls.Add(AwayTeamValue);
         Controls.Add(HomeTeamValue);
         Controls.Add(StatNameLabel);
         Controls.Add(StatSplitBar);
-        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-        Size = new System.Drawing.Size(500, 70);
+        Margin = new Padding(2, 3, 2, 3);
+        Name = "StatisticBar";
+        Size = new Size(481, 66);
         ResumeLayout(false);
     }
 

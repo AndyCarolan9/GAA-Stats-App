@@ -31,120 +31,144 @@ partial class MatchView
     /// </summary>
     private void InitializeComponent()
     {
-        components = new System.ComponentModel.Container();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchView));
-        FootballFieldInput = new System.Windows.Forms.PictureBox();
-        EventInputMenu = new System.Windows.Forms.ContextMenuStrip(components);
-        toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-        toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-        HeaderBar = new System.Windows.Forms.MenuStrip();
-        fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-        saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-        cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-        selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        JournalistData = new System.Windows.Forms.ToolStripMenuItem();
-        ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        Scorers = new System.Windows.Forms.ToolStripMenuItem();
-        AllStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        GraphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        ScoreTimeLine = new System.Windows.Forms.ToolStripMenuItem();
-        EventTimeLine = new System.Windows.Forms.ToolStripMenuItem();
-        PlayerPerformance = new System.Windows.Forms.ToolStripMenuItem();
-        DisciplineReport = new System.Windows.Forms.ToolStripMenuItem();
-        helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-        aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-        pointScoredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        HomeTeamName = new System.Windows.Forms.Label();
-        AwayTeamName = new System.Windows.Forms.Label();
-        AwayTeamScore = new System.Windows.Forms.Label();
-        HomeTeamScore = new System.Windows.Forms.Label();
-        pictureBox1 = new System.Windows.Forms.PictureBox();
-        pictureBox2 = new System.Windows.Forms.PictureBox();
-        HomeTeamSubs = new System.Windows.Forms.Button();
-        AwayTeamSubs = new System.Windows.Forms.Button();
-        pictureBox3 = new System.Windows.Forms.PictureBox();
+        components = new Container();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(MatchView));
+        FootballFieldInput = new PictureBox();
+        EventInputMenu = new ContextMenuStrip(components);
+        toolStripComboBox1 = new ToolStripComboBox();
+        toolStripMenuItem1 = new ToolStripMenuItem();
+        toolStripMenuItem2 = new ToolStripMenuItem();
+        toolStripMenuItem3 = new ToolStripMenuItem();
+        HeaderBar = new MenuStrip();
+        fileToolStripMenuItem = new ToolStripMenuItem();
+        newToolStripMenuItem = new ToolStripMenuItem();
+        openToolStripMenuItem = new ToolStripMenuItem();
+        toolStripSeparator = new ToolStripSeparator();
+        saveToolStripMenuItem = new ToolStripMenuItem();
+        saveAsToolStripMenuItem = new ToolStripMenuItem();
+        editToolStripMenuItem = new ToolStripMenuItem();
+        undoToolStripMenuItem = new ToolStripMenuItem();
+        redoToolStripMenuItem = new ToolStripMenuItem();
+        toolStripSeparator3 = new ToolStripSeparator();
+        cutToolStripMenuItem = new ToolStripMenuItem();
+        copyToolStripMenuItem = new ToolStripMenuItem();
+        pasteToolStripMenuItem = new ToolStripMenuItem();
+        toolStripSeparator4 = new ToolStripSeparator();
+        selectAllToolStripMenuItem = new ToolStripMenuItem();
+        ExportToolStripMenuItem = new ToolStripMenuItem();
+        JournalistData = new ToolStripMenuItem();
+        ViewToolStripMenuItem = new ToolStripMenuItem();
+        Scorers = new ToolStripMenuItem();
+        AllStatsToolStripMenuItem = new ToolStripMenuItem();
+        GraphsToolStripMenuItem = new ToolStripMenuItem();
+        ScoreTimeLine = new ToolStripMenuItem();
+        EventTimeLine = new ToolStripMenuItem();
+        PlayerPerformance = new ToolStripMenuItem();
+        DisciplineReport = new ToolStripMenuItem();
+        helpToolStripMenuItem = new ToolStripMenuItem();
+        contentsToolStripMenuItem = new ToolStripMenuItem();
+        indexToolStripMenuItem = new ToolStripMenuItem();
+        searchToolStripMenuItem = new ToolStripMenuItem();
+        toolStripSeparator5 = new ToolStripSeparator();
+        aboutToolStripMenuItem = new ToolStripMenuItem();
+        toolStripMenuItem4 = new ToolStripMenuItem();
+        toolStripMenuItem5 = new ToolStripMenuItem();
+        toolStripMenuItem6 = new ToolStripMenuItem();
+        toolStripMenuItem7 = new ToolStripMenuItem();
+        toolStripMenuItem8 = new ToolStripMenuItem();
+        toolStripMenuItem9 = new ToolStripMenuItem();
+        toolStripMenuItem11 = new ToolStripMenuItem();
+        pointScoredToolStripMenuItem = new ToolStripMenuItem();
+        HomeTeamName = new Label();
+        AwayTeamName = new Label();
+        AwayTeamScore = new Label();
+        HomeTeamScore = new Label();
+        HomeTeamSubs = new Button();
+        AwayTeamSubs = new Button();
         TurnoverStatBar = new StatsTracker.View_Elements.StatisticBar();
         ShotsStatBar = new StatsTracker.View_Elements.StatisticBar();
         KickoutsStatsBar = new StatsTracker.View_Elements.StatisticBar();
         GoalShotsStatBar = new StatsTracker.View_Elements.StatisticBar();
         WidesStatBar = new StatsTracker.View_Elements.StatisticBar();
         FreesStatBar = new StatsTracker.View_Elements.StatisticBar();
-        HalfLabel = new System.Windows.Forms.Label();
-        StartStopButton = new System.Windows.Forms.Button();
-        Pause = new System.Windows.Forms.Button();
-        label2 = new System.Windows.Forms.Label();
-        label3 = new System.Windows.Forms.Label();
-        pictureBox4 = new System.Windows.Forms.PictureBox();
-        MinutesLabel = new System.Windows.Forms.Label();
-        label5 = new System.Windows.Forms.Label();
-        SecondsLabel = new System.Windows.Forms.Label();
-        SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
-        OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-        toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-        EventListBox = new System.Windows.Forms.ListBox();
-        HomePitchLabel = new System.Windows.Forms.Label();
-        AwayPitchLabel = new System.Windows.Forms.Label();
-        HomePitchHighlight = new System.Windows.Forms.PictureBox();
-        AwayPitchHighlight = new System.Windows.Forms.PictureBox();
-        toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-        toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
-        toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-        HomeCardsButton = new System.Windows.Forms.Button();
-        AwayCardsButton = new System.Windows.Forms.Button();
-        HomeTeamCardedPlayers = new System.Windows.Forms.ListBox();
-        AwayTeamCardedPlayers = new System.Windows.Forms.ListBox();
-        EventListContextMenu = new System.Windows.Forms.ContextMenuStrip(components);
-        ((System.ComponentModel.ISupportInitialize)FootballFieldInput).BeginInit();
+        HalfLabel = new Label();
+        StartStopButton = new Button();
+        Pause = new Button();
+        label2 = new Label();
+        label3 = new Label();
+        TimeLabel = new Label();
+        SaveFileDialog = new SaveFileDialog();
+        OpenFileDialog = new OpenFileDialog();
+        toolStripMenuItem10 = new ToolStripMenuItem();
+        EventListBox = new ListBox();
+        HomePitchLabel = new Label();
+        AwayPitchLabel = new Label();
+        HomePitchHighlight = new PictureBox();
+        AwayPitchHighlight = new PictureBox();
+        toolStripMenuItem12 = new ToolStripMenuItem();
+        toolStripMenuItem13 = new ToolStripMenuItem();
+        toolStripMenuItem14 = new ToolStripMenuItem();
+        toolStripSeparator1 = new ToolStripSeparator();
+        toolStripSeparator2 = new ToolStripSeparator();
+        toolStripMenuItem15 = new ToolStripMenuItem();
+        toolStripMenuItem16 = new ToolStripMenuItem();
+        toolStripMenuItem17 = new ToolStripMenuItem();
+        toolStripMenuItem18 = new ToolStripMenuItem();
+        toolStripMenuItem19 = new ToolStripMenuItem();
+        HomeCardsButton = new Button();
+        AwayCardsButton = new Button();
+        HomeTeamCardedPlayers = new ListBox();
+        AwayTeamCardedPlayers = new ListBox();
+        EventListContextMenu = new ContextMenuStrip(components);
+        MainScreenSplitContainer = new SplitContainer();
+        StatsViewTable = new TableLayoutPanel();
+        TimeControlTable = new TableLayoutPanel();
+        ScorecardTable = new TableLayoutPanel();
+        splitContainer2 = new SplitContainer();
+        splitContainer4 = new SplitContainer();
+        splitContainer3 = new SplitContainer();
+        splitContainer5 = new SplitContainer();
+        StatsBarContainer = new TableLayoutPanel();
+        ((ISupportInitialize)FootballFieldInput).BeginInit();
         HeaderBar.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)HomePitchHighlight).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)AwayPitchHighlight).BeginInit();
+        ((ISupportInitialize)HomePitchHighlight).BeginInit();
+        ((ISupportInitialize)AwayPitchHighlight).BeginInit();
+        ((ISupportInitialize)MainScreenSplitContainer).BeginInit();
+        MainScreenSplitContainer.Panel1.SuspendLayout();
+        MainScreenSplitContainer.Panel2.SuspendLayout();
+        MainScreenSplitContainer.SuspendLayout();
+        StatsViewTable.SuspendLayout();
+        TimeControlTable.SuspendLayout();
+        ScorecardTable.SuspendLayout();
+        ((ISupportInitialize)splitContainer2).BeginInit();
+        splitContainer2.Panel1.SuspendLayout();
+        splitContainer2.Panel2.SuspendLayout();
+        splitContainer2.SuspendLayout();
+        ((ISupportInitialize)splitContainer4).BeginInit();
+        splitContainer4.Panel1.SuspendLayout();
+        splitContainer4.Panel2.SuspendLayout();
+        splitContainer4.SuspendLayout();
+        ((ISupportInitialize)splitContainer3).BeginInit();
+        splitContainer3.Panel1.SuspendLayout();
+        splitContainer3.Panel2.SuspendLayout();
+        splitContainer3.SuspendLayout();
+        ((ISupportInitialize)splitContainer5).BeginInit();
+        splitContainer5.Panel1.SuspendLayout();
+        splitContainer5.Panel2.SuspendLayout();
+        splitContainer5.SuspendLayout();
+        StatsBarContainer.SuspendLayout();
         SuspendLayout();
         // 
         // FootballFieldInput
         // 
-        FootballFieldInput.BackgroundImage = ((System.Drawing.Image)resources.GetObject("FootballFieldInput.BackgroundImage"));
-        FootballFieldInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+        FootballFieldInput.BackgroundImage = (Image)resources.GetObject("FootballFieldInput.BackgroundImage");
+        FootballFieldInput.BackgroundImageLayout = ImageLayout.Stretch;
         FootballFieldInput.ContextMenuStrip = EventInputMenu;
-        FootballFieldInput.Location = new System.Drawing.Point(5, 28);
+        FootballFieldInput.Dock = DockStyle.Fill;
+        FootballFieldInput.Location = new Point(0, 0);
         FootballFieldInput.Name = "FootballFieldInput";
-        FootballFieldInput.Size = new System.Drawing.Size(700, 964);
-        FootballFieldInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+        FootballFieldInput.Size = new Size(632, 1050);
+        FootballFieldInput.SizeMode = PictureBoxSizeMode.StretchImage;
         FootballFieldInput.TabIndex = 0;
         FootballFieldInput.TabStop = false;
         FootballFieldInput.Paint += FootballFieldInput_Paint;
@@ -153,369 +177,366 @@ partial class MatchView
         // 
         // EventInputMenu
         // 
-        EventInputMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+        EventInputMenu.ImageScalingSize = new Size(20, 20);
         EventInputMenu.Name = "EventInputMenu";
-        EventInputMenu.Size = new System.Drawing.Size(61, 4);
+        EventInputMenu.Size = new Size(61, 4);
         EventInputMenu.Opening += EventInputMenu_Opening;
         // 
         // toolStripComboBox1
         // 
         toolStripComboBox1.Name = "toolStripComboBox1";
-        toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+        toolStripComboBox1.Size = new Size(121, 23);
         // 
         // toolStripMenuItem1
         // 
         toolStripMenuItem1.Name = "toolStripMenuItem1";
-        toolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem1.Size = new Size(32, 19);
         toolStripMenuItem1.Text = "toolStripMenuItem1";
         // 
         // toolStripMenuItem2
         // 
         toolStripMenuItem2.Name = "toolStripMenuItem2";
-        toolStripMenuItem2.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem2.Size = new Size(32, 19);
         // 
         // toolStripMenuItem3
         // 
         toolStripMenuItem3.Name = "toolStripMenuItem3";
-        toolStripMenuItem3.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem3.Size = new Size(32, 19);
         // 
         // HeaderBar
         // 
-        HeaderBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-        HeaderBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ExportToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
-        HeaderBar.Location = new System.Drawing.Point(0, 0);
+        HeaderBar.BackColor = Color.Gray;
+        HeaderBar.ImageScalingSize = new Size(20, 20);
+        HeaderBar.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ExportToolStripMenuItem, ViewToolStripMenuItem, helpToolStripMenuItem });
+        HeaderBar.Location = new Point(0, 0);
         HeaderBar.Name = "HeaderBar";
-        HeaderBar.Size = new System.Drawing.Size(1902, 28);
+        HeaderBar.Size = new Size(1902, 24);
         HeaderBar.TabIndex = 1;
         HeaderBar.Text = "menuStrip1";
         // 
         // fileToolStripMenuItem
         // 
-        fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, toolStripSeparator, saveToolStripMenuItem, saveAsToolStripMenuItem });
+        fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, toolStripSeparator, saveToolStripMenuItem, saveAsToolStripMenuItem });
         fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-        fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+        fileToolStripMenuItem.Size = new Size(37, 20);
         fileToolStripMenuItem.Text = "&File";
         // 
         // newToolStripMenuItem
         // 
-        newToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("newToolStripMenuItem.Image"));
-        newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        newToolStripMenuItem.Image = (Image)resources.GetObject("newToolStripMenuItem.Image");
+        newToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         newToolStripMenuItem.Name = "newToolStripMenuItem";
-        newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
-        newToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+        newToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+        newToolStripMenuItem.Size = new Size(186, 22);
         newToolStripMenuItem.Text = "&New";
         newToolStripMenuItem.Click += newToolStripMenuItem_Click;
         // 
         // openToolStripMenuItem
         // 
-        openToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("openToolStripMenuItem.Image"));
-        openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        openToolStripMenuItem.Image = (Image)resources.GetObject("openToolStripMenuItem.Image");
+        openToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         openToolStripMenuItem.Name = "openToolStripMenuItem";
-        openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O));
-        openToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+        openToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+        openToolStripMenuItem.Size = new Size(186, 22);
         openToolStripMenuItem.Text = "&Open";
         openToolStripMenuItem.Click += openToolStripMenuItem_Click;
         // 
         // toolStripSeparator
         // 
         toolStripSeparator.Name = "toolStripSeparator";
-        toolStripSeparator.Size = new System.Drawing.Size(230, 6);
+        toolStripSeparator.Size = new Size(183, 6);
         // 
         // saveToolStripMenuItem
         // 
-        saveToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("saveToolStripMenuItem.Image"));
-        saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        saveToolStripMenuItem.Image = (Image)resources.GetObject("saveToolStripMenuItem.Image");
+        saveToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-        saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
-        saveToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+        saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+        saveToolStripMenuItem.Size = new Size(186, 22);
         saveToolStripMenuItem.Text = "&Save";
         saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
         // 
         // saveAsToolStripMenuItem
         // 
         saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-        saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S));
-        saveAsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+        saveAsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+        saveAsToolStripMenuItem.Size = new Size(186, 22);
         saveAsToolStripMenuItem.Text = "Save &As";
         saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
         // 
         // editToolStripMenuItem
         // 
-        editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem, toolStripSeparator3, cutToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem, toolStripSeparator4, selectAllToolStripMenuItem });
+        editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem, toolStripSeparator3, cutToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem, toolStripSeparator4, selectAllToolStripMenuItem });
         editToolStripMenuItem.Name = "editToolStripMenuItem";
-        editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+        editToolStripMenuItem.Size = new Size(39, 20);
         editToolStripMenuItem.Text = "&Edit";
         // 
         // undoToolStripMenuItem
         // 
         undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-        undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z));
-        undoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
+        undoToolStripMenuItem.Size = new Size(144, 22);
         undoToolStripMenuItem.Text = "&Undo";
         // 
         // redoToolStripMenuItem
         // 
         redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-        redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y));
-        redoToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
+        redoToolStripMenuItem.Size = new Size(144, 22);
         redoToolStripMenuItem.Text = "&Redo";
         // 
         // toolStripSeparator3
         // 
         toolStripSeparator3.Name = "toolStripSeparator3";
-        toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
+        toolStripSeparator3.Size = new Size(141, 6);
         // 
         // cutToolStripMenuItem
         // 
-        cutToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("cutToolStripMenuItem.Image"));
-        cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        cutToolStripMenuItem.Image = (Image)resources.GetObject("cutToolStripMenuItem.Image");
+        cutToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-        cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X));
-        cutToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
+        cutToolStripMenuItem.Size = new Size(144, 22);
         cutToolStripMenuItem.Text = "Cu&t";
         // 
         // copyToolStripMenuItem
         // 
-        copyToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("copyToolStripMenuItem.Image"));
-        copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        copyToolStripMenuItem.Image = (Image)resources.GetObject("copyToolStripMenuItem.Image");
+        copyToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-        copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C));
-        copyToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
+        copyToolStripMenuItem.Size = new Size(144, 22);
         copyToolStripMenuItem.Text = "&Copy";
         // 
         // pasteToolStripMenuItem
         // 
-        pasteToolStripMenuItem.Image = ((System.Drawing.Image)resources.GetObject("pasteToolStripMenuItem.Image"));
-        pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+        pasteToolStripMenuItem.Image = (Image)resources.GetObject("pasteToolStripMenuItem.Image");
+        pasteToolStripMenuItem.ImageTransparentColor = Color.Magenta;
         pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-        pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V));
-        pasteToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
+        pasteToolStripMenuItem.Size = new Size(144, 22);
         pasteToolStripMenuItem.Text = "&Paste";
         // 
         // toolStripSeparator4
         // 
         toolStripSeparator4.Name = "toolStripSeparator4";
-        toolStripSeparator4.Size = new System.Drawing.Size(176, 6);
+        toolStripSeparator4.Size = new Size(141, 6);
         // 
         // selectAllToolStripMenuItem
         // 
         selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-        selectAllToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+        selectAllToolStripMenuItem.Size = new Size(144, 22);
         selectAllToolStripMenuItem.Text = "Select &All";
         // 
         // ExportToolStripMenuItem
         // 
-        ExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { JournalistData });
+        ExportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { JournalistData });
         ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
-        ExportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+        ExportToolStripMenuItem.Size = new Size(52, 20);
         ExportToolStripMenuItem.Text = "Export";
         // 
         // JournalistData
         // 
         JournalistData.Name = "JournalistData";
-        JournalistData.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
-        JournalistData.Size = new System.Drawing.Size(240, 26);
+        JournalistData.ShortcutKeys = Keys.Control | Keys.E;
+        JournalistData.Size = new Size(191, 22);
         JournalistData.Text = "Journalist Data";
         JournalistData.Click += JournalistData_Click;
         // 
         // ViewToolStripMenuItem
         // 
-        ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { Scorers, AllStatsToolStripMenuItem, GraphsToolStripMenuItem, DisciplineReport });
+        ViewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { Scorers, AllStatsToolStripMenuItem, GraphsToolStripMenuItem, DisciplineReport });
         ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-        ViewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+        ViewToolStripMenuItem.Size = new Size(44, 20);
         ViewToolStripMenuItem.Text = "&View";
         // 
         // Scorers
         // 
         Scorers.Name = "Scorers";
-        Scorers.Size = new System.Drawing.Size(206, 26);
+        Scorers.Size = new Size(163, 22);
         Scorers.Text = "Scorers";
         Scorers.Click += Scorers_Click;
         // 
         // AllStatsToolStripMenuItem
         // 
         AllStatsToolStripMenuItem.Name = "AllStatsToolStripMenuItem";
-        AllStatsToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+        AllStatsToolStripMenuItem.Size = new Size(163, 22);
         AllStatsToolStripMenuItem.Text = "&All Stats";
         AllStatsToolStripMenuItem.Click += AllStatsToolStripMenuItem_Click;
         // 
         // GraphsToolStripMenuItem
         // 
-        GraphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ScoreTimeLine, EventTimeLine, PlayerPerformance });
+        GraphsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ScoreTimeLine, EventTimeLine, PlayerPerformance });
         GraphsToolStripMenuItem.Name = "GraphsToolStripMenuItem";
-        GraphsToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+        GraphsToolStripMenuItem.Size = new Size(163, 22);
         GraphsToolStripMenuItem.Text = "&Graphs";
         // 
         // ScoreTimeLine
         // 
         ScoreTimeLine.Name = "ScoreTimeLine";
-        ScoreTimeLine.Size = new System.Drawing.Size(219, 26);
+        ScoreTimeLine.Size = new Size(177, 22);
         ScoreTimeLine.Text = "Score Time Line";
         ScoreTimeLine.Click += ScoreTimeLine_Click;
         // 
         // EventTimeLine
         // 
         EventTimeLine.Name = "EventTimeLine";
-        EventTimeLine.Size = new System.Drawing.Size(219, 26);
+        EventTimeLine.Size = new Size(177, 22);
         EventTimeLine.Text = "Event Time Line";
         EventTimeLine.Click += EventTimeLine_Click;
         // 
         // PlayerPerformance
         // 
         PlayerPerformance.Name = "PlayerPerformance";
-        PlayerPerformance.Size = new System.Drawing.Size(219, 26);
+        PlayerPerformance.Size = new Size(177, 22);
         PlayerPerformance.Text = "Player Performance";
         // 
         // DisciplineReport
         // 
         DisciplineReport.Name = "DisciplineReport";
-        DisciplineReport.Size = new System.Drawing.Size(206, 26);
+        DisciplineReport.Size = new Size(163, 22);
         DisciplineReport.Text = "Discipline Report";
         DisciplineReport.Click += DisciplineReport_Click;
         // 
         // helpToolStripMenuItem
         // 
-        helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator5, aboutToolStripMenuItem });
+        helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator5, aboutToolStripMenuItem });
         helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-        helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+        helpToolStripMenuItem.Size = new Size(44, 20);
         helpToolStripMenuItem.Text = "&Help";
         // 
         // contentsToolStripMenuItem
         // 
         contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-        contentsToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+        contentsToolStripMenuItem.Size = new Size(122, 22);
         contentsToolStripMenuItem.Text = "&Contents";
         // 
         // indexToolStripMenuItem
         // 
         indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-        indexToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+        indexToolStripMenuItem.Size = new Size(122, 22);
         indexToolStripMenuItem.Text = "&Index";
         // 
         // searchToolStripMenuItem
         // 
         searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-        searchToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+        searchToolStripMenuItem.Size = new Size(122, 22);
         searchToolStripMenuItem.Text = "&Search";
         // 
         // toolStripSeparator5
         // 
         toolStripSeparator5.Name = "toolStripSeparator5";
-        toolStripSeparator5.Size = new System.Drawing.Size(147, 6);
+        toolStripSeparator5.Size = new Size(119, 6);
         // 
         // aboutToolStripMenuItem
         // 
         aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        aboutToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+        aboutToolStripMenuItem.Size = new Size(122, 22);
         aboutToolStripMenuItem.Text = "&About...";
         // 
         // toolStripMenuItem4
         // 
         toolStripMenuItem4.Name = "toolStripMenuItem4";
-        toolStripMenuItem4.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem4.Size = new Size(32, 19);
         // 
         // toolStripMenuItem5
         // 
         toolStripMenuItem5.Name = "toolStripMenuItem5";
-        toolStripMenuItem5.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem5.Size = new Size(32, 19);
         toolStripMenuItem5.Text = "toolStripMenuItem5";
         // 
         // toolStripMenuItem6
         // 
         toolStripMenuItem6.Name = "toolStripMenuItem6";
-        toolStripMenuItem6.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem6.Size = new Size(32, 19);
         // 
         // toolStripMenuItem7
         // 
         toolStripMenuItem7.Name = "toolStripMenuItem7";
-        toolStripMenuItem7.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem7.Size = new Size(32, 19);
         toolStripMenuItem7.Text = "toolStripMenuItem7";
         // 
         // toolStripMenuItem8
         // 
         toolStripMenuItem8.Name = "toolStripMenuItem8";
-        toolStripMenuItem8.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem8.Size = new Size(32, 19);
         // 
         // toolStripMenuItem9
         // 
         toolStripMenuItem9.Name = "toolStripMenuItem9";
-        toolStripMenuItem9.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem9.Size = new Size(32, 19);
         // 
         // toolStripMenuItem11
         // 
         toolStripMenuItem11.Name = "toolStripMenuItem11";
-        toolStripMenuItem11.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem11.Size = new Size(32, 19);
         // 
         // pointScoredToolStripMenuItem
         // 
         pointScoredToolStripMenuItem.Name = "pointScoredToolStripMenuItem";
-        pointScoredToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+        pointScoredToolStripMenuItem.Size = new Size(32, 19);
         pointScoredToolStripMenuItem.Text = "Point Scored";
         // 
         // HomeTeamName
         // 
-        HomeTeamName.Font = new System.Drawing.Font("Segoe UI", 24F);
-        HomeTeamName.Location = new System.Drawing.Point(1336, 32);
+        HomeTeamName.AutoSize = true;
+        HomeTeamName.Dock = DockStyle.Fill;
+        HomeTeamName.Font = new Font("Segoe UI", 25F);
+        HomeTeamName.Location = new Point(10, 10);
+        HomeTeamName.Margin = new Padding(10);
         HomeTeamName.Name = "HomeTeamName";
-        HomeTeamName.Size = new System.Drawing.Size(278, 51);
+        HomeTeamName.Size = new Size(293, 65);
         HomeTeamName.TabIndex = 2;
         HomeTeamName.Text = "Home Team";
-        HomeTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        HomeTeamName.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // AwayTeamName
         // 
-        AwayTeamName.Font = new System.Drawing.Font("Segoe UI", 24F);
-        AwayTeamName.Location = new System.Drawing.Point(1641, 32);
+        AwayTeamName.AutoSize = true;
+        AwayTeamName.Dock = DockStyle.Fill;
+        AwayTeamName.Font = new Font("Segoe UI", 25F);
+        AwayTeamName.Location = new Point(323, 10);
+        AwayTeamName.Margin = new Padding(10);
         AwayTeamName.Name = "AwayTeamName";
-        AwayTeamName.Size = new System.Drawing.Size(244, 51);
+        AwayTeamName.Size = new Size(294, 65);
         AwayTeamName.TabIndex = 3;
         AwayTeamName.Text = "Away Team";
-        AwayTeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        AwayTeamName.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // AwayTeamScore
         // 
-        AwayTeamScore.Font = new System.Drawing.Font("Segoe UI", 24F);
-        AwayTeamScore.Location = new System.Drawing.Point(1641, 83);
+        AwayTeamScore.AutoSize = true;
+        AwayTeamScore.Dock = DockStyle.Fill;
+        AwayTeamScore.Font = new Font("Segoe UI", 35F);
+        AwayTeamScore.Location = new Point(323, 95);
+        AwayTeamScore.Margin = new Padding(10);
         AwayTeamScore.Name = "AwayTeamScore";
-        AwayTeamScore.Size = new System.Drawing.Size(244, 51);
+        AwayTeamScore.Size = new Size(294, 65);
         AwayTeamScore.TabIndex = 5;
         AwayTeamScore.Text = "0-00";
-        AwayTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        AwayTeamScore.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // HomeTeamScore
         // 
-        HomeTeamScore.Font = new System.Drawing.Font("Segoe UI", 24F);
-        HomeTeamScore.Location = new System.Drawing.Point(1336, 83);
+        HomeTeamScore.AutoSize = true;
+        HomeTeamScore.Dock = DockStyle.Fill;
+        HomeTeamScore.Font = new Font("Segoe UI", 35F);
+        HomeTeamScore.Location = new Point(10, 95);
+        HomeTeamScore.Margin = new Padding(10);
         HomeTeamScore.Name = "HomeTeamScore";
-        HomeTeamScore.Size = new System.Drawing.Size(278, 51);
+        HomeTeamScore.Size = new Size(293, 65);
         HomeTeamScore.TabIndex = 6;
         HomeTeamScore.Text = "0-00";
-        HomeTeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // pictureBox1
-        // 
-        pictureBox1.BackColor = System.Drawing.Color.Black;
-        pictureBox1.Location = new System.Drawing.Point(709, 25);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new System.Drawing.Size(8, 1023);
-        pictureBox1.TabIndex = 7;
-        pictureBox1.TabStop = false;
-        // 
-        // pictureBox2
-        // 
-        pictureBox2.BackColor = System.Drawing.Color.Black;
-        pictureBox2.Location = new System.Drawing.Point(1309, 25);
-        pictureBox2.Name = "pictureBox2";
-        pictureBox2.Size = new System.Drawing.Size(8, 1023);
-        pictureBox2.TabIndex = 8;
-        pictureBox2.TabStop = false;
+        HomeTeamScore.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // HomeTeamSubs
         // 
-        HomeTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
-        HomeTeamSubs.Location = new System.Drawing.Point(1346, 141);
+        HomeTeamSubs.AutoSize = true;
+        HomeTeamSubs.Dock = DockStyle.Fill;
+        HomeTeamSubs.Font = new Font("Segoe UI", 15F);
+        HomeTeamSubs.Location = new Point(0, 0);
         HomeTeamSubs.Name = "HomeTeamSubs";
-        HomeTeamSubs.Size = new System.Drawing.Size(122, 50);
+        HomeTeamSubs.Size = new Size(102, 34);
         HomeTeamSubs.TabIndex = 9;
         HomeTeamSubs.Text = "Subs";
         HomeTeamSubs.UseVisualStyleBackColor = true;
@@ -523,94 +544,103 @@ partial class MatchView
         // 
         // AwayTeamSubs
         // 
-        AwayTeamSubs.Font = new System.Drawing.Font("Segoe UI", 15F);
-        AwayTeamSubs.Location = new System.Drawing.Point(1641, 143);
+        AwayTeamSubs.AutoSize = true;
+        AwayTeamSubs.Dock = DockStyle.Fill;
+        AwayTeamSubs.Font = new Font("Segoe UI", 15F);
+        AwayTeamSubs.Location = new Point(0, 0);
         AwayTeamSubs.Name = "AwayTeamSubs";
-        AwayTeamSubs.Size = new System.Drawing.Size(122, 49);
+        AwayTeamSubs.Size = new Size(102, 34);
         AwayTeamSubs.TabIndex = 10;
         AwayTeamSubs.Text = "Subs";
         AwayTeamSubs.UseVisualStyleBackColor = true;
         AwayTeamSubs.MouseClick += SubsMenuButtonClick;
         // 
-        // pictureBox3
-        // 
-        pictureBox3.BackColor = System.Drawing.Color.Black;
-        pictureBox3.Location = new System.Drawing.Point(709, 200);
-        pictureBox3.Name = "pictureBox3";
-        pictureBox3.Size = new System.Drawing.Size(1200, 10);
-        pictureBox3.TabIndex = 13;
-        pictureBox3.TabStop = false;
-        // 
         // TurnoverStatBar
         // 
-        TurnoverStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        TurnoverStatBar.Location = new System.Drawing.Point(1367, 333);
-        TurnoverStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        TurnoverStatBar.BackColor = SystemColors.ActiveCaption;
+        TurnoverStatBar.Dock = DockStyle.Fill;
+        TurnoverStatBar.Location = new Point(10, 10);
+        TurnoverStatBar.Margin = new Padding(10);
         TurnoverStatBar.Name = "TurnoverStatBar";
-        TurnoverStatBar.Size = new System.Drawing.Size(500, 101);
+        TurnoverStatBar.Size = new Size(607, 110);
         TurnoverStatBar.TabIndex = 14;
         // 
         // ShotsStatBar
         // 
-        ShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        ShotsStatBar.Location = new System.Drawing.Point(1367, 551);
-        ShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        ShotsStatBar.AutoSize = true;
+        ShotsStatBar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        ShotsStatBar.Dock = DockStyle.Fill;
+        ShotsStatBar.Location = new Point(10, 270);
+        ShotsStatBar.Margin = new Padding(10);
         ShotsStatBar.Name = "ShotsStatBar";
-        ShotsStatBar.Size = new System.Drawing.Size(500, 101);
+        ShotsStatBar.Size = new Size(607, 110);
         ShotsStatBar.TabIndex = 15;
         // 
         // KickoutsStatsBar
         // 
-        KickoutsStatsBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        KickoutsStatsBar.Location = new System.Drawing.Point(1367, 442);
-        KickoutsStatsBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        KickoutsStatsBar.AutoSize = true;
+        KickoutsStatsBar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        KickoutsStatsBar.Dock = DockStyle.Fill;
+        KickoutsStatsBar.Location = new Point(10, 140);
+        KickoutsStatsBar.Margin = new Padding(10);
         KickoutsStatsBar.Name = "KickoutsStatsBar";
-        KickoutsStatsBar.Size = new System.Drawing.Size(500, 101);
+        KickoutsStatsBar.Size = new Size(607, 110);
         KickoutsStatsBar.TabIndex = 16;
         // 
         // GoalShotsStatBar
         // 
-        GoalShotsStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        GoalShotsStatBar.Location = new System.Drawing.Point(1367, 660);
-        GoalShotsStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        GoalShotsStatBar.AutoSize = true;
+        GoalShotsStatBar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        GoalShotsStatBar.Dock = DockStyle.Fill;
+        GoalShotsStatBar.Location = new Point(10, 400);
+        GoalShotsStatBar.Margin = new Padding(10);
         GoalShotsStatBar.Name = "GoalShotsStatBar";
-        GoalShotsStatBar.Size = new System.Drawing.Size(500, 101);
+        GoalShotsStatBar.Size = new Size(607, 110);
         GoalShotsStatBar.TabIndex = 17;
         // 
         // WidesStatBar
         // 
-        WidesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        WidesStatBar.Location = new System.Drawing.Point(1367, 769);
-        WidesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        WidesStatBar.AutoSize = true;
+        WidesStatBar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        WidesStatBar.Dock = DockStyle.Fill;
+        WidesStatBar.Location = new Point(10, 530);
+        WidesStatBar.Margin = new Padding(10);
         WidesStatBar.Name = "WidesStatBar";
-        WidesStatBar.Size = new System.Drawing.Size(500, 101);
+        WidesStatBar.Size = new Size(607, 110);
         WidesStatBar.TabIndex = 18;
         // 
         // FreesStatBar
         // 
-        FreesStatBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        FreesStatBar.Location = new System.Drawing.Point(1367, 878);
-        FreesStatBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        FreesStatBar.AutoSize = true;
+        FreesStatBar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        FreesStatBar.Dock = DockStyle.Fill;
+        FreesStatBar.Location = new Point(10, 660);
+        FreesStatBar.Margin = new Padding(10);
         FreesStatBar.Name = "FreesStatBar";
-        FreesStatBar.Size = new System.Drawing.Size(500, 101);
+        FreesStatBar.Size = new Size(607, 112);
         FreesStatBar.TabIndex = 20;
         // 
         // HalfLabel
         // 
-        HalfLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        HalfLabel.Location = new System.Drawing.Point(726, 75);
+        HalfLabel.AutoSize = true;
+        HalfLabel.Dock = DockStyle.Fill;
+        HalfLabel.Font = new Font("Segoe UI", 35F, FontStyle.Bold);
+        HalfLabel.Location = new Point(323, 10);
+        HalfLabel.Margin = new Padding(10);
         HalfLabel.Name = "HalfLabel";
-        HalfLabel.Size = new System.Drawing.Size(165, 50);
+        HalfLabel.Size = new Size(294, 65);
         HalfLabel.TabIndex = 24;
         HalfLabel.Text = "Second Half";
-        HalfLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        HalfLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // StartStopButton
         // 
-        StartStopButton.Font = new System.Drawing.Font("Segoe UI", 15F);
-        StartStopButton.Location = new System.Drawing.Point(730, 146);
+        StartStopButton.AutoSize = true;
+        StartStopButton.Dock = DockStyle.Fill;
+        StartStopButton.Font = new Font("Segoe UI", 15F);
+        StartStopButton.Location = new Point(3, 173);
         StartStopButton.Name = "StartStopButton";
-        StartStopButton.Size = new System.Drawing.Size(157, 38);
+        StartStopButton.Size = new Size(307, 80);
         StartStopButton.TabIndex = 25;
         StartStopButton.Text = "Start";
         StartStopButton.UseVisualStyleBackColor = true;
@@ -618,10 +648,12 @@ partial class MatchView
         // 
         // Pause
         // 
-        Pause.Font = new System.Drawing.Font("Segoe UI", 15F);
-        Pause.Location = new System.Drawing.Point(907, 146);
+        Pause.AutoSize = true;
+        Pause.Dock = DockStyle.Fill;
+        Pause.Font = new Font("Segoe UI", 15F);
+        Pause.Location = new Point(316, 173);
         Pause.Name = "Pause";
-        Pause.Size = new System.Drawing.Size(157, 38);
+        Pause.Size = new Size(308, 80);
         Pause.TabIndex = 26;
         Pause.Text = "Pause";
         Pause.UseVisualStyleBackColor = true;
@@ -629,278 +661,451 @@ partial class MatchView
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 15F);
-        label2.Location = new System.Drawing.Point(930, 26);
+        label2.AutoSize = true;
+        label2.Dock = DockStyle.Fill;
+        label2.Font = new Font("Segoe UI", 35F);
+        label2.Location = new Point(10, 95);
+        label2.Margin = new Padding(10);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(151, 39);
+        label2.Size = new Size(293, 65);
         label2.TabIndex = 27;
         label2.Text = "Time Gone";
-        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        label2.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label3
         // 
-        label3.Font = new System.Drawing.Font("Segoe UI", 15F);
-        label3.Location = new System.Drawing.Point(730, 25);
+        label3.AutoSize = true;
+        label3.BackColor = Color.FromArgb(255, 128, 0);
+        label3.Dock = DockStyle.Fill;
+        label3.Font = new Font("Segoe UI", 35F);
+        label3.Location = new Point(10, 10);
+        label3.Margin = new Padding(10);
         label3.Name = "label3";
-        label3.Size = new System.Drawing.Size(151, 39);
+        label3.Size = new Size(293, 65);
         label3.TabIndex = 28;
         label3.Text = "Current Half";
-        label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        label3.TextAlign = ContentAlignment.MiddleCenter;
         // 
-        // pictureBox4
+        // TimeLabel
         // 
-        pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        pictureBox4.Location = new System.Drawing.Point(907, 74);
-        pictureBox4.Name = "pictureBox4";
-        pictureBox4.Size = new System.Drawing.Size(176, 51);
-        pictureBox4.TabIndex = 29;
-        pictureBox4.TabStop = false;
-        // 
-        // MinutesLabel
-        // 
-        MinutesLabel.BackColor = System.Drawing.Color.Transparent;
-        MinutesLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-        MinutesLabel.Location = new System.Drawing.Point(931, 80);
-        MinutesLabel.Name = "MinutesLabel";
-        MinutesLabel.Size = new System.Drawing.Size(64, 39);
-        MinutesLabel.TabIndex = 30;
-        MinutesLabel.Text = "00";
-        MinutesLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-        // 
-        // label5
-        // 
-        label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-        label5.Location = new System.Drawing.Point(983, 78);
-        label5.Name = "label5";
-        label5.Size = new System.Drawing.Size(29, 39);
-        label5.TabIndex = 31;
-        label5.Text = ":";
-        label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        // 
-        // SecondsLabel
-        // 
-        SecondsLabel.BackColor = System.Drawing.Color.Transparent;
-        SecondsLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-        SecondsLabel.Location = new System.Drawing.Point(1001, 80);
-        SecondsLabel.Name = "SecondsLabel";
-        SecondsLabel.Size = new System.Drawing.Size(63, 39);
-        SecondsLabel.TabIndex = 32;
-        SecondsLabel.Text = "00";
-        SecondsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+        TimeLabel.AutoSize = true;
+        TimeLabel.BackColor = Color.Transparent;
+        TimeLabel.Dock = DockStyle.Fill;
+        TimeLabel.Font = new Font("Segoe UI", 38F, FontStyle.Bold);
+        TimeLabel.Location = new Point(323, 95);
+        TimeLabel.Margin = new Padding(10);
+        TimeLabel.Name = "TimeLabel";
+        TimeLabel.Size = new Size(294, 65);
+        TimeLabel.TabIndex = 30;
+        TimeLabel.Text = "00:00";
+        TimeLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // toolStripMenuItem10
         // 
         toolStripMenuItem10.Name = "toolStripMenuItem10";
-        toolStripMenuItem10.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem10.Size = new Size(32, 19);
         // 
         // EventListBox
         // 
+        EventListBox.Dock = DockStyle.Fill;
         EventListBox.FormattingEnabled = true;
-        EventListBox.Location = new System.Drawing.Point(723, 219);
+        EventListBox.Location = new Point(3, 265);
         EventListBox.Name = "EventListBox";
-        EventListBox.Size = new System.Drawing.Size(580, 544);
+        EventListBox.Size = new Size(627, 782);
         EventListBox.TabIndex = 33;
         EventListBox.KeyDown += EventListBox_KeyDown;
         // 
         // HomePitchLabel
         // 
-        HomePitchLabel.BackColor = System.Drawing.Color.Black;
-        HomePitchLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        HomePitchLabel.ForeColor = System.Drawing.Color.White;
-        HomePitchLabel.Location = new System.Drawing.Point(607, 28);
+        HomePitchLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        HomePitchLabel.BackColor = Color.Black;
+        HomePitchLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        HomePitchLabel.ForeColor = Color.White;
+        HomePitchLabel.Location = new Point(539, 0);
         HomePitchLabel.Name = "HomePitchLabel";
-        HomePitchLabel.Size = new System.Drawing.Size(93, 52);
+        HomePitchLabel.Size = new Size(93, 52);
         HomePitchLabel.TabIndex = 34;
         HomePitchLabel.Text = "Home";
-        HomePitchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        HomePitchLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // AwayPitchLabel
         // 
-        AwayPitchLabel.BackColor = System.Drawing.Color.Black;
-        AwayPitchLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        AwayPitchLabel.ForeColor = System.Drawing.Color.White;
-        AwayPitchLabel.Location = new System.Drawing.Point(607, 930);
+        AwayPitchLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        AwayPitchLabel.BackColor = Color.Black;
+        AwayPitchLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        AwayPitchLabel.ForeColor = Color.White;
+        AwayPitchLabel.Location = new Point(539, 989);
         AwayPitchLabel.Name = "AwayPitchLabel";
-        AwayPitchLabel.Size = new System.Drawing.Size(93, 52);
+        AwayPitchLabel.Size = new Size(93, 52);
         AwayPitchLabel.TabIndex = 37;
         AwayPitchLabel.Text = "Away";
-        AwayPitchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        AwayPitchLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // HomePitchHighlight
         // 
-        HomePitchHighlight.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)128)), ((int)((byte)0)));
-        HomePitchHighlight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        HomePitchHighlight.Location = new System.Drawing.Point(607, 70);
+        HomePitchHighlight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        HomePitchHighlight.BackColor = Color.FromArgb(255, 128, 0);
+        HomePitchHighlight.BorderStyle = BorderStyle.FixedSingle;
+        HomePitchHighlight.Location = new Point(539, 45);
         HomePitchHighlight.Name = "HomePitchHighlight";
-        HomePitchHighlight.Size = new System.Drawing.Size(93, 16);
+        HomePitchHighlight.Size = new Size(93, 16);
         HomePitchHighlight.TabIndex = 38;
         HomePitchHighlight.TabStop = false;
         // 
         // AwayPitchHighlight
         // 
-        AwayPitchHighlight.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)128)), ((int)((byte)0)));
-        AwayPitchHighlight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        AwayPitchHighlight.Location = new System.Drawing.Point(607, 976);
+        AwayPitchHighlight.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        AwayPitchHighlight.BackColor = Color.FromArgb(255, 128, 0);
+        AwayPitchHighlight.BorderStyle = BorderStyle.FixedSingle;
+        AwayPitchHighlight.Location = new Point(539, 1034);
         AwayPitchHighlight.Name = "AwayPitchHighlight";
-        AwayPitchHighlight.Size = new System.Drawing.Size(93, 16);
+        AwayPitchHighlight.Size = new Size(93, 16);
         AwayPitchHighlight.TabIndex = 39;
         AwayPitchHighlight.TabStop = false;
         // 
         // toolStripMenuItem12
         // 
         toolStripMenuItem12.Name = "toolStripMenuItem12";
-        toolStripMenuItem12.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem12.Size = new Size(32, 19);
         // 
         // toolStripMenuItem13
         // 
         toolStripMenuItem13.Name = "toolStripMenuItem13";
-        toolStripMenuItem13.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem13.Size = new Size(32, 19);
         toolStripMenuItem13.Text = "toolStripMenuItem13";
         // 
         // toolStripMenuItem14
         // 
         toolStripMenuItem14.Name = "toolStripMenuItem14";
-        toolStripMenuItem14.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem14.Size = new Size(32, 19);
         // 
         // toolStripSeparator1
         // 
         toolStripSeparator1.Name = "toolStripSeparator1";
-        toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
+        toolStripSeparator1.Size = new Size(6, 6);
         // 
         // toolStripSeparator2
         // 
         toolStripSeparator2.Name = "toolStripSeparator2";
-        toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
+        toolStripSeparator2.Size = new Size(6, 6);
         // 
         // toolStripMenuItem15
         // 
         toolStripMenuItem15.Name = "toolStripMenuItem15";
-        toolStripMenuItem15.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem15.Size = new Size(32, 19);
         // 
         // toolStripMenuItem16
         // 
         toolStripMenuItem16.Name = "toolStripMenuItem16";
-        toolStripMenuItem16.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem16.Size = new Size(32, 19);
         toolStripMenuItem16.Text = "toolStripMenuItem16";
         // 
         // toolStripMenuItem17
         // 
         toolStripMenuItem17.Name = "toolStripMenuItem17";
-        toolStripMenuItem17.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem17.Size = new Size(32, 19);
         toolStripMenuItem17.Text = "toolStripMenuItem17";
         // 
         // toolStripMenuItem18
         // 
         toolStripMenuItem18.Name = "toolStripMenuItem18";
-        toolStripMenuItem18.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem18.Size = new Size(32, 19);
         toolStripMenuItem18.Text = "toolStripMenuItem18";
         // 
         // toolStripMenuItem19
         // 
         toolStripMenuItem19.Name = "toolStripMenuItem19";
-        toolStripMenuItem19.Size = new System.Drawing.Size(32, 19);
+        toolStripMenuItem19.Size = new Size(32, 19);
         // 
         // HomeCardsButton
         // 
-        HomeCardsButton.Font = new System.Drawing.Font("Segoe UI", 15F);
-        HomeCardsButton.Location = new System.Drawing.Point(1474, 141);
+        HomeCardsButton.AutoSize = true;
+        HomeCardsButton.Dock = DockStyle.Fill;
+        HomeCardsButton.Font = new Font("Segoe UI", 15F);
+        HomeCardsButton.Location = new Point(0, 0);
         HomeCardsButton.Name = "HomeCardsButton";
-        HomeCardsButton.Size = new System.Drawing.Size(122, 50);
+        HomeCardsButton.Size = new Size(102, 42);
         HomeCardsButton.TabIndex = 40;
         HomeCardsButton.Text = "Cards";
         HomeCardsButton.UseVisualStyleBackColor = true;
         // 
         // AwayCardsButton
         // 
-        AwayCardsButton.Font = new System.Drawing.Font("Segoe UI", 15F);
-        AwayCardsButton.Location = new System.Drawing.Point(1769, 142);
+        AwayCardsButton.AutoSize = true;
+        AwayCardsButton.Dock = DockStyle.Fill;
+        AwayCardsButton.Font = new Font("Segoe UI", 15F);
+        AwayCardsButton.Location = new Point(0, 0);
         AwayCardsButton.Name = "AwayCardsButton";
-        AwayCardsButton.Size = new System.Drawing.Size(122, 50);
+        AwayCardsButton.Size = new Size(102, 42);
         AwayCardsButton.TabIndex = 41;
         AwayCardsButton.Text = "Cards";
         AwayCardsButton.UseVisualStyleBackColor = true;
         // 
         // HomeTeamCardedPlayers
         // 
+        HomeTeamCardedPlayers.Dock = DockStyle.Fill;
         HomeTeamCardedPlayers.FormattingEnabled = true;
-        HomeTeamCardedPlayers.Location = new System.Drawing.Point(1343, 215);
+        HomeTeamCardedPlayers.Location = new Point(0, 0);
         HomeTeamCardedPlayers.Name = "HomeTeamCardedPlayers";
-        HomeTeamCardedPlayers.Size = new System.Drawing.Size(260, 84);
+        HomeTeamCardedPlayers.Size = new Size(201, 80);
         HomeTeamCardedPlayers.TabIndex = 42;
         // 
         // AwayTeamCardedPlayers
         // 
+        AwayTeamCardedPlayers.Dock = DockStyle.Fill;
         AwayTeamCardedPlayers.FormattingEnabled = true;
-        AwayTeamCardedPlayers.Location = new System.Drawing.Point(1631, 216);
+        AwayTeamCardedPlayers.Location = new Point(0, 0);
         AwayTeamCardedPlayers.Name = "AwayTeamCardedPlayers";
-        AwayTeamCardedPlayers.Size = new System.Drawing.Size(260, 84);
+        AwayTeamCardedPlayers.Size = new Size(202, 80);
         AwayTeamCardedPlayers.TabIndex = 43;
         // 
         // EventListContextMenu
         // 
-        EventListContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+        EventListContextMenu.ImageScalingSize = new Size(20, 20);
         EventListContextMenu.Name = "EventListContextMenu";
-        EventListContextMenu.Size = new System.Drawing.Size(61, 4);
+        EventListContextMenu.Size = new Size(61, 4);
+        // 
+        // MainScreenSplitContainer
+        // 
+        MainScreenSplitContainer.Dock = DockStyle.Fill;
+        MainScreenSplitContainer.Location = new Point(0, 24);
+        MainScreenSplitContainer.Name = "MainScreenSplitContainer";
+        // 
+        // MainScreenSplitContainer.Panel1
+        // 
+        MainScreenSplitContainer.Panel1.Controls.Add(HomePitchLabel);
+        MainScreenSplitContainer.Panel1.Controls.Add(AwayPitchLabel);
+        MainScreenSplitContainer.Panel1.Controls.Add(HomePitchHighlight);
+        MainScreenSplitContainer.Panel1.Controls.Add(AwayPitchHighlight);
+        MainScreenSplitContainer.Panel1.Controls.Add(FootballFieldInput);
+        // 
+        // MainScreenSplitContainer.Panel2
+        // 
+        MainScreenSplitContainer.Panel2.Controls.Add(StatsViewTable);
+        MainScreenSplitContainer.Size = new Size(1902, 1050);
+        MainScreenSplitContainer.SplitterDistance = 632;
+        MainScreenSplitContainer.TabIndex = 44;
+        MainScreenSplitContainer.Text = "splitContainer1";
+        // 
+        // StatsViewTable
+        // 
+        StatsViewTable.ColumnCount = 2;
+        StatsViewTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        StatsViewTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        StatsViewTable.Controls.Add(TimeControlTable, 0, 0);
+        StatsViewTable.Controls.Add(EventListBox, 0, 1);
+        StatsViewTable.Controls.Add(ScorecardTable, 1, 0);
+        StatsViewTable.Controls.Add(StatsBarContainer, 1, 1);
+        StatsViewTable.Dock = DockStyle.Fill;
+        StatsViewTable.Location = new Point(0, 0);
+        StatsViewTable.Name = "StatsViewTable";
+        StatsViewTable.RowCount = 2;
+        StatsViewTable.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+        StatsViewTable.RowStyles.Add(new RowStyle(SizeType.Percent, 75F));
+        StatsViewTable.Size = new Size(1266, 1050);
+        StatsViewTable.TabIndex = 44;
+        // 
+        // TimeControlTable
+        // 
+        TimeControlTable.BackColor = Color.FromArgb(255, 128, 0);
+        TimeControlTable.ColumnCount = 2;
+        TimeControlTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+        TimeControlTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+        TimeControlTable.Controls.Add(TimeLabel, 1, 1);
+        TimeControlTable.Controls.Add(Pause, 1, 2);
+        TimeControlTable.Controls.Add(label3, 0, 0);
+        TimeControlTable.Controls.Add(StartStopButton, 0, 2);
+        TimeControlTable.Controls.Add(HalfLabel, 1, 0);
+        TimeControlTable.Controls.Add(label2, 0, 1);
+        TimeControlTable.Dock = DockStyle.Fill;
+        TimeControlTable.Location = new Point(3, 3);
+        TimeControlTable.Name = "TimeControlTable";
+        TimeControlTable.RowCount = 3;
+        TimeControlTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        TimeControlTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        TimeControlTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        TimeControlTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        TimeControlTable.Size = new Size(627, 256);
+        TimeControlTable.TabIndex = 33;
+        // 
+        // ScorecardTable
+        // 
+        ScorecardTable.BackColor = Color.FromArgb(255, 255, 192);
+        ScorecardTable.ColumnCount = 2;
+        ScorecardTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+        ScorecardTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+        ScorecardTable.Controls.Add(splitContainer2, 0, 2);
+        ScorecardTable.Controls.Add(AwayTeamScore, 1, 1);
+        ScorecardTable.Controls.Add(HomeTeamScore, 0, 1);
+        ScorecardTable.Controls.Add(AwayTeamName, 1, 0);
+        ScorecardTable.Controls.Add(HomeTeamName, 0, 0);
+        ScorecardTable.Controls.Add(splitContainer3, 1, 2);
+        ScorecardTable.Dock = DockStyle.Fill;
+        ScorecardTable.Location = new Point(636, 3);
+        ScorecardTable.Name = "ScorecardTable";
+        ScorecardTable.RowCount = 3;
+        ScorecardTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        ScorecardTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        ScorecardTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+        ScorecardTable.Size = new Size(627, 256);
+        ScorecardTable.TabIndex = 34;
+        // 
+        // splitContainer2
+        // 
+        splitContainer2.Dock = DockStyle.Fill;
+        splitContainer2.Location = new Point(3, 173);
+        splitContainer2.Name = "splitContainer2";
+        // 
+        // splitContainer2.Panel1
+        // 
+        splitContainer2.Panel1.Controls.Add(splitContainer4);
+        // 
+        // splitContainer2.Panel2
+        // 
+        splitContainer2.Panel2.Controls.Add(HomeTeamCardedPlayers);
+        splitContainer2.Size = new Size(307, 80);
+        splitContainer2.SplitterDistance = 102;
+        splitContainer2.TabIndex = 35;
+        // 
+        // splitContainer4
+        // 
+        splitContainer4.Dock = DockStyle.Fill;
+        splitContainer4.Location = new Point(0, 0);
+        splitContainer4.Name = "splitContainer4";
+        splitContainer4.Orientation = Orientation.Horizontal;
+        // 
+        // splitContainer4.Panel1
+        // 
+        splitContainer4.Panel1.Controls.Add(HomeTeamSubs);
+        // 
+        // splitContainer4.Panel2
+        // 
+        splitContainer4.Panel2.Controls.Add(HomeCardsButton);
+        splitContainer4.Size = new Size(102, 80);
+        splitContainer4.SplitterDistance = 34;
+        splitContainer4.TabIndex = 10;
+        // 
+        // splitContainer3
+        // 
+        splitContainer3.Dock = DockStyle.Fill;
+        splitContainer3.Location = new Point(316, 173);
+        splitContainer3.Name = "splitContainer3";
+        // 
+        // splitContainer3.Panel1
+        // 
+        splitContainer3.Panel1.Controls.Add(splitContainer5);
+        // 
+        // splitContainer3.Panel2
+        // 
+        splitContainer3.Panel2.Controls.Add(AwayTeamCardedPlayers);
+        splitContainer3.Size = new Size(308, 80);
+        splitContainer3.SplitterDistance = 102;
+        splitContainer3.TabIndex = 36;
+        // 
+        // splitContainer5
+        // 
+        splitContainer5.Dock = DockStyle.Fill;
+        splitContainer5.Location = new Point(0, 0);
+        splitContainer5.Name = "splitContainer5";
+        splitContainer5.Orientation = Orientation.Horizontal;
+        // 
+        // splitContainer5.Panel1
+        // 
+        splitContainer5.Panel1.Controls.Add(AwayTeamSubs);
+        // 
+        // splitContainer5.Panel2
+        // 
+        splitContainer5.Panel2.Controls.Add(AwayCardsButton);
+        splitContainer5.Size = new Size(102, 80);
+        splitContainer5.SplitterDistance = 34;
+        splitContainer5.TabIndex = 11;
+        // 
+        // StatsBarContainer
+        // 
+        StatsBarContainer.BackColor = SystemColors.ActiveCaption;
+        StatsBarContainer.ColumnCount = 1;
+        StatsBarContainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        StatsBarContainer.Controls.Add(FreesStatBar, 0, 5);
+        StatsBarContainer.Controls.Add(WidesStatBar, 0, 4);
+        StatsBarContainer.Controls.Add(GoalShotsStatBar, 0, 3);
+        StatsBarContainer.Controls.Add(ShotsStatBar, 0, 2);
+        StatsBarContainer.Controls.Add(KickoutsStatsBar, 0, 1);
+        StatsBarContainer.Controls.Add(TurnoverStatBar, 0, 0);
+        StatsBarContainer.Dock = DockStyle.Fill;
+        StatsBarContainer.Location = new Point(636, 265);
+        StatsBarContainer.Name = "StatsBarContainer";
+        StatsBarContainer.RowCount = 6;
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+        StatsBarContainer.Size = new Size(627, 782);
+        StatsBarContainer.TabIndex = 35;
         // 
         // MatchView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-        AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        ClientSize = new System.Drawing.Size(1902, 996);
-        Controls.Add(AwayTeamCardedPlayers);
-        Controls.Add(HomeTeamCardedPlayers);
-        Controls.Add(AwayCardsButton);
-        Controls.Add(HomeCardsButton);
-        Controls.Add(AwayPitchHighlight);
-        Controls.Add(HomePitchHighlight);
-        Controls.Add(AwayPitchLabel);
-        Controls.Add(HomePitchLabel);
-        Controls.Add(EventListBox);
-        Controls.Add(SecondsLabel);
-        Controls.Add(label5);
-        Controls.Add(MinutesLabel);
-        Controls.Add(pictureBox4);
-        Controls.Add(label3);
-        Controls.Add(label2);
-        Controls.Add(Pause);
-        Controls.Add(StartStopButton);
-        Controls.Add(HalfLabel);
-        Controls.Add(FreesStatBar);
-        Controls.Add(WidesStatBar);
-        Controls.Add(GoalShotsStatBar);
-        Controls.Add(KickoutsStatsBar);
-        Controls.Add(ShotsStatBar);
-        Controls.Add(TurnoverStatBar);
-        Controls.Add(pictureBox3);
-        Controls.Add(AwayTeamSubs);
-        Controls.Add(HomeTeamSubs);
-        Controls.Add(pictureBox2);
-        Controls.Add(pictureBox1);
-        Controls.Add(HomeTeamScore);
-        Controls.Add(AwayTeamScore);
-        Controls.Add(AwayTeamName);
-        Controls.Add(HomeTeamName);
-        Controls.Add(FootballFieldInput);
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        AutoScroll = true;
+        AutoSize = true;
+        AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        BackColor = SystemColors.ControlDarkDark;
+        ClientSize = new Size(1902, 1074);
+        Controls.Add(MainScreenSplitContainer);
         Controls.Add(HeaderBar);
         DoubleBuffered = true;
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        Icon = (Icon)resources.GetObject("$this.Icon");
         MainMenuStrip = HeaderBar;
-        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        Margin = new Padding(3, 4, 3, 4);
+        MinimumSize = new Size(1918, 1113);
+        Name = "MatchView";
         Text = "MatchView";
         Load += MatchView_Load;
-        ((System.ComponentModel.ISupportInitialize)FootballFieldInput).EndInit();
+        ((ISupportInitialize)FootballFieldInput).EndInit();
         HeaderBar.ResumeLayout(false);
         HeaderBar.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-        ((System.ComponentModel.ISupportInitialize)HomePitchHighlight).EndInit();
-        ((System.ComponentModel.ISupportInitialize)AwayPitchHighlight).EndInit();
+        ((ISupportInitialize)HomePitchHighlight).EndInit();
+        ((ISupportInitialize)AwayPitchHighlight).EndInit();
+        MainScreenSplitContainer.Panel1.ResumeLayout(false);
+        MainScreenSplitContainer.Panel2.ResumeLayout(false);
+        ((ISupportInitialize)MainScreenSplitContainer).EndInit();
+        MainScreenSplitContainer.ResumeLayout(false);
+        StatsViewTable.ResumeLayout(false);
+        TimeControlTable.ResumeLayout(false);
+        TimeControlTable.PerformLayout();
+        ScorecardTable.ResumeLayout(false);
+        ScorecardTable.PerformLayout();
+        splitContainer2.Panel1.ResumeLayout(false);
+        splitContainer2.Panel2.ResumeLayout(false);
+        ((ISupportInitialize)splitContainer2).EndInit();
+        splitContainer2.ResumeLayout(false);
+        splitContainer4.Panel1.ResumeLayout(false);
+        splitContainer4.Panel1.PerformLayout();
+        splitContainer4.Panel2.ResumeLayout(false);
+        splitContainer4.Panel2.PerformLayout();
+        ((ISupportInitialize)splitContainer4).EndInit();
+        splitContainer4.ResumeLayout(false);
+        splitContainer3.Panel1.ResumeLayout(false);
+        splitContainer3.Panel2.ResumeLayout(false);
+        ((ISupportInitialize)splitContainer3).EndInit();
+        splitContainer3.ResumeLayout(false);
+        splitContainer5.Panel1.ResumeLayout(false);
+        splitContainer5.Panel1.PerformLayout();
+        splitContainer5.Panel2.ResumeLayout(false);
+        splitContainer5.Panel2.PerformLayout();
+        ((ISupportInitialize)splitContainer5).EndInit();
+        splitContainer5.ResumeLayout(false);
+        StatsBarContainer.ResumeLayout(false);
+        StatsBarContainer.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.SplitContainer MainScreenSplitContainer;
+
+    private System.Windows.Forms.TableLayoutPanel StatsViewTable;
 
     private System.Windows.Forms.ToolStripMenuItem DisciplineReport;
 
@@ -954,14 +1159,10 @@ partial class MatchView
 
     private System.Windows.Forms.SaveFileDialog SaveFileDialog;
 
-    private System.Windows.Forms.Label SecondsLabel;
-
-    private System.Windows.Forms.Label MinutesLabel;
+    private System.Windows.Forms.Label TimeLabel;
     private System.Windows.Forms.Label HalfLabel;
-    private System.Windows.Forms.Label label5;
 
     private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.PictureBox pictureBox4;
 
     private System.Windows.Forms.Button StartStopButton;
     private System.Windows.Forms.Button Pause;
@@ -976,14 +1177,8 @@ partial class MatchView
 
     private StatsTracker.View_Elements.StatisticBar TurnoverStatBar;
 
-    private System.Windows.Forms.PictureBox pictureBox3;
-
     private System.Windows.Forms.Button HomeTeamSubs;
     private System.Windows.Forms.Button AwayTeamSubs;
-
-    private System.Windows.Forms.PictureBox pictureBox2;
-
-    private System.Windows.Forms.PictureBox pictureBox1;
 
     private System.Windows.Forms.Label AwayTeamScore;
     private System.Windows.Forms.Label HomeTeamScore;
@@ -1046,4 +1241,12 @@ partial class MatchView
     private System.Windows.Forms.PictureBox FootballFieldInput;
 
     #endregion
+
+    private TableLayoutPanel TimeControlTable;
+    private TableLayoutPanel ScorecardTable;
+    private SplitContainer splitContainer2;
+    private SplitContainer splitContainer4;
+    private SplitContainer splitContainer3;
+    private SplitContainer splitContainer5;
+    private TableLayoutPanel StatsBarContainer;
 }

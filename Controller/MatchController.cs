@@ -712,8 +712,7 @@ public class MatchController : IStatsController
     private void UpdateTimeDisplay(object? sender, EventArgs e)
     {
         TimeSpan elapsedTime = _match.GetElapsedTime();
-        _view.GetMinutesLabel().Text = GetTimeValue(elapsedTime.Minutes);
-        _view.GetSecondsLabel().Text = GetTimeValue(elapsedTime.Seconds);
+        _view.GetTimeLabel().Text = GetTimeValue(elapsedTime.Minutes) + ":" + GetTimeValue(elapsedTime.Seconds);
         
         UpdateCardedPlayersLists();
     }

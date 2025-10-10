@@ -123,17 +123,12 @@ public partial class MatchView : Form, IStatsView
 
     public StatisticBar[] GetAllStatisticBars()
     {
-        return Controls.OfType<StatisticBar>().ToArray();
+        return StatsBarContainer.Controls.OfType<StatisticBar>().ToArray();
     }
 
-    public Label GetMinutesLabel()
+    public Label GetTimeLabel()
     {
-        return MinutesLabel;
-    }
-
-    public Label GetSecondsLabel()
-    {
-        return SecondsLabel;
+        return TimeLabel;
     }
 
     public Label GetHalfLabel()
