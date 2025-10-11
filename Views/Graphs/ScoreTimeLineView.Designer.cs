@@ -31,41 +31,65 @@ partial class ScoreTimeLineView
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScoreTimeLineView));
-        label1 = new System.Windows.Forms.Label();
-        label2 = new System.Windows.Forms.Label();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(ScoreTimeLineView));
+        label1 = new Label();
+        label2 = new Label();
+        ViewTable = new TableLayoutPanel();
+        ViewTable.SuspendLayout();
         SuspendLayout();
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(314, -7);
+        label1.Dock = DockStyle.Fill;
+        label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label1.Location = new Point(5, 5);
+        label1.Margin = new Padding(5);
         label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(133, 34);
+        label1.Size = new Size(822, 40);
         label1.TabIndex = 0;
         label1.Text = "First Half";
-        label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        label1.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(1378, -7);
+        label2.Dock = DockStyle.Fill;
+        label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label2.Location = new Point(837, 5);
+        label2.Margin = new Padding(5);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(186, 34);
+        label2.Size = new Size(822, 40);
         label2.TabIndex = 1;
         label2.Text = "Second Half";
-        label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        label2.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // ViewTable
+        // 
+        ViewTable.ColumnCount = 2;
+        ViewTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        ViewTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        ViewTable.Controls.Add(label2, 1, 0);
+        ViewTable.Controls.Add(label1, 0, 0);
+        ViewTable.Dock = DockStyle.Fill;
+        ViewTable.Location = new Point(0, 0);
+        ViewTable.Name = "ViewTable";
+        ViewTable.RowCount = 2;
+        ViewTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+        ViewTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        ViewTable.Size = new Size(1664, 452);
+        ViewTable.TabIndex = 2;
         // 
         // ScoreTimeLineView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1902, 603);
-        Controls.Add(label2);
-        Controls.Add(label1);
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1664, 452);
+        Controls.Add(ViewTable);
+        Icon = (Icon)resources.GetObject("$this.Icon");
+        Margin = new Padding(3, 2, 3, 2);
+        Name = "ScoreTimeLineView";
         Text = "Score Timeline";
         Load += ScoreTimeLineView_Load;
+        ViewTable.ResumeLayout(false);
         ResumeLayout(false);
     }
 
@@ -74,4 +98,6 @@ partial class ScoreTimeLineView
     private System.Windows.Forms.Label label1;
 
     #endregion
+
+    private TableLayoutPanel ViewTable;
 }
