@@ -31,687 +31,666 @@ partial class PlayerPerformanceChart
     /// </summary>
     private void InitializeComponent()
     {
-        TeamComboBox = new System.Windows.Forms.ComboBox();
-        PlayerComboBox = new System.Windows.Forms.ComboBox();
-        label1 = new System.Windows.Forms.Label();
-        label2 = new System.Windows.Forms.Label();
-        label3 = new System.Windows.Forms.Label();
-        label4 = new System.Windows.Forms.Label();
-        label5 = new System.Windows.Forms.Label();
-        label6 = new System.Windows.Forms.Label();
-        label7 = new System.Windows.Forms.Label();
-        label8 = new System.Windows.Forms.Label();
-        label9 = new System.Windows.Forms.Label();
-        pictureBox2 = new System.Windows.Forms.PictureBox();
-        pictureBox3 = new System.Windows.Forms.PictureBox();
-        pictureBox4 = new System.Windows.Forms.PictureBox();
-        pictureBox5 = new System.Windows.Forms.PictureBox();
-        pictureBox6 = new System.Windows.Forms.PictureBox();
-        pictureBox7 = new System.Windows.Forms.PictureBox();
-        pictureBox8 = new System.Windows.Forms.PictureBox();
-        pictureBox9 = new System.Windows.Forms.PictureBox();
-        pictureBox10 = new System.Windows.Forms.PictureBox();
-        pictureBox11 = new System.Windows.Forms.PictureBox();
-        pictureBox12 = new System.Windows.Forms.PictureBox();
-        pictureBox13 = new System.Windows.Forms.PictureBox();
-        pictureBox14 = new System.Windows.Forms.PictureBox();
-        label10 = new System.Windows.Forms.Label();
-        label11 = new System.Windows.Forms.Label();
-        label12 = new System.Windows.Forms.Label();
-        FHTOWon = new System.Windows.Forms.Label();
-        FHTOLost = new System.Windows.Forms.Label();
-        FHKOWon = new System.Windows.Forms.Label();
-        FHPointScored = new System.Windows.Forms.Label();
-        FH2PointScored = new System.Windows.Forms.Label();
-        FHGoalScored = new System.Windows.Forms.Label();
-        FHMisses = new System.Windows.Forms.Label();
-        FHFrees = new System.Windows.Forms.Label();
-        FHScoreableFrees = new System.Windows.Forms.Label();
-        SHMisses = new System.Windows.Forms.Label();
-        SHGoalScored = new System.Windows.Forms.Label();
-        SH2PointScored = new System.Windows.Forms.Label();
-        SHPointScored = new System.Windows.Forms.Label();
-        SHKOWon = new System.Windows.Forms.Label();
-        SHTOLost = new System.Windows.Forms.Label();
-        SHTOWon = new System.Windows.Forms.Label();
-        SHScoreableFrees = new System.Windows.Forms.Label();
-        SHFrees = new System.Windows.Forms.Label();
-        TOTFrees = new System.Windows.Forms.Label();
-        TOTMisses = new System.Windows.Forms.Label();
-        TOTGoalScored = new System.Windows.Forms.Label();
-        TOT2PointScored = new System.Windows.Forms.Label();
-        TOTPointScored = new System.Windows.Forms.Label();
-        TOTKOWon = new System.Windows.Forms.Label();
-        TOTTOLost = new System.Windows.Forms.Label();
-        TOTTOWon = new System.Windows.Forms.Label();
-        TOTScoreableFrees = new System.Windows.Forms.Label();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(PlayerPerformanceChart));
+        TeamComboBox = new ComboBox();
+        PlayerComboBox = new ComboBox();
+        label1 = new Label();
+        label2 = new Label();
+        label3 = new Label();
+        label4 = new Label();
+        label5 = new Label();
+        label6 = new Label();
+        label7 = new Label();
+        label8 = new Label();
+        label9 = new Label();
+        label10 = new Label();
+        label11 = new Label();
+        label12 = new Label();
+        FHTOWon = new Label();
+        FHTOLost = new Label();
+        FHKOWon = new Label();
+        FHPointScored = new Label();
+        FH2PointScored = new Label();
+        FHGoalScored = new Label();
+        FHMisses = new Label();
+        FHFrees = new Label();
+        FHScoreableFrees = new Label();
+        SHMisses = new Label();
+        SHGoalScored = new Label();
+        SH2PointScored = new Label();
+        SHPointScored = new Label();
+        SHKOWon = new Label();
+        SHTOLost = new Label();
+        SHTOWon = new Label();
+        SHScoreableFrees = new Label();
+        SHFrees = new Label();
+        TOTFrees = new Label();
+        TOTMisses = new Label();
+        TOTGoalScored = new Label();
+        TOT2PointScored = new Label();
+        TOTPointScored = new Label();
+        TOTKOWon = new Label();
+        TOTTOLost = new Label();
+        TOTTOWon = new Label();
+        TOTScoreableFrees = new Label();
+        MainSplitController = new SplitContainer();
+        splitContainer2 = new SplitContainer();
+        StatTable = new TableLayoutPanel();
+        ((ISupportInitialize)MainSplitController).BeginInit();
+        MainSplitController.Panel2.SuspendLayout();
+        MainSplitController.SuspendLayout();
+        ((ISupportInitialize)splitContainer2).BeginInit();
+        splitContainer2.Panel1.SuspendLayout();
+        splitContainer2.Panel2.SuspendLayout();
+        splitContainer2.SuspendLayout();
+        StatTable.SuspendLayout();
         SuspendLayout();
         // 
         // TeamComboBox
         // 
         TeamComboBox.FormattingEnabled = true;
-        TeamComboBox.Location = new System.Drawing.Point(516, 10);
+        TeamComboBox.Location = new Point(3, 8);
+        TeamComboBox.Margin = new Padding(5);
         TeamComboBox.Name = "TeamComboBox";
-        TeamComboBox.Size = new System.Drawing.Size(200, 28);
+        TeamComboBox.Size = new Size(176, 23);
         TeamComboBox.TabIndex = 1;
         // 
         // PlayerComboBox
         // 
         PlayerComboBox.FormattingEnabled = true;
-        PlayerComboBox.Location = new System.Drawing.Point(722, 10);
+        PlayerComboBox.Location = new Point(185, 8);
+        PlayerComboBox.Margin = new Padding(5);
         PlayerComboBox.Name = "PlayerComboBox";
-        PlayerComboBox.Size = new System.Drawing.Size(200, 28);
+        PlayerComboBox.Size = new Size(176, 23);
         PlayerComboBox.TabIndex = 2;
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(516, 99);
+        label1.Dock = DockStyle.Fill;
+        label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label1.Location = new Point(8, 45);
+        label1.Margin = new Padding(5);
         label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(197, 32);
+        label1.Size = new Size(232, 24);
         label1.TabIndex = 3;
         label1.Text = "Turnovers Won";
-        label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label1.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(516, 151);
+        label2.Dock = DockStyle.Fill;
+        label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label2.Location = new Point(8, 82);
+        label2.Margin = new Padding(5);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(197, 32);
+        label2.Size = new Size(232, 24);
         label2.TabIndex = 4;
         label2.Text = "Turnovers Lost";
-        label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label2.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label3
         // 
-        label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label3.Location = new System.Drawing.Point(516, 203);
+        label3.Dock = DockStyle.Fill;
+        label3.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label3.Location = new Point(8, 119);
+        label3.Margin = new Padding(5);
         label3.Name = "label3";
-        label3.Size = new System.Drawing.Size(197, 32);
+        label3.Size = new Size(232, 24);
         label3.TabIndex = 5;
         label3.Text = "Kickouts Won";
-        label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label3.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label4
         // 
-        label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label4.Location = new System.Drawing.Point(516, 255);
+        label4.Dock = DockStyle.Fill;
+        label4.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label4.Location = new Point(8, 156);
+        label4.Margin = new Padding(5);
         label4.Name = "label4";
-        label4.Size = new System.Drawing.Size(197, 32);
+        label4.Size = new Size(232, 24);
         label4.TabIndex = 6;
         label4.Text = "Points Scored";
-        label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label4.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label5
         // 
-        label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label5.Location = new System.Drawing.Point(516, 307);
+        label5.Dock = DockStyle.Fill;
+        label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label5.Location = new Point(8, 193);
+        label5.Margin = new Padding(5);
         label5.Name = "label5";
-        label5.Size = new System.Drawing.Size(207, 32);
+        label5.Size = new Size(232, 24);
         label5.TabIndex = 7;
         label5.Text = "2-Points Scored";
-        label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label5.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label6
         // 
-        label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label6.Location = new System.Drawing.Point(513, 359);
+        label6.Dock = DockStyle.Fill;
+        label6.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label6.Location = new Point(8, 230);
+        label6.Margin = new Padding(5);
         label6.Name = "label6";
-        label6.Size = new System.Drawing.Size(197, 32);
+        label6.Size = new Size(232, 24);
         label6.TabIndex = 8;
         label6.Text = "Goals Scored";
-        label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label6.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label7
         // 
-        label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label7.Location = new System.Drawing.Point(516, 411);
+        label7.Dock = DockStyle.Fill;
+        label7.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label7.Location = new Point(8, 267);
+        label7.Margin = new Padding(5);
         label7.Name = "label7";
-        label7.Size = new System.Drawing.Size(197, 32);
+        label7.Size = new Size(232, 24);
         label7.TabIndex = 9;
         label7.Text = "Misses";
-        label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label7.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label8
         // 
-        label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label8.Location = new System.Drawing.Point(516, 515);
+        label8.Dock = DockStyle.Fill;
+        label8.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label8.Location = new Point(8, 304);
+        label8.Margin = new Padding(5);
         label8.Name = "label8";
-        label8.Size = new System.Drawing.Size(207, 32);
+        label8.Size = new Size(232, 24);
         label8.TabIndex = 10;
         label8.Text = "Scoreable Frees";
-        label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label8.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label9
         // 
-        label9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label9.Location = new System.Drawing.Point(516, 458);
+        label9.Dock = DockStyle.Fill;
+        label9.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label9.Location = new Point(8, 341);
+        label9.Margin = new Padding(5);
         label9.Name = "label9";
-        label9.Size = new System.Drawing.Size(207, 32);
+        label9.Size = new Size(232, 33);
         label9.TabIndex = 11;
         label9.Text = "Frees Conceded";
-        label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        // 
-        // pictureBox2
-        // 
-        pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox2.Location = new System.Drawing.Point(513, 82);
-        pictureBox2.Name = "pictureBox2";
-        pictureBox2.Size = new System.Drawing.Size(596, 14);
-        pictureBox2.TabIndex = 12;
-        pictureBox2.TabStop = false;
-        // 
-        // pictureBox3
-        // 
-        pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox3.Location = new System.Drawing.Point(513, 134);
-        pictureBox3.Name = "pictureBox3";
-        pictureBox3.Size = new System.Drawing.Size(596, 14);
-        pictureBox3.TabIndex = 13;
-        pictureBox3.TabStop = false;
-        // 
-        // pictureBox4
-        // 
-        pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox4.Location = new System.Drawing.Point(513, 186);
-        pictureBox4.Name = "pictureBox4";
-        pictureBox4.Size = new System.Drawing.Size(596, 14);
-        pictureBox4.TabIndex = 14;
-        pictureBox4.TabStop = false;
-        // 
-        // pictureBox5
-        // 
-        pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox5.Location = new System.Drawing.Point(513, 238);
-        pictureBox5.Name = "pictureBox5";
-        pictureBox5.Size = new System.Drawing.Size(596, 14);
-        pictureBox5.TabIndex = 15;
-        pictureBox5.TabStop = false;
-        // 
-        // pictureBox6
-        // 
-        pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox6.Location = new System.Drawing.Point(513, 290);
-        pictureBox6.Name = "pictureBox6";
-        pictureBox6.Size = new System.Drawing.Size(596, 14);
-        pictureBox6.TabIndex = 16;
-        pictureBox6.TabStop = false;
-        // 
-        // pictureBox7
-        // 
-        pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox7.Location = new System.Drawing.Point(513, 342);
-        pictureBox7.Name = "pictureBox7";
-        pictureBox7.Size = new System.Drawing.Size(596, 14);
-        pictureBox7.TabIndex = 17;
-        pictureBox7.TabStop = false;
-        // 
-        // pictureBox8
-        // 
-        pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox8.Location = new System.Drawing.Point(513, 394);
-        pictureBox8.Name = "pictureBox8";
-        pictureBox8.Size = new System.Drawing.Size(596, 14);
-        pictureBox8.TabIndex = 18;
-        pictureBox8.TabStop = false;
-        // 
-        // pictureBox9
-        // 
-        pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox9.Location = new System.Drawing.Point(513, 446);
-        pictureBox9.Name = "pictureBox9";
-        pictureBox9.Size = new System.Drawing.Size(596, 14);
-        pictureBox9.TabIndex = 19;
-        pictureBox9.TabStop = false;
-        // 
-        // pictureBox10
-        // 
-        pictureBox10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox10.Location = new System.Drawing.Point(513, 498);
-        pictureBox10.Name = "pictureBox10";
-        pictureBox10.Size = new System.Drawing.Size(596, 14);
-        pictureBox10.TabIndex = 20;
-        pictureBox10.TabStop = false;
-        // 
-        // pictureBox11
-        // 
-        pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox11.Location = new System.Drawing.Point(513, 550);
-        pictureBox11.Name = "pictureBox11";
-        pictureBox11.Size = new System.Drawing.Size(596, 14);
-        pictureBox11.TabIndex = 21;
-        pictureBox11.TabStop = false;
-        // 
-        // pictureBox12
-        // 
-        pictureBox12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox12.Location = new System.Drawing.Point(722, 90);
-        pictureBox12.Name = "pictureBox12";
-        pictureBox12.Size = new System.Drawing.Size(13, 474);
-        pictureBox12.TabIndex = 22;
-        pictureBox12.TabStop = false;
-        // 
-        // pictureBox13
-        // 
-        pictureBox13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox13.Location = new System.Drawing.Point(853, 90);
-        pictureBox13.Name = "pictureBox13";
-        pictureBox13.Size = new System.Drawing.Size(13, 474);
-        pictureBox13.TabIndex = 23;
-        pictureBox13.TabStop = false;
-        // 
-        // pictureBox14
-        // 
-        pictureBox14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox14.Location = new System.Drawing.Point(984, 90);
-        pictureBox14.Name = "pictureBox14";
-        pictureBox14.Size = new System.Drawing.Size(13, 474);
-        pictureBox14.TabIndex = 24;
-        pictureBox14.TabStop = false;
+        label9.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // label10
         // 
-        label10.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label10.Location = new System.Drawing.Point(762, 47);
+        label10.Dock = DockStyle.Fill;
+        label10.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label10.Location = new Point(253, 8);
+        label10.Margin = new Padding(5);
         label10.Name = "label10";
-        label10.Size = new System.Drawing.Size(58, 32);
+        label10.Size = new Size(108, 24);
         label10.TabIndex = 25;
         label10.Text = "1st";
-        label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label10.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label11
         // 
-        label11.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label11.Location = new System.Drawing.Point(891, 47);
+        label11.Dock = DockStyle.Fill;
+        label11.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label11.Location = new Point(374, 8);
+        label11.Margin = new Padding(5);
         label11.Name = "label11";
-        label11.Size = new System.Drawing.Size(63, 32);
+        label11.Size = new Size(108, 24);
         label11.TabIndex = 26;
         label11.Text = "2nd";
-        label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label11.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label12
         // 
-        label12.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        label12.Location = new System.Drawing.Point(1014, 47);
+        label12.Dock = DockStyle.Fill;
+        label12.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        label12.Location = new Point(495, 8);
+        label12.Margin = new Padding(5);
         label12.Name = "label12";
-        label12.Size = new System.Drawing.Size(83, 32);
+        label12.Size = new Size(147, 24);
         label12.TabIndex = 27;
         label12.Text = "Total";
-        label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+        label12.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHTOWon
         // 
-        FHTOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHTOWon.Location = new System.Drawing.Point(741, 99);
+        FHTOWon.Dock = DockStyle.Fill;
+        FHTOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHTOWon.Location = new Point(253, 45);
+        FHTOWon.Margin = new Padding(5);
         FHTOWon.Name = "FHTOWon";
-        FHTOWon.Size = new System.Drawing.Size(106, 32);
+        FHTOWon.Size = new Size(108, 24);
         FHTOWon.TabIndex = 28;
         FHTOWon.Text = "00";
-        FHTOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHTOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHTOLost
         // 
-        FHTOLost.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHTOLost.Location = new System.Drawing.Point(741, 151);
+        FHTOLost.Dock = DockStyle.Fill;
+        FHTOLost.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHTOLost.Location = new Point(253, 82);
+        FHTOLost.Margin = new Padding(5);
         FHTOLost.Name = "FHTOLost";
-        FHTOLost.Size = new System.Drawing.Size(106, 32);
+        FHTOLost.Size = new Size(108, 24);
         FHTOLost.TabIndex = 29;
         FHTOLost.Text = "00";
-        FHTOLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHTOLost.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHKOWon
         // 
-        FHKOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHKOWon.Location = new System.Drawing.Point(741, 203);
+        FHKOWon.Dock = DockStyle.Fill;
+        FHKOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHKOWon.Location = new Point(253, 119);
+        FHKOWon.Margin = new Padding(5);
         FHKOWon.Name = "FHKOWon";
-        FHKOWon.Size = new System.Drawing.Size(106, 32);
+        FHKOWon.Size = new Size(108, 24);
         FHKOWon.TabIndex = 30;
         FHKOWon.Text = "00";
-        FHKOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHKOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHPointScored
         // 
-        FHPointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHPointScored.Location = new System.Drawing.Point(741, 255);
+        FHPointScored.Dock = DockStyle.Fill;
+        FHPointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHPointScored.Location = new Point(253, 156);
+        FHPointScored.Margin = new Padding(5);
         FHPointScored.Name = "FHPointScored";
-        FHPointScored.Size = new System.Drawing.Size(106, 32);
+        FHPointScored.Size = new Size(108, 24);
         FHPointScored.TabIndex = 31;
         FHPointScored.Text = "00";
-        FHPointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHPointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FH2PointScored
         // 
-        FH2PointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FH2PointScored.Location = new System.Drawing.Point(741, 307);
+        FH2PointScored.Dock = DockStyle.Fill;
+        FH2PointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FH2PointScored.Location = new Point(253, 193);
+        FH2PointScored.Margin = new Padding(5);
         FH2PointScored.Name = "FH2PointScored";
-        FH2PointScored.Size = new System.Drawing.Size(106, 32);
+        FH2PointScored.Size = new Size(108, 24);
         FH2PointScored.TabIndex = 32;
         FH2PointScored.Text = "00";
-        FH2PointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FH2PointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHGoalScored
         // 
-        FHGoalScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHGoalScored.Location = new System.Drawing.Point(741, 359);
+        FHGoalScored.Dock = DockStyle.Fill;
+        FHGoalScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHGoalScored.Location = new Point(253, 230);
+        FHGoalScored.Margin = new Padding(5);
         FHGoalScored.Name = "FHGoalScored";
-        FHGoalScored.Size = new System.Drawing.Size(106, 32);
+        FHGoalScored.Size = new Size(108, 24);
         FHGoalScored.TabIndex = 33;
         FHGoalScored.Text = "00";
-        FHGoalScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHGoalScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHMisses
         // 
-        FHMisses.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHMisses.Location = new System.Drawing.Point(741, 411);
+        FHMisses.Dock = DockStyle.Fill;
+        FHMisses.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHMisses.Location = new Point(253, 267);
+        FHMisses.Margin = new Padding(5);
         FHMisses.Name = "FHMisses";
-        FHMisses.Size = new System.Drawing.Size(106, 32);
+        FHMisses.Size = new Size(108, 24);
         FHMisses.TabIndex = 34;
         FHMisses.Text = "00";
-        FHMisses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHMisses.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHFrees
         // 
-        FHFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHFrees.Location = new System.Drawing.Point(741, 463);
+        FHFrees.Dock = DockStyle.Fill;
+        FHFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHFrees.Location = new Point(253, 341);
+        FHFrees.Margin = new Padding(5);
         FHFrees.Name = "FHFrees";
-        FHFrees.Size = new System.Drawing.Size(106, 32);
+        FHFrees.Size = new Size(108, 33);
         FHFrees.TabIndex = 35;
         FHFrees.Text = "00";
-        FHFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHFrees.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // FHScoreableFrees
         // 
-        FHScoreableFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        FHScoreableFrees.Location = new System.Drawing.Point(741, 515);
+        FHScoreableFrees.Dock = DockStyle.Fill;
+        FHScoreableFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        FHScoreableFrees.Location = new Point(253, 304);
+        FHScoreableFrees.Margin = new Padding(5);
         FHScoreableFrees.Name = "FHScoreableFrees";
-        FHScoreableFrees.Size = new System.Drawing.Size(106, 32);
+        FHScoreableFrees.Size = new Size(108, 24);
         FHScoreableFrees.TabIndex = 36;
         FHScoreableFrees.Text = "00";
-        FHScoreableFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        FHScoreableFrees.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHMisses
         // 
-        SHMisses.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHMisses.Location = new System.Drawing.Point(872, 411);
+        SHMisses.Dock = DockStyle.Fill;
+        SHMisses.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHMisses.Location = new Point(374, 267);
+        SHMisses.Margin = new Padding(5);
         SHMisses.Name = "SHMisses";
-        SHMisses.Size = new System.Drawing.Size(106, 32);
+        SHMisses.Size = new Size(108, 24);
         SHMisses.TabIndex = 37;
         SHMisses.Text = "00";
-        SHMisses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHMisses.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHGoalScored
         // 
-        SHGoalScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHGoalScored.Location = new System.Drawing.Point(872, 359);
+        SHGoalScored.Dock = DockStyle.Fill;
+        SHGoalScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHGoalScored.Location = new Point(374, 230);
+        SHGoalScored.Margin = new Padding(5);
         SHGoalScored.Name = "SHGoalScored";
-        SHGoalScored.Size = new System.Drawing.Size(106, 32);
+        SHGoalScored.Size = new Size(108, 24);
         SHGoalScored.TabIndex = 38;
         SHGoalScored.Text = "00";
-        SHGoalScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHGoalScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SH2PointScored
         // 
-        SH2PointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SH2PointScored.Location = new System.Drawing.Point(872, 307);
+        SH2PointScored.Dock = DockStyle.Fill;
+        SH2PointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SH2PointScored.Location = new Point(374, 193);
+        SH2PointScored.Margin = new Padding(5);
         SH2PointScored.Name = "SH2PointScored";
-        SH2PointScored.Size = new System.Drawing.Size(106, 32);
+        SH2PointScored.Size = new Size(108, 24);
         SH2PointScored.TabIndex = 39;
         SH2PointScored.Text = "00";
-        SH2PointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SH2PointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHPointScored
         // 
-        SHPointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHPointScored.Location = new System.Drawing.Point(872, 255);
+        SHPointScored.Dock = DockStyle.Fill;
+        SHPointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHPointScored.Location = new Point(374, 156);
+        SHPointScored.Margin = new Padding(5);
         SHPointScored.Name = "SHPointScored";
-        SHPointScored.Size = new System.Drawing.Size(106, 32);
+        SHPointScored.Size = new Size(108, 24);
         SHPointScored.TabIndex = 40;
         SHPointScored.Text = "00";
-        SHPointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHPointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHKOWon
         // 
-        SHKOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHKOWon.Location = new System.Drawing.Point(872, 203);
+        SHKOWon.Dock = DockStyle.Fill;
+        SHKOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHKOWon.Location = new Point(374, 119);
+        SHKOWon.Margin = new Padding(5);
         SHKOWon.Name = "SHKOWon";
-        SHKOWon.Size = new System.Drawing.Size(106, 32);
+        SHKOWon.Size = new Size(108, 24);
         SHKOWon.TabIndex = 41;
         SHKOWon.Text = "00";
-        SHKOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHKOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHTOLost
         // 
-        SHTOLost.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHTOLost.Location = new System.Drawing.Point(872, 151);
+        SHTOLost.Dock = DockStyle.Fill;
+        SHTOLost.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHTOLost.Location = new Point(374, 82);
+        SHTOLost.Margin = new Padding(5);
         SHTOLost.Name = "SHTOLost";
-        SHTOLost.Size = new System.Drawing.Size(106, 32);
+        SHTOLost.Size = new Size(108, 24);
         SHTOLost.TabIndex = 42;
         SHTOLost.Text = "00";
-        SHTOLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHTOLost.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHTOWon
         // 
-        SHTOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHTOWon.Location = new System.Drawing.Point(872, 99);
+        SHTOWon.Dock = DockStyle.Fill;
+        SHTOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHTOWon.Location = new Point(374, 45);
+        SHTOWon.Margin = new Padding(5);
         SHTOWon.Name = "SHTOWon";
-        SHTOWon.Size = new System.Drawing.Size(106, 32);
+        SHTOWon.Size = new Size(108, 24);
         SHTOWon.TabIndex = 43;
         SHTOWon.Text = "00";
-        SHTOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHTOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHScoreableFrees
         // 
-        SHScoreableFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHScoreableFrees.Location = new System.Drawing.Point(872, 515);
+        SHScoreableFrees.Dock = DockStyle.Fill;
+        SHScoreableFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHScoreableFrees.Location = new Point(374, 304);
+        SHScoreableFrees.Margin = new Padding(5);
         SHScoreableFrees.Name = "SHScoreableFrees";
-        SHScoreableFrees.Size = new System.Drawing.Size(106, 32);
+        SHScoreableFrees.Size = new Size(108, 24);
         SHScoreableFrees.TabIndex = 44;
         SHScoreableFrees.Text = "00";
-        SHScoreableFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHScoreableFrees.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // SHFrees
         // 
-        SHFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        SHFrees.Location = new System.Drawing.Point(872, 463);
+        SHFrees.Dock = DockStyle.Fill;
+        SHFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        SHFrees.Location = new Point(374, 341);
+        SHFrees.Margin = new Padding(5);
         SHFrees.Name = "SHFrees";
-        SHFrees.Size = new System.Drawing.Size(106, 32);
+        SHFrees.Size = new Size(108, 33);
         SHFrees.TabIndex = 45;
         SHFrees.Text = "00";
-        SHFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        SHFrees.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTFrees
         // 
-        TOTFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTFrees.Location = new System.Drawing.Point(1003, 463);
+        TOTFrees.Dock = DockStyle.Fill;
+        TOTFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTFrees.Location = new Point(495, 341);
+        TOTFrees.Margin = new Padding(5);
         TOTFrees.Name = "TOTFrees";
-        TOTFrees.Size = new System.Drawing.Size(106, 32);
+        TOTFrees.Size = new Size(147, 33);
         TOTFrees.TabIndex = 46;
         TOTFrees.Text = "00";
-        TOTFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTFrees.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTMisses
         // 
-        TOTMisses.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTMisses.Location = new System.Drawing.Point(1003, 411);
+        TOTMisses.Dock = DockStyle.Fill;
+        TOTMisses.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTMisses.Location = new Point(495, 267);
+        TOTMisses.Margin = new Padding(5);
         TOTMisses.Name = "TOTMisses";
-        TOTMisses.Size = new System.Drawing.Size(106, 32);
+        TOTMisses.Size = new Size(147, 24);
         TOTMisses.TabIndex = 47;
         TOTMisses.Text = "00";
-        TOTMisses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTMisses.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTGoalScored
         // 
-        TOTGoalScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTGoalScored.Location = new System.Drawing.Point(1003, 359);
+        TOTGoalScored.Dock = DockStyle.Fill;
+        TOTGoalScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTGoalScored.Location = new Point(495, 230);
+        TOTGoalScored.Margin = new Padding(5);
         TOTGoalScored.Name = "TOTGoalScored";
-        TOTGoalScored.Size = new System.Drawing.Size(106, 32);
+        TOTGoalScored.Size = new Size(147, 24);
         TOTGoalScored.TabIndex = 48;
         TOTGoalScored.Text = "00";
-        TOTGoalScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTGoalScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOT2PointScored
         // 
-        TOT2PointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOT2PointScored.Location = new System.Drawing.Point(1003, 307);
+        TOT2PointScored.Dock = DockStyle.Fill;
+        TOT2PointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOT2PointScored.Location = new Point(495, 193);
+        TOT2PointScored.Margin = new Padding(5);
         TOT2PointScored.Name = "TOT2PointScored";
-        TOT2PointScored.Size = new System.Drawing.Size(106, 32);
+        TOT2PointScored.Size = new Size(147, 24);
         TOT2PointScored.TabIndex = 49;
         TOT2PointScored.Text = "00";
-        TOT2PointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOT2PointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTPointScored
         // 
-        TOTPointScored.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTPointScored.Location = new System.Drawing.Point(1003, 255);
+        TOTPointScored.Dock = DockStyle.Fill;
+        TOTPointScored.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTPointScored.Location = new Point(495, 156);
+        TOTPointScored.Margin = new Padding(5);
         TOTPointScored.Name = "TOTPointScored";
-        TOTPointScored.Size = new System.Drawing.Size(106, 32);
+        TOTPointScored.Size = new Size(147, 24);
         TOTPointScored.TabIndex = 50;
         TOTPointScored.Text = "00";
-        TOTPointScored.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTPointScored.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTKOWon
         // 
-        TOTKOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTKOWon.Location = new System.Drawing.Point(1003, 203);
+        TOTKOWon.Dock = DockStyle.Fill;
+        TOTKOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTKOWon.Location = new Point(495, 119);
+        TOTKOWon.Margin = new Padding(5);
         TOTKOWon.Name = "TOTKOWon";
-        TOTKOWon.Size = new System.Drawing.Size(106, 32);
+        TOTKOWon.Size = new Size(147, 24);
         TOTKOWon.TabIndex = 51;
         TOTKOWon.Text = "00";
-        TOTKOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTKOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTTOLost
         // 
-        TOTTOLost.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTTOLost.Location = new System.Drawing.Point(1003, 151);
+        TOTTOLost.Dock = DockStyle.Fill;
+        TOTTOLost.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTTOLost.Location = new Point(495, 82);
+        TOTTOLost.Margin = new Padding(5);
         TOTTOLost.Name = "TOTTOLost";
-        TOTTOLost.Size = new System.Drawing.Size(106, 32);
+        TOTTOLost.Size = new Size(147, 24);
         TOTTOLost.TabIndex = 52;
         TOTTOLost.Text = "00";
-        TOTTOLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTTOLost.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTTOWon
         // 
-        TOTTOWon.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTTOWon.Location = new System.Drawing.Point(1003, 99);
+        TOTTOWon.Dock = DockStyle.Fill;
+        TOTTOWon.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTTOWon.Location = new Point(495, 45);
+        TOTTOWon.Margin = new Padding(5);
         TOTTOWon.Name = "TOTTOWon";
-        TOTTOWon.Size = new System.Drawing.Size(106, 32);
+        TOTTOWon.Size = new Size(147, 24);
         TOTTOWon.TabIndex = 53;
         TOTTOWon.Text = "00";
-        TOTTOWon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTTOWon.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // TOTScoreableFrees
         // 
-        TOTScoreableFrees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        TOTScoreableFrees.Location = new System.Drawing.Point(1003, 515);
+        TOTScoreableFrees.Dock = DockStyle.Fill;
+        TOTScoreableFrees.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        TOTScoreableFrees.Location = new Point(495, 304);
+        TOTScoreableFrees.Margin = new Padding(5);
         TOTScoreableFrees.Name = "TOTScoreableFrees";
-        TOTScoreableFrees.Size = new System.Drawing.Size(106, 32);
+        TOTScoreableFrees.Size = new Size(147, 24);
         TOTScoreableFrees.TabIndex = 54;
         TOTScoreableFrees.Text = "00";
-        TOTScoreableFrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        TOTScoreableFrees.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // MainSplitController
+        // 
+        MainSplitController.Dock = DockStyle.Fill;
+        MainSplitController.Location = new Point(0, 0);
+        MainSplitController.Name = "MainSplitController";
+        // 
+        // MainSplitController.Panel2
+        // 
+        MainSplitController.Panel2.Controls.Add(splitContainer2);
+        MainSplitController.Size = new Size(980, 426);
+        MainSplitController.SplitterDistance = 326;
+        MainSplitController.TabIndex = 55;
+        // 
+        // splitContainer2
+        // 
+        splitContainer2.Dock = DockStyle.Fill;
+        splitContainer2.Location = new Point(0, 0);
+        splitContainer2.Name = "splitContainer2";
+        splitContainer2.Orientation = Orientation.Horizontal;
+        // 
+        // splitContainer2.Panel1
+        // 
+        splitContainer2.Panel1.Controls.Add(TeamComboBox);
+        splitContainer2.Panel1.Controls.Add(PlayerComboBox);
+        // 
+        // splitContainer2.Panel2
+        // 
+        splitContainer2.Panel2.Controls.Add(StatTable);
+        splitContainer2.Size = new Size(650, 426);
+        splitContainer2.SplitterDistance = 40;
+        splitContainer2.TabIndex = 0;
+        // 
+        // StatTable
+        // 
+        StatTable.CellBorderStyle = TableLayoutPanelCellBorderStyle.OutsetPartial;
+        StatTable.ColumnCount = 4;
+        StatTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.2022476F));
+        StatTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7265911F));
+        StatTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.7265911F));
+        StatTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.3445663F));
+        StatTable.Controls.Add(TOTFrees, 3, 9);
+        StatTable.Controls.Add(SHFrees, 2, 9);
+        StatTable.Controls.Add(FHFrees, 1, 9);
+        StatTable.Controls.Add(label9, 0, 9);
+        StatTable.Controls.Add(TOTScoreableFrees, 3, 8);
+        StatTable.Controls.Add(SHScoreableFrees, 2, 8);
+        StatTable.Controls.Add(FHScoreableFrees, 1, 8);
+        StatTable.Controls.Add(label8, 0, 8);
+        StatTable.Controls.Add(TOTMisses, 3, 7);
+        StatTable.Controls.Add(SHMisses, 2, 7);
+        StatTable.Controls.Add(FHMisses, 1, 7);
+        StatTable.Controls.Add(label7, 0, 7);
+        StatTable.Controls.Add(TOTGoalScored, 3, 6);
+        StatTable.Controls.Add(SHGoalScored, 2, 6);
+        StatTable.Controls.Add(FHGoalScored, 1, 6);
+        StatTable.Controls.Add(label6, 0, 6);
+        StatTable.Controls.Add(TOT2PointScored, 3, 5);
+        StatTable.Controls.Add(SH2PointScored, 2, 5);
+        StatTable.Controls.Add(FH2PointScored, 1, 5);
+        StatTable.Controls.Add(label5, 0, 5);
+        StatTable.Controls.Add(TOTPointScored, 3, 4);
+        StatTable.Controls.Add(SHPointScored, 2, 4);
+        StatTable.Controls.Add(FHPointScored, 1, 4);
+        StatTable.Controls.Add(label4, 0, 4);
+        StatTable.Controls.Add(TOTKOWon, 3, 3);
+        StatTable.Controls.Add(SHKOWon, 2, 3);
+        StatTable.Controls.Add(FHKOWon, 1, 3);
+        StatTable.Controls.Add(label3, 0, 3);
+        StatTable.Controls.Add(TOTTOLost, 3, 2);
+        StatTable.Controls.Add(SHTOLost, 2, 2);
+        StatTable.Controls.Add(FHTOLost, 1, 2);
+        StatTable.Controls.Add(label2, 0, 2);
+        StatTable.Controls.Add(TOTTOWon, 3, 1);
+        StatTable.Controls.Add(SHTOWon, 2, 1);
+        StatTable.Controls.Add(FHTOWon, 1, 1);
+        StatTable.Controls.Add(label12, 3, 0);
+        StatTable.Controls.Add(label11, 2, 0);
+        StatTable.Controls.Add(label10, 1, 0);
+        StatTable.Controls.Add(label1, 0, 1);
+        StatTable.Dock = DockStyle.Fill;
+        StatTable.Location = new Point(0, 0);
+        StatTable.Name = "StatTable";
+        StatTable.RowCount = 10;
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+        StatTable.Size = new Size(650, 382);
+        StatTable.TabIndex = 0;
         // 
         // PlayerPerformanceChart
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1182, 568);
-        Controls.Add(TOTScoreableFrees);
-        Controls.Add(TOTTOWon);
-        Controls.Add(TOTTOLost);
-        Controls.Add(TOTKOWon);
-        Controls.Add(TOTPointScored);
-        Controls.Add(TOT2PointScored);
-        Controls.Add(TOTGoalScored);
-        Controls.Add(TOTMisses);
-        Controls.Add(TOTFrees);
-        Controls.Add(SHFrees);
-        Controls.Add(SHScoreableFrees);
-        Controls.Add(SHTOWon);
-        Controls.Add(SHTOLost);
-        Controls.Add(SHKOWon);
-        Controls.Add(SHPointScored);
-        Controls.Add(SH2PointScored);
-        Controls.Add(SHGoalScored);
-        Controls.Add(SHMisses);
-        Controls.Add(FHScoreableFrees);
-        Controls.Add(FHFrees);
-        Controls.Add(FHMisses);
-        Controls.Add(FHGoalScored);
-        Controls.Add(FH2PointScored);
-        Controls.Add(FHPointScored);
-        Controls.Add(FHKOWon);
-        Controls.Add(FHTOLost);
-        Controls.Add(FHTOWon);
-        Controls.Add(label12);
-        Controls.Add(label11);
-        Controls.Add(label10);
-        Controls.Add(pictureBox14);
-        Controls.Add(pictureBox13);
-        Controls.Add(pictureBox12);
-        Controls.Add(pictureBox11);
-        Controls.Add(pictureBox10);
-        Controls.Add(pictureBox9);
-        Controls.Add(pictureBox8);
-        Controls.Add(pictureBox7);
-        Controls.Add(pictureBox6);
-        Controls.Add(pictureBox5);
-        Controls.Add(pictureBox4);
-        Controls.Add(pictureBox3);
-        Controls.Add(pictureBox2);
-        Controls.Add(label9);
-        Controls.Add(label8);
-        Controls.Add(label7);
-        Controls.Add(label6);
-        Controls.Add(label5);
-        Controls.Add(label4);
-        Controls.Add(label3);
-        Controls.Add(label2);
-        Controls.Add(label1);
-        Controls.Add(PlayerComboBox);
-        Controls.Add(TeamComboBox);
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(980, 426);
+        Controls.Add(MainSplitController);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        Icon = (Icon)resources.GetObject("$this.Icon");
+        Margin = new Padding(3, 2, 3, 2);
+        MinimizeBox = false;
+        Name = "PlayerPerformanceChart";
         Text = "PlayerPerformanceChart";
         Load += PlayerPerformanceChart_Load;
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+        MainSplitController.Panel2.ResumeLayout(false);
+        ((ISupportInitialize)MainSplitController).EndInit();
+        MainSplitController.ResumeLayout(false);
+        splitContainer2.Panel1.ResumeLayout(false);
+        splitContainer2.Panel2.ResumeLayout(false);
+        ((ISupportInitialize)splitContainer2).EndInit();
+        splitContainer2.ResumeLayout(false);
+        StatTable.ResumeLayout(false);
         ResumeLayout(false);
     }
-
-    private System.Windows.Forms.PictureBox pictureBox3;
-    private System.Windows.Forms.PictureBox pictureBox4;
-    private System.Windows.Forms.PictureBox pictureBox5;
-    private System.Windows.Forms.PictureBox pictureBox6;
-    private System.Windows.Forms.PictureBox pictureBox7;
-    private System.Windows.Forms.PictureBox pictureBox8;
-    private System.Windows.Forms.PictureBox pictureBox9;
-    private System.Windows.Forms.PictureBox pictureBox10;
-    private System.Windows.Forms.PictureBox pictureBox11;
-    private System.Windows.Forms.PictureBox pictureBox12;
-    private System.Windows.Forms.PictureBox pictureBox13;
-    private System.Windows.Forms.PictureBox pictureBox14;
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Label label11;
     private System.Windows.Forms.Label label12;
@@ -743,8 +722,6 @@ partial class PlayerPerformanceChart
     private System.Windows.Forms.Label TOTTOWon;
     private System.Windows.Forms.Label TOTScoreableFrees;
 
-    private System.Windows.Forms.PictureBox pictureBox2;
-
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label4;
@@ -759,4 +736,8 @@ partial class PlayerPerformanceChart
     private System.Windows.Forms.Label label1;
 
     #endregion
+
+    private SplitContainer MainSplitController;
+    private SplitContainer splitContainer2;
+    private TableLayoutPanel StatTable;
 }
