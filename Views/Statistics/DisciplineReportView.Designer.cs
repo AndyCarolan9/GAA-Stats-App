@@ -31,166 +31,175 @@ partial class DisciplineReportView
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisciplineReportView));
-        pictureBox1 = new System.Windows.Forms.PictureBox();
-        AwayTeamLabel = new System.Windows.Forms.Label();
-        HomeTeamLabel = new System.Windows.Forms.Label();
-        pictureBox2 = new System.Windows.Forms.PictureBox();
-        TeamSelectBox = new System.Windows.Forms.ComboBox();
-        TeamConcededFreesGrid = new System.Windows.Forms.DataGridView();
-        PlayerConcededFreesView = new System.Windows.Forms.DataGridView();
-        PlayerWonFreesGrid = new System.Windows.Forms.DataGridView();
-        TeamWonFreesGrid = new System.Windows.Forms.DataGridView();
-        label1 = new System.Windows.Forms.Label();
-        label2 = new System.Windows.Forms.Label();
-        ScoreConcededGrid = new System.Windows.Forms.DataGridView();
-        TotalScoredGrid = new System.Windows.Forms.DataGridView();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)TeamConcededFreesGrid).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)PlayerConcededFreesView).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)PlayerWonFreesGrid).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)TeamWonFreesGrid).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)ScoreConcededGrid).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)TotalScoredGrid).BeginInit();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(DisciplineReportView));
+        pictureBox1 = new PictureBox();
+        AwayTeamLabel = new Label();
+        HomeTeamLabel = new Label();
+        pictureBox2 = new PictureBox();
+        TeamSelectBox = new ComboBox();
+        TeamConcededFreesGrid = new DataGridView();
+        PlayerConcededFreesView = new DataGridView();
+        PlayerWonFreesGrid = new DataGridView();
+        TeamWonFreesGrid = new DataGridView();
+        label1 = new Label();
+        label2 = new Label();
+        ScoreConcededGrid = new DataGridView();
+        TotalScoredGrid = new DataGridView();
+        ((ISupportInitialize)pictureBox1).BeginInit();
+        ((ISupportInitialize)pictureBox2).BeginInit();
+        ((ISupportInitialize)TeamConcededFreesGrid).BeginInit();
+        ((ISupportInitialize)PlayerConcededFreesView).BeginInit();
+        ((ISupportInitialize)PlayerWonFreesGrid).BeginInit();
+        ((ISupportInitialize)TeamWonFreesGrid).BeginInit();
+        ((ISupportInitialize)ScoreConcededGrid).BeginInit();
+        ((ISupportInitialize)TotalScoredGrid).BeginInit();
         SuspendLayout();
         // 
         // pictureBox1
         // 
-        pictureBox1.BackgroundImage = ((System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage"));
-        pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-        pictureBox1.Location = new System.Drawing.Point(17, 40);
+        pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+        pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+        pictureBox1.Location = new Point(15, 30);
+        pictureBox1.Margin = new Padding(3, 2, 3, 2);
         pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new System.Drawing.Size(700, 964);
+        pictureBox1.Size = new Size(612, 723);
         pictureBox1.TabIndex = 0;
         pictureBox1.TabStop = false;
         // 
         // AwayTeamLabel
         // 
-        AwayTeamLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        AwayTeamLabel.Location = new System.Drawing.Point(241, 1007);
+        AwayTeamLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        AwayTeamLabel.Location = new Point(211, 755);
         AwayTeamLabel.Name = "AwayTeamLabel";
-        AwayTeamLabel.Size = new System.Drawing.Size(227, 36);
+        AwayTeamLabel.Size = new Size(199, 27);
         AwayTeamLabel.TabIndex = 1;
         AwayTeamLabel.Text = "Away Team";
-        AwayTeamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        AwayTeamLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // HomeTeamLabel
         // 
-        HomeTeamLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-        HomeTeamLabel.Location = new System.Drawing.Point(241, 1);
+        HomeTeamLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+        HomeTeamLabel.Location = new Point(211, 1);
         HomeTeamLabel.Name = "HomeTeamLabel";
-        HomeTeamLabel.Size = new System.Drawing.Size(227, 36);
+        HomeTeamLabel.Size = new Size(199, 27);
         HomeTeamLabel.TabIndex = 2;
         HomeTeamLabel.Text = "Home Team";
-        HomeTeamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        HomeTeamLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // pictureBox2
         // 
-        pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-        pictureBox2.Location = new System.Drawing.Point(723, -5);
+        pictureBox2.BackColor = SystemColors.ActiveCaptionText;
+        pictureBox2.Location = new Point(633, -4);
+        pictureBox2.Margin = new Padding(3, 2, 3, 2);
         pictureBox2.Name = "pictureBox2";
-        pictureBox2.Size = new System.Drawing.Size(10, 1054);
+        pictureBox2.Size = new Size(9, 790);
         pictureBox2.TabIndex = 3;
         pictureBox2.TabStop = false;
         // 
         // TeamSelectBox
         // 
         TeamSelectBox.FormattingEnabled = true;
-        TeamSelectBox.Location = new System.Drawing.Point(744, 9);
+        TeamSelectBox.Location = new Point(651, 7);
+        TeamSelectBox.Margin = new Padding(3, 2, 3, 2);
         TeamSelectBox.Name = "TeamSelectBox";
-        TeamSelectBox.Size = new System.Drawing.Size(177, 28);
+        TeamSelectBox.Size = new Size(155, 23);
         TeamSelectBox.TabIndex = 4;
         // 
         // TeamConcededFreesGrid
         // 
-        TeamConcededFreesGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-        TeamConcededFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        TeamConcededFreesGrid.Location = new System.Drawing.Point(744, 107);
+        TeamConcededFreesGrid.BackgroundColor = SystemColors.Control;
+        TeamConcededFreesGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        TeamConcededFreesGrid.Location = new Point(651, 80);
+        TeamConcededFreesGrid.Margin = new Padding(3, 2, 3, 2);
         TeamConcededFreesGrid.Name = "TeamConcededFreesGrid";
         TeamConcededFreesGrid.RowHeadersWidth = 51;
-        TeamConcededFreesGrid.Size = new System.Drawing.Size(630, 192);
+        TeamConcededFreesGrid.Size = new Size(551, 144);
         TeamConcededFreesGrid.TabIndex = 5;
         TeamConcededFreesGrid.Text = "dataGridView1";
         // 
         // PlayerConcededFreesView
         // 
-        PlayerConcededFreesView.BackgroundColor = System.Drawing.SystemColors.Control;
-        PlayerConcededFreesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        PlayerConcededFreesView.Location = new System.Drawing.Point(745, 305);
+        PlayerConcededFreesView.BackgroundColor = SystemColors.Control;
+        PlayerConcededFreesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        PlayerConcededFreesView.Location = new Point(652, 229);
+        PlayerConcededFreesView.Margin = new Padding(3, 2, 3, 2);
         PlayerConcededFreesView.Name = "PlayerConcededFreesView";
         PlayerConcededFreesView.RowHeadersWidth = 51;
-        PlayerConcededFreesView.Size = new System.Drawing.Size(404, 192);
+        PlayerConcededFreesView.Size = new Size(354, 144);
         PlayerConcededFreesView.TabIndex = 6;
         PlayerConcededFreesView.Text = "dataGridView2";
         // 
         // PlayerWonFreesGrid
         // 
-        PlayerWonFreesGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-        PlayerWonFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        PlayerWonFreesGrid.Location = new System.Drawing.Point(745, 797);
+        PlayerWonFreesGrid.BackgroundColor = SystemColors.Control;
+        PlayerWonFreesGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        PlayerWonFreesGrid.Location = new Point(652, 598);
+        PlayerWonFreesGrid.Margin = new Padding(3, 2, 3, 2);
         PlayerWonFreesGrid.Name = "PlayerWonFreesGrid";
         PlayerWonFreesGrid.RowHeadersWidth = 51;
-        PlayerWonFreesGrid.Size = new System.Drawing.Size(404, 192);
+        PlayerWonFreesGrid.Size = new Size(354, 144);
         PlayerWonFreesGrid.TabIndex = 8;
         PlayerWonFreesGrid.Text = "dataGridView3";
         // 
         // TeamWonFreesGrid
         // 
-        TeamWonFreesGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-        TeamWonFreesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        TeamWonFreesGrid.Location = new System.Drawing.Point(744, 599);
+        TeamWonFreesGrid.BackgroundColor = SystemColors.Control;
+        TeamWonFreesGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        TeamWonFreesGrid.Location = new Point(651, 449);
+        TeamWonFreesGrid.Margin = new Padding(3, 2, 3, 2);
         TeamWonFreesGrid.Name = "TeamWonFreesGrid";
         TeamWonFreesGrid.RowHeadersWidth = 51;
-        TeamWonFreesGrid.Size = new System.Drawing.Size(630, 192);
+        TeamWonFreesGrid.Size = new Size(551, 144);
         TeamWonFreesGrid.TabIndex = 7;
         TeamWonFreesGrid.Text = "dataGridView4";
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(745, 51);
+        label1.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
+        label1.Location = new Point(652, 38);
         label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(372, 53);
+        label1.Size = new Size(326, 40);
         label1.TabIndex = 9;
         label1.Text = "Frees Conceded";
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(744, 543);
+        label2.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
+        label2.Location = new Point(651, 407);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(372, 53);
+        label2.Size = new Size(326, 40);
         label2.TabIndex = 10;
         label2.Text = "Frees Won";
         // 
         // ScoreConcededGrid
         // 
-        ScoreConcededGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-        ScoreConcededGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        ScoreConcededGrid.Location = new System.Drawing.Point(1155, 305);
+        ScoreConcededGrid.BackgroundColor = SystemColors.Control;
+        ScoreConcededGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        ScoreConcededGrid.Location = new Point(1011, 229);
+        ScoreConcededGrid.Margin = new Padding(3, 2, 3, 2);
         ScoreConcededGrid.Name = "ScoreConcededGrid";
         ScoreConcededGrid.RowHeadersWidth = 51;
-        ScoreConcededGrid.Size = new System.Drawing.Size(279, 192);
+        ScoreConcededGrid.Size = new Size(244, 144);
         ScoreConcededGrid.TabIndex = 11;
         ScoreConcededGrid.Text = "dataGridView2";
         // 
         // TotalScoredGrid
         // 
-        TotalScoredGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-        TotalScoredGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        TotalScoredGrid.Location = new System.Drawing.Point(1155, 797);
+        TotalScoredGrid.BackgroundColor = SystemColors.Control;
+        TotalScoredGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        TotalScoredGrid.Location = new Point(1011, 598);
+        TotalScoredGrid.Margin = new Padding(3, 2, 3, 2);
         TotalScoredGrid.Name = "TotalScoredGrid";
         TotalScoredGrid.RowHeadersWidth = 51;
-        TotalScoredGrid.Size = new System.Drawing.Size(279, 192);
+        TotalScoredGrid.Size = new Size(244, 144);
         TotalScoredGrid.TabIndex = 12;
         TotalScoredGrid.Text = "dataGridView2";
         // 
         // DisciplineReportView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1555, 1041);
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1361, 781);
         Controls.Add(TotalScoredGrid);
         Controls.Add(ScoreConcededGrid);
         Controls.Add(label2);
@@ -204,17 +213,20 @@ partial class DisciplineReportView
         Controls.Add(HomeTeamLabel);
         Controls.Add(AwayTeamLabel);
         Controls.Add(pictureBox1);
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
-        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        Icon = (Icon)resources.GetObject("$this.Icon");
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "DisciplineReportView";
         Text = "DisciplineReportView";
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-        ((System.ComponentModel.ISupportInitialize)TeamConcededFreesGrid).EndInit();
-        ((System.ComponentModel.ISupportInitialize)PlayerConcededFreesView).EndInit();
-        ((System.ComponentModel.ISupportInitialize)PlayerWonFreesGrid).EndInit();
-        ((System.ComponentModel.ISupportInitialize)TeamWonFreesGrid).EndInit();
-        ((System.ComponentModel.ISupportInitialize)ScoreConcededGrid).EndInit();
-        ((System.ComponentModel.ISupportInitialize)TotalScoredGrid).EndInit();
+        ((ISupportInitialize)pictureBox1).EndInit();
+        ((ISupportInitialize)pictureBox2).EndInit();
+        ((ISupportInitialize)TeamConcededFreesGrid).EndInit();
+        ((ISupportInitialize)PlayerConcededFreesView).EndInit();
+        ((ISupportInitialize)PlayerWonFreesGrid).EndInit();
+        ((ISupportInitialize)TeamWonFreesGrid).EndInit();
+        ((ISupportInitialize)ScoreConcededGrid).EndInit();
+        ((ISupportInitialize)TotalScoredGrid).EndInit();
         ResumeLayout(false);
     }
 

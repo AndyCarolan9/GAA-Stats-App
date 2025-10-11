@@ -31,38 +31,60 @@ partial class ScorersView
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScorersView));
-        ScorersGrid = new System.Windows.Forms.DataGridView();
-        ((System.ComponentModel.ISupportInitialize)ScorersGrid).BeginInit();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(ScorersView));
+        ScorersGrid = new DataGridView();
+        panel1 = new Panel();
+        ((ISupportInitialize)ScorersGrid).BeginInit();
+        panel1.SuspendLayout();
         SuspendLayout();
         // 
         // ScorersGrid
         // 
-        ScorersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-        ScorersGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-        ScorersGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+        ScorersGrid.AllowUserToAddRows = false;
+        ScorersGrid.AllowUserToDeleteRows = false;
+        ScorersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        ScorersGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        ScorersGrid.BackgroundColor = SystemColors.Control;
         ScorersGrid.ColumnHeadersHeight = 29;
-        ScorersGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-        ScorersGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-        ScorersGrid.Location = new System.Drawing.Point(0, 0);
+        ScorersGrid.Dock = DockStyle.Fill;
+        ScorersGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
+        ScorersGrid.Location = new Point(0, 0);
+        ScorersGrid.Margin = new Padding(3, 2, 3, 2);
         ScorersGrid.Name = "ScorersGrid";
+        ScorersGrid.ReadOnly = true;
         ScorersGrid.RowHeadersWidth = 51;
-        ScorersGrid.Size = new System.Drawing.Size(800, 450);
+        ScorersGrid.Size = new Size(1084, 191);
         ScorersGrid.TabIndex = 0;
+        // 
+        // panel1
+        // 
+        panel1.Controls.Add(ScorersGrid);
+        panel1.Dock = DockStyle.Fill;
+        panel1.Location = new Point(0, 0);
+        panel1.Name = "panel1";
+        panel1.Size = new Size(1084, 191);
+        panel1.TabIndex = 1;
         // 
         // ScorersView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(ScorersGrid);
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1084, 191);
+        Controls.Add(panel1);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        Icon = (Icon)resources.GetObject("$this.Icon");
+        Margin = new Padding(3, 2, 3, 2);
+        MinimumSize = new Size(1100, 230);
+        Name = "ScorersView";
         Text = "Scorers List";
-        ((System.ComponentModel.ISupportInitialize)ScorersGrid).EndInit();
+        ((ISupportInitialize)ScorersGrid).EndInit();
+        panel1.ResumeLayout(false);
         ResumeLayout(false);
     }
 
     private System.Windows.Forms.DataGridView ScorersGrid;
 
     #endregion
+
+    private Panel panel1;
 }

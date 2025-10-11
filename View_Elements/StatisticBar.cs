@@ -19,6 +19,8 @@ namespace StatsTracker.View_Elements
             {
                 control.Click += OnControlClick;
             }
+
+            this.Dock = DockStyle.Fill;
         }
 
         #region Properties

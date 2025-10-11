@@ -36,7 +36,8 @@ public partial class PlayerPerformanceChart : Form, IStatsView
         chartArea.BackColor = Color.Silver;
         
         _chart.ChartAreas.Add(chartArea);
-        Controls.Add(_chart);
+        MainSplitController.Panel1.Controls.Add(_chart);
+        _chart.Dock = DockStyle.Fill;
     }
     
     #region View Getters

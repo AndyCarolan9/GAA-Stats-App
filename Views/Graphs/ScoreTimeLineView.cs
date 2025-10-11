@@ -43,7 +43,9 @@ public partial class ScoreTimeLineView : Form, IStatsView
         Series awayTeamLine = CreateLineForTeam(_match.AwayTeam, 1);
         _firstHalfChart.Series.Add(homeTeamLine);
         _firstHalfChart.Series.Add(awayTeamLine);
-        Controls.Add(_firstHalfChart);
+        ViewTable.Controls.Add(_firstHalfChart);
+        ViewTable.SetCellPosition(_firstHalfChart, new TableLayoutPanelCellPosition(0, 1));
+        _firstHalfChart.Dock = DockStyle.Fill;
         
         _secondHalfChart.Size =  new Size(930, 550);
         _secondHalfChart.Location = new Point(950, 30);
@@ -62,7 +64,9 @@ public partial class ScoreTimeLineView : Form, IStatsView
         Series secondHalfAwayTeamLine = CreateLineForTeam(_match.AwayTeam, 2);
         _secondHalfChart.Series.Add(secondHalfHomeTeamLine);
         _secondHalfChart.Series.Add(secondHalfAwayTeamLine);
-        Controls.Add(_secondHalfChart);
+        ViewTable.Controls.Add(_secondHalfChart);
+        ViewTable.SetCellPosition(_secondHalfChart, new TableLayoutPanelCellPosition(1, 1));
+        _secondHalfChart.Dock = DockStyle.Fill;
     }
 
     private Series CreateLineForTeam(Team team, int halfIndex)

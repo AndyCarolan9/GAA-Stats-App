@@ -187,7 +187,10 @@ public partial class AllStatsView : Form, IStatsView
 
     public StatisticBar[] GetAllStatisticsBars()
     {
-        return Controls.OfType<StatisticBar>().ToArray();
+        List<StatisticBar> AllStatsBars = new List<StatisticBar>();
+        AllStatsBars.AddRange(KOTOTable.Controls.OfType<StatisticBar>());
+        AllStatsBars.AddRange(ShotsTable.Controls.OfType<StatisticBar>());
+        return AllStatsBars.ToArray();
     }
     #endregion
 
