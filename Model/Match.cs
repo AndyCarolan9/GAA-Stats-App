@@ -110,7 +110,7 @@ public class Match
         _matchTimer = Stopwatch.StartNew();
         _half += 1;
         _isPlayStarted = true;
-        AddEvent(new MatchEvent(new Point(), "", 0, EventType.HalfStart, "", _half));
+        AddEvent(new MatchEvent(new PointF(), "", 0, EventType.HalfStart, "", _half));
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public class Match
     {
         _matchTimer.Stop();
         _isPlayStarted = false;
-        AddEvent(new MatchEvent(new Point(), "", _matchTimer.ElapsedMilliseconds, EventType.HalfEnd, "", _half));
+        AddEvent(new MatchEvent(new PointF(), "", _matchTimer.ElapsedMilliseconds, EventType.HalfEnd, "", _half));
     }
 
     /// <summary>
@@ -782,19 +782,13 @@ public class Match
         awayTeamScore = goals.AwayTeamValue.ToString() + "-" + awayTotalPoints.ToString();
     }
     
-    public int GetDistanceFromGoal(bool isHomeEvent, Point shotLocation)
+    public int GetDistanceFromGoal(bool isHomeEvent, PointF shotLocation)
     {
         Vector2 realWorldHomeGoal = new Vector2(45, 0);
         Vector2 realWorldAwayGoal = new Vector2(45, 145);
         
-        int width = 700;
-        int height = 964;
-
-        float xPercent = (float)shotLocation.X / width;
-        float yPercent = (float)shotLocation.Y / height;
-        
-        float realWorldX = 90 * xPercent;
-        float realWorldY = 145 * yPercent;
+        float realWorldX = 90 * shotLocation.X;
+        float realWorldY = 145 * shotLocation.Y;
 
         float distance = 0.0f;
         if (isHomeEvent)

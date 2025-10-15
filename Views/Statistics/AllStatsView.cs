@@ -212,21 +212,24 @@ public partial class AllStatsView : Form, IStatsView
 
         foreach (var selectedEvent in _selectedEvents)
         {
+            float x = DisplayPitch.Width * selectedEvent.Location.X;
+            float y = DisplayPitch.Height * selectedEvent.Location.Y;
+            
             Brush brush = IsPositiveEvent(selectedEvent) ? Brushes.Green : Brushes.Red;
             
             if (CanShowHomeEvent() && selectedEvent.TeamName[new Range(0, 4)] == HomeTeamLabel.Text)
             {
                 e.Graphics.FillRectangle(brush,
-                    selectedEvent.Location.X - 5,
-                    selectedEvent.Location.Y - 5,
+                    x - 5,
+                    y - 5,
                     10, 10);
             }
             else if(CanShowAwayEvent() && selectedEvent.TeamName[new Range(0, 4)] == AwayTeamLabel.Text)
             {
                 e.Graphics.FillEllipse(
                     brush,
-                    selectedEvent.Location.X - 5,
-                    selectedEvent.Location.Y - 5,
+                    x - 5,
+                    y - 5,
                     10, 10);
             }
         }

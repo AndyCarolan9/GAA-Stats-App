@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel;
 using StatsTracker.Classes;
-using StatsTracker.Enums;
-using StatsTracker.Events;
 using StatsTracker.View_Elements;
 
 namespace StatsTracker.Views;
@@ -41,7 +39,7 @@ public partial class MatchView : Form, IStatsView
 
     public event EventHandler<KeyEventArgs>? OnCopySelectedEvent;
 
-    private Point _inputLocation = new Point(0, 0);
+    private PointF _inputLocation = new Point(0, 0);
 
     private MatchEvent? _lastMatchEvent;
     
@@ -65,7 +63,7 @@ public partial class MatchView : Form, IStatsView
         Refresh();
     }
 
-    public Point GetInputLocation()
+    public PointF GetInputLocation()
     {
         return _inputLocation;
     }
@@ -292,13 +290,22 @@ public partial class MatchView : Form, IStatsView
             return;
         }
         
-        e.Graphics.FillRectangle(Brushes.IndianRed, _lastMatchEvent.Location.X - 5, _lastMatchEvent.Location.Y - 5, 10, 10);
+        PictureBox pitch = GetPitchInput();
+        float xLocation = pitch.Width * _lastMatchEvent.Location.X;
+        float yLocation = pitch.Height * _lastMatchEvent.Location.Y;
+        
+        e.Graphics.FillRectangle(Brushes.IndianRed, xLocation - 5, yLocation - 5, 10, 10);
     }
 
     private void FootballFieldInput_MouseUp(object sender, MouseEventArgs e)
     {
         if(e.Button == MouseButtons.Right)
-            _inputLocation = e.Location;
+        {
+            PictureBox pictureBox = GetPitchInput();
+            float x = (float)e.X / (float)pictureBox.Width;
+            float y = (float)e.Y / (float)pictureBox.Height;
+            _inputLocation = new PointF(x, y);
+        }
     }
 
     private void JournalistData_Click(object sender, EventArgs e)

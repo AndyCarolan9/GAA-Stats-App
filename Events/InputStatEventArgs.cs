@@ -9,7 +9,7 @@ public class InputStatEventArgs
     
     public Team Team { get; set; }
     
-    public Point Location { get; set; }
+    public PointF Location { get; set; }
     
     public string Player { get; set; }
 }

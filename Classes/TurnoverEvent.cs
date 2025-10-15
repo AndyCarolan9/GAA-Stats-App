@@ -10,7 +10,7 @@ public class TurnoverEvent : MatchEvent
         
     }
 
-    public TurnoverEvent(Point location, string player, long time, EventType eventType, string teamName, int halfIndex,
+    public TurnoverEvent(PointF location, string player, long time, EventType eventType, string teamName, int halfIndex,
         TurnoverType turnoverType) : base(location, player, time, eventType, teamName, halfIndex)
     {
         TurnoverType = turnoverType;

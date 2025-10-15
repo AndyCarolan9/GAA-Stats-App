@@ -11,7 +11,7 @@ public class SubstitutionEvent : MatchEvent
     }
 
     public SubstitutionEvent(string playerOffName, string playerOnName, long time, EventType eventType, string TeamName,
-        int halfIndex) : base(new Point(), playerOffName, time, eventType, TeamName, halfIndex)
+        int halfIndex) : base(new PointF(), playerOffName, time, eventType, TeamName, halfIndex)
     {
         PlayerOnName = playerOnName;
     }
