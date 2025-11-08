@@ -11,7 +11,7 @@ namespace StatsTracker.Singletons
 
         private bool _isLoaded = false;
 
-        private string _version = "";
+        private string _version = "0.1";
         #endregion
 
         #region Properties
@@ -34,10 +34,10 @@ namespace StatsTracker.Singletons
 
         public StatTrackerSettings() 
         {
-            LoadSettings();
+            
         }
 
-        private void LoadSettings()
+        public void LoadSettings()
         {
             if (string.IsNullOrEmpty(_filePath))
             {

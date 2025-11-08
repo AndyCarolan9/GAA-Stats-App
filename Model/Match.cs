@@ -3,6 +3,7 @@ using System.Numerics;
 using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
+using StatsTracker.Singletons;
 
 namespace StatsTracker.Model;
 
@@ -36,6 +37,7 @@ public class Match
 
     public Match(Team homeTeam, Team awayTeam)
     {
+        AppVersion = StatTrackerSettings.Settings.Version;
         MatchName = Guid.NewGuid().ToString();
         MatchEvents = new List<MatchEvent>();
         _matchTimer = new Stopwatch();
@@ -54,6 +56,8 @@ public class Match
     #endregion
     
     #region Properties
+    public string? AppVersion { get; set; }
+    
     public string MatchName { get; set; }
 
     public List<MatchEvent> MatchEvents { get; set; }
