@@ -1061,6 +1061,11 @@ public class MatchController : IStatsController
                 LogSystem.Log(MessageType.Error, "OpenGame: Failed to load game from file.");
                 return;
             }
+
+            if (VersionUpdater.UpdateMatchData(loadedMatch))
+            {
+                JSONHelper.SaveToJsonFile(_filePath, loadedMatch);
+            }
             
             _match = loadedMatch;
             _view.Text = "GAA Intelligence" + " - " + _match.HomeTeam.TeamName + " vs " + _match.AwayTeam.TeamName;
