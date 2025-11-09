@@ -21,7 +21,7 @@ public class MatchEvent
         TeamName = string.Empty;
     }
 
-    public MatchEvent(Point location, string player, long time, EventType eventType, string teamName, int halfIndex)
+    public MatchEvent(PointF location, string player, long time, EventType eventType, string teamName, int halfIndex)
     {
         Location = location;
         Player = player;
@@ -34,7 +34,7 @@ public class MatchEvent
     
     #region Properties
 
-    public Point Location { get; set; }
+    public PointF Location { get; set; }
 
     public string Player { get; set; }
 

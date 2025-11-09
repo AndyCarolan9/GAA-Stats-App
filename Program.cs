@@ -1,4 +1,5 @@
 using StatsTracker.Controller;
+using StatsTracker.Singletons;
 using StatsTracker.Utils;
 
 namespace StatsTracker;
@@ -16,6 +17,7 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         LogSystem.Log(MessageType.Log, "Application Startup");
+        StatTrackerSettings.Settings.LoadSettings();
         MatchController controller = new MatchController();
         
         Application.Run(controller.GetView().GetForm());
