@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using StatsTracker.Classes;
+using StatsTracker.Enums;
 
 namespace StatsTracker.View_Elements
 {
@@ -30,6 +31,18 @@ namespace StatsTracker.View_Elements
             get => StatNameLabel.Text;
             set => StatNameLabel.Text = value;
         }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public EventType EventEnumType { get; set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public KickOutResultType KickOutResultType { get; set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public ShotResultType ShotResultType { get; set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public TurnoverType TurnoverType { get; set; }
         #endregion
 
         private void OnControlClick(object? sender, EventArgs e)
