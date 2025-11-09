@@ -6,6 +6,7 @@
 public enum EventType
 {
     Default,
+    Shots,
     PointShot,
     GoalShot,
     DoublePointShot,
@@ -93,6 +94,20 @@ static class EventTypeExtensions
             case EventType.RedCard:
             case EventType.YellowCard:
             case EventType.RedCard2Y:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static bool IsShotEvent(this EventType eventType)
+    {
+        switch(eventType)
+        {
+            case EventType.Shots:
+            case EventType.GoalShot:
+            case EventType.PointShot:
+            case EventType.DoublePointShot:
                 return true;
             default:
                 return false;

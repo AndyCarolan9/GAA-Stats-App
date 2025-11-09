@@ -5,6 +5,7 @@
 /// </summary>
 public enum KickOutResultType
 {
+    Default,
     Won,
     WonMark,
     Lost,
@@ -18,6 +19,7 @@ public enum KickOutResultType
 /// </summary>
 public enum ShotResultType
 {
+    Default,
     Wide,
     Point,
     Goal,

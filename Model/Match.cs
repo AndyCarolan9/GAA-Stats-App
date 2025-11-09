@@ -4,6 +4,7 @@ using StatsTracker.Classes;
 using StatsTracker.Enums;
 using StatsTracker.Events;
 using StatsTracker.Singletons;
+using StatsTracker.View_Elements;
 
 namespace StatsTracker.Model;
 
@@ -570,6 +571,67 @@ public class Match
     #endregion
     
     #region Statistic Methods
+    public void UpdateStatisticBar(StatisticBar statsBar)
+    {
+        switch (statsBar.EventEnumType)
+        {
+            case EventType.Shots:
+                StatisticPair shots = GetStatisticPairForShots();
+                statsBar.UpdateValues(shots);
+                break;
+            case EventType.PointShot:
+                UpdateEventBar(statsBar);
+                break;
+            case EventType.DoublePointShot:
+                UpdateEventBar(statsBar);
+                break;
+            case EventType.GoalShot:
+                UpdateEventBar(statsBar);
+                break;
+        }
+    }
+
+    private void UpdateEventBar(StatisticBar statsBar)
+    {
+        if(statsBar.EventEnumType == EventType.Shots)
+        {
+            StatisticPair defaultPair = GetStatisticPairForShots();
+            statsBar.UpdateValues(defaultPair);
+        }
+
+        StatisticPair pair = GetStatisticForEvent(statsBar.EventEnumType);
+        statsBar.UpdateValues(pair);
+    }
+
+    private void UpdateBar_ShotResult(StatisticBar statsBar)
+    {
+        if (statsBar.EventEnumType == EventType.Shots)
+        {
+            return;
+        }
+
+        StatisticPair pair = GetStatisticForShotResult(statsBar.ShotResultType);
+        statsBar.UpdateValues(pair);
+    }
+
+    private void UpdateBar_KickoutResult(StatisticBar statsBar)
+    {
+        if(statsBar.KickOutResultType == KickOutResultType.Default)
+        {
+            StatisticPair defaultPair = GetStatisticForEvent(EventType.KickOut);
+            statsBar.UpdateValues(defaultPair);
+        }
+
+        StatisticPair pair = GetStatisticPairForKickOutResult(statsBar.KickOutResultType);
+        statsBar.UpdateValues(pair);
+    }
+
+    private void UpdateBar_TurnoverResult(StatisticBar statsBar)
+    {
+        StatisticPair pair = GetStatisticPairForTurnoverType(statsBar.TurnoverType, HomeTeam.TeamName);
+        statsBar.UpdateValues(pair);
+    }
+
     public StatisticPair GetStatisticForEvent(EventType eventType, HalfTime selectedHalf = HalfTime.FullGame)
     {
         List<MatchEvent> events = MatchEvents.FindAll(matchEvent =>
